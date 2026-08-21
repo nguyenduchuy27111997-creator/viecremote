@@ -17,38 +17,38 @@ from collections import Counter, defaultdict
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from gates import enforce
 
-SCHEMA = """
-PRAGMA journal_mode=WAL;
-
-CREATE TABLE IF NOT EXISTS company (
+# --- Định nghĩa bảng, dùng chung cho SQLite cục bộ và D1 ---------------------
+# {S} là hậu tố: rỗng khi dựng bản cục bộ, "_new" khi sinh seed cho D1.
+# Không có FOREIGN KEY: nó cản việc đổi tên bảng lúc hoán đổi, và SQLite mặc
+# định không thực thi FK — nên nó chỉ là chú thích tốn phí.
+TABLES = """
+CREATE TABLE IF NOT EXISTS company{S} (
   slug        TEXT PRIMARY KEY,
   name        TEXT NOT NULL,
-  verdict     TEXT NOT NULL,          -- ok | unk | no
+  verdict     TEXT NOT NULL,
   verdict_label TEXT NOT NULL,
   n_jobs      INTEGER NOT NULL,
-  n_global    INTEGER NOT NULL,       -- vị trí mở toàn cầu
-  n_vn        INTEGER NOT NULL,       -- vị trí mở cho vùng/nước có VN
+  n_global    INTEGER NOT NULL,
+  n_vn        INTEGER NOT NULL,
   n_excluded  INTEGER NOT NULL,
   n_unknown   INTEGER NOT NULL,
   mechanism   TEXT NOT NULL,
   source      TEXT NOT NULL,
   n_pay       INTEGER NOT NULL,
-  locked      TEXT NOT NULL,          -- JSON [[mã nước, số tin], ...]
-  declared    TEXT NOT NULL,          -- JSON [tên nước công ty tự khai]
-  reasons     TEXT NOT NULL           -- JSON [[mã DQ, số tin], ...]
+  locked      TEXT NOT NULL,
+  declared    TEXT NOT NULL,
+  reasons     TEXT NOT NULL
 );
-CREATE INDEX IF NOT EXISTS company_verdict ON company(verdict, n_global DESC, n_jobs DESC);
-CREATE INDEX IF NOT EXISTS company_mech    ON company(mechanism);
 
-CREATE TABLE IF NOT EXISTS job (
+CREATE TABLE IF NOT EXISTS job{S} (
   id           TEXT PRIMARY KEY,
-  company_slug TEXT NOT NULL REFERENCES company(slug),
+  company_slug TEXT NOT NULL,
   title        TEXT NOT NULL,
   location_raw TEXT,
   url          TEXT NOT NULL,
   source       TEXT NOT NULL,
   eligibility  TEXT NOT NULL,
-  scope        TEXT NOT NULL,         -- worldwide | vn | excluded | unknown
+  scope        TEXT NOT NULL,
   reason       TEXT,
   evidence     TEXT,
   evidence_src TEXT,
@@ -59,23 +59,29 @@ CREATE TABLE IF NOT EXISTS job (
   first_seen   TEXT,
   last_seen    TEXT
 );
-CREATE INDEX IF NOT EXISTS job_company ON job(company_slug, scope);
-CREATE INDEX IF NOT EXISTS job_scope   ON job(scope);
 
--- tra cứu tên công ty: FTS5 rẻ hơn LIKE '%x%' ở 10.000+ dòng
-CREATE VIRTUAL TABLE IF NOT EXISTS company_fts USING fts5(
-  slug UNINDEXED, name, tokenize='unicode61'
-);
+CREATE TABLE IF NOT EXISTS meta{S} (k TEXT PRIMARY KEY, v TEXT NOT NULL);
+"""
 
-CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT NOT NULL);
+# Chỉ mục và FTS tạo SAU khi hoán đổi — tên chỉ mục là toàn cục trong một CSDL,
+# nên không thể tồn tại song song hai bản.
+INDEXES = """
+CREATE INDEX IF NOT EXISTS company_verdict ON company(verdict, n_global DESC, n_jobs DESC);
+CREATE INDEX IF NOT EXISTS company_mech    ON company(mechanism);
+CREATE INDEX IF NOT EXISTS job_company     ON job(company_slug, scope);
+CREATE INDEX IF NOT EXISTS job_scope       ON job(scope);
+DROP TABLE IF EXISTS company_fts;
+CREATE VIRTUAL TABLE company_fts USING fts5(slug UNINDEXED, name, tokenize='unicode61');
+INSERT INTO company_fts (slug, name) SELECT slug, name FROM company;
+"""
 
--- Báo sai nhãn. Sứ mệnh gọi tỷ lệ báo sai là CHỈ SỐ SỐNG CÒN.
--- KHÔNG có cột nào chứa dữ liệu cá nhân: không email, không IP, không tài khoản.
--- Nhờ đó giữ nguyên miễn trừ DPO/DPIA của Nghị định 356/2025.
+# Bảng do NGƯỜI DÙNG ghi. Không phái sinh từ jobs.json, không dựng lại được.
+# CREATE IF NOT EXISTS và TUYỆT ĐỐI không nằm trong luồng hoán đổi.
+USER_TABLES = """
 CREATE TABLE IF NOT EXISTS report (
   id         INTEGER PRIMARY KEY AUTOINCREMENT,
-  kind       TEXT NOT NULL,          -- job | company
-  ref        TEXT NOT NULL,          -- job.id hoặc company.slug
+  kind       TEXT NOT NULL,
+  ref        TEXT NOT NULL,
   reason     TEXT NOT NULL,
   note       TEXT,
   created_at TEXT NOT NULL,
@@ -83,6 +89,8 @@ CREATE TABLE IF NOT EXISTS report (
 );
 CREATE INDEX IF NOT EXISTS report_open ON report(resolved, created_at DESC);
 """
+
+SCHEMA = TABLES.replace("{S}", "") + INDEXES + USER_TABLES
 
 
 def unent(v):
@@ -159,16 +167,19 @@ def q(v):
 
 
 def write_seed(db, outdir, per_file=4000, per_stmt=40):
-    """Sinh SQL tường minh, chia mảnh.
+    """Sinh SQL để nạp vào D1 — NGUYÊN TỬ.
 
-    Không dùng iterdump: nó xuất cả bảng bóng của FTS5 dưới dạng ghi thẳng vào
-    sqlite_master, và D1 từ chối ('table sqlite_master may not be modified').
-    Hai mức chia: mỗi CÂU LỆNH tối đa 40 dòng (D1 trả SQLITE_TOOBIG nếu câu quá
-    dài), mỗi TỆP tối đa 4.000 dòng (một lần execute có trần riêng)."""
-    # Xoá seed cũ trước: số tệp đổi theo kích thước kho, nên lần chạy sau có thể
-    # để lại tệp thừa của lần trước và nạp meta/fts hai lần.
-    for old in glob.glob(os.path.join(outdir, "seed-*.sql")):
-        os.remove(old)
+    Vấn đề: 13 tệp seed chạy tuần tự. Đứt giữa chừng (mạng, hết hạn mức, Ctrl-C)
+    để lại CSDL nửa vời — và trang production sẽ phục vụ đúng cái nửa vời đó.
+
+    Cách giải: nạp vào bảng `*_new`, chỉ đến TỆP CUỐI mới hoán đổi. Cửa sổ dữ
+    liệu không nhất quán rút từ "cả quá trình nạp" xuống "một tệp DROP+RENAME".
+    Đứt trước tệp cuối thì bảng cũ còn nguyên, trang vẫn chạy dữ liệu hôm qua.
+
+    Không dùng iterdump: nó xuất bảng bóng FTS5 dưới dạng ghi thẳng vào
+    sqlite_master, và D1 từ chối. Hai mức chia: 40 dòng/câu lệnh (D1 trả
+    SQLITE_TOOBIG nếu câu quá dài), 4.000 dòng/tệp (một lần execute có trần riêng).
+    """
     files, n = [], 0
 
     def emit(name, lines):
@@ -178,27 +189,43 @@ def write_seed(db, outdir, per_file=4000, per_stmt=40):
         files.append(path)
         n += 1
 
-    emit("schema", [ln.strip() + ";" for ln in SCHEMA.split(";")
-                    if ln.strip() and not ln.strip().startswith("PRAGMA")])
+    def stmts(sql):
+        return [x.strip() + ";" for x in sql.split(";") if x.strip()
+                and not x.strip().startswith("PRAGMA")]
 
+    # 1. Bảng người dùng (không bao giờ đụng) + bảng tạm sạch
+    emit("schema", stmts(USER_TABLES)
+         + [f"DROP TABLE IF EXISTS {t}_new;" for t in ("company", "job", "meta")]
+         + stmts(TABLES.replace("{S}", "_new")))
+
+    # 2. Dữ liệu -> bảng tạm
     for table in ("company", "job", "meta"):
         cols = [r[1] for r in db.execute(f"PRAGMA table_info({table})")]
         rows = db.execute(f"SELECT {','.join(cols)} FROM {table}").fetchall()
         for i in range(0, len(rows), per_file):
             part = rows[i:i + per_file]
             emit(table, [
-                f"INSERT INTO {table} ({','.join(cols)}) VALUES "
+                f"INSERT INTO {table}_new ({','.join(cols)}) VALUES "
                 + ",".join("(" + ",".join(q(v) for v in r) + ")" for r in part[k:k + per_stmt])
                 + ";"
                 for k in range(0, len(part), per_stmt)])
 
-    emit("fts", ["INSERT INTO company_fts (slug, name) SELECT slug, name FROM company;"])
-    # `report` do người dùng ghi — schema tạo nếu chưa có, nhưng KHÔNG bao giờ
-    # xoá hay ghi đè. Seed hằng ngày không được làm mất báo cáo.
+    # 3. Hoán đổi — tệp DUY NHẤT làm dữ liệu cũ biến mất. Chạy cuối cùng.
+    #
+    # THỨ TỰ QUAN TRỌNG: con trước, cha sau. D1 THỰC THI foreign key (khác
+    # SQLite mặc định), và schema cũ có `job.company_slug REFERENCES company`.
+    # Drop `company` khi `job` còn tham chiếu -> SQLITE_CONSTRAINT_FOREIGNKEY.
+    # Bảng mới không có FK nên đây là vấn đề một lần, nhưng thứ tự phải đúng
+    # ở mọi lần chạy vì có thể nạp lên một CSDL còn schema cũ.
+    emit("swap",
+         [f"DROP TABLE IF EXISTS {t}; ALTER TABLE {t}_new RENAME TO {t};"
+          for t in ("job", "company", "meta")]
+         + stmts(INDEXES))
+
     tot = sum(os.path.getsize(f) for f in files)
     print(f"✓ {len(files)} tệp seed trong {outdir}/ — {tot/1e6:.1f} MB tổng")
-    print(f"  nạp: for f in {outdir}/seed-*.sql; do npx wrangler d1 execute "
-          f"viec-remote --local --file=../$f; done")
+    print(f"  tệp cuối ({os.path.basename(files[-1])}) là bước hoán đổi — "
+          f"đứt trước nó thì dữ liệu cũ còn nguyên")
 
 
 def main():

@@ -1,0 +1,89 @@
+name: CI
+
+# Chạy trên mọi push và PR. Mục đích duy nhất: KHÔNG để một thay đổi luật chấm
+# làm tụt độ chính xác mà không ai biết. `eval.py` từng chỉ chạy khi nhớ.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  rules:
+    name: Đối chứng bộ quy tắc
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      # Không cài gì: pipeline dùng thư viện chuẩn, 0 phụ thuộc ngoài.
+
+      - name: Biên dịch toàn bộ Python
+        run: python3 -m py_compile build.py tools/*.py
+
+      - name: Chấm lại bộ đối chứng 180 tin
+        run: python3 tools/score_rules.py
+
+      - name: Đo ngưỡng
+        # eval.py thoát mã 1 nếu tụt dưới ngưỡng — đó chính là cổng.
+        run: python3 tools/eval.py
+
+      - name: Cổng C1..C5 chặn được dữ liệu hỏng
+        # Kiểm chính CÁI CỔNG, không chỉ kiểm dữ liệu. Cổng im lặng còn tệ hơn
+        # không có cổng.
+        run: |
+          python3 - <<'PY'
+          import sys, copy
+          sys.path.insert(0, "tools")
+          from gates import validate
+
+          base = [{
+              "id": "x", "eligibility": "excluded", "exclusion_reason": "DQ-02",
+              "evidence": "Tin ghi địa điểm: US only", "excerpt": "a",
+              "index_layer": "aggregated", "status": "open", "alr_countries": [],
+          }]
+          assert not validate(base), "dữ liệu sạch bị chặn nhầm"
+
+          cases = {
+              "C1 mất trích dẫn":  lambda j: j.update(evidence=""),
+              "C1 trích dẫn vô nghĩa": lambda j: j.update(evidence="chúng tôi yêu cà phê"),
+              "C4 trích đoạn dài":  lambda j: j.update(excerpt="x" * 301),
+              "C3 tin đã đóng":     lambda j: j.update(status="closed"),
+              "C2 sai index_layer": lambda j: j.update(index_layer="original"),
+              "C5 xung đột schema": lambda j: j.update(
+                  eligibility="worldwide", exclusion_reason=None,
+                  evidence="A-02(location): Anywhere",
+                  alr_countries=["United States"]),
+          }
+          for name, mutate in cases.items():
+              js = copy.deepcopy(base)
+              mutate(js[0])
+              assert validate(js), f"CỔNG KHÔNG CHẶN: {name}"
+              print(f"  ✓ chặn {name}")
+          print("6/6 ca đối kháng bị chặn")
+          PY
+
+  web:
+    name: Kiểm kiểu và build web
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+        working-directory: web
+
+      - name: Kiểm kiểu
+        run: npx tsc --noEmit
+        working-directory: web
+
+      - run: npx eslint .
+        working-directory: web

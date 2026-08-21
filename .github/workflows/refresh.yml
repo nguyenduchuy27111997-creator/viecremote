@@ -1,0 +1,130 @@
+name: Cập nhật hằng ngày
+
+# Thay cho cron trên laptop. Laptop ngủ thì kho đóng băng — đã xảy ra thật.
+#
+# Ba secret cần đặt ở Settings > Secrets and variables > Actions:
+#   CLOUDFLARE_API_TOKEN   quyền: Workers Scripts:Edit, D1:Edit
+#   CLOUDFLARE_ACCOUNT_ID
+#   CF_ANALYTICS_TOKEN     (biến thường cũng được, nó vốn công khai)
+on:
+  schedule:
+    # 05:17 giờ Việt Nam = 22:17 UTC hôm trước.
+    # Phút 17 chứ không phải 00: phút tròn là lúc runner GitHub đông nhất.
+    - cron: "17 22 * * *"
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "Đẩy lên production sau khi chấm xong"
+        type: boolean
+        default: true
+
+concurrency:
+  # Hai lần chạy chồng nhau sẽ ghi đè jobs.json của nhau.
+  group: refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write        # để commit lại slug_state.json
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      # jobs.json 34 MB, không commit được (đổi hằng ngày -> ~1 GB/tháng repo).
+      # Cache giữ nó ấm giữa các lần chạy. Bị đuổi thì lần sau kéo toàn bộ
+      # (~68 phút thay vì 16) — chậm chứ không hỏng.
+      - name: Khôi phục kho
+        uses: actions/cache/restore@v4
+        with:
+          path: jobs.json
+          key: jobs-${{ github.run_id }}
+          restore-keys: jobs-
+
+      - name: Kéo + chấm nhãn
+        run: python3 -u tools/export_jobs.py -o jobs.json
+
+      # export_db.py gọi tools/gates.py — vi phạm C1..C5 thì thoát mã 1 ở đây,
+      # trước khi bất kỳ thứ gì chạm tới production.
+      - name: Cổng C1..C5 + xuất SQLite/seed
+        run: python3 -u tools/export_db.py
+
+      - name: Dựng bản tĩnh (đường lui)
+        run: python3 build.py
+
+      - name: Lưu kho
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: jobs.json
+          key: jobs-${{ github.run_id }}
+
+      - run: npm ci
+        working-directory: web
+        if: inputs.deploy != false
+
+      # Tệp cuối (seed-NN-swap.sql) là bước hoán đổi. Đứt trước nó thì
+      # production vẫn chạy dữ liệu hôm qua — xem tools/export_db.py.
+      - name: Nạp D1
+        if: inputs.deploy != false
+        working-directory: web
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          for f in ../data/seed-*.sql; do
+            echo "→ $f"
+            npx wrangler d1 execute viec-remote --remote --file="$f" -y
+          done
+
+      - name: Deploy Worker
+        if: inputs.deploy != false
+        working-directory: web
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
+        run: npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy
+
+      # Bậc poll là trạng thái DUY NHẤT không dựng lại được và không nằm trong
+      # jobs.json. Mất nó thì lần sau phải kéo cả 5.700 slug.
+      - name: Ghi lại bậc poll
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/slug_state.json
+          git diff --quiet --cached || git commit -m "chore: cập nhật bậc poll [skip ci]"
+          git push
+
+      - name: Tóm tắt
+        if: always()
+        run: |
+          python3 - >> "$GITHUB_STEP_SUMMARY" <<'PY'
+          import json, collections, os
+          if not os.path.exists("jobs.json"):
+              print("### ❌ Không có jobs.json — bước kéo đã thất bại"); raise SystemExit
+          d = json.load(open("jobs.json"))
+          n = collections.Counter(j["eligibility"] for j in d)
+          comp = {j["company_slug"] for j in d}
+          ok = {j["company_slug"] for j in d if j["eligibility"] == "worldwide"}
+          print("### Kho sau cập nhật\n")
+          print("| | |\n|---|---|")
+          print(f"| Tin | {len(d):,} |")
+          print(f"| Công ty | {len(comp):,} |")
+          print(f"| Công ty tuyển được ở VN | **{len(ok)}** |")
+          print(f"| Tin mở | {n['worldwide']} |")
+          print(f"| Bị giới hạn địa lý | {n['excluded']:,} |")
+          PY

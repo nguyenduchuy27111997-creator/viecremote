@@ -4,7 +4,7 @@ import { all, meta, type Job } from "@/lib/db"
 import { SCOPE_LABEL, SCOPE_TONE } from "@/lib/labels"
 import { Badge } from "@/components/Badge"
 import { DensityBar, StatRow } from "@/components/Stat"
-import { Eyebrow, Lead, Note, PageTitle } from "@/components/Page"
+import { Eyebrow, Lead, Note } from "@/components/Page"
 import { evidenceText } from "@/lib/evidence"
 
 export const metadata = { title: "Tin đang mở cho người ở Việt Nam" }

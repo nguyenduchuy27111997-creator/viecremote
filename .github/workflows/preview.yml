@@ -1,0 +1,75 @@
+name: Preview
+
+# Deploy thẳng lên production là cách chắc chắn để phát hiện lỗi bằng người dùng.
+# Workflow này tải lên một PHIÊN BẢN chứ không kích hoạt nó: Cloudflare trả về
+# một URL preview riêng, dùng chung D1 production (chỉ đọc), và không có lưu
+# lượng thật nào đi vào cho tới khi bạn promote.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+        working-directory: web
+
+      - name: Tải lên phiên bản (KHÔNG kích hoạt)
+        id: up
+        working-directory: web
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
+        run: |
+          npx opennextjs-cloudflare build
+          npx wrangler versions upload 2>&1 | tee /tmp/up.log
+          # wrangler in ra dòng "Version Preview URL: https://..."
+          URL=$(grep -oE 'https://[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev' /tmp/up.log | head -1)
+          VER=$(grep -oiE 'version id:?[[:space:]]+[a-f0-9-]{36}' /tmp/up.log | grep -oE '[a-f0-9-]{36}' | head -1)
+          echo "url=$URL"  >> "$GITHUB_OUTPUT"
+          echo "ver=$VER"  >> "$GITHUB_OUTPUT"
+
+      - name: Kiểm khói trên preview
+        if: steps.up.outputs.url != ''
+        run: |
+          FAIL=0
+          for p in / /tin-mo /vi-sao-bi-loai /phuong-phap /sitemap.xml /robots.txt; do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "${{ steps.up.outputs.url }}$p")
+            printf '  %-20s %s\n' "$p" "$CODE"
+            [ "$CODE" = "200" ] || FAIL=1
+          done
+          # 404 phải TRẢ 404, không phải 200 — nếu không thì Google lập chỉ mục rác
+          CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "${{ steps.up.outputs.url }}/khong-co-trang-nay")
+          printf '  %-20s %s (mong đợi 404)\n' "/khong-co" "$CODE"
+          [ "$CODE" = "404" ] || FAIL=1
+          exit $FAIL
+
+      - name: Ghi vào tóm tắt
+        if: always()
+        run: |
+          {
+            echo "### Preview"
+            echo ""
+            echo "URL: ${{ steps.up.outputs.url }}"
+            echo ""
+            echo "Phiên bản này **chưa** nhận lưu lượng. Promote khi đã xem xong:"
+            echo ""
+            echo '```bash'
+            echo "cd web && npx wrangler versions deploy ${{ steps.up.outputs.ver }} -y"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

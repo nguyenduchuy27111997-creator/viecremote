@@ -3,7 +3,7 @@ import { cacheLife } from "next/cache"
 import { all, meta } from "@/lib/db"
 import { REASON } from "@/lib/labels"
 import { cname } from "@/lib/countries"
-import { BarRow, Eyebrow, Lead, Note, PageTitle, Section } from "@/components/Page"
+import { BarRow, Eyebrow, Lead, Note, Section } from "@/components/Page"
 
 export const metadata = { title: "Vì sao tin bị loại" }
 

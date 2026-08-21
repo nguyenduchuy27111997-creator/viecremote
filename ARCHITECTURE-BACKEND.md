@@ -122,17 +122,42 @@ Còn **68 phút** cho toàn kho, **16 phút** khi chỉ kéo slug đến hạn.
 
 ### 4.2 Thiếu gì — xếp theo mức nguy hiểm
 
-| # | Lỗ hổng | Hậu quả thật | Sửa |
-|---|---|---|---|
-| **1** | **Không phải git repo** | Không có lịch sử, không quay lui được code, một `rm` sai là mất hết. 3.460 dòng Python + toàn bộ tài liệu đang **không được bảo vệ** | `git init` + push private. **~15 phút** |
-| **2** | **Cron chạy trên laptop** | Máy ngủ ⇒ không cập nhật. **Đã xảy ra trong phiên này** | Chuyển sang GitHub Actions hoặc một VPS luôn bật |
-| **3** | **Không có cảnh báo** | Cron chết thì phát hiện sau **7 ngày** (đọc log hằng tuần) | Healthcheck: cron ping một URL sau khi chạy xong; không ping thì báo |
-| **4** | **Không có CI** | `eval.py` chỉ chạy khi nhớ. Sửa luật làm tụt precision mà không ai biết | GitHub Actions chạy `eval.py` mỗi lần push |
-| **5** | **Không có staging** | Deploy thẳng lên production | Cloudflare Workers có preview URL — dùng trước khi promote |
-| **6** | **Seed D1 không nguyên tử** | 13 tệp seed chạy tuần tự; đứt giữa chừng để lại DB nửa vời | Seed vào bảng tạm rồi `ALTER TABLE ... RENAME` |
-| **7** | **Build Next chạy trên laptop** | Deploy cần node + mạng + ~1 phút | Cùng lời giải với #2 |
+| # | Lỗ hổng | Trạng thái |
+|---|---|---|
+| 1 | Không phải git repo | ✅ **xong** — `git init`, 299 tệp, repo 3,4 MB |
+| 2 | Cron chạy trên laptop | ✅ **xong** — `.github/workflows/refresh.yml`, cron 22:17 UTC |
+| 3 | Không có cảnh báo | ✅ **xong** — Actions gửi email khi job đỏ |
+| 4 | Không có CI | ✅ **xong** — `.github/workflows/ci.yml` |
+| 5 | Không có staging | ✅ **xong** — `.github/workflows/preview.yml` |
+| 6 | Seed D1 không nguyên tử | ✅ **xong** — bảng `*_new` + hoán đổi ở tệp cuối |
+| 7 | Build Next chạy trên laptop | ✅ **xong** — chạy trên runner |
 
-**#1 nguy hiểm nhất và rẻ nhất.** Mọi thứ khác trong bảng này đều giả định code còn tồn tại.
+### Seed nguyên tử — cách làm và bằng chứng
+
+13 tệp nạp vào `company_new` / `job_new` / `meta_new`. **Chỉ tệp cuối** (`seed-12-swap.sql`)
+mới drop bảng cũ và đổi tên. Cửa sổ dữ liệu không nhất quán rút từ *cả quá trình nạp* xuống
+*một tệp DROP+RENAME*.
+
+Đã kiểm bằng cách cố ý đứt trước tệp cuối:
+
+| | Trước | Sau khi đứt |
+|---|---|---|
+| `company` (cũ) | 3.666 | **3.666** — nguyên vẹn |
+| `company_new` | — | 3.666 — chờ hoán đổi |
+| `report` (người dùng ghi) | 2 | **2** — không mất |
+
+**Một bẫy D1:** khác SQLite mặc định, **D1 THỰC THI foreign key**. Schema cũ có
+`job.company_slug REFERENCES company(slug)`, nên drop `company` trước `job` trả
+`SQLITE_CONSTRAINT_FOREIGNKEY`. Thứ tự hoán đổi phải là **con trước, cha sau**. Bảng mới bỏ
+hẳn FK — SQLite vốn không thực thi nó theo mặc định nên nó chỉ là chú thích tốn phí.
+
+### Điều CI thật sự kiểm
+
+Không chỉ chạy `eval.py`. Nó còn **kiểm chính cái cổng**: sáu ca cố ý làm hỏng dữ liệu
+(mất trích dẫn, trích dẫn vô nghĩa, trích đoạn 301 ký tự, tin đã đóng, sai `index_layer`,
+xung đột C5) — cả sáu phải bị chặn, nếu không CI đỏ.
+
+Cổng im lặng còn tệ hơn không có cổng.
 
 ---
 
@@ -183,13 +208,14 @@ duy nhất nó bán là độ chính xác.
 
 ## 7. Thứ tự làm
 
-| # | Việc | Thời gian | Giải lỗ hổng |
-|---|---|---|---|
-| 1 | `git init` + push private | 15 phút | #1 |
-| 2 | GitHub Actions: CI chạy `eval.py` | 30 phút | #4 |
-| 3 | GitHub Actions: cron `refresh.sh --deploy` | 1 giờ | #2, #3, #7 |
-| 4 | Seed D1 vào bảng tạm rồi rename | 1 giờ | #6 |
-| 5 | Preview URL trước khi promote | 30 phút | #5 |
+**Cả năm việc đã xong 22/08.** Còn lại là phần chỉ bạn làm được:
 
-**Tổng ~3 giờ.** Không nằm trong 8 giờ chặn launch — nhưng **việc #1 nên làm ngay hôm nay**,
-trước cả deploy. Mọi thứ khác giả định code còn tồn tại.
+| # | Việc | Ai |
+|---|---|---|
+| 1 | Tạo repo private trên GitHub, `git push` | **Bạn** |
+| 2 | Đặt secret: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `CF_ANALYTICS_TOKEN` | **Bạn** |
+| 3 | Đặt biến `SITE_URL` (Settings → Variables) | **Bạn** |
+| 4 | Bật Actions, chạy thử `Cập nhật hằng ngày` bằng tay một lần | **Bạn** |
+
+Token Cloudflare cần đúng hai quyền: **Workers Scripts:Edit** và **D1:Edit**. Đừng dùng
+Global API Key — nó có toàn quyền tài khoản.

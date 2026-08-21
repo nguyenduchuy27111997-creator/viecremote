@@ -34,7 +34,8 @@ export function SearchBox() {
   useEffect(() => {
     const t = setTimeout(() => {
       const u = new URLSearchParams(sp.toString())
-      q ? u.set("q", q) : u.delete("q")
+      if (q) u.set("q", q)
+      else u.delete("q")
       u.delete("p")
       const next = u.toString() ? `/?${u}` : "/"
       if (next !== `${location.pathname}${location.search}`) {
@@ -46,7 +47,8 @@ export function SearchBox() {
 
   const setParam = (k: string, v: string) => {
     const u = new URLSearchParams(sp.toString())
-    v ? u.set(k, v) : u.delete(k)
+    if (v) u.set(k, v)
+    else u.delete(k)
     u.delete("p")
     start(() => router.replace(u.toString() ? `/?${u}` : "/", { scroll: false }))
   }

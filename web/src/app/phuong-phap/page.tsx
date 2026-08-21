@@ -1,6 +1,6 @@
 import { cacheLife } from "next/cache"
 import { meta } from "@/lib/db"
-import { Eyebrow, KV, KVTable, Lead, PageTitle, Section } from "@/components/Page"
+import { Eyebrow, KV, KVTable, Lead } from "@/components/Page"
 
 export const metadata = { title: "Phương pháp" }
 
