@@ -1,0 +1,36 @@
+# Lưu ý: .gitignore KHÔNG hỗ trợ chú thích cùng dòng.
+# `data/   # ghi chú` bị hiểu là pattern "data/   # ghi chú", không khớp gì cả.
+# Mọi chú thích phải nằm trên dòng riêng.
+
+# --- phái sinh: dựng lại được từ pipeline ---
+# site/ 46 MB (build.py) · data/ 50 MB (export_db.py)
+site/
+data/
+web/.next/
+web/.open-next/
+web/out/
+
+# --- phụ thuộc ---
+node_modules/
+__pycache__/
+*.pyc
+
+# --- bí mật, trạng thái cục bộ ---
+.env
+.env.local
+.env*.local
+web/.wrangler/
+# sinh bằng `wrangler types`
+web/cloudflare-env.d.ts
+
+# --- log và sao lưu xoay vòng ---
+logs/
+
+.DS_Store
+
+# --- KHO DỮ LIỆU ---
+# jobs.json 34 MB và đổi HẰNG NGÀY. Commit nó là ~1 GB/tháng phình repo.
+# Dựng lại được bằng `python3 tools/export_jobs.py` (~68 phút), NHƯNG lần dựng
+# lại cho dữ liệu MỚI — lịch sử `first_seen` sẽ mất.
+# => Cần sao lưu RIÊNG (R2, Time Machine, rsync). Xem ARCHITECTURE-BACKEND.md.
+jobs.json

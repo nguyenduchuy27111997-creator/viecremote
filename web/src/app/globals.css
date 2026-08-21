@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   HỆ MÀU — TỐI LÀ MẶC ĐỊNH
+   ===========================================================================
+
+   Đây là sản phẩm kỹ thuật, nên nền tối là trạng thái chính chứ không phải
+   biến thể. Bản sáng vẫn có đủ và vẫn đạt chuẩn, nhưng thiết kế xuất phát từ tối.
+
+   Nền ám hue 265 (xanh-tím rất nhạt), không phải xám thuần. Xám trung tính ở
+   nền tối trông "chết"; một chút chroma làm nó có chiều sâu mà mắt không nhận ra
+   là màu.
+
+   Ba màu ngữ nghĩa: cùng L, cùng C, chỉ khác H — nên trông như ba anh em.
+   Trên nền tối đẩy chroma lên 0.114 (bản sáng 0.106) vì màu rực mới đọc được
+   là tín hiệu; màu nhạt trên nền tối trông như lỗi.
+
+   Đã ĐO, không ước lượng:
+     text/bg 17,7:1 · text-2/bg 9,1:1 · text-3/card 4,8:1
+     ngữ nghĩa/bg 10,0–11,0:1 · chip chữ/nền 8,2–8,7:1
+     viền ô nhập 3,0:1 — WCAG 1.4.11
+=========================================================================== */
+
+@theme {
+  /* --- nền tối, mặc định --- */
+  --color-bg: oklch(0.155 0.012 265);
+  --color-card: oklch(0.200 0.014 265);
+  --color-raised: oklch(0.245 0.014 265);
+  --color-line: oklch(0.290 0.014 265);
+  --color-line-2: oklch(0.245 0.014 265);
+  --color-field: oklch(0.484 0.014 265);
+  --color-text: oklch(0.965 0.012 265);
+  --color-text-2: oklch(0.760 0.012 265);
+  --color-text-3: oklch(0.610 0.012 265);
+
+  --color-open: oklch(0.800 0.114 165);
+  --color-closed: oklch(0.800 0.114 20);
+  --color-unk: oklch(0.800 0.114 80);
+  --color-open-bg: oklch(0.255 0.055 165);
+  --color-closed-bg: oklch(0.255 0.055 20);
+  --color-unk-bg: oklch(0.255 0.055 80);
+
+  --color-focus: oklch(0.800 0.140 265);
+
+  /* Sans cho MỌI thứ. Không serif — serif đọc ra vẻ báo chí, không phải công cụ. */
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
+
+  --spacing: 0.25rem;
+
+  /* Bán kính theo kích thước phần tử; lồng nhau thì trong = ngoài − đệm. */
+  --radius-xs: 5px;
+  --radius-sm: 7px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+}
+
+/* Bản sáng chỉ định nghĩa LẠI token. Mặc định là tối, nên phải bắt cả trường
+   hợp người dùng chọn "light" ở hệ điều hành lẫn chọn tay. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --color-bg: oklch(0.991 0.004 265);
+    --color-card: oklch(0.975 0.006 265);
+    --color-raised: oklch(0.955 0.006 265);
+    --color-line: oklch(0.905 0.008 265);
+    --color-line-2: oklch(0.945 0.008 265);
+    --color-field: oklch(0.660 0.010 265);
+    --color-text: oklch(0.240 0.010 265);
+    --color-text-2: oklch(0.430 0.010 265);
+    --color-text-3: oklch(0.545 0.010 265);
+    --color-open: oklch(0.520 0.106 165);
+    --color-closed: oklch(0.520 0.106 20);
+    --color-unk: oklch(0.520 0.106 80);
+    --color-open-bg: oklch(0.955 0.045 165);
+    --color-closed-bg: oklch(0.955 0.045 20);
+    --color-unk-bg: oklch(0.955 0.045 80);
+    --color-focus: oklch(0.520 0.150 265);
+  }
+}
+
+:root[data-theme="light"] {
+  --color-bg: oklch(0.991 0.004 265);
+  --color-card: oklch(0.975 0.006 265);
+  --color-raised: oklch(0.955 0.006 265);
+  --color-line: oklch(0.905 0.008 265);
+  --color-line-2: oklch(0.945 0.008 265);
+  --color-field: oklch(0.660 0.010 265);
+  --color-text: oklch(0.240 0.010 265);
+  --color-text-2: oklch(0.430 0.010 265);
+  --color-text-3: oklch(0.545 0.010 265);
+  --color-open: oklch(0.520 0.106 165);
+  --color-closed: oklch(0.520 0.106 20);
+  --color-unk: oklch(0.520 0.106 80);
+  --color-open-bg: oklch(0.955 0.045 165);
+  --color-closed-bg: oklch(0.955 0.045 20);
+  --color-unk-bg: oklch(0.955 0.045 80);
+  --color-focus: oklch(0.520 0.150 265);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;              /* dấu tiếng Việt xếp chồng cần tối thiểu 1.5 */
+  color-scheme: dark light;
+}
+
+/* Tiêu đề: sans, rất chặt, nặng. Đây là thứ tạo cảm giác "tech" nhiều hơn cả
+   bảng màu — serif ở cùng bảng màu này vẫn sẽ đọc ra vẻ tạp chí. */
+h1, h2, h3 {
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+/* Ánh sáng nền: một quầng radial rất nhạt sau tiêu đề. Đây là chi tiết làm nền
+   tối hết "phẳng" mà không thêm bất kỳ phần tử nhìn thấy được nào. */
+.glow {
+  position: relative;
+  isolation: isolate;
+  /* Quầng sáng thò ra hai bên 20% để blur không bị cắt cụt ở mép. Không clip
+     ngang thì chính nó làm THÂN TRANG cuộn ngang. `clip` chỉ cắt trục X,
+     blur theo trục Y vẫn hiện. */
+  overflow-x: clip;
+}
+.glow::before {
+  content: "";
+  position: absolute;
+  inset: -40% -20% auto -20%;
+  height: 420px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(50% 60% at 20% 0%, color-mix(in oklch, var(--color-open) 16%, transparent), transparent 70%),
+    radial-gradient(45% 55% at 80% 10%, color-mix(in oklch, var(--color-focus) 12%, transparent), transparent 70%);
+  filter: blur(28px);
+}
+
+/* Chữ chuyển sắc cho một cụm trong tiêu đề — dùng ĐÚNG MỘT chỗ mỗi trang. */
+.grad {
+  background: linear-gradient(100deg, var(--color-open), var(--color-focus) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+a, button, select, summary, [role="button"] { cursor: pointer; }
+::selection { background: var(--color-open-bg); color: var(--color-open); }
+
+/* --- Chuyển động ---------------------------------------------------------
+   Nguyên tắc: chuyển động phải MANG NGHĨA. Vào trang thì nội dung trồi lên
+   theo thứ tự đọc; rê chuột thì hàng sáng lên. Không animation trang trí. */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+.rise {
+  animation: rise 0.42s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+  .glow::before { display: none; }
+}
+
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
