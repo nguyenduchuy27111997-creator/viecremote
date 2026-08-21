@@ -97,7 +97,7 @@ export function KVTable({ children }: { children: React.ReactNode }) {
 /** Hàng có thanh tỉ lệ. Thanh và số ở HAI ô riêng — gộp một ô thì thanh 100%
  *  đẩy con số lớn nhất, tức quan trọng nhất, ra ngoài khung. */
 export function BarRow({ label, n, pct, tone = "closed" }: {
-  label: string
+  label: React.ReactNode
   n: number
   pct: number
   tone?: "open" | "closed" | "unk"

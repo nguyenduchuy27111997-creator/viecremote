@@ -164,10 +164,10 @@ tại sao 92% tin không nói, và điều đó nghĩa là gì khi bạn thươn
 | 5 | A2 nút báo sai | 3 | ✅ **xong** — API + form + `/bao-sai` |
 | 6 | D-sửa: ghi độ phủ cạnh bộ lọc cơ chế | 0,5 | ✅ **xong** |
 | — | *↑ 8 giờ chặn launch — **HOÀN TẤT** 21/08 ↑* | | |
-| 7 | E1 duyệt theo nước bị khoá | 4 | SEO + giá trị |
-| 8 | E2 trang "vậy tôi làm gì" | 3 | Lỗ hổng sản phẩm |
-| 9 | C1 thu email | 2 | GĐ 1 |
-| 10 | C2 bảo vệ + tài liệu API | 3 | GĐ 2 |
+| 7 | E1 duyệt theo nước bị khoá | 4 | ✅ **xong** — `/khoa` + 104 trang nước |
+| 8 | E2 trang "vậy tôi làm gì" | 3 | ✅ **xong** — `/lam-gi` |
+| 9 | C1 thu email | 2 | ✅ **xong** — double opt-in + `/rieng-tu` |
+| 10 | C2 bảo vệ + tài liệu API | 3 | ✅ **xong** — khoá băm SHA-256 + `/api` |
 
 **8 giờ chặn launch.** Vừa đúng một tuần ở nhịp 10h/tuần — nhưng tuần đó cũng phải deploy và
 chạy A8, nên thực tế là **hai tuần**.

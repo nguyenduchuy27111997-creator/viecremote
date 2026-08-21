@@ -61,6 +61,17 @@ CREATE TABLE IF NOT EXISTS job{S} (
 );
 
 CREATE TABLE IF NOT EXISTS meta{S} (k TEXT PRIMARY KEY, v TEXT NOT NULL);
+
+-- Bảng nối công ty <-> nước bị khoá, tính sẵn từ cột `locked` (JSON).
+-- Vì sao không truy vấn json_each lúc chạy: nó quét toàn bảng, không dùng được
+-- chỉ mục. Đây là dữ liệu GIÀU NHẤT ta có (2.324/3.666 công ty) và trước đó
+-- không có đường nào vào nó.
+CREATE TABLE IF NOT EXISTS locked{S} (
+  code    TEXT NOT NULL,
+  slug    TEXT NOT NULL,
+  n_jobs  INTEGER NOT NULL,
+  PRIMARY KEY (code, slug)
+);
 """
 
 # Chỉ mục và FTS tạo SAU khi hoán đổi — tên chỉ mục là toàn cục trong một CSDL,
@@ -70,6 +81,8 @@ CREATE INDEX IF NOT EXISTS company_verdict ON company(verdict, n_global DESC, n_
 CREATE INDEX IF NOT EXISTS company_mech    ON company(mechanism);
 CREATE INDEX IF NOT EXISTS job_company     ON job(company_slug, scope);
 CREATE INDEX IF NOT EXISTS job_scope       ON job(scope);
+CREATE INDEX IF NOT EXISTS locked_code      ON locked(code, n_jobs DESC);
+CREATE INDEX IF NOT EXISTS locked_slug      ON locked(slug);
 DROP TABLE IF EXISTS company_fts;
 CREATE VIRTUAL TABLE company_fts USING fts5(slug UNINDEXED, name, tokenize='unicode61');
 INSERT INTO company_fts (slug, name) SELECT slug, name FROM company;
@@ -88,6 +101,28 @@ CREATE TABLE IF NOT EXISTS report (
   resolved   INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS report_open ON report(resolved, created_at DESC);
+
+-- Đăng ký nhận tin. KHÁC MỌI BẢNG KHÁC: email LÀ dữ liệu cá nhân.
+-- Hệ quả (xem legal-brief.md): phải có double opt-in, phải có đường rút lui
+-- một cú bấm, và phải nêu trong trang riêng tư. Dưới 100.000 chủ thể nên vẫn
+-- giữ được miễn trừ DPO/DPIA của Nghị định 356/2025 — theo dõi con số này.
+CREATE TABLE IF NOT EXISTS subscriber (
+  email        TEXT PRIMARY KEY,
+  token        TEXT NOT NULL UNIQUE,
+  confirmed    INTEGER NOT NULL DEFAULT 0,
+  created_at   TEXT NOT NULL,
+  confirmed_at TEXT
+);
+CREATE INDEX IF NOT EXISTS subscriber_token ON subscriber(token);
+
+-- Khoá API cho khách trả tiền (giai đoạn 2). Lưu SHA-256 của khoá, không lưu
+-- khoá thô: rò cơ sở dữ liệu thì kẻ lấy được cũng không gọi API được.
+CREATE TABLE IF NOT EXISTS api_key (
+  hash       TEXT PRIMARY KEY,
+  label      TEXT NOT NULL,
+  created_at TEXT NOT NULL,
+  revoked    INTEGER NOT NULL DEFAULT 0
+);
 """
 
 SCHEMA = TABLES.replace("{S}", "") + INDEXES + USER_TABLES
@@ -195,11 +230,11 @@ def write_seed(db, outdir, per_file=4000, per_stmt=40):
 
     # 1. Bảng người dùng (không bao giờ đụng) + bảng tạm sạch
     emit("schema", stmts(USER_TABLES)
-         + [f"DROP TABLE IF EXISTS {t}_new;" for t in ("company", "job", "meta")]
+         + [f"DROP TABLE IF EXISTS {t}_new;" for t in ("company", "job", "meta", "locked")]
          + stmts(TABLES.replace("{S}", "_new")))
 
     # 2. Dữ liệu -> bảng tạm
-    for table in ("company", "job", "meta"):
+    for table in ("company", "job", "meta", "locked"):
         cols = [r[1] for r in db.execute(f"PRAGMA table_info({table})")]
         rows = db.execute(f"SELECT {','.join(cols)} FROM {table}").fetchall()
         for i in range(0, len(rows), per_file):
@@ -219,7 +254,7 @@ def write_seed(db, outdir, per_file=4000, per_stmt=40):
     # ở mọi lần chạy vì có thể nạp lên một CSDL còn schema cũ.
     emit("swap",
          [f"DROP TABLE IF EXISTS {t}; ALTER TABLE {t}_new RENAME TO {t};"
-          for t in ("job", "company", "meta")]
+          for t in ("job", "locked", "company", "meta")]
          + stmts(INDEXES))
 
     tot = sum(os.path.getsize(f) for f in files)
@@ -254,6 +289,9 @@ def main():
     cols = list(profs[0].keys())
     db.executemany(f"INSERT INTO company ({','.join(cols)}) VALUES ({','.join('?'*len(cols))})",
                    [tuple(p[c] for c in cols) for p in profs])
+    db.executemany(
+        "INSERT INTO locked (code, slug, n_jobs) VALUES (?,?,?)",
+        [(code, p["slug"], n) for p in profs for code, n in json.loads(p["locked"])])
     db.executemany("INSERT INTO company_fts (slug, name) VALUES (?,?)",
                    [(p["slug"], p["name"]) for p in profs])   # bản cục bộ; D1 nạp riêng
     db.executemany(

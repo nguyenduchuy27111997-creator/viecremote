@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { Be_Vietnam_Pro, IBM_Plex_Mono } from "next/font/google"
+import { Subscribe } from "@/components/Subscribe"
+import { SITE_URL } from "@/lib/site"
 import "./globals.css"
 
 /**
@@ -24,6 +26,9 @@ const mono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
+  // Không có metadataBase thì ảnh OG được giải về http://localhost:3000 —
+  // mọi lượt chia sẻ trên production sẽ hiện thẻ hỏng.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Công ty nào thật sự tuyển được người ở Việt Nam",
     template: "%s — viecremote",
@@ -35,6 +40,8 @@ export const metadata: Metadata = {
 const NAV = [
   { href: "/", label: "Công ty" },
   { href: "/tin-mo", label: "Tin mở" },
+  { href: "/khoa", label: "Khoá tuyển" },
+  { href: "/lam-gi", label: "Làm gì" },
   { href: "/vi-sao-bi-loai", label: "Vì sao bị loại" },
   { href: "/phuong-phap", label: "Phương pháp" },
 ]
@@ -101,13 +108,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
 
-        <footer className="mx-auto max-w-5xl border-t border-line/70 px-5 py-8 text-[12.5px] leading-relaxed text-text-3">
-          Không nhận hồ sơ. Mọi thông tin lấy từ tin gốc do công ty tự công bố.
-          Nhãn có thể sai — xem{" "}
-          <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/phuong-phap">
-            phương pháp và giới hạn
-          </Link>
-          .
+        <footer className="mx-auto max-w-5xl border-t border-line/70 px-5 py-9">
+          <Subscribe />
+          <p className="mt-8 text-[12.5px] leading-relaxed text-text-3">
+            Không nhận hồ sơ. Mọi thông tin lấy từ tin gốc do công ty tự công bố.
+            Nhãn có thể sai — xem{" "}
+            <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/phuong-phap">
+              phương pháp và giới hạn
+            </Link>
+            {" · "}
+            <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/rieng-tu">
+              dữ liệu và riêng tư
+            </Link>
+            .
+          </p>
         </footer>
 
         {CF_TOKEN && (

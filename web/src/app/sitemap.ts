@@ -21,6 +21,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: "daily", priority: 1 },
     { url: `${SITE_URL}/tin-mo`, lastModified: now, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/vi-sao-bi-loai`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
+    { url: `${SITE_URL}/khoa`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/lam-gi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/api`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE_URL}/rieng-tu`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
     { url: `${SITE_URL}/phuong-phap`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
   ]
 
@@ -30,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     `SELECT slug, verdict FROM company
      ORDER BY CASE verdict WHEN 'ok' THEN 0 WHEN 'unk' THEN 1 ELSE 2 END, n_global DESC`,
   )
+  const codes = await all<{ code: string }>("SELECT DISTINCT code FROM locked")
   const jobs = await all<{ id: string }>(
     "SELECT id FROM job WHERE scope IN ('worldwide','vn') ORDER BY id",
   )
@@ -41,6 +46,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: c.verdict === "ok" ? 0.8 : 0.4,
+    })),
+    ...codes.map((c) => ({
+      url: `${SITE_URL}/khoa/${c.code.toLowerCase()}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
     })),
     ...jobs.map((j) => ({
       url: `${SITE_URL}/viec/${j.id}`,
