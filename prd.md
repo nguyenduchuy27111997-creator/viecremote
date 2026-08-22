@@ -1,196 +1,213 @@
-# PRD v2.0 — Web tra cứu tin remote
+# PRD v3.0 — Mạng lưới kỹ sư Việt
 
-**Ngày:** 17/08/2026 · **Thay thế** PRD v1.0 (viết cho mô hình bản tin, đã bỏ)
-**Sứ mệnh:** [MISSION.md](MISSION.md) — làm thị trường minh bạch với kỹ sư Việt
+**Ngày:** 22/08/2026 · **Thay thế** PRD v2.0 (web tra cứu đọc-only)
+**Sứ mệnh:** [MISSION.md](MISSION.md) · **Mô hình:** [business-model.md](business-model.md) · **Đổi hướng:** [PIVOT.md](PIVOT.md)
 **Quy tắc chấm:** [rubric-spec.md](rubric-spec.md) · **Tuân thủ:** [legal-brief.md](legal-brief.md)
 
 ---
 
 ## 1. Sản phẩm một câu
 
-> **Tra một công ty bất kỳ và biết ngay họ có tuyển được người ở Việt Nam không — kèm lý do trích dẫn được.**
+> **Kỹ sư Việt được nhìn thấy bởi đúng những công ty thật sự tuyển được họ.**
 
-Trục sản phẩm là **công ty**, không phải tin. Lý do và số liệu: [business-model.md](business-model.md) Mục 1.
+Hai tầng, và chúng **không cùng trạng thái**:
 
-Đọc-only. Không tài khoản. Không đăng tin. Không nộp hồ sơ.
-
-## 2. Ràng buộc từ dữ liệu — quyết định sản phẩm chứa gì
-
-Đây là phần quan trọng nhất của tài liệu. **Dữ liệu dồi dào là dữ liệu loại trừ.**
-
-| Nếu trang hứa | Dữ liệu thật có | Kết luận |
+| Tầng | Là gì | Trạng thái |
 |---|---|---|
-| "Việc tuyển được ở VN" | **0/150** | **Không được hứa.** Không có gì để hiển thị |
-| "Việc mở toàn cầu" | 4% ≈ 150 tin trong kho hiện tại | Hiển thị được, nhưng ít |
-| **"Tin này KHÔNG mở cho bạn, vì sao"** | **84%** — có lý do trích dẫn được | **Đây là lõi sản phẩm** |
-| "Cơ chế trả lương" | 7,2% | Hiển thị khi có, "Không rõ" khi không |
+| **L1 — Minh bạch** | Tra cứu công khai: công ty nào tuyển được ở VN, kèm trích dẫn | ✅ **Đã build, sẵn sàng launch** |
+| **L2 — Mạng lưới** | Hồ sơ kỹ sư, đồng ý theo công ty, giới thiệu có thu phí | 🔒 **KHOÁ — chờ luật sư** |
 
-**Hệ quả:** trang này **không phải bộ lọc tìm việc tốt**. Nó là **bộ kiểm tra loại trừ**. Nếu marketing hứa cái đầu, nó thất bại ngày đầu tiên.
+L1 chạy được **ngay và độc lập**. Nó không giới thiệu ai cho ai, không thu hồ sơ, không thu phí
+— nên **chưa phải dịch vụ việc làm** và không cần pháp nhân hay ký quỹ.
 
-Và đó đúng là sứ mệnh A: *câu trả lời "không" có giá trị ngang câu "có"*.
-
-## 3. Người dùng & việc cần làm
-
-Kỹ sư Việt, đang xem một tin remote, sắp bỏ 40 phút viết cover letter.
-**Việc cần làm:** biết trong 10 giây có đáng bỏ 40 phút đó không.
-**Thất bại:** trang nói "đủ điều kiện" mà thực ra không → tiêu đúng thứ nó hứa tiết kiệm.
+L2 là chỗ có doanh thu, và cũng là chỗ có mọi rủi ro pháp lý.
 
 ---
 
-## 4. Phạm vi v1
+## 2. L2 bị khoá bởi cái gì — đọc trước khi build
 
-### Trong phạm vi
+**Không viết một dòng code nào cho L2** cho tới khi ba câu này có lời giải từ luật sư:
+
+| Câu | Nội dung | Nếu trả lời xấu |
+|---|---|---|
+| **B-Q5** | "Kết nối có đồng ý, thu phí từ công ty" có bị coi là mua bán dữ liệu cá nhân không? | Cả mô hình doanh thu sụp · phạt tới **10× doanh thu** |
+| **Điều 18 NĐ 356** | Gửi hồ sơ kỹ sư ra nước ngoài — thuộc diện miễn hay phải lập Mẫu 09 và báo Bộ Công an? | Mỗi công ty nhận hồ sơ = một thoả thuận ràng buộc phải ký |
+| **NĐ 352/2025** | Nền tảng online có phải duy trì đủ điều kiện dịch vụ việc làm (ký quỹ 300 triệu, pháp nhân, trụ sở ≥24 tháng)? | Cần ~310 triệu vốn trước khi chạy |
+
+`legal-brief.md` từng chốt mặc định an toàn là *"không triển khai mô hình giới thiệu dưới bất kỳ
+hình thức nào"*. **Mặc định đó không còn** — nên ba câu này chuyển từ *"tốt nếu biết"* thành
+*"chặn tất cả"*.
+
+---
+
+## 3. L1 — Minh bạch · đã build
+
+### 3.1 Ràng buộc từ dữ liệu
+
+**Dữ liệu dồi dào là dữ liệu loại trừ.** Đây vẫn là sự thật quyết định L1 chứa gì.
+
+| Nếu trang hứa | Dữ liệu thật | Kết luận |
+|---|---|---|
+| "Việc tuyển được ở VN" | **0/150** chấm tay | Không được hứa |
+| "Công ty tuyển được ở VN" | **110/3.666** (3,0%) | Hiển thị được, và đây là **danh sách khách hàng của L2** |
+| **"Công ty này KHÔNG tuyển được, vì sao"** | **67,8%** có trích dẫn | **Lõi của L1** |
+| "Cơ chế trả lương" | 3% máy · 7,2% chấm tay | Hiện khi có, "không rõ" khi không |
+
+### 3.2 Tính năng — đã xong
+
+| # | Tính năng | Đường dẫn |
+|---|---|---|
+| F0 | **Sổ đăng ký công ty** — trục chính | `/` |
+| F1 | Hồ sơ công ty: kết luận, bản đồ nước khoá, cơ chế, mọi tin | `/cong-ty/{slug}` |
+| F2 | Danh sách tin đang mở — trục phụ | `/tin-mo` |
+| F3 | Chi tiết tin, bằng chứng nguyên văn | `/viec/{id}` |
+| F4 | Vì sao bị loại — phân loại + nước khoá | `/vi-sao-bi-loai` |
+| F5 | **Duyệt theo nước bị khoá** — 104 nước | `/khoa`, `/khoa/{code}` |
+| F6 | **Vậy tôi nên làm gì** | `/lam-gi` |
+| F7 | Phương pháp: rubric, số liệu, giới hạn | `/phuong-phap` |
+| F8 | **Nút báo sai** trên mọi trang tin và công ty | — |
+| F9 | Thu email, double opt-in | chân trang |
+| F10 | Dữ liệu và riêng tư | `/rieng-tu` |
+| F11 | API dữ liệu địa lý tuyển + tài liệu | `/api`, `/api/companies` |
+
+### 3.3 Vai trò mới của L1
+
+L1 không còn là sản phẩm cuối. Nó là **ba thứ cùng lúc**:
+
+1. **Phễu thu hút kỹ sư** — lý do họ vào, và lý do họ tin
+2. **Danh sách khách hàng cho L2** — 110 công ty, có tên, có bằng chứng, có URL tin gốc
+3. **Bằng chứng năng lực** khi đi bán: *"tôi đã chấm 34.313 tin, precision 97,5%"*
+
+---
+
+## 4. L2 — Mạng lưới · đặc tả, chưa build
+
+Viết ra để biết cần gì, **không phải để build ngay**.
 
 | # | Tính năng | Ghi chú |
 |---|---|---|
-| **F0** | **Sổ đăng ký công ty — TRANG CHỦ.** Hồ sơ địa lý tuyển của 2.410 công ty | **Trục chính.** Xem [business-model.md](business-model.md) |
-| F1 | **Trang danh sách tin** (`tin-mo.html`) — trục phụ | |
-| F2 | **Trang chi tiết tin** — nhãn + lý do + trích dẫn nguyên văn + link gốc | |
-| F3 | **Bộ lọc**: trạng thái · lý do loại trừ · overlap múi giờ · có công bố lương | |
-| F4 | **Trang "Vì sao bị loại"** — nhóm theo lý do, kèm số lượng | Lõi sản phẩm (Mục 2) |
-| F5 | **Hồ sơ công ty** — kết luận, bản đồ nước bị khoá, cơ chế, mọi tin | Đòn bẩy 64:1. Tin đổi hằng ngày, công ty đổi hằng quý |
-| F6 | **Trang phương pháp** — rubric công khai, số liệu, giới hạn mẫu | Độ chính xác là sản phẩm → phương pháp phải công khai |
-| F7 | Ô đăng ký email, tuỳ chọn, cuối trang | Không bắt buộc để xem gì |
+| G1 | Tài khoản kỹ sư | Bề mặt PDPL đầu tiên. Tối giản: email + mật khẩu |
+| G2 | Hồ sơ: kỹ năng, kinh nghiệm, mức mong muốn, múi giờ chấp nhận được | **Không bắt buộc CV** — CV dễ chứa dữ liệu nhạy cảm |
+| G3 | **Đồng ý theo từng công ty** | Bấm "cho phép giới thiệu tôi tới X". **Không có** "đồng ý cho mọi đối tác" |
+| G4 | **Nhật ký đồng ý** | Ai, công ty nào, lúc nào, IP. Đây là bằng chứng pháp lý |
+| G5 | Rút lui một cú bấm | **Xoá hẳn**, không đánh dấu |
+| G6 | Bảng công ty: xem hồ sơ đã được đồng ý | Chỉ hồ sơ có đồng ý cho **chính công ty đó** |
+| G7 | Theo dõi trạng thái nối | Để tính phí và để biết quy trình vỡ ở đâu |
 
-### Ngoài phạm vi v1 — và vì sao
+### Điều KHÔNG build ở L2
 
-| Không làm | Lý do |
+| | Vì sao |
 |---|---|
-| Tài khoản, đăng nhập | Không có gì sau cổng. Mở rộng bề mặt PDPL vô ích |
-| Nộp hồ sơ trong trang | Luôn dẫn về tin gốc |
-| Công ty tự đăng tin | A3 chưa bao giờ kiểm |
-| Nhận đóng góp cộng đồng | Chờ rà soát pháp lý |
-| Bản tin | Chờ có khán giả |
-| Tìm kiếm toàn văn | Bộ lọc đủ ở quy mô ~4.000 tin |
+| Hồ sơ công khai, ai xem cũng được | Vi phạm G3 — mỗi lần xem phải có đồng ý cụ thể |
+| Tự động gợi ý ứng viên cho công ty | Gợi ý = gửi dữ liệu. Cần đồng ý trước |
+| Chấm điểm/xếp hạng kỹ sư công khai | Dữ liệu cá nhân + rủi ro phân biệt đối xử |
+| Thu CV dạng tệp | Dễ chứa dữ liệu nhạy cảm ⇒ mất miễn trừ DPO/DPIA |
+| Công ty trả tiền để lên đầu | Vi phạm [MISSION.md](MISSION.md) ràng buộc 1 |
+| Cho thuê lại lao động | Ký quỹ 2 tỷ + đại diện cần 3 năm kinh nghiệm ngành |
 
 ---
 
-## 5. Kiến trúc — chọn theo ràng buộc "một người, 10h/tuần"
+## 5. Ràng buộc bắt buộc
 
-**Sinh trang tĩnh.** Pipeline chạy → xuất HTML → deploy. Không máy chủ, không database, không ops.
+### 5.1 L1 — năm cổng chặn build, đã chạy
 
-```
-tools/pull_sample.py   →  kéo tin từ 3 ATS
-tools/score_rules.py   →  chấm nhãn
-tools/country.py       →  chuẩn hoá + DQ-09
-        ↓
-   jobs.json  (một file phẳng, ~4.000 bản ghi)
-        ↓
-   build.py   →  HTML tĩnh
-        ↓
-   deploy (Cloudflare Pages / Netlify — free tier)
-```
+Nằm ở `tools/gates.py`, **cả hai luồng xuất bản cùng gọi**. Vi phạm ⇒ exit 1, không sinh đầu ra.
 
-**Vì sao tĩnh:** ~4.000 tin, cập nhật hằng ngày, đọc-only, không cá nhân hoá. Database ở đây là chi phí không mua được gì. Chuyển sang động khi nào cần tài khoản — tức là chưa.
-
-**Chi phí:** tên miền ~12 USD/năm. Hosting 0. LLM 5–35 USD/tháng nếu bật tầng 3.
-
-### Bản ghi tin — schema phẳng
-
-```json
-{
-  "id": "...", "company": "...", "company_slug": "...",
-  "title": "...", "location_raw": "...", "url": "...",
-  "source": "greenhouse|lever|ashby",
-  "first_seen": "2026-08-17", "last_seen": "2026-08-17",
-  "status": "open|closed",
-
-  "eligibility": "worldwide|excluded|unknown",
-  "exclusion_reason": "DQ-02|DQ-05|DQ-06|...|null",
-  "evidence": "trích dẫn NGUYÊN VĂN từ tin",
-  "evidence_source": "location|title|description|schema",
-
-  "timezone_overlap_gmt7": 4,
-  "contract_mechanism": "eor|contractor|entity|unknown",
-  "pay_disclosed": true,
-  "alr_countries": ["United States"],
-
-  "index_layer": "aggregated",
-  "rubric_version": "0.4", "scored_at": "..."
-}
-```
-
-**Ba nhãn hiển thị, không dùng từ nội bộ:**
-
-| Nội bộ | Hiển thị cho người dùng |
+| # | Ràng buộc |
 |---|---|
-| `tier_a` / worldwide | **"Mở toàn cầu"** |
-| `no` | **"Không mở cho VN"** + lý do |
-| `unknown` | **"Chưa xác định"** — hiển thị thật, không giấu |
+| **C1** | Mọi nhãn phải có trích dẫn nguyên văn chứa từ khoá đã khớp |
+| **C2** | Không phát sinh JobPosting schema · `index_layer = aggregated` |
+| **C3** | Tin biến mất khỏi feed ⇒ gỡ trong 48h |
+| **C4** | Trích đoạn ≤ 300 ký tự, luôn link về tin gốc |
+| **C5** | Không gán "mở toàn cầu" khi công ty tự khai danh sách nước không có VN |
 
----
+Đã kiểm đối kháng sáu ca; CI chạy lại mỗi lần push.
 
-## 6. Ràng buộc bắt buộc — không được bỏ
+### 5.2 L2 — bốn ràng buộc mới, chưa có cổng
 
-Bốn cái này không phải tính năng, là điều kiện để launch.
+Đây là món nợ: **chưa có cơ chế nào ép chúng.** Phải build cùng lúc với L2, không phải sau.
 
-| # | Ràng buộc | Vì sao |
+| # | Ràng buộc | Kiểm thế nào |
 |---|---|---|
-| **C1** | **Mọi nhãn phải có trích dẫn nguyên văn.** Không trích được → `unknown`, không đoán | Độ chính xác là sản phẩm ([MISSION.md](MISSION.md) hệ quả 1) |
-| **C2** | **Không phát sinh JobPosting schema. Toàn bộ `index_layer = aggregated`** | Q1 chưa có câu trả lời từ luật sư. Mặc định an toàn |
-| **C3** | **Tin biến mất khỏi feed → gỡ khỏi hiển thị trong 48h** | Chính sách Google về tin hết hạn; và tin zombie phá chính giá trị của trang |
-| **C4** | **Trích đoạn mô tả ≤ 300 ký tự, có dẫn nguồn** | Bản quyền. Luôn link về tin gốc |
+| **C6** | Không hồ sơ nào rời hệ thống mà thiếu bản ghi đồng ý cho **đúng công ty đó** | Chặn ở tầng dữ liệu, không phải tầng giao diện |
+| **C7** | Kỹ sư không bao giờ bị thu tiền | Không có luồng thanh toán nào hướng vào kỹ sư |
+| **C8** | Rút lui = xoá hẳn trong 24h | Kiểm tự động |
+| **C9** | Tầng minh bạch không đổi vì công ty trả tiền | Nhãn công ty do pipeline sinh, **không có đường sửa tay** |
 
-**Kiểm tự động trước mỗi lần deploy** — build fail nếu vi phạm C1 hoặc C2.
-
----
-
-## 7. Trang phương pháp — không phải trang phụ
-
-Vì độ chính xác là sản phẩm, phương pháp phải kiểm tra được. Trang này chứa:
-
-- Rubric đầy đủ, công khai
-- **Số liệu đo được:** 84% loại trừ · 4% mở toàn cầu · 0/150 ghi rõ tuyển VN · 7,2% nêu cơ chế
-- **Độ chính xác gần nhất:** đối chứng tay 180 tin — precision 100%, DQ recall 100%
-- **Giới hạn mẫu, nói thẳng:** 3 ATS · nguồn slug từ HN → thiên về công ty Mỹ/EU · ảnh chụp thời điểm
-- Nút báo sai trên mọi tin
-
-Đây cũng là tài sản GEO — dữ liệu gốc là thứ AI trích dẫn.
+**C9 là ràng buộc khó nhất** vì nó chống lại chính động cơ kinh tế. Cách ép duy nhất đáng tin:
+giữ nhãn công ty hoàn toàn do `tools/score_rules.py` sinh, và **không xây giao diện sửa nhãn nào cả**.
 
 ---
 
-## 8. Lộ trình launch
+## 6. Lộ trình — gắn với cổng, không gắn với ngày
 
-| Mốc | Việc | Ước tính |
+### Giai đoạn L1 · chi phí ~12 USD
+
+| Mốc | Việc | Ai |
 |---|---|---|
-| **M0** | `build.py`: jobs.json → HTML tĩnh. F1, F2. Chưa CSS | 6–8h |
-| **M1** | F3 bộ lọc, F4 trang "vì sao bị loại", F5 trang công ty | 6–8h |
-| **M2** | F6 trang phương pháp, F7 email, kiểm C1–C4 tự động | 4h |
-| **M3** | Tên miền, deploy, job cập nhật hằng ngày | 3h |
-| **M4** | **Launch** | — |
+| M0 | ✅ Pipeline, chấm nhãn, cổng C1–C5, site | xong |
+| M1 | ✅ Analytics, sitemap, OG, báo sai, API | xong |
+| M2 | **Buổi luật sư — 3 câu ở Mục 2** | **Bạn** |
+| M3 | Deploy, tên miền, cron | **Bạn** |
+| M4 | Đăng bài công bố · A8 với 10 kỹ sư | **Bạn** |
 
-**~20–25 giờ ≈ 2–3 tuần ở nhịp 10h/tuần.**
+**Cổng:** 30 ngày sau launch, <100 người dùng ⇒ **dừng**. Luật sư nói không hợp pháp ⇒ **dừng
+L2 hẳn**, giữ L1 làm đóng góp công cộng.
 
-### Điều kiện launch
+### Giai đoạn A3 · chi phí 0
 
-- [ ] Kiểm C1–C4 chạy sạch
-- [ ] ≥ 100 tin "mở toàn cầu" trong kho *(hiện có ~150)*
-- [ ] Trang phương pháp có số liệu và **giới hạn mẫu**
-- [ ] Lấy mẫu tay 20 tin bất kỳ, xác nhận nhãn đúng
-- [ ] Job gỡ tin hết hạn chạy được, có cảnh báo khi lỗi
+| Mốc | Việc |
+|---|---|
+| M5 | **A3 — 10 công ty trong danh sách 110.** Hỏi: có trả phí giới thiệu không, bao nhiêu |
+| M6 | **Làm thủ công một ca** — nối một người, thu một lần phí, xem cái gì vỡ |
 
-**Không cần trước khi launch:** buổi luật sư (C2 đã là mặc định an toàn) · bản tin · A8 · đóng góp cộng đồng.
+**Cổng:** <3/10 nói có ⇒ **không dựng pháp nhân**.
+
+### Giai đoạn L2 · chi phí ~310 triệu
+
+| Mốc | Việc |
+|---|---|
+| M7 | Pháp nhân, ký quỹ 300 triệu, trụ sở |
+| M8 | Hồ sơ Mẫu 09, thoả thuận với bên nhận, DPO nếu cần |
+| M9 | Build G1–G7 **kèm cổng C6–C9** |
+| M10 | Chạy thật |
+
+**M6 phải xong trước M7.** Nối thủ công một ca là bước rẻ nhất trong cả lộ trình và dễ bị bỏ
+qua nhất.
 
 ---
 
-## 9. Đo gì sau launch
+## 7. Đo gì
+
+### L1
 
 | Chỉ số | Vì sao |
 |---|---|
 | **Tỷ lệ báo nhãn sai** | Chỉ số sống còn. Sứ mệnh hỏng nếu số này cao |
-| Số lần bấm "xem tin gốc" | Giá trị thật đến tay người dùng |
-| Trang "vì sao bị loại" — lượt xem so với trang danh sách | Kiểm giả thuyết lõi ở Mục 2 |
-| Đăng ký email | Kênh sở hữu |
+| Người dùng duy nhất / tháng | Cổng GĐ 0 |
+| Đăng ký email | Hạt giống của L2 |
+| Lượt xem `/khoa` và `/lam-gi` | Kiểm giả thuyết "câu không cũng có giá trị" |
 
-**Không đo:** tổng số tin trong kho, tổng lượt xem trang. Chỉ số phù phiếm.
+### L2
+
+| Chỉ số | Vì sao |
+|---|---|
+| **Lần nối thành công / tháng** | Doanh thu tăng theo đúng số này |
+| Tỷ lệ hồ sơ gửi đi được phỏng vấn | Chất lượng sàng lọc — thứ giữ cửa |
+| Số kỹ sư rút lui | Nếu cao, mạng lưới đang làm gì đó sai |
+| Thời gian từ đồng ý tới phản hồi | Trải nghiệm phía kỹ sư |
+
+**Không đo:** tổng số tin trong kho, tổng lượt xem, số hồ sơ đã thu. Chỉ số phù phiếm.
 
 ---
 
-## 10. Rủi ro đã biết
+## 8. Rủi ro đã biết
 
 | Rủi ro | Xử lý |
 |---|---|
-| Chỉ ~150 tin "mở toàn cầu" — kho mỏng | Chấp nhận. Thà 150 tin đúng hơn 4.000 tin đoán. Mở rộng slug nếu cần |
-| Nhãn sai lọt ra ngoài | C1 + nút báo sai + lấy mẫu tay hằng tháng |
-| Bị một ATS chặn | Poll theo bậc (đã có trong `pull_sample`); mất 1 nguồn = mất ~1/3 |
-| Không ai dùng | Đó là câu trả lời. Cổng: 30 ngày sau launch, < 100 người dùng duy nhất → xem lại |
+| **Cold start hai phía** | Bắt đầu từ **phía cầu** — 110 công ty đã có tên, có bằng chứng |
+| B-Q5 trả lời là "bán dữ liệu" | Hỏi **trước** khi build. Nếu xấu, dừng L2 và giữ L1 |
+| Nhãn sai lọt ra ngoài | C1 + nút báo sai + audit phân tầng hằng tháng |
+| Không mở rộng được | Chấp nhận. Đây là doanh nghiệp dịch vụ |
+| Áp lực uốn dữ liệu cho khách lớn | C9 — không xây giao diện sửa nhãn nào cả |
+| Bị một ATS chặn | Poll theo bậc; mất 1 nguồn ≈ mất 1/3 kho |

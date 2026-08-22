@@ -2,7 +2,7 @@
 
 **Ngày soạn:** 17/08/2026
 **Mục đích:** rút ngắn buổi tư vấn luật sư/kế toán bằng cách mang sẵn dữ kiện, để buổi đó chỉ dùng cho phần cần chuyên môn.
-**Đi kèm:** [brd-v2.md](brd-v2.md) Mục 6 · [prd.md](prd.md) Mục 13
+**Đi kèm:** [brd-v2.md](archive/brd-v2.md) Mục 6 · [prd.md](prd.md) Mục 13
 
 > **Đây không phải tư vấn pháp lý.** Đây là tổng hợp văn bản công khai do một người không có chuyên môn pháp lý thực hiện, để chuẩn bị cho buổi tư vấn. Mọi kết luận trong đây phải được luật sư xác nhận trước khi hành động. Các trích dẫn được ghi nguyên văn kèm nguồn để luật sư kiểm lại.
 

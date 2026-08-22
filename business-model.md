@@ -1,205 +1,165 @@
 # Mô hình kinh doanh
 
-**Ngày:** 21/08/2026 · **Ràng buộc:** [MISSION.md](MISSION.md) hệ quả 4 · [legal-brief.md](legal-brief.md)
-**Trạng thái:** phân tích, chưa kiểm chứng. A3 (phía cầu) **chưa bao giờ chạy**.
+**Ngày:** 22/08/2026 · **Thay thế** bản 21/08 (viết cho web tra cứu đọc-only)
+**Sứ mệnh:** [MISSION.md](MISSION.md) · **Kế hoạch:** [BUSINESS-PLAN.md](BUSINESS-PLAN.md) · **Lý do đổi:** [PIVOT.md](PIVOT.md)
 
 ---
 
 ## 1. Kết luận trước, lập luận sau
 
-**Job board không phải business ở đây.** 409 tin mở trên 34.313 (1,2%) không đủ làm hàng hoá. Playbook chuẩn của
-job board — bán chỗ đăng tin và bán quyền truy cập CV — **cả hai đều bị cấm** bởi sứ mệnh và PDPL.
+**Doanh thu đến từ phí giới thiệu, công ty trả, mỗi lần nối thành công.**
+Kỹ sư không bao giờ trả. Không bán dữ liệu. Không bán vị trí trong danh sách.
 
-Thứ có giá trị không phải danh sách tin. Là **hồ sơ địa lý tuyển dụng của 3.666 công ty, mỗi
-dòng có trích dẫn nguyên văn.** Không ai khác tính được thứ này.
+Ba con số định hình lựa chọn này:
 
-Đề xuất: **chuyển trục sản phẩm từ *tin* sang *công ty*.**
+| | |
+|---|---|
+| Phí mỗi lần nối (thận trọng) | **3.000–5.000 USD** |
+| Vốn ban đầu | **~310 triệu đồng** (ký quỹ 300 triệu chiếm gần hết) |
+| Chi phí vận hành hạ tầng | **~12 USD/năm** |
 
-| | Trục tin | Trục công ty |
-|---|---|---|
-| Số lượng | 409 mở / 34.313 | 110 mở / 3.666 |
-| Vòng đời | Đổi hằng ngày | Đổi hằng quý |
-| Đòn bẩy | 1:1 | **64:1** (đã đo) |
-| Bán được cho B2B | Không | **Có** |
-| Dính dữ liệu cá nhân | Không | Không |
+Điều quan trọng nhất: **cả hai cổng quyết định nằm TRƯỚC khoản ký quỹ.** Sai thì mất ~12 USD
+và hai tháng, không mất 310 triệu.
 
 ---
 
-## 2. Ràng buộc — thứ đóng cửa hầu hết lựa chọn
+## 2. Ba ràng buộc đóng cửa hầu hết lựa chọn
 
 Viết ra trước khi bàn phương án, để không tự lừa mình.
 
 | # | Ràng buộc | Nguồn | Đóng cửa cái gì |
 |---|---|---|---|
-| **R1** | Tiền không được đổi nội dung xuất bản | Sứ mệnh, hệ quả 4 | Đăng tin trả phí, featured listing, sponsored placement |
-| **R2** | Cấm mua bán dữ liệu cá nhân, phạt tới **10× doanh thu** từ hành vi vi phạm | Luật 91/2025 | Bán quyền truy cập CV, bán lead ứng viên |
-| **R3** | Đang được miễn DPO + DPIA (không xử lý dữ liệu nhạy cảm, <100.000 chủ thể) | NĐ 356/2025 | Mọi thứ làm mất miễn trừ này |
-| **R4** | Kho chỉ **409 tin mở** (1,2%) | Đo được | Mô hình cần lượng hàng lớn |
-| **R5** | Người dùng **nên rời đi** sau khi có câu trả lời | Sứ mệnh, hệ quả 5 | Subscription hướng người dùng cuối |
-| **R6** | Một người, 10h/tuần | Thực tế | Dịch vụ tư vấn 1-1, sales outbound nặng |
+| **R1** | Tiền không được đổi điều được xuất bản | [MISSION.md](MISSION.md) ràng buộc 1 | Bán vị trí trong danh sách, gỡ thông tin bất lợi, xếp hạng theo tiền |
+| **R2** | **Cấm mua bán dữ liệu cá nhân**, phạt tới **10× doanh thu** | Luật 91/2025 | Bán hồ sơ, bán lead ứng viên, chia sẻ CV không có đồng ý cụ thể |
+| **R3** | Thu phí người lao động bị siết chặt | pháp luật lao động VN | Mọi mô hình lấy tiền từ kỹ sư |
 
-**R1 + R2 giết luôn 90% doanh thu của job board thông thường.** RemoteOK thu 600 USD/tin đăng.
-Job board ngách thu 299–600 USD/tin, 100–300 USD/tháng cho CV database. Cả hai dòng đó bị chặn.
+**R2 là ràng buộc mới và nó nguy hiểm nhất.** Ở bản trước, dự án không xử lý dữ liệu cá nhân
+nào nên R2 chỉ là lý thuyết. Bây giờ hồ sơ kỹ sư **chính là** thứ đang lưu chuyển — nên ranh
+giới giữa *dịch vụ kết nối có đồng ý* và *bán dữ liệu* nằm ngay giữa mô hình doanh thu.
 
-**R5 là cái ít ai để ý và đau nhất.** Sản phẩm trả lời một câu hỏi *một lần*. Trả lời xong,
-người dùng đi. Đó là sứ mệnh làm đúng, nhưng là retention tệ nhất có thể cho mô hình thuê bao.
-**Đừng xây business dựa trên việc giữ chân kỹ sư.**
+> **Câu hỏi B-Q5 vẫn chưa có lời giải, và giờ nó không tránh được nữa.**
+> Xem [BUSINESS-PLAN.md](BUSINESS-PLAN.md) Mục 2 — cần một buổi luật sư trước khi build.
 
 ---
 
-## 3. Ba tài sản thật sự đang có
+## 3. Tám phương án, chấm theo ràng buộc
 
-| Tài sản | Quy mô | Ai khác có |
-|---|---|---|
-| **Hồ sơ địa lý tuyển của công ty**, có trích dẫn | 3.666 công ty | Không ai |
-| **Vì sao bị loại**, phân loại + trích dẫn | 29.607 tin | Không ai |
-| **Phương pháp đã kiểm chứng** — precision 97,5% mẫu phân tầng | 5 đợt audit | Không ai công bố |
+| # | Mô hình | R1 | R2 | R3 | Trần doanh thu | Phán quyết |
+|---|---|:--:|:--:|:--:|---|---|
+| A | **Phí giới thiệu, công ty trả** | ✓ | ⚠️ | ✓ | 3–15 nghìn USD/tháng | **Chọn** |
+| B | Thuê bao công ty (truy cập mạng lưới) | ✓ | ⚠️ | ✓ | 200–1.000 USD/th/khách | Dòng phụ, sau A |
+| C | Cho thuê lại lao động (Andela, Turing) | ✓ | ⚠️ | ✓ | Rất cao | **Rào cứng** — xem dưới |
+| D | Bán dữ liệu địa lý tuyển cho EOR | ✓ | ✓ | ✓ | ~490 USD/th/khách | Dòng phụ, giữ lại |
+| E | Thu phí kỹ sư | ✓ | ✓ | ❌ | — | **Cấm** — R3 và sứ mệnh |
+| F | Bán hồ sơ, bán lead ứng viên | ✓ | ❌ | ✓ | — | **Cấm** — phạt 10× doanh thu |
+| G | Công ty trả để lên đầu danh sách | ❌ | ✓ | ✓ | — | **Cấm** — phá thứ đang bán |
+| H | Quảng cáo trên trang | ❌ | ✓ | ✓ | Nhỏ | Bỏ — làm bẩn tầng minh bạch |
 
-Phân rã lý do loại — đây là dataset, không phải nội dung trang web:
+⚠️ = hợp pháp **nếu** B-Q5 được trả lời đúng hướng. Chưa có câu trả lời thì chưa build.
 
-| Số tin | Lý do |
+### Vì sao C là rào cứng, không phải "đắt"
+
+Cho thuê lại lao động cần **ký quỹ 2 tỷ** — gấp gần 7 lần. Nhưng đó không phải phần chặn.
+
+> Người đại diện pháp luật phải có **3 năm trực tiếp làm chuyên môn hoặc quản lý trong lĩnh vực
+> cho thuê lại lao động hoặc cung ứng lao động**, trong 5 năm liền kề.
+
+Đây là điều kiện **không mua được bằng tiền**. Muốn đi hướng C thì phải tuyển đúng một người
+như vậy làm đại diện pháp luật. Ghi lại để sau này không quên.
+
+### Vì sao D vẫn giữ, dù không còn là chính
+
+Bản kế hoạch trước lấy D làm dòng doanh thu chính: bán hồ sơ địa lý tuyển cho nhà cung cấp EOR.
+Giờ nó thành **dòng phụ**, nhưng đừng bỏ:
+
+- Nó **không đụng dữ liệu cá nhân** — R2 không áp dụng, rủi ro gần bằng 0
+- Dữ liệu đã có sẵn, `/api/companies` đã chạy
+- Người mua (Deel, Remote, Oyster) là **cùng nhóm** với khách hàng của mô hình A
+
+Điểm cần cẩn thận: cùng một cuộc gọi A3 có thể bán cả hai thứ, nhưng **đừng bán cùng lúc**.
+Bán dữ liệu trước sẽ làm loãng câu hỏi quan trọng hơn — *"anh có trả tiền để tuyển kỹ sư Việt
+không?"*
+
+---
+
+## 4. Nghịch lý vẫn là lý do mô hình này tồn tại
+
+Việt Nam có **530.000 lập trình viên**, top 6 thế giới về gia công. Nhưng đo 150 tin remote:
+**0 tin** ghi rõ tuyển được ở Việt Nam.
+
+Hai điều đó không mâu thuẫn — chúng nói rằng **việc tuyển kỹ sư Việt có thật nhưng không đi qua
+tin đăng công khai.** Nó đi qua công ty gia công, EOR, hợp đồng nhà thầu, giới thiệu.
+
+Ở bản trước, phát hiện này là **tin xấu**: nó chứng minh không có đủ hàng để làm job board.
+
+Ở hướng mới, nó là **lý do tồn tại**: nếu kênh nối hai bên không có ở nơi cả hai đang tìm, thì
+xây đúng cái kênh đó là một business — không phải một trang tra cứu.
+
+---
+
+## 5. Tài sản đang có — phía cầu đã xong
+
+| Tài sản | Vai trò trong mô hình mới |
 |---|---|
-| 19.023 | khoá theo nước/vùng/bang |
-| 5.466 | hybrid / onsite |
-| 1.621 | cần giấy phép lao động sở tại |
-| 1.236 | quốc tịch / security clearance |
-| 1.085 | công ty tự khai danh sách nước, **không có VN** |
-| 793 | bắt buộc trả lương nội địa (W-2/PAYE) |
-| 375 | bắt buộc múi giờ |
-| 8 | khác |
+| **110 công ty tuyển được ở VN** | **Khách hàng ấm nhất.** Đã chứng minh có cơ chế trả lương |
+| 3.666 hồ sơ địa lý tuyển | Danh sách khách tiềm năng, đã lọc |
+| 2.485 công ty khoá hoàn toàn | Danh sách loại trừ — khỏi gọi |
+| Bảng `locked`, 104 nước | Biết ai *sắp* cần mở rộng ra ngoài nước hiện tại |
+| Precision 97,5%, đo phân tầng | Thứ làm câu chào khác mọi lời chào khác |
+| Trang tra cứu công khai | **Phễu thu hút kỹ sư** — lý do họ vào và quay lại |
 
-Nước khoá tuyển nhiều nhất: US 11.589 · CA 933 · GB 850 · IN 607 · DE 431.
-
-**Quan trọng: toàn bộ dữ liệu này là về CÔNG TY, không phải về CÁ NHÂN.** PDPL không áp dụng.
-R2 và R3 không chạm tới nó. Đây là lý do nó là tài sản bán được duy nhất.
+Ba tháng vừa rồi xây **đúng một nửa — nửa khó hơn.** Hồ sơ kỹ sư thì họ tự nhập; dữ liệu công
+ty phải cào và chấm.
 
 ---
 
-## 4. Nghịch lý cần nhìn thẳng
+## 6. Điều phải nói thẳng về mô hình A
 
-Việt Nam có **530.000 lập trình viên**, mỗi năm thêm 50.000–60.000 cử nhân IT, và đứng
-**top 6 thế giới** về gia công phần mềm.
+**Nó không mở rộng được.** Mỗi lần nối cần sàng lọc thật, phỏng vấn thật, theo dõi thật. Doanh
+thu tăng tuyến tính với giờ làm, không tăng theo số người dùng.
 
-Nhưng đo 150 tin: **0 tin ghi rõ tuyển được ở Việt Nam.**
+| | Bản trước (dữ liệu B2B) | Bản này (giới thiệu) |
+|---|---|---|
+| Doanh thu tăng theo | số khách | **giờ làm của bạn** |
+| Trần một người | cao | ~3 lần nối/tháng |
+| Vốn ban đầu | ~0 | **~310 triệu** |
+| Bằng chứng nhu cầu | chưa có | **chưa có** |
 
-Hai điều này không mâu thuẫn. Chúng nói rằng **việc tuyển kỹ sư Việt có thật, nhưng không đi qua
-tin đăng ATS công khai.** Nó đi qua công ty gia công, EOR, nhà thầu, giới thiệu nội bộ.
+Đây không phải điểm trừ — headhunt là một nghề có thật và sống được. Nhưng phải biết mình đang
+xây **doanh nghiệp dịch vụ có công cụ dữ liệu tốt**, không phải sản phẩm phần mềm.
 
-Hệ quả cho business:
-
-- **0/150 không phải "không có cầu".** Là "cầu không xuất hiện ở kênh ta đang đo".
-- Danh sách tin công khai vì thế **không bao giờ dày lên được** dù có cào bao nhiêu nguồn.
-- Nhưng **110 công ty tuyển trực tiếp được người ở VN** là danh sách thật, hiếm, và đúng thứ kỹ sư cần.
-
-Đây củng cố kết luận Mục 1: sản phẩm nên là **sổ đăng ký công ty**, không phải bảng tin.
-
----
-
-## 5. Bảy phương án, chấm theo ràng buộc
-
-| # | Mô hình | R1 | R2/R3 | Trần doanh thu | Phán quyết |
-|---|---|:--:|:--:|---|---|
-| A | Đăng tin trả phí | ❌ | ✓ | 299–600 USD/tin | **Cấm** — tiền mua vị trí |
-| B | Bán CV / lead ứng viên | ❌ | ❌ | 100–300 USD/th | **Cấm** — PDPL, phạt 10× |
-| C | Affiliate EOR (Deel 1.500 USD/khách) | ✓ | ✓ | Cao | **Hỏng cấu trúc** — xem dưới |
-| D | Affiliate cổng thanh toán (Wise/Payoneer) | ✓ | ✓ | ~150 USD/th | Nhỏ nhưng chạy được |
-| E | Tài trợ, tách bạch rõ khỏi nội dung | ✓ | ✓ | 200–1.000 USD/th | **Bước đầu đúng** |
-| F | Dịch vụ trả phí cho kỹ sư (kiểu Levels.fyi) | ✓ | ✓ | 10–30 USD/lần | Không hợp R6 |
-| G | **Dữ liệu B2B — địa lý tuyển dụng** | ✓ | ✓ | 490+ USD/th/khách | **Trần cao nhất** |
-
-### Vì sao C hỏng cấu trúc, không phải "nhỏ"
-
-Deel trả **500 USD/lead đủ điều kiện + 1.000 USD/khách mới**. Nghe rất hấp dẫn. Nhưng:
-
-> **Cookie nằm trên trình duyệt của kỹ sư. Người mua EOR là CÔNG TY.**
-
-Kỹ sư bấm link, ứng tuyển, được nhận. Rồi *công ty* — chưa từng vào trang của ta — mở tài khoản
-EOR. Không có đường nào nối hai sự kiện đó. Attribution đứt hoàn toàn.
-
-Ngay cả khi bỏ qua điều đó, phễu vẫn mỏng: 10.000 lượt truy cập/tháng → ~1.500 bấm sang tin gốc
-→ ~300 hồ sơ → ~3 người được nhận → ~1 tài khoản EOR mới. **1.500 USD/tháng ở kịch bản lạc quan
-nhất, với attribution bằng 0.** Không xây business trên cái này.
-
-### Vì sao G có trần cao nhất
-
-Người mua: **nhà cung cấp EOR** (Deel, Remote, Oyster, Multiplier) làm outbound · công ty gia công
-Việt Nam tìm khách · quỹ và hãng nghiên cứu thị trường.
-
-Thị trường này có thật và có giá tham chiếu: PredictLeads bán tín hiệu tuyển dụng từ **490
-USD/tháng**; Coresignal bán dataset tin tuyển theo API và file.
-
-**Ta không cạnh tranh bằng độ rộng** — họ có 123 triệu công ty, ta có 3.666. Ta cạnh tranh bằng
-**một thuộc tính không ai tính**: *công ty này thật sự tuyển được ở đâu, và câu nào trong tin
-chứng minh điều đó.* Họ bán "công ty X đang tuyển". Ta bán "công ty X tuyển được ở 12 nước,
-đây là trích dẫn".
-
----
-
-## 6. Lộ trình đề xuất — ba giai đoạn
-
-### Giai đoạn 0 — không doanh thu (nay → tháng 3)
-
-**Mục tiêu: chứng minh có khán giả. Không kiếm tiền.**
-
-Thứ phát tán được **không phải danh sách tin** — là **phát hiện**:
-
-> *"Đo 34.313 tin remote của 3.666 công ty: 86% khoá theo địa lý. 0/150 ghi rõ tuyển được ở
-> Việt Nam. Chỉ 7,2% nói cơ chế trả lương. Đây là 110 công ty tuyển được người ở VN."*
-
-Chưa ai công bố con số này. Đó là mũi nhọn phân phối, và nó **chính là sứ mệnh đang chạy**.
-
-**Cổng:** 30 ngày sau launch, < 100 người dùng duy nhất → dừng lại xem lại toàn bộ.
-
-### Giai đoạn 1 — tiền nhỏ, an toàn sứ mệnh (tháng 3 → 9)
-
-- **E — tài trợ**, tách bạch rõ, nhà cung cấp EOR là người mua tự nhiên. 200–1.000 USD/tháng.
-- **D — affiliate cổng thanh toán.** Kỹ sư *chính là* người mua → attribution chạy. ~150 USD/tháng.
-
-Cộng lại ~350–1.150 USD/tháng. **Không đủ sống.** Mục đích không phải sống — là **kiểm xem có ai
-quan tâm đủ để trả tiền** trước khi đầu tư vào giai đoạn 2.
-
-### Giai đoạn 2 — dữ liệu B2B (tháng 9 → 18), **chỉ khi A3 xác nhận**
-
-Sản phẩm: **sổ đăng ký địa lý tuyển dụng**, API hoặc file, cập nhật hằng tháng.
-
-Điều kiện vào:
-1. **A3 chạy xong** — 10 cuộc nói chuyện với nhà cung cấp EOR / công ty gia công. Hỏi thẳng:
-   *"dữ liệu này giải quyết vấn đề gì, trả bao nhiêu?"*
-2. Kho ≥ **10.000 công ty** (nay 3.666). Dưới ngưỡng đó không ai mua.
-3. Precision giữ ≥ 95% — đây là thứ duy nhất đang bán.
-
-Toán: 10 khách × 490 USD/tháng = **4.900 USD/tháng**. Đó là con số đủ sống. Cũng là con số
-**chưa có một mẩu bằng chứng nào**.
+Nếu mục tiêu là thứ mở rộng được, mô hình D (bán dữ liệu) mới là hướng — nhưng trần của nó
+thấp hơn và cũng chưa có bằng chứng nhu cầu.
 
 ---
 
 ## 7. Điều tôi có thể sai
 
-**Sai lớn nhất có thể:** giả định nhà cung cấp EOR muốn mua dữ liệu này. Họ có thể tự cào lấy —
-rào cản kỹ thuật của ta gần bằng 0. Thứ khó sao chép là **bộ quy tắc đã hiệu chỉnh và 5 đợt
-audit**, không phải hạ tầng. Nhưng đó là lợi thế 12 tháng, không phải hào sâu.
-**A3 phải chạy trước khi viết một dòng code nào cho giai đoạn 2.**
+**Sai lớn nhất có thể:** giả định công ty chịu trả phí giới thiệu cho kỹ sư Việt. Họ có thể đã
+có công ty gia công quen, hoặc thấy tự đăng tin là đủ. **A3 phải chạy trước khi tiêu một đồng
+nào** — và nó không tốn gì.
 
-**Sai thứ hai:** con số 490 USD/tháng lấy từ PredictLeads — quy mô 123 triệu công ty. Giá cho
-2.410 công ty gần như chắc chắn thấp hơn nhiều. Coi 490 là **trần**, không phải kỳ vọng.
+**Sai thứ hai:** phí 3.000–5.000 USD suy từ chuẩn ngành (15–25% lương năm đầu) trên mức lương
+30–60 nghìn USD. Cả hai số đều là ước lượng. Con số thật chỉ biết sau ca đầu tiên.
 
-**Sai thứ ba:** giai đoạn 0 giả định phát hiện "0/150" đủ hấp dẫn để lan. Có thể không. Nó là tin
-xấu, và tin xấu về cơ hội việc làm không phải thứ người ta muốn chia sẻ.
+**Sai thứ ba:** giả định lợi thế dữ liệu chuyển được thành lợi thế bán hàng. Biết công ty nào
+tuyển được ở VN là thứ **mở cửa**. Giữ cửa phải bằng chất lượng sàng lọc — và đó là năng lực
+chưa được kiểm.
 
-**Căng thẳng chưa giải được:** sứ mệnh nói người dùng *nên rời đi*. Mọi mô hình doanh thu hướng
-người dùng cuối đều cần họ *ở lại*. Đó là lý do đề xuất nghiêng hẳn về B2B — **không phải vì B2B
-kiếm được nhiều hơn, mà vì nó là hướng duy nhất không đòi ta phản bội sứ mệnh.**
+**Căng thẳng chưa giải:** tầng minh bạch làm mạng lưới đáng tin, nhưng cũng chính nó có thể
+nói điều bất lợi về khách đang trả tiền. [MISSION.md](MISSION.md) ràng buộc 1 nói phải nói
+thẳng. **Ngày đầu tiên mất một khách vì điều đó là ngày biết ràng buộc có thật hay không.**
 
 ---
 
-## 8. Việc kế tiếp, theo thứ tự
+## 8. Việc kế tiếp
 
-| # | Việc | Ai | Chặn cái gì |
-|---|---|---|---|
-| 1 | **Launch.** Deploy + tên miền + cron | Bạn | Mọi thứ |
-| 2 | **A8** — 10 cuộc với kỹ sư Việt thật | Bạn | Biết sản phẩm có đúng vấn đề không |
-| 3 | **A3** — 10 cuộc với nhà cung cấp EOR / công ty gia công | Bạn | **Toàn bộ giai đoạn 2** |
-| 4 | Mở rộng kho lên 10.000 công ty *(nay 3.666)* | Máy | Giai đoạn 2 |
-| 5 | Thêm trang công ty làm trục chính, tin làm phụ | Máy | Trục sản phẩm mới |
+| # | Việc | Chặn cái gì |
+|---|---|---|
+| 1 | **Buổi luật sư — B-Q5, Điều 18 NĐ 356, điều kiện NĐ 352** | Toàn bộ mô hình |
+| 2 | Launch trang tra cứu, đo khán giả | Phễu kỹ sư |
+| 3 | **A3 — 10 công ty trong danh sách 110** | Quyết định có dựng pháp nhân |
+| 4 | Làm thủ công **một ca** trước khi ký quỹ | Biết quy trình vỡ ở đâu |
 
-**Việc số 3 là việc quan trọng nhất trong tài liệu này, và là việc chưa bao giờ được làm.**
+Việc số 4 là bước rẻ nhất trong cả kế hoạch và dễ bị bỏ qua nhất: **nối một người, thu một lần
+phí, xem cái gì hỏng** — trước khi bỏ 300 triệu vào ngân hàng.

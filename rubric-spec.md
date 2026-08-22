@@ -3,7 +3,7 @@
 **Phiên bản:** 0.4 (DỰ THẢO — chưa hiệu chỉnh bằng dữ liệu thật)
 **Ngày:** 17/08/2026
 **Trạng thái:** Dùng làm dụng cụ đo cho Cổng 0.1. Nâng lên 1.0 sau khi điền Mục 11.
-**Đi kèm:** [brd-v2.md](brd-v2.md) Mục 2 · [next-steps.md](next-steps.md)
+**Đi kèm:** [brd-v2.md](archive/brd-v2.md) Mục 2 · [next-steps.md](archive/next-steps.md)
 
 ---
 

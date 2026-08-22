@@ -4,7 +4,8 @@
 > kỹ sư Việt**. Lý do, cái giá, và cái gì còn dùng được: [PIVOT.md](PIVOT.md).
 > Việc chặn tất cả: **một buổi luật sư** cho ba câu hỏi pháp lý — xem [BUSINESS-PLAN.md](BUSINESS-PLAN.md) Mục 2.
 
-**Đang làm:** web tra cứu **địa lý tuyển dụng của công ty**.
+**Đang làm:** **L1 — tầng minh bạch** (tra cứu địa lý tuyển dụng công ty), sẵn sàng launch.
+**L2 — mạng lưới** đã đặc tả nhưng **KHOÁ** chờ luật sư — xem [prd.md](prd.md) Mục 2.
 Trục chuyển từ *tin* sang *công ty* (21/08). Giao diện chuyển sang **Next.js 16 + Cloudflare D1**
 (21/08) — xem [ARCHITECTURE-WEB.md](ARCHITECTURE-WEB.md), triển khai [DEPLOY-WEB.md](DEPLOY-WEB.md). Spec: [prd.md](prd.md). Launch mục tiêu ~2–3 tuần.
 
