@@ -125,8 +125,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         {CF_TOKEN && (
+          // `type="module"` theo đúng đoạn Cloudflare phát ra. Module script
+          // vốn đã hoãn thực thi nên không cần `defer`.
           <script
-            defer
+            type="module"
             src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon={JSON.stringify({ token: CF_TOKEN })}
           />
