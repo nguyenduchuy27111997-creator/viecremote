@@ -1,4 +1,8 @@
-# Trạng thái — 21/08/2026
+# Trạng thái — 22/08/2026
+
+> **ĐỔI HƯỚNG 22/08.** Từ *web tra cứu đọc-only* sang **mạng lưới nối công ty nước ngoài với
+> kỹ sư Việt**. Lý do, cái giá, và cái gì còn dùng được: [PIVOT.md](PIVOT.md).
+> Việc chặn tất cả: **một buổi luật sư** cho ba câu hỏi pháp lý — xem [BUSINESS-PLAN.md](BUSINESS-PLAN.md) Mục 2.
 
 **Đang làm:** web tra cứu **địa lý tuyển dụng của công ty**.
 Trục chuyển từ *tin* sang *công ty* (21/08). Giao diện chuyển sang **Next.js 16 + Cloudflare D1**

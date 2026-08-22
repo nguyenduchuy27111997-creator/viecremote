@@ -1,69 +1,105 @@
 # Sứ mệnh & Tầm nhìn
 
-**Chốt:** 17/08/2026 · **Sứ mệnh A — Minh bạch thị trường**
+**Chốt lại:** 22/08/2026 — đổi hướng sang **mạng lưới**
+**Thay thế** bản 17/08 (*"Sứ mệnh A — minh bạch thị trường"*, đọc-only, không tài khoản)
+Lý do đổi và cái giá: [PIVOT.md](PIVOT.md)
 
 ---
 
 ## Sứ mệnh
 
-> **Làm cho thị trường việc remote quốc tế trở nên minh bạch với kỹ sư Việt Nam.**
+> **Nối kỹ sư Việt với công ty nước ngoài thật sự tuyển được họ.**
 
-Không phải giúp họ được tuyển. Không phải giúp công ty tuyển dễ hơn. **Làm cho họ nhìn thấy sự thật** — để họ tự quyết bằng thông tin đúng thay vì bằng phỏng đoán.
+Không phải mọi công ty. **Công ty thật sự tuyển được** — đã có cơ chế trả lương, đã không khoá
+theo địa lý, và có bằng chứng trích dẫn được từ chính tin tuyển dụng của họ.
 
-**Chẩn đoán nền:** vấn đề là **thông tin bị che**, không phải **năng lực bị thiếu**.
+**Chẩn đoán nền — đã đo, không đoán:**
+
+Việt Nam có 530.000 lập trình viên và đứng top 6 thế giới về gia công. Nhưng trong 34.313 tin
+remote đã chấm, **0/150** tin chấm tay ghi rõ tuyển được ở Việt Nam, và chỉ **1,2%** không
+vướng giới hạn địa lý.
+
+Hai điều đó không mâu thuẫn. Chúng nói rằng **việc tuyển kỹ sư Việt có thật, nhưng không đi qua
+tin đăng công khai** — nó đi qua công ty gia công, EOR, hợp đồng nhà thầu, giới thiệu.
+
+Vấn đề không phải *"kỹ sư Việt không đủ giỏi"*. Là **kênh nối hai bên không tồn tại ở nơi cả
+hai bên đang tìm.**
 
 ---
 
-## Tầm nhìn *(bản nháp — sửa tự do, đây là phần của bạn)*
+## Tầm nhìn
 
-> Trong 5 năm: một kỹ sư Việt nhìn một tin tuyển remote và biết **trong 10 giây** nó có mở cho mình không, và nếu có thì công ty sẽ trả lương cho mình bằng cách nào — **trước khi** bỏ 40 phút viết cover letter, không phải sau ba vòng phỏng vấn.
+> Trong 5 năm: một công ty nước ngoài muốn thuê kỹ sư Việt **biết chỗ để hỏi**, và một kỹ sư
+> Việt giỏi **không cần quen ai** mới được nhìn thấy.
 >
-> Địa lý tuyển dụng thật của các công ty là **hồ sơ công khai**, không phải lời truyền miệng trong nhóm Facebook.
+> Địa lý tuyển dụng thật của các công ty là hồ sơ công khai, không phải lời truyền miệng.
 
 ---
 
-## Năm hệ quả — phần quan trọng hơn cả câu sứ mệnh
+## Minh bạch không còn là đích — nó là con đường
 
-### 1. Độ chính xác **chính là sản phẩm**
+Bản trước lấy *minh bạch thị trường* làm sứ mệnh cuối. Bây giờ nó là **phương tiện**, và điều
+đó không hạ thấp nó — nó biến minh bạch thành **lợi thế cạnh tranh**.
 
-Với sứ mệnh B hay C, nhãn sai là một lỗi kỹ thuật. Với A, **nhãn sai là thất bại sứ mệnh** — vì thứ duy nhất đang bán là sự thật.
+Lý do: mọi đối thủ đều nói *"chúng tôi có kỹ sư giỏi"*. Không ai nói được *"chúng tôi biết
+chính xác 110 công ty nào tuyển được người ở Việt Nam, kèm câu trích trong tin gốc"*.
 
-Điều này nâng kỷ luật đo lường từ "quy trình" thành "bản thân sản phẩm". Ngưỡng ở [rubric-spec.md](rubric-spec.md) Mục 9.3 (Tier A precision ≥ 90%) không phải chỉ tiêu kỹ thuật — nó là ngưỡng đạo đức.
+Dữ liệu ấy là **thứ mở được cửa**. Nó không giữ được cửa — giữ cửa phải bằng chất lượng sàng
+lọc, và đó là việc của người.
 
-### 2. Câu trả lời **"không"** có giá trị ngang câu **"có"**
+---
 
-*"Công ty này không tuyển được ở Việt Nam"* — với sứ mệnh B đó là thất bại. **Với A đó là thành công.** Nó tiết kiệm 40 phút và một lần hy vọng hụt.
+## Năm ràng buộc — phần quan trọng hơn câu sứ mệnh
 
-Hệ quả thiết kế: hiển thị cả tin bị loại kèm lý do, không chỉ tin đủ điều kiện. Danh sách "đừng nộp, đây là vì sao" cũng là sản phẩm.
+### 1. Tầng minh bạch KHÔNG BAO GIỜ uốn theo công ty trả tiền
 
-### 3. Kết quả 0/150 **không phải thất bại — là sứ mệnh đã thực thi một lần**
+Đây là ràng buộc sống còn, và nó khó hơn ở bản cũ.
 
-Đây là hệ quả đáng chú ý nhất.
+Bản cũ dễ giữ vì tiền không dính tới nội dung. Bây giờ **tiền đến từ chính việc kết nối** — nên
+cám dỗ có thật: đẩy kỹ sư về phía công ty trả tiền, giấu điều bất lợi, thổi phồng hồ sơ.
 
-Đọc tay 150 tin và công bố *"84% bị giới hạn địa lý, 0 tin ghi rõ tuyển được ở VN"* **chính là minh bạch hoá thị trường**. Đó là sứ mệnh đang chạy, không phải sứ mệnh thất bại.
+Quy tắc cứng:
 
-**Cái chết là một chiến lược kiếm tiền, không phải mục đích.** Nếu mục tiêu là bán một bản tin tin tuyển dụng, 0/150 giết nó. Nếu mục tiêu là minh bạch, 0/150 **là kết quả** — và là kết quả chưa ai từng công bố.
-
-*Giữ cả hai điều này cùng lúc: sứ mệnh còn nguyên, nhưng chưa có bằng chứng nào cho thấy ai sẽ trả tiền. Đó là hai câu hỏi khác nhau.*
-
-### 4. Doanh thu **không được bóp méo thông tin**
-
-Đây là ràng buộc cứng, không phải sở thích.
-
-| Nguồn thu | Với sứ mệnh A |
+| | |
 |---|---|
-| Affiliate EOR/thanh toán, **có công bố quan hệ** | Được — không đụng tới nội dung nào |
-| Tài trợ bản tin, **tách bạch rõ khỏi nội dung** | Được |
-| **Đăng tin trả phí trộn vào danh sách đã lọc** | **Không.** Tiền mua vị trí = phá huỷ chính thứ đang bán |
-| Bán quyền truy cập ứng viên | Không — PDPL cấm, và trái sứ mệnh |
+| Công ty trả tiền khoá tuyển vào Mỹ | Trang **vẫn ghi** họ khoá vào Mỹ |
+| Công ty trả tiền có điều khoản xấu | Trang **vẫn hiện** trích dẫn đó |
+| Nhãn của họ sai | Sửa như mọi công ty khác, không hỏi ý |
 
-Quy tắc một dòng: **nếu một khoản tiền có thể đổi nội dung được xuất bản, khoản đó bị loại.**
+**Nếu một khoản tiền có thể đổi điều được xuất bản, khoản đó bị loại.** Không có ngoại lệ cho
+khách lớn — vì thứ đang bán chính là *"chỗ này nói thật"*, và bán nó một lần là mất vĩnh viễn.
 
-### 5. Việc **không** làm
+### 2. Kỹ sư KHÔNG BAO GIỜ trả tiền
 
-- Không đại diện ứng viên, không thu CV, không làm khâu tuyển chọn → đó là sứ mệnh B
-- Không tối ưu cho công ty tuyển dễ hơn → đó là sứ mệnh C
-- Không giữ chân người dùng lâu. Họ tìm được việc rồi thì **nên rời đi** — với A, người rời đi là người đã được phục vụ
+Phí chỉ đến từ phía công ty. Ba lý do, theo thứ tự quan trọng:
+
+- Thu tiền người tìm việc là mô hình dễ trượt sang bóc lột người yếu thế nhất
+- Nó bóp méo động cơ: thu phí ứng viên thì càng nhiều người thất bại càng lãi
+- Pháp luật lao động Việt Nam siết chặt việc thu phí của người lao động
+
+### 3. Đồng ý phải là hành động, không phải điều khoản
+
+Không có hồ sơ nào được gửi đi mà kỹ sư chưa **bấm đồng ý cho đúng công ty đó**. Không có
+*"đồng ý cho mọi đối tác của chúng tôi"*.
+
+Đây vừa là đạo đức vừa là pháp lý: Luật 91/2025 **cấm mua bán dữ liệu cá nhân**, chế tài tới
+**10 lần doanh thu**. Ranh giới giữa *dịch vụ kết nối có đồng ý* và *bán dữ liệu* nằm đúng ở chỗ
+này — và nó **chưa được luật sư xác nhận** ([PIVOT.md](PIVOT.md) Mục 1.3).
+
+### 4. Nói "không" với công ty cũng phải làm được
+
+Nếu một công ty không phù hợp với kỹ sư — trả thấp, điều khoản xấu, khoá địa lý — thì nói
+thẳng với kỹ sư, kể cả khi công ty đó đang trả tiền.
+
+Đây là hệ quả trực tiếp của ràng buộc 1, nhưng đáng viết riêng vì nó là chỗ dễ trượt nhất
+trong thực tế hằng ngày.
+
+### 5. Việc KHÔNG làm
+
+- **Không giữ hồ sơ của người đã rời đi.** Rút lui là xoá, không phải đánh dấu.
+- **Không tự nhận đại diện độc quyền** cho kỹ sư. Họ nộp thẳng ở đâu cũng được.
+- **Không mô hình cho thuê lại lao động** (Andela, Turing) — xem lý do ở kế hoạch kinh doanh.
+- **Không thu tiền để xếp công ty lên trước** trong danh sách.
 
 ---
 
@@ -73,19 +109,28 @@ Ghi ra bây giờ, khi còn tỉnh táo.
 
 | | Thất bại kiểu này |
 |---|---|
-| **Nhẹ** | Thông tin đúng, nhưng không ai đọc |
-| **Nặng** | Thông tin **sai**, và người ta tin nó |
+| **Nhẹ** | Không ai dùng. Tốn thời gian, mất ~12 USD |
+| **Nặng** | Nối một kỹ sư vào một chỗ tệ, và họ tin vì trang này nói vậy |
+| **Không cứu được** | Uốn dữ liệu cho một khách trả tiền, rồi bị phát hiện |
 
-Kiểu nặng tệ hơn kiểu nhẹ. Một danh sách "đủ điều kiện" mà 7/10 sai — đúng như tầng quy tắc lần đầu làm ra — **có hại hơn là không có gì**, vì nó tiêu đúng thứ nó hứa sẽ tiết kiệm.
+Kiểu nặng tệ hơn kiểu nhẹ. Kiểu thứ ba giết cả dự án lẫn uy tín cá nhân — vì tài sản duy nhất
+ở đây là **người ta tin con số này**.
 
-Đó là lý do bước đối chứng tay không phải thủ tục. Nó là cái phanh.
+Đó là lý do độ chính xác nhãn (hiện **97,5%**, đo bằng chấm mù phân tầng) không phải chỉ số kỹ
+thuật. Nó là **cái phanh**.
 
 ---
 
 ## Điều sứ mệnh này KHÔNG trả lời
 
-**Có ai trả tiền không.** Sứ mệnh nói nên làm gì, không nói mô hình kinh doanh chạy được. A3 (phía cầu) chưa bao giờ chạy. Cổng tuần 8 của [audience-strategy.md](audience-strategy.md) là phép thử đầu tiên chạm tới câu này.
+**Có ai trả tiền không.** A3 — hỏi thẳng công ty — vẫn chưa bao giờ chạy. Giờ nó là việc quan
+trọng nhất, và may là danh sách 110 công ty để hỏi đã có sẵn.
 
-**Quy mô có đủ không.** Minh bạch hoá một thị trường mà 96% cửa đang đóng vẫn là minh bạch — nhưng khán giả của nó nhỏ hơn nhiều so với giả định ban đầu.
+**Có làm hợp pháp được không.** Ba câu hỏi (B-Q5, Điều 18 NĐ 356, điều kiện NĐ 352) chưa có
+lời giải. Cần luật sư, không tự trả lời được.
 
-Sứ mệnh làm rõ **hướng**. Nó không làm rõ **khả thi**. Hai thứ đó vẫn phải kiểm riêng.
+**Có vượt được cold start không.** Kỹ sư không vào nếu chưa có công ty; công ty không trả tiền
+nếu chưa có kỹ sư. Đây là rủi ro lớn nhất và nó **không phải rủi ro kỹ thuật**.
+
+Sứ mệnh làm rõ **hướng**. Nó không làm rõ **khả thi**. Ba thứ trên phải kiểm riêng, và kiểm
+trước khi tiêu tiền.

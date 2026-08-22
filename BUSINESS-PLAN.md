@@ -1,18 +1,19 @@
-# Kế hoạch kinh doanh — 18 tháng
+# Kế hoạch kinh doanh — mạng lưới kỹ sư Việt
 
-**Ngày:** 21/08/2026 · **Mô hình:** [business-model.md](business-model.md) · **Vận hành:** [OPERATIONS.md](OPERATIONS.md)
-**Trạng thái:** chưa launch. Doanh thu **0**. A3 (phía cầu) **chưa bao giờ chạy**.
+**Ngày:** 22/08/2026 · **Sứ mệnh:** [MISSION.md](MISSION.md) · **Lý do đổi hướng:** [PIVOT.md](PIVOT.md)
+**Trạng thái:** chưa launch · doanh thu **0** · chưa có pháp nhân · A3 **chưa bao giờ chạy**
 
 ---
 
 ## 0. Đọc cái này trước
 
-Tài liệu này có **hai** thứ mà kế hoạch kinh doanh thường trộn lẫn:
+Hai thứ mà kế hoạch kinh doanh thường trộn lẫn, ở đây tách bảng riêng:
 
-1. **Điều đã biết** — số đo được, ghi rõ nguồn.
-2. **Điều đang cược** — giả định chưa kiểm, ghi rõ là giả định.
+1. **Điều đã biết** — số đo được, ghi rõ nguồn
+2. **Điều đang cược** — giả định chưa kiểm, ghi rõ là giả định
 
-Trộn hai thứ đó là cách tự lừa mình hiệu quả nhất. Ở đây chúng tách bảng riêng.
+Và một thứ thứ ba mà bản trước không có: **điều pháp luật bắt buộc**. Không phải giả định,
+không phải lựa chọn.
 
 ---
 
@@ -20,157 +21,204 @@ Trộn hai thứ đó là cách tự lừa mình hiệu quả nhất. Ở đây 
 
 | Số | Giá trị | Nguồn |
 |---|---|---|
-| Công ty có hồ sơ | **3.666** | đo |
-| Công ty tuyển được ở VN | **110** (3,0%) | đo |
-| Công ty khoá hoàn toàn | **2.485** (67,8%) | đo |
-| Tin remote đã chấm | **34.313** | đo |
-| Tin mở | **409** (1,2%) | đo |
-| Tin nêu cơ chế trả lương | **3,0%** máy · **7,2%** chấm tay (n=150) | đo — dù lấy số nào thì >92% không nói |
+| Công ty có hồ sơ địa lý tuyển | **3.666** | đo |
+| **Công ty tuyển được ở VN** | **110** | đo — đây là danh sách khách hàng |
+| Công ty khoá hoàn toàn | 2.485 (67,8%) | đo — danh sách loại trừ |
+| Tin remote đã chấm | 34.313 | đo |
+| Tin khoá theo địa lý | 86,3% | đo |
 | Tin ghi rõ tuyển được ở VN | **0/150** | chấm tay |
-| Precision nhãn "mở" | **97,5%** | audit phân tầng, mẫu 40, KTC 87–100% |
-| Lập trình viên VN | **530.000** | báo cáo ngành |
-| Chi phí vận hành | **~12 USD/năm** | tính |
-| Thời gian vận hành | **12 giờ/tháng** | ước từ quy trình thật |
+| Precision nhãn "mở" | 97,5% · KTC 87–100% | audit phân tầng, n=40 |
+| Lập trình viên VN | 530.000 | báo cáo ngành |
+| Chi phí hạ tầng | ~12 USD/năm | tính |
+| Ký quỹ dịch vụ việc làm | **300.000.000 đ** | NĐ 352/2025 |
+| Ký quỹ cho thuê lại lao động | **2.000.000.000 đ** | quy định hiện hành |
 
 ---
 
-## 2. Điều đang cược
+## 2. Điều pháp luật bắt buộc — không phải lựa chọn
 
-| Giả định | Nếu sai thì sao | Kiểm bằng |
+| Ràng buộc | Nguồn | Hệ quả |
 |---|---|---|
-| Kỹ sư Việt quan tâm đủ để quay lại | Không có khán giả → không có gì để bán | **A8** · cổng 30 ngày |
-| Nhà cung cấp EOR muốn mua dữ liệu địa lý tuyển | **Toàn bộ giai đoạn 2 sụp** | **A3** |
-| Phát hiện "0/150" đủ hấp dẫn để lan | Không có phân phối → không có khán giả | GĐ 0 |
-| Kho lên được 10.000 công ty | Dưới ngưỡng đó dữ liệu không bán được | Đã đi 3.666, nguồn slug đang cạn |
-| Precision giữ ≥95% khi kho gấp ba | Sản phẩm mất thứ duy nhất nó bán | Audit hằng tháng |
+| Ký quỹ **300 triệu**, pháp nhân, trụ sở thuê ≥24 tháng | NĐ 352/2025 | Không làm với tư cách cá nhân được |
+| Thủ tục cấp phép **đã bãi bỏ** 01/07/2026, chuyển **hậu kiểm** | Luật Đầu tư sửa đổi 2025 | Không phải xin phép, nhưng phải **duy trì đủ điều kiện** mọi lúc |
+| Hồ sơ chuyển dữ liệu xuyên biên giới (Mẫu 09) + báo Bộ Công an trong 60 ngày + **thoả thuận ràng buộc với từng bên nhận** | Điều 18 NĐ 356/2025 | Không thể "đăng hồ sơ cho ai xem cũng được" |
+| **Cấm mua bán dữ liệu cá nhân**, phạt tới **10× doanh thu** | Luật 91/2025 | Ranh giới "kết nối có đồng ý" vs "bán dữ liệu" **chưa rõ** |
+| Mất miễn trừ DPO/DPIA khi vượt 100.000 chủ thể hoặc xử lý dữ liệu nhạy cảm | NĐ 356/2025 | Phải có DPO khi lớn |
 
-**Rủi ro lớn nhất không phải kỹ thuật.** Là ô số 2: chưa một mẩu bằng chứng nào cho thấy có
-người trả tiền.
+**Ba câu chưa có lời giải** — B-Q5, Điều 18, điều kiện NĐ 352 — cần **một buổi luật sư**. Đây
+là chi tiêu đầu tiên nên làm, và nó rẻ hơn nhiều so với build sáu tháng rồi phát hiện không
+được phép.
 
 ---
 
-## 3. Ba giai đoạn, có cổng thoát
+## 3. Chọn mô hình — hai đường, chênh nhau 7 lần
 
-### GĐ 0 — Launch và đo khán giả · tháng 0–3 · doanh thu 0
-
-**Mục tiêu duy nhất: biết có ai quan tâm không.** Không kiếm tiền.
-
-| Tuần | Việc | Ai |
+| | **A. Giới thiệu** *(đề xuất)* | **B. Cho thuê lại lao động** |
 |---|---|---|
-| 1 | Cloudflare: tạo D1, nạp seed, deploy, tên miền | **Bạn** |
-| 1 | Cài cron `refresh.sh --deploy` | **Bạn** |
-| 2–3 | **A8 — 10 cuộc với kỹ sư Việt thật.** Hỏi: *trước khi nộp đơn remote, bạn kiểm gì?* | **Bạn** |
-| 3 | Bài công bố — **đã viết**: [content/bai-cong-bo.md](content/bai-cong-bo.md) + [bản ngắn](content/bai-cong-bo-ngan.md) | Bạn đọc lại, thay `[LINK]` |
-| 4 | Đăng: nhóm dev Việt trên Facebook, /r/vietnam, Hacker News, LinkedIn | **Bạn** |
-| 5–12 | Vận hành theo [OPERATIONS.md](OPERATIONS.md) · audit hằng tháng | Tự động + 12h/tháng |
+| Ai ký hợp đồng với kỹ sư | Công ty khách | **Bạn** |
+| Ký quỹ | **300 triệu** | **2 tỷ** |
+| Người đại diện | đủ năng lực theo quy định | **3 năm kinh nghiệm ngành** trong 5 năm gần nhất |
+| Doanh thu/người | phí một lần | hằng tháng, liên tục |
+| Rủi ro | thấp — không giữ hợp đồng lao động | cao — chịu trách nhiệm sử dụng lao động |
+| Ví dụ | headhunt truyền thống | Andela, Turing |
+| Vốn ban đầu | ~310 triệu | ~2,1 tỷ |
 
-**Bài công bố** — mũi nhọn phân phối, không phải danh sách tin:
+**Chọn A.** Ba lý do:
 
-> *"Tôi chấm 34.313 tin remote của 3.666 công ty. 86,3% khoá theo địa lý. 0/150 ghi rõ tuyển
-> được ở Việt Nam. Hơn 92% không nói cơ chế trả lương. Đây là 110 công ty tuyển được người ở
-> VN, mỗi kết luận kèm trích dẫn."*
+1. **Điều kiện người đại diện ở B là rào cứng** — 3 năm kinh nghiệm trực tiếp ngành cho thuê
+   lại lao động. Không có thì không mở được, dù có đủ tiền.
+2. Vốn chênh gần 7 lần, trong khi chưa có bằng chứng nào về nhu cầu.
+3. B là mô hình vận hành nặng: chấm công, bảo hiểm, tranh chấp lao động. Một người 10h/tuần
+   không làm được.
 
-Bản đầy đủ: [content/bai-cong-bo.md](content/bai-cong-bo.md) · ba bản ngắn cho Facebook,
-LinkedIn, Hacker News: [content/bai-cong-bo-ngan.md](content/bai-cong-bo-ngan.md)
+Ghi lại để sau này không quên: **nếu muốn sang B, phải tuyển người có 3 năm kinh nghiệm ngành
+làm đại diện pháp luật.** Đó là điều kiện, không phải tuỳ chọn.
 
-**Cổng ra GĐ 0** — đo ở ngày thứ 30 sau launch:
+---
 
-| Kết quả | Hành động |
+## 4. Doanh thu — toán và tham chiếu thị trường
+
+Tham chiếu (mức khách nước ngoài đang trả cho kỹ sư offshore, 2026):
+
+| Nền tảng | Mô hình | Giá |
+|---|---|---|
+| Toptal | freelance theo giờ | 60–200 USD/giờ, cộng 500 USD đặt cọc + 79 USD/tháng |
+| Turing | theo giờ, tối thiểu 3–6 tháng | senior 5–10 nghìn USD/tháng |
+| Andela | staffing, tối thiểu 12 tháng | senior 12–15 nghìn USD/tháng, phí chuyển sang in-house ~50 nghìn USD |
+
+Ba cái trên đều là **mô hình B**. Chúng cho biết **trần giá thị trường**, không phải mô hình
+của ta.
+
+**Mô hình A — phí giới thiệu một lần:**
+
+| | |
 |---|---|
-| ≥ 500 người dùng duy nhất | Đi tiếp GĐ 1 |
-| 100–500 | Đi tiếp nhưng **hoãn GĐ 2**, dồn sức vào phân phối |
-| < 100 | **Dừng lại.** Xem lại giả định gốc, đừng xây thêm |
+| Lương năm kỹ sư Việt từ công ty nước ngoài | 30.000–60.000 USD |
+| Phí giới thiệu tiêu chuẩn ngành | 15–25% lương năm đầu |
+| **Phí mỗi lần nối thành công** | **4.500–15.000 USD** |
+| Thận trọng, khoán phẳng | **3.000–5.000 USD** |
+
+**Toán ở nhịp một người:**
+
+| Nhịp | Doanh thu/tháng |
+|---|---|
+| 1 lần nối/tháng | 3.000–5.000 USD |
+| 2 lần | 6.000–10.000 USD |
+| 3 lần | 9.000–15.000 USD |
+
+**Điều phải nói thẳng:** đây **không phải sản phẩm mở rộng được**. Mỗi lần nối cần sàng lọc
+thật, phỏng vấn thật, theo dõi thật — công của người. Doanh thu tăng tuyến tính với giờ làm,
+không tăng theo số người dùng.
+
+Đó không phải điểm trừ, nhưng phải biết mình đang xây cái gì: **một doanh nghiệp dịch vụ có
+công cụ dữ liệu tốt**, không phải một sản phẩm phần mềm.
 
 ---
 
-### GĐ 1 — Tiền nhỏ, an toàn sứ mệnh · tháng 3–9 · mục tiêu 350–1.150 USD/tháng
+## 5. Ba giai đoạn, có cổng thoát
 
-Hai dòng, cả hai **không đổi được nội dung xuất bản**:
+### GĐ 0 — Launch tra cứu, thu email · tháng 0–2 · **~12 USD** · doanh thu 0
 
-| Dòng | Cơ chế | Ước tính |
-|---|---|---|
-| **Tài trợ** | Một dòng tách bạch rõ, nhà cung cấp EOR là người mua tự nhiên | 200–1.000 USD/th |
-| **Affiliate cổng thanh toán** | Wise/Payoneer — **kỹ sư chính là người mua**, nên attribution chạy | ~150 USD/th |
+**Không đổi gì về pháp lý.** Bản tra cứu hiện tại không giới thiệu ai cho ai, không thu hồ sơ,
+không thu phí — nó chưa phải dịch vụ việc làm.
 
-**Không đủ sống.** Mục đích không phải sống — là kiểm xem *có ai quan tâm đủ để trả tiền* trước
-khi đầu tư vào GĐ 2.
+| Việc | Ai |
+|---|---|
+| Deploy Cloudflare + tên miền + cron | **Bạn** |
+| Đăng [bài công bố](content/bai-cong-bo.md) | **Bạn** |
+| A8 — 10 cuộc với kỹ sư Việt thật | **Bạn** |
+| **Buổi luật sư — 3 câu hỏi ở Mục 2** | **Bạn** |
 
-Song song, việc quan trọng nhất của cả kế hoạch:
+**Cổng ra:**
 
-> **A3 — 10 cuộc với nhà cung cấp EOR và công ty gia công VN.**
-> Hỏi thẳng: *dữ liệu địa lý tuyển dụng theo công ty giải quyết vấn đề gì của anh, và trả
-> bao nhiêu?*
+| Kết quả 30 ngày | Hành động |
+|---|---|
+| ≥ 500 người dùng duy nhất | Đi tiếp |
+| 100–500 | Đi tiếp, nhưng dồn sức vào phân phối trước |
+| < 100 | **Dừng.** Mạng lưới không có người thì không thành mạng lưới |
+| **Luật sư nói mô hình không hợp pháp** | **Dừng hẳn**, giữ bản tra cứu làm đóng góp công cộng |
 
-**Cổng ra GĐ 1:**
+### GĐ 1 — A3 với chính 110 công ty đó · tháng 2–4 · **0 đồng**
+
+Đây là giai đoạn quyết định, và nó **không tốn tiền**.
+
+Bạn đã có: tên công ty, bằng chứng họ tuyển được ở Việt Nam, URL tin gốc, và số vị trí đang mở.
+
+> *"Anh đang tuyển remote toàn cầu — tôi thấy N vị trí. Nếu tôi đưa 20 kỹ sư Việt đã sàng lọc,
+> anh có trả phí giới thiệu không, và bao nhiêu?"*
+
+Song song: mở đăng ký cho kỹ sư quan tâm — **chưa gửi hồ sơ đi đâu cả**, chỉ ghi danh.
+
+**Cổng ra:**
 
 | Kết quả A3 | Hành động |
 |---|---|
-| ≥ 3/10 nói sẽ trả ≥ 200 USD/tháng | Vào GĐ 2 |
-| 1–2/10 | Làm thử một khách trả tiền trước khi xây API đầy đủ |
-| 0/10 | **Không vào GĐ 2.** Giữ GĐ 1 làm dự án phụ, hoặc dừng |
+| ≥ 3/10 nói sẽ trả ≥ 3.000 USD/lần nối | Vào GĐ 2 |
+| 1–2/10 | Làm **thủ công một ca** trước khi dựng pháp nhân |
+| 0/10 | **Không dựng pháp nhân.** Giữ bản tra cứu, hoặc dừng |
+
+**Làm thủ công một ca trước** là bước rẻ nhất trong cả kế hoạch: nối một người, thu một lần
+phí, xem toàn bộ quy trình vỡ ở đâu — trước khi tiêu 300 triệu.
+
+### GĐ 2 — Dựng pháp nhân, chạy thật · tháng 4+ · **~310 triệu**
+
+Chỉ vào khi GĐ 0 và GĐ 1 đều qua cổng.
+
+| Khoản | Ước tính |
+|---|---|
+| Thành lập công ty | 3–10 triệu |
+| **Ký quỹ** (giữ trong ngân hàng, không mất) | **300 triệu** |
+| Trụ sở 24 tháng | tuỳ |
+| Luật sư: hồ sơ Mẫu 09, thoả thuận với bên nhận, DPO | cần thật |
+| Kế toán | hằng tháng |
+
+Build thêm: hồ sơ kỹ sư, luồng đồng ý theo từng công ty, nhật ký đồng ý, luồng rút lui.
+**Tất cả đều là bề mặt PDPL** — không tự viết ẩu.
 
 ---
 
-### GĐ 2 — Dữ liệu B2B · tháng 9–18 · mục tiêu 4.900 USD/tháng
-
-**Chỉ vào khi A3 xác nhận.** Ba điều kiện, thiếu một là chưa vào:
-
-1. A3 đạt cổng trên
-2. Kho ≥ **10.000 công ty** (nay 3.666)
-3. Precision ≥ **95%** trên ba đợt audit liên tiếp
-
-Sản phẩm: **sổ đăng ký địa lý tuyển dụng** — API + file, cập nhật hằng tháng.
-Đã có nguyên mẫu chạy: `/api/companies`.
-
-Người mua: nhà cung cấp EOR (Deel, Remote, Oyster, Multiplier) làm outbound · công ty gia công
-VN tìm khách · hãng nghiên cứu thị trường.
-
-**Ta không cạnh tranh bằng độ rộng** — PredictLeads có 123 triệu công ty. Ta bán **một thuộc
-tính không ai tính**: *công ty này thật sự tuyển được ở đâu, và câu nào trong tin chứng minh*.
-
-Toán: 10 khách × 490 USD/tháng = **4.900 USD/tháng**. Đủ sống. Cũng là con số **chưa có một
-mẩu bằng chứng nào** — 490 USD là giá PredictLeads cho quy mô gấp 33.000 lần, nên coi là
-**trần**, không phải kỳ vọng. Kịch bản thận trọng: 10 × 150 = 1.500 USD/tháng.
-
----
-
-## 4. Ba kịch bản 18 tháng
+## 6. Ba kịch bản 18 tháng
 
 | | Xấu | Cơ sở | Tốt |
 |---|---|---|---|
-| Người dùng/tháng (T18) | < 100 | 2.000 | 15.000 |
-| Kho công ty | 4.000 | 8.000 | 12.000 |
-| Khách B2B trả tiền | 0 | 3 | 12 |
-| Doanh thu/tháng (T18) | 0 | ~800 USD | ~5.000 USD |
-| Kết luận | Dừng ở tháng 3 | Dự án phụ có lãi nhỏ | Có thể làm toàn thời gian |
+| Người dùng trang tra cứu | < 100 | 2.000 | 15.000 |
+| Kỹ sư ghi danh | 0 | 300 | 2.000 |
+| Công ty trả tiền | 0 | 2 | 8 |
+| Lần nối thành công/tháng | 0 | 1 | 3 |
+| Doanh thu/tháng (T18) | 0 | ~4.000 USD | ~12.000 USD |
+| Vốn đã tiêu | ~12 USD | ~310 triệu | ~310 triệu |
+| Kết luận | Dừng ở tháng 2, gần như không mất gì | Đủ sống một người | Tuyển thêm người |
 
-**Kịch bản xấu chỉ tốn ~12 USD và ba tháng.** Đó là điều tốt nhất của cấu trúc chi phí này:
-thất bại rẻ, và biết sớm.
-
----
-
-## 5. Ràng buộc không được vi phạm để lấy doanh thu
-
-| Cấm | Vì sao |
-|---|---|
-| Đăng tin trả phí trộn vào danh sách đã lọc | Tiền mua vị trí = phá huỷ chính thứ đang bán |
-| Bán CV, lead ứng viên | Luật 91/2025 cấm mua bán dữ liệu cá nhân — **phạt tới 10× doanh thu** |
-| Thu dữ liệu cá nhân nhạy cảm | Mất miễn trừ DPO/DPIA của NĐ 356/2025 |
-| Sửa nhãn theo yêu cầu công ty trả tiền | Thất bại sứ mệnh, không phải bug |
-
-Quy tắc một dòng: **nếu một khoản tiền có thể đổi nội dung được xuất bản, khoản đó bị loại.**
+**Kịch bản xấu vẫn chỉ tốn ~12 USD** — vì cổng GĐ 0 và GĐ 1 đều nằm **trước** khoản ký quỹ.
+Đó là điều quan trọng nhất của cách sắp xếp này.
 
 ---
 
-## 6. Việc kế tiếp, theo thứ tự
+## 7. Rủi ro, xếp theo mức nguy hiểm thật
+
+| # | Rủi ro | Vì sao nguy hiểm | Giảm thế nào |
+|---|---|---|---|
+| 1 | **Cold start hai phía** | Kỹ sư không vào nếu chưa có công ty; công ty không trả nếu chưa có kỹ sư | Dùng dữ liệu 110 công ty đi trước — bắt đầu từ phía cầu, không phải phía cung |
+| 2 | **B-Q5 trả lời là "bán dữ liệu"** | Cả mô hình doanh thu sụp, phạt 10× doanh thu | **Hỏi luật sư TRƯỚC**, không build trước |
+| 3 | Đối thủ đã có sẵn quan hệ | Công ty gia công VN đã làm việc này nhiều năm | Lợi thế duy nhất: biết công ty nào tuyển được, có bằng chứng |
+| 4 | Không mở rộng được | Doanh thu tăng theo giờ làm, không theo người dùng | Chấp nhận. Đây là doanh nghiệp dịch vụ |
+| 5 | Uốn dữ liệu cho khách lớn | Mất tài sản duy nhất | [MISSION.md](MISSION.md) ràng buộc 1 — không ngoại lệ |
+
+**Rủi ro số 1 không phải rủi ro kỹ thuật, và không code nào giải được.**
+
+---
+
+## 8. Việc kế tiếp, theo thứ tự
 
 | # | Việc | Ai | Chặn cái gì |
 |---|---|---|---|
-| 1 | Deploy + tên miền + cron | **Bạn** | Mọi thứ |
-| 2 | **A8** — 10 cuộc với kỹ sư Việt | **Bạn** | Biết sản phẩm có đúng vấn đề không |
-| 3 | Đăng bài công bố *(đã soạn)* | **Bạn** | Phân phối |
-| 4 | **A3** — 10 cuộc với EOR / công ty gia công | **Bạn** | **Toàn bộ GĐ 2** |
-| 5 | Mở rộng kho lên 10.000 công ty | Máy | GĐ 2 |
+| 1 | **Buổi luật sư — 3 câu ở Mục 2** | **Bạn** | **Toàn bộ mô hình** |
+| 2 | Deploy + tên miền + cron | **Bạn** | Mọi thứ khác |
+| 3 | Đăng bài công bố | **Bạn** | Phân phối |
+| 4 | A8 — 10 kỹ sư Việt | **Bạn** | Biết có đúng vấn đề không |
+| 5 | **A3 — 10 công ty trong danh sách 110** | **Bạn** | Quyết định có dựng pháp nhân |
 
-**Việc số 4 quyết định dự án này có mô hình kinh doanh hay chỉ là một đóng góp công cộng.**
-Cả hai đều là kết quả chấp nhận được — nhưng phải biết mình đang ở cái nào.
+Việc số 1 đổi chỗ lên đầu so với bản trước. Lý do: bản trước chọn **tránh hẳn** mô hình giới
+thiệu nên buổi luật sư không chặn gì. Bây giờ mô hình đó **là** business, nên nó chặn tất cả.
+
+Bốn việc còn lại đều là việc của bạn, không phải của máy.
