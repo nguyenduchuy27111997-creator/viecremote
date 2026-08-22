@@ -105,7 +105,12 @@ Bản tĩnh là đường lui, giữ tới khi Next.js chạy production ổn đ
 định, màu OKLCH (ba màu ngữ nghĩa cùng độ sáng cảm nhận), sans toàn bộ (bỏ serif), có chuyển
 động và phím tắt ⌘K. Tương phản đo trên DOM thật 1.338 phần tử đạt, cả hai chế độ.
 
-**Còn thiếu để launch: deploy** — chỉ bạn làm được (tài khoản Cloudflare + tên miền + cron).
+**ĐÃ LAUNCH.** L1 chạy tại https://viec-remote.nguyenduchuy27111997.workers.dev
+Repo: https://github.com/nguyenduchuy27111997-creator/viecremote (public)
+Cập nhật hằng ngày: GitHub Actions 22:17 UTC — [OPERATIONS.md](OPERATIONS.md) Mục 8.
+
+**Chặn còn lại:** token Cloudflare Web Analytics (không có thì cổng GĐ 0 không đo được) ·
+buổi luật sư cho L2 · A8 và A3.
 
 ---
 

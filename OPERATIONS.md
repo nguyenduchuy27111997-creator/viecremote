@@ -128,45 +128,48 @@ sống được ở 0 doanh thu vô thời hạn — **thời gian là ràng bu�
 
 ---
 
-## 8. Lịch chạy hằng ngày trên máy — launchd, không phải cron
+## 8. Lịch chạy hằng ngày — GitHub Actions
 
-Đã cài: `~/Library/LaunchAgents/com.viecremote.refresh.plist` · **05:17 mỗi ngày**
+Repo: **github.com/nguyenduchuy27111997-creator/viecremote** (public)
+Workflow: `.github/workflows/refresh.yml` · **22:17 UTC = 05:17 giờ VN**
 
 ```bash
-launchctl print gui/$(id -u)/com.viecremote.refresh   # xem trạng thái
-launchctl kickstart gui/$(id -u)/com.viecremote.refresh  # chạy ngay, không chờ
-tail -f ~/Library/Logs/viecremote/refresh.log         # xem log
-launchctl bootout gui/$(id -u)/com.viecremote.refresh # gỡ
+gh run list --workflow=refresh.yml --limit 5     # 5 lần chạy gần nhất
+gh run watch                                     # theo dõi lần đang chạy
+gh workflow run "Cập nhật hằng ngày" -f deploy=true   # chạy ngay
+gh run view <id> --log-failed                    # xem log bước hỏng
 ```
 
-### Vì sao launchd chứ không phải cron
+**Repo để public** vì Actions free cho private chỉ 2.000 phút/tháng, mà chu kỳ đo được là
+~60 phút/ngày = 1.800 phút — sát trần, một lần chạy lại thủ công là vượt. Public thì không
+giới hạn phút. Dự án vốn không có gì bí mật; secret nằm ở GitHub Secrets, không trong repo.
 
-**Máy ngủ đúng giờ hẹn thì launchd chạy bù khi thức. cron bỏ luôn lần đó.**
-Laptop ngủ là chuyện thường, nên với cron sẽ có những ngày kho đơn giản không cập nhật
-mà không có dấu hiệu gì.
+### Ba thứ phải có trong repo
 
-Vẫn còn giới hạn: **máy tắt hẳn thì không có gì chạy.** Muốn độc lập khỏi máy thì dùng
-GitHub Actions (`.github/workflows/refresh.yml`, đã viết sẵn).
+| Loại | Tên | Quyền cần |
+|---|---|---|
+| Secret | `CLOUDFLARE_API_TOKEN` | **Workers Scripts:Edit** + **D1:Edit**, không hơn |
+| Secret | `CLOUDFLARE_ACCOUNT_ID` | — |
+| Variable | `SITE_URL` | — |
 
-### Hai cái bẫy macOS đã sập, ghi lại để khỏi mất thời gian
+Workflow **kiểm token ngay bước đầu** (`wrangler whoami` + `d1 list`). Sai quyền thì dừng sau
+~40 giây thay vì 25 phút — token vốn chỉ được dùng ở bước nạp D1, tức sau cả bước kéo tin.
 
-**1. Dự án KHÔNG được nằm trong `~/Desktop`, `~/Documents`, `~/Downloads`.**
+### Cảnh báo khi hỏng
 
-TCC chặn launchd *thực thi* tệp trong các thư mục đó:
+GitHub gửi email khi job đỏ. Đó là toàn bộ cơ chế cảnh báo hiện có — không có gì khác. Cron
+hỏng im lặng là kiểu hỏng tệ nhất, nên đừng tắt thông báo của repo này.
 
-```
-bash: ./refresh.sh: Operation not permitted
-```
+### Đã bỏ: launchd trên máy
 
-Đã kiểm bằng cách chạy cùng một job launchd với script ở hai nơi — `~/tcc-probe` chạy
-được, `~/Desktop/...` bị chặn. Cách khắc phục duy nhất ngoài việc di chuyển là cấp
-**Full Disk Access cho `/bin/bash`** — quyền quá rộng, cho MỌI script bash đọc toàn bộ
-đĩa. Không đáng.
+Từng cài rồi gỡ. Lý do gỡ: Actions không phụ thuộc máy bật, còn launchd thì máy tắt là không
+chạy. Hai lịch chồng nhau chỉ tạo hai nguồn sự thật.
 
-**Dự án đã chuyển sang `~/viecremote` vì lý do này.**
+**Hai bẫy macOS đã sập lúc cài, ghi lại phòng khi cần lại:**
 
-**2. Log cũng không được để trong thư mục bị TCC.**
-
-`launchd` **tự mở** `StandardOutPath`/`StandardErrorPath`, và bản thân nó không có quyền
-TCC. Job chết ngay với `EX_CONFIG (78)` **trước khi chạy được dòng nào**, và log rỗng nên
-không có manh mối gì. Log để ở `~/Library/Logs/viecremote/`.
+1. **TCC chặn launchd thực thi tệp trong `~/Desktop`, `~/Documents`, `~/Downloads`** —
+   `bash: ./refresh.sh: Operation not permitted`. Đã kiểm dứt điểm: cùng một job, script ở
+   `~/tcc-probe` chạy được, ở `~/Desktop/...` bị chặn. Đây là lý do dự án nằm ở `~/viecremote`.
+2. **Log cũng không được để trong thư mục bị TCC.** launchd *tự* mở `StandardOutPath`, và nó
+   không có quyền TCC — job chết với `EX_CONFIG (78)` **trước khi chạy dòng nào**, log rỗng nên
+   không manh mối gì.
