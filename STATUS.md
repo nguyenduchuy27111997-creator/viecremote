@@ -2,10 +2,12 @@
 
 > **ĐỔI HƯỚNG 22/08.** Từ *web tra cứu đọc-only* sang **mạng lưới nối công ty nước ngoài với
 > kỹ sư Việt**. Lý do, cái giá, và cái gì còn dùng được: [PIVOT.md](PIVOT.md).
-> Việc chặn tất cả: **một buổi luật sư** cho ba câu hỏi pháp lý — xem [BUSINESS-PLAN.md](BUSINESS-PLAN.md) Mục 2.
+> Ba câu pháp lý từng chặn tất cả **đã nghiên cứu xong** — [legal-research.md](legal-research.md).
+> Mô hình hợp pháp được, có điều kiện. Không còn gì chặn launch L1.
 
 **Đang làm:** **L1 — tầng minh bạch** (tra cứu địa lý tuyển dụng công ty), sẵn sàng launch.
-**L2 — mạng lưới** đã đặc tả nhưng **KHOÁ** chờ luật sư — xem [prd.md](prd.md) Mục 2.
+**L2 — mạng lưới** đã đặc tả, **mở khoá có điều kiện** (ký quỹ 300 triệu · Mẫu 09 · đồng ý theo
+công ty) — xem [prd.md](prd.md) Mục 2.
 Trục chuyển từ *tin* sang *công ty* (21/08). Giao diện chuyển sang **Next.js 16 + Cloudflare D1**
 (21/08) — xem [ARCHITECTURE-WEB.md](ARCHITECTURE-WEB.md), triển khai [DEPLOY-WEB.md](DEPLOY-WEB.md). Spec: [prd.md](prd.md). Launch mục tiêu ~2–3 tuần.
 
@@ -110,7 +112,7 @@ Repo: https://github.com/nguyenduchuy27111997-creator/viecremote (public)
 Cập nhật hằng ngày: GitHub Actions 22:17 UTC — [OPERATIONS.md](OPERATIONS.md) Mục 8.
 
 **Chặn còn lại:** token Cloudflare Web Analytics (không có thì cổng GĐ 0 không đo được) ·
-buổi luật sư cho L2 · A8 và A3.
+A8 và A3. Rà soát pháp lý hoãn tới trước ca nối đầu tiên.
 
 ---
 
@@ -145,7 +147,7 @@ Kiến trúc: **sinh trang tĩnh**, không máy chủ, không database. Hosting 
 
 - **A3** — có công ty nào trả tiền không
 - **A8** — nhãn cơ chế có đổi hành vi kỹ sư không
-- **Buổi luật sư** — 4 câu ([legal-brief.md](legal-brief.md)). Không chặn launch vì C2 đã là mặc định an toàn
+- **Rà soát pháp lý** — hoãn tới trước ca nối đầu tiên ([legal-research.md](legal-research.md) Mục 4)
 
 **Chưa có bằng chứng nào cho thấy ai sẽ trả tiền.** Sứ mệnh làm rõ hướng, không làm rõ khả thi.
 **Ba tài liệu kinh doanh:**
@@ -168,7 +170,8 @@ A3 (phía cầu) chặn toàn bộ đường doanh thu có trần cao và **chư
 | [prd.md](prd.md) | **Spec build** — đọc cái này để code |
 | [MISSION.md](MISSION.md) | Sứ mệnh + 5 hệ quả |
 | [rubric-spec.md](rubric-spec.md) | Quy tắc chấm nhãn, v0.4 |
-| [legal-brief.md](legal-brief.md) | 15 câu cho luật sư/kế toán |
+| [legal-research.md](legal-research.md) | **Ba câu chặn L2 — đã tra, có nguồn** |
+| [legal-brief.md](legal-brief.md) | 15 câu cho luật sư/kế toán (nền) |
 | `scoring-sheet.csv` · `a9-targets.csv` | Dữ liệu |
 | `tools/` | Pipeline |
 | `archive/` | v1, brd-v2, pivot-v3, chiến lược khán giả, bản đồ cộng đồng, bài viết — **giữ lại, không xoá** |

@@ -15,7 +15,7 @@ Hai tầng, và chúng **không cùng trạng thái**:
 | Tầng | Là gì | Trạng thái |
 |---|---|---|
 | **L1 — Minh bạch** | Tra cứu công khai: công ty nào tuyển được ở VN, kèm trích dẫn | ✅ **Đã build, sẵn sàng launch** |
-| **L2 — Mạng lưới** | Hồ sơ kỹ sư, đồng ý theo công ty, giới thiệu có thu phí | 🔒 **KHOÁ — chờ luật sư** |
+| **L2 — Mạng lưới** | Hồ sơ kỹ sư, đồng ý theo công ty, giới thiệu có thu phí | 🔓 **Mở khoá có điều kiện** — xem Mục 2 |
 
 L1 chạy được **ngay và độc lập**. Nó không giới thiệu ai cho ai, không thu hồ sơ, không thu phí
 — nên **chưa phải dịch vụ việc làm** và không cần pháp nhân hay ký quỹ.
@@ -24,19 +24,31 @@ L2 là chỗ có doanh thu, và cũng là chỗ có mọi rủi ro pháp lý.
 
 ---
 
-## 2. L2 bị khoá bởi cái gì — đọc trước khi build
+## 2. Điều kiện để build L2 — đọc trước khi viết code
 
-**Không viết một dòng code nào cho L2** cho tới khi ba câu này có lời giải từ luật sư:
+Ba câu từng chặn L2 **đã nghiên cứu xong** — [legal-research.md](legal-research.md).
+Kết luận: **mô hình hợp pháp được, có điều kiện.** Điều kiện đã biết rõ, không còn là ẩn số.
 
-| Câu | Nội dung | Nếu trả lời xấu |
+| Câu | Kết quả nghiên cứu | Ràng buộc để lại cho L2 |
 |---|---|---|
-| **B-Q5** | "Kết nối có đồng ý, thu phí từ công ty" có bị coi là mua bán dữ liệu cá nhân không? | Cả mô hình doanh thu sụp · phạt tới **10× doanh thu** |
-| **Điều 18 NĐ 356** | Gửi hồ sơ kỹ sư ra nước ngoài — thuộc diện miễn hay phải lập Mẫu 09 và báo Bộ Công an? | Mỗi công ty nhận hồ sơ = một thoả thuận ràng buộc phải ký |
-| **NĐ 352/2025** | Nền tảng online có phải duy trì đủ điều kiện dịch vụ việc làm (ký quỹ 300 triệu, pháp nhân, trụ sở ≥24 tháng)? | Cần ~310 triệu vốn trước khi chạy |
+| **B-Q5** — "kết nối có đồng ý, thu phí từ công ty" có phải mua bán dữ liệu? | **Không**, nếu đúng cấu trúc. Điều 7 Luật 91/2025 cấm mua bán *"trừ trường hợp luật có quy định khác"* — Luật Việc làm 2025 quy định rõ *"tư vấn, giới thiệu việc làm"*. Điều 25 cho phép dùng dữ liệu ngoài tuyển dụng **nếu ứng viên đồng ý** | Đồng ý **theo từng công ty**, rút lại được, có nhật ký. Thu phí cho **dịch vụ**, không theo số lượng hồ sơ. Không tuyển thì **xoá** |
+| **Điều 18 NĐ 356** — gửi hồ sơ ra nước ngoài, miễn hay phải khai? | **Phải khai.** Cả hai miễn trừ đều trượt: "quản lý nhân sự xuyên biên giới" chỉ áp cho nhân viên của chính mình; miễn trừ doanh nghiệp siêu nhỏ loại trừ khi *hoạt động chính là xử lý dữ liệu* — đúng trường hợp này | **Mẫu 09** + báo Bộ Công an trong 60 ngày + **thoả thuận ràng buộc với từng công ty nhận hồ sơ** |
+| **NĐ 352/2025** — nền tảng online có phải đủ điều kiện dịch vụ việc làm? | **Có.** Luật ghi rõ dịch vụ việc làm được làm bằng phương thức điện tử. Thủ tục cấp phép đã bãi bỏ 01/07/2026, nhưng **điều kiện vẫn còn**, chuyển sang hậu kiểm | Pháp nhân · **ký quỹ 300 triệu** · trụ sở thuê ≥24 tháng, duy trì suốt quá trình |
 
-`legal-brief.md` từng chốt mặc định an toàn là *"không triển khai mô hình giới thiệu dưới bất kỳ
-hình thức nào"*. **Mặc định đó không còn** — nên ba câu này chuyển từ *"tốt nếu biết"* thành
-*"chặn tất cả"*.
+**Bộ luật Lao động 2019:** người lao động không phải trả chi phí tuyển dụng. Ràng buộc *"kỹ sư
+không bao giờ trả tiền"* trong [MISSION.md](MISSION.md) là **luật**, không phải lựa chọn.
+
+### Cái nghiên cứu KHÔNG giải quyết được
+
+Rà soát chuyên môn vẫn cần, nhưng **muộn hơn và rẻ hơn** — câu hỏi đã đổi từ *"mô hình này có
+hợp pháp không"* thành *"câu chữ đã đúng chưa"*:
+
+- Câu chữ đồng ý cụ thể · mẫu thoả thuận với công ty nhận hồ sơ · nội dung Mẫu 09
+- Ngưỡng DPO/DPIA — hoạt động chính là xử lý dữ liệu, nhiều khả năng **mất miễn trừ ngay từ đầu**
+- Cách thực thi thực tế: luật hiệu lực 01/01/2026, chưa có án lệ
+
+**Thời điểm:** trước **ca nối đầu tiên**, không phải bây giờ. Chế tài cao nhất là **10× doanh
+thu** — không tự tin vào tài liệu nghiên cứu khi đến bước đó.
 
 ---
 
@@ -147,7 +159,7 @@ giữ nhãn công ty hoàn toàn do `tools/score_rules.py` sinh, và **không x�
 |---|---|---|
 | M0 | ✅ Pipeline, chấm nhãn, cổng C1–C5, site | xong |
 | M1 | ✅ Analytics, sitemap, OG, báo sai, API | xong |
-| M2 | **Buổi luật sư — 3 câu ở Mục 2** | **Bạn** |
+| M2 | **Rà soát pháp lý — câu chữ đồng ý + Mẫu 09** (trước ca nối đầu tiên) | **Bạn** |
 | M3 | Deploy, tên miền, cron | **Bạn** |
 | M4 | Đăng bài công bố · A8 với 10 kỹ sư | **Bạn** |
 
