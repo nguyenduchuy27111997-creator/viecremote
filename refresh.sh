@@ -43,13 +43,11 @@ say "3/4 dựng bản tĩnh (đường lui)"
 python3 build.py || fail "build tĩnh vi phạm ràng buộc"
 
 if [ "$DEPLOY" = "1" ]; then
-    say "4/4 nạp D1 từ xa + deploy"
-    for f in data/seed-*.sql; do
-        (cd web && npx wrangler d1 execute viec-remote --remote --file="../$f") \
-            || fail "nạp D1 thất bại ở $f"
-    done
-    (cd web && npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy) \
-        || fail "deploy thất bại"
+    # Gọi deploy.sh thay vì lặp lại các bước ở đây. Nó nạp D1 cả LOCAL lẫn
+    # REMOTE đúng thứ tự — build cần local (generateStaticParams truy vấn D1),
+    # runtime cần remote. Bản cũ chỉ nạp remote nên build chết trên máy sạch.
+    say "4/4 deploy"
+    ./deploy.sh || fail "deploy thất bại"
 else
     say "4/4 bỏ qua deploy (thêm --deploy để đẩy lên)"
 fi
