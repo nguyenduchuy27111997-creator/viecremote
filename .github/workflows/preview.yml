@@ -25,10 +25,38 @@ jobs:
           cache: npm
           cache-dependency-path: web/package-lock.json
 
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Khôi phục kho
+        uses: actions/cache/restore@v4
+        with:
+          path: jobs.json
+          key: jobs-preview
+          restore-keys: jobs-
+
       - run: npm ci
         working-directory: web
 
+      # `next build` truy vấn D1 trong generateStaticParams. Repo không commit
+      # data/ nên phải dựng lại từ jobs.json — nhưng jobs.json cũng không commit.
+      # Không có kho thì bỏ qua preview thay vì build ra trang rỗng.
+      - name: Chuẩn bị dữ liệu
+        id: data
+        run: |
+          if [ ! -f jobs.json ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "Không có jobs.json — bỏ qua preview. Chạy workflow 'Cập nhật hằng ngày' trước."
+            exit 0
+          fi
+          python3 tools/export_db.py
+          cd web && for f in ../data/seed-*.sql; do
+            npx wrangler d1 execute viec-remote --local --file="$f"
+          done
+
       - name: Tải lên phiên bản (KHÔNG kích hoạt)
+        if: steps.data.outputs.skip != 'true' 
         id: up
         working-directory: web
         env:

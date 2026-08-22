@@ -1,5 +1,13 @@
 # Triển khai — Next.js trên Cloudflare Workers
 
+> **Dùng `./deploy.sh`.** Nó làm toàn bộ các bước dưới đây, idempotent, chạy lại
+> được nếu đứt giữa chừng. Tài liệu này giữ lại để hiểu từng bước làm gì.
+>
+> ```bash
+> cd web && npx wrangler login   # một lần duy nhất
+> cd .. && ./deploy.sh
+> ```
+
 Mọi bước dưới đây **cần tài khoản Cloudflare của bạn**. Tôi không chạy được.
 
 ---

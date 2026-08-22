@@ -75,6 +75,17 @@ jobs:
         working-directory: web
         if: inputs.deploy != false
 
+      # BẮT BUỘC trước khi build: `next build` chạy generateStaticParams, và
+      # hàm đó TRUY VẤN D1. Trên runner mới, D1 local rỗng ⇒ build chết với
+      # "no such table: company". Seed local trước, seed remote sau.
+      - name: Seed D1 cục bộ (cho bước build)
+        if: inputs.deploy != false
+        working-directory: web
+        run: |
+          for f in ../data/seed-*.sql; do
+            npx wrangler d1 execute viec-remote --local --file="$f"
+          done
+
       # Tệp cuối (seed-NN-swap.sql) là bước hoán đổi. Đứt trước nó thì
       # production vẫn chạy dữ liệu hôm qua — xem tools/export_db.py.
       - name: Nạp D1
