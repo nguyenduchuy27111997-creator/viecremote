@@ -5,7 +5,9 @@ name: Cập nhật hằng ngày
 # Ba secret cần đặt ở Settings > Secrets and variables > Actions:
 #   CLOUDFLARE_API_TOKEN   quyền: Workers Scripts:Edit, D1:Edit
 #   CLOUDFLARE_ACCOUNT_ID
-#   CF_ANALYTICS_TOKEN     (biến thường cũng được, nó vốn công khai)
+# Và một biến thường (Settings > Variables):
+#   CF_ANALYTICS_TOKEN     beacon token Web Analytics — KHÔNG phải bí mật
+#   SITE_URL
 on:
   schedule:
     # 05:17 giờ Việt Nam = 22:17 UTC hôm trước.
@@ -123,7 +125,10 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ secrets.CF_ANALYTICS_TOKEN }}
+          # Beacon token của Web Analytics KHÔNG phải bí mật — nó nằm ngay trong
+          # HTML ai xem nguồn cũng thấy. Dùng variable để debug được; vẫn nhận
+          # secret nếu ai đó đã đặt kiểu đó.
+          NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.CF_ANALYTICS_TOKEN || secrets.CF_ANALYTICS_TOKEN }}
           NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
         run: npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy
 
