@@ -4,8 +4,12 @@
 # CHẠY MỘT LẦN, hoặc chạy lại bao nhiêu lần cũng được — mọi bước đều idempotent.
 # Đứt giữa chừng thì chạy lại, nó bỏ qua phần đã xong.
 #
-#   ./deploy.sh                       # dùng tên miền mặc định trong site.ts
-#   SITE_URL=https://abc.com ./deploy.sh
+#   ./deploy.sh                       # chưa có tên miền -> tự dùng *.workers.dev
+#   SITE_URL=https://abc.com ./deploy.sh   # đã có tên miền riêng
+#
+# CHƯA CÓ TÊN MIỀN thì cứ chạy. Lần đầu script deploy HAI LẦN: lần một để biết
+# URL workers.dev (chỉ Cloudflare mới biết), lần hai để build lại cho sitemap
+# và ảnh OG trỏ đúng. Từ lần sau chỉ deploy một lần.
 #
 # TRƯỚC KHI CHẠY, một lần duy nhất:
 #   cd web && npx wrangler login
@@ -79,18 +83,47 @@ echo "  ✓ $(ls ../data/seed-*.sql | wc -l | tr -d ' ') tệp, cả hai môi tr
 # ---------------------------------------------------------------- 4. build + deploy
 say "4/6  Build và deploy"
 npm ci --silent || die "npm ci thất bại"
-export NEXT_PUBLIC_SITE_URL="${SITE_URL:-${NEXT_PUBLIC_SITE_URL:-}}"
-npx opennextjs-cloudflare build  || die "build thất bại"
-npx opennextjs-cloudflare deploy || die "deploy thất bại"
+
+# Thứ tự ưu tiên URL: biến môi trường > .env.local (lần chạy trước ghi lại) > rỗng
+[ -f .env.local ] && . ./.env.local 2>/dev/null
+WANT="${SITE_URL:-${NEXT_PUBLIC_SITE_URL:-}}"
+
+deploy_once() {
+    export NEXT_PUBLIC_SITE_URL="$1"
+    npx opennextjs-cloudflare build || die "build thất bại"
+    # Bắt mã thoát THẬT của deploy, không phải của tee. `pipefail` làm pipeline
+    # mang mã thoát của lệnh hỏng đầu tiên, nên PIPESTATUS ở đây là đủ tin.
+    npx opennextjs-cloudflare deploy 2>&1 | tee /tmp/deploy.log
+    [ "${PIPESTATUS[0]}" = "0" ] || die "deploy thất bại — xem /tmp/deploy.log"
+}
+
+# Ghi một biến vào .env.local, THAY nếu đã có. Append mù sẽ tích dòng trùng
+# qua mỗi lần chạy, và Next đọc dòng cuối nên lỗi rất khó thấy.
+set_env() {
+    touch .env.local
+    grep -v "^$1=" .env.local > .env.local.tmp 2>/dev/null || true
+    printf '%s=%s\n' "$1" "$2" >> .env.local.tmp
+    mv .env.local.tmp .env.local
+}
+
+deploy_once "$WANT"
+
+# URL thật: ưu tiên tên miền bạn đặt, không có thì lấy workers.dev từ log deploy
+URL="${SITE_URL:-}"
+if [ -z "$URL" ]; then
+    URL=$(grep -oE 'https://[a-z0-9-]+\.[a-z0-9-]+\.workers\.dev' /tmp/deploy.log | head -1)
+fi
+
+# Lần đầu trên workers.dev: build vừa rồi nhúng URL SAI vào sitemap và ảnh OG,
+# vì chỉ Cloudflare mới biết subdomain của tài khoản. Build lại một lần cho đúng.
+if [ -n "$URL" ] && [ "$URL" != "$WANT" ]; then
+    say "4b/6  Biết URL thật ($URL) — build lại để sitemap và ảnh OG trỏ đúng"
+    set_env NEXT_PUBLIC_SITE_URL "$URL"
+    deploy_once "$URL"
+fi
 
 # --------------------------------------------------------------- 5. kiểm khói
 say "5/6  Kiểm khói trên bản vừa deploy"
-URL="${SITE_URL:-}"
-if [ -z "$URL" ]; then
-    URL=$(npx wrangler deployments list 2>/dev/null \
-          | grep -oE 'https://[a-z0-9.-]+\.workers\.dev' | head -1)
-fi
-
 if [ -z "$URL" ]; then
     echo "  ! không tự tìm được URL — kiểm tay trên dashboard"
 else
@@ -116,9 +149,10 @@ cat <<EOF
 
   CÒN PHẢI LÀM TAY (không tự động được):
 
-  1. Tên miền
-     Dashboard → Workers → viec-remote → Settings → Domains & Routes
-     Rồi đặt lại: SITE_URL=https://<tên miền> ./deploy.sh
+  1. Tên miền riêng — KHÔNG gấp, workers.dev chạy tốt và miễn phí
+     Có rồi thì: Dashboard → Workers → viec-remote → Settings → Domains & Routes
+     Rồi chạy: SITE_URL=https://<tên miền> ./deploy.sh
+     (script sẽ tự build lại để sitemap và ảnh OG trỏ sang miền mới)
 
   2. Analytics — KHÔNG có thì cổng "500 người dùng sau 30 ngày" không bấm được
      Dashboard → Analytics → Web Analytics → lấy token
