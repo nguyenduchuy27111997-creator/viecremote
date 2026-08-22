@@ -34,7 +34,7 @@ export default async function Confirm({
       </h1>
       <Lead>
         {ok
-          ? "Bạn sẽ nhận thư khi có thay đổi đáng kể trong kho. Không quảng cáo, không bán địa chỉ cho ai. Mỗi thư đều có đường huỷ một cú bấm."
+          ? "Bạn đã ở trong danh sách. Tôi sẽ báo khi mạng lưới mở, và gửi thư khi kho có thay đổi đáng kể. Không quảng cáo, không bán địa chỉ cho ai. Mỗi thư đều có đường huỷ một cú bấm."
           : "Đường dẫn xác nhận đã hết hạn hoặc không đúng. Thử đăng ký lại ở cuối trang chủ."}
       </Lead>
       <p className="mt-7">

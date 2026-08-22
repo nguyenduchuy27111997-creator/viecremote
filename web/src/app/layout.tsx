@@ -125,10 +125,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         {CF_TOKEN && (
-          // `type="module"` theo đúng đoạn Cloudflare phát ra. Module script
-          // vốn đã hoãn thực thi nên không cần `defer`.
+          // `defer` chứ không `type="module"`: hai cách chạy như nhau cho beacon,
+          // nhưng luật no-sync-scripts của Next không nhận ra module script vốn
+          // đã hoãn, nên nó báo lỗi. Dùng defer thì khỏi phải tắt luật.
           <script
-            type="module"
+            defer
             src="https://static.cloudflareinsights.com/beacon.min.js"
             data-cf-beacon={JSON.stringify({ token: CF_TOKEN })}
           />

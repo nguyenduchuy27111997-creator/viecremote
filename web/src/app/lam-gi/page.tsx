@@ -15,10 +15,11 @@ export const metadata = {
  * Lỗ hổng sản phẩm lớn nhất trước trang này: kho nói 97% công ty đóng, rồi
  * KHÔNG có bước tiếp theo nào.
  *
- * Đây không phải mồi giữ chân — sứ mệnh nói người dùng NÊN rời đi sau khi có
- * câu trả lời. Đây là phần hoàn tất câu trả lời. Mọi khẳng định trên trang này
- * phải truy được về một con số trong kho; chỗ nào không có số thì nói thẳng là
- * không có số.
+ * Mọi khẳng định trên trang này phải truy được về một con số trong kho; chỗ nào
+ * không có số thì nói thẳng là không có số.
+ *
+ * (Bản trước ghi "sứ mệnh nói người dùng NÊN rời đi" — điều đó thuộc sứ mệnh cũ
+ * và đã bỏ khi đổi hướng sang mạng lưới. Xem PIVOT.md.)
  */
 export default async function WhatToDo() {
   const m = await meta()

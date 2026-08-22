@@ -4,11 +4,14 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 /**
- * Kênh sở hữu duy nhất. Không có nó thì mọi lưu lượng từ bài công bố bay hết
- * sau một tuần.
+ * Kênh sở hữu duy nhất, và là HẠT GIỐNG của mạng lưới (BUSINESS-PLAN GĐ 1).
  *
- * Đổi lại: email LÀ dữ liệu cá nhân, nên form phải nói THẲNG sẽ dùng để làm gì
- * ngay tại chỗ nhập — không giấu trong trang điều khoản.
+ * Chỉ thu email. KHÔNG hồ sơ, KHÔNG CV, KHÔNG kỹ năng — mọi thứ đó thuộc L2 và
+ * L2 đang khoá chờ luật sư (prd.md Mục 2). Ghi danh quan tâm không phải là
+ * "giới thiệu việc làm", nên nó nằm ngoài phạm vi dịch vụ việc làm có điều kiện.
+ *
+ * Copy phải nói THẲNG sẽ dùng làm gì ngay tại chỗ nhập — email là dữ liệu cá
+ * nhân, và hứa mơ hồ ở đây là vừa dở vừa rủi ro.
  */
 export function Subscribe() {
   const [state, setState] = useState<"idle" | "sending" | "done" | "pending" | "error">("idle")
@@ -52,7 +55,7 @@ export function Subscribe() {
   return (
     <form onSubmit={submit} className="max-w-[52ch]">
       <label htmlFor="sub" className="font-mono text-[11px] uppercase tracking-wider text-text-3">
-        Nhận tin khi kho đổi đáng kể
+        Ghi danh mạng lưới kỹ sư Việt
       </label>
       <div className="mt-2 flex flex-wrap gap-2">
         <input
@@ -73,8 +76,14 @@ export function Subscribe() {
           {state === "sending" ? "Đang gửi…" : "Đăng ký"}
         </button>
       </div>
-      <p className="mt-2.5 text-[12px] leading-relaxed text-text-3">
-        Cần xác nhận qua thư. Không quảng cáo, không bán địa chỉ cho ai, huỷ một cú bấm.{" "}
+      <p className="mt-2.5 max-w-[52ch] text-[12px] leading-relaxed text-text-3">
+        Tôi đang xây một mạng lưới nối kỹ sư Việt với công ty nước ngoài{" "}
+        <b className="text-text-2">thật sự tuyển được</b> — ghi danh để biết khi nó mở. Trong lúc
+        chờ, bạn nhận thư khi kho có thay đổi đáng kể.
+      </p>
+      <p className="mt-1.5 max-w-[52ch] text-[12px] leading-relaxed text-text-3">
+        Chỉ thu email, <b className="text-text-2">không hồ sơ, không CV</b>. Cần xác nhận qua thư.
+        Không quảng cáo, không bán địa chỉ cho ai, huỷ một cú bấm.{" "}
         <Link className="underline underline-offset-2 hover:text-text-2" href="/rieng-tu">
           Cách dữ liệu được xử lý
         </Link>
