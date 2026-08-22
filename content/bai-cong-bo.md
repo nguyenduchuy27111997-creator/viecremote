@@ -2,12 +2,18 @@
 
 **Dùng cho:** blog, LinkedIn, nhóm Facebook dev Việt, Spiderum
 **Độ dài:** ~1.100 từ · **Ngày dữ liệu:** 21/08/2026
-**Trước khi đăng:** thay `[LINK]` bằng tên miền thật, và đọc lại Mục "Giới hạn" — đó là phần
-giữ uy tín cho toàn bài.
+**Trước khi đăng — hai việc:**
+
+1. Thay `[LINK]` bằng URL thật.
+2. **Chạy `python3 tools/post_numbers.py --check`.** Kho đổi mỗi ngày; chỉ sau MỘT chu kỳ
+   cập nhật, số công ty tuyển được đã đi từ 110 xuống 103. Đăng số cũ thì người đọc mở trang
+   ra thấy số khác — mất đúng thứ duy nhất bài này bán.
+
+Và đọc lại Mục "Giới hạn" — đó là phần giữ uy tín cho toàn bài.
 
 ---
 
-## Tôi chấm 34.313 tin tuyển dụng remote. Có 0 tin ghi rõ tuyển được người ở Việt Nam.
+## Tôi chấm 34.546 tin tuyển dụng remote. Có 0 tin ghi rõ tuyển được người ở Việt Nam.
 
 Tôi hay thấy câu này trong các nhóm dev: *"remote thì làm ở đâu chẳng được."*
 
@@ -21,19 +27,19 @@ Kết quả không dễ chịu.
 
 ### Ba con số
 
-**34.313** tin remote, của **3.666** công ty.
+**34.546** tin remote, của **3.630** công ty.
 
 | | Số tin | |
 |---|---|---|
-| Bị giới hạn địa lý | **29.607** | **86,3%** |
+| Bị giới hạn địa lý | **30.000** | **86,8%** |
 | Chưa đủ căn cứ kết luận | 4.297 | 12,5% |
-| Không vướng giới hạn nào | **409** | **1,2%** |
+| Không vướng giới hạn nào | **391** | **1,1%** |
 
-Trong 409 tin đó: 300 tin mở toàn cầu, 109 tin mở cho một vùng hoặc nước có Việt Nam
+Trong 391 tin đó: 290 tin mở toàn cầu, 101 tin mở cho một vùng hoặc nước có Việt Nam
 (APAC, Hà Nội, TP.HCM…).
 
-Tính theo **công ty** thì rõ hơn: trong 3.666 công ty, **110 công ty** tuyển được người ở Việt
-Nam. **2.485 công ty khoá hoàn toàn** — không một vị trí nào.
+Tính theo **công ty** thì rõ hơn: trong 3.630 công ty, **103 công ty** tuyển được người ở Việt
+Nam. **2.493 công ty khoá hoàn toàn** — không một vị trí nào.
 
 Và con số làm tôi dừng lại lâu nhất: tôi chấm tay 150 tin ngẫu nhiên, đọc từ đầu đến cuối.
 **Không một tin nào ghi rõ rằng công ty tuyển được người ở Việt Nam.** Không phải "ít". Là 0.
@@ -46,17 +52,17 @@ Không phải "công ty không thích người Việt". Là những mệnh đề
 
 | Số tin | Rào cản |
 |---|---|
-| 19.023 | Khoá theo nước, vùng, hoặc bang — *"Remote (US only)"*, *"EMEA"* |
-| 5.466 | Phải có mặt tại văn phòng — tin gắn nhãn remote nhưng bên trong là hybrid |
-| 1.621 | Cần giấy phép lao động tại một nước cụ thể |
-| 1.236 | Yêu cầu quốc tịch hoặc security clearance |
-| 1.085 | Công ty tự khai danh sách nước nhận hồ sơ, không có Việt Nam |
-| 793 | Hình thức lao động chỉ tồn tại ở một nước (W-2 của Mỹ, PAYE của Anh) |
-| 375 | Bắt buộc múi giờ mà GMT+7 không trùng nổi |
+| 19.363 | Khoá theo nước, vùng, hoặc bang — *"Remote (US only)"*, *"EMEA"* |
+| 5.579 | Phải có mặt tại văn phòng — tin gắn nhãn remote nhưng bên trong là hybrid |
+| 1.640 | Cần giấy phép lao động tại một nước cụ thể |
+| 1.257 | Yêu cầu quốc tịch hoặc security clearance |
+| 989 | Công ty tự khai danh sách nước nhận hồ sơ, không có Việt Nam |
+| 796 | Hình thức lao động chỉ tồn tại ở một nước (W-2 của Mỹ, PAYE của Anh) |
+| 368 | Bắt buộc múi giờ mà GMT+7 không trùng nổi |
 
-Nước bị khoá vào nhiều nhất: **Mỹ 11.589** · Canada 933 · Anh 850 · Ấn Độ 607 · Đức 431.
+Nước bị khoá vào nhiều nhất: **Mỹ 11.761** · Canada 925 · Anh 865 · Ấn Độ 596 · Đức 440.
 
-Con số 5.466 tin "remote nhưng thật ra phải lên văn phòng" là loại lãng phí thời gian trắng
+Con số 5.579 tin "remote nhưng thật ra phải lên văn phòng" là loại lãng phí thời gian trắng
 trợn nhất. Nhãn nói một đằng, mệnh đề trong tin nói một nẻo.
 
 ---
@@ -95,9 +101,9 @@ trong tin chứng minh điều đó.**
 
 Ba thứ có thể dùng ngay:
 
-- **110 công ty tuyển được người ở Việt Nam** — kèm số vị trí đang mở
+- **103 công ty tuyển được người ở Việt Nam** — kèm số vị trí đang mở
 - **Hồ sơ từng công ty** — họ khoá tuyển vào những nước nào, đếm theo số tin
-- **29.607 tin bị loại, kèm lý do trích dẫn được** — để bạn biết *đừng* mất thời gian vào đâu
+- **30.000 tin bị loại, kèm lý do trích dẫn được** — để bạn biết *đừng* mất thời gian vào đâu
 
 Mỗi kết luận đều kèm **trích dẫn nguyên văn** từ tin gốc. Không có "theo thuật toán của chúng
 tôi". Bạn đọc được đúng câu mà máy đã đọc.

@@ -6,10 +6,10 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 
 ## A. Facebook / nhóm dev Việt · ~180 từ
 
-> Tôi chấm 34.313 tin tuyển dụng remote từ Greenhouse, Lever, Ashby. Tìm một thứ duy nhất:
+> Tôi chấm 34.546 tin tuyển dụng remote từ Greenhouse, Lever, Ashby. Tìm một thứ duy nhất:
 > có câu nào chặn người đang sống ở Việt Nam không.
 >
-> **86,3% bị giới hạn địa lý.** Chỉ **409 tin** (1,2%) không vướng gì.
+> **86,8% bị giới hạn địa lý.** Chỉ **391 tin** (1,1%) không vướng gì.
 >
 > Tôi cũng chấm tay 150 tin ngẫu nhiên, đọc từ đầu đến cuối. **Không một tin nào ghi rõ tuyển
 > được người ở Việt Nam.** Không phải "ít" — là 0.
@@ -21,7 +21,7 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > Nếu bạn đang rải đơn vào các tin remote trên LinkedIn: không phải bạn kém. Kênh đó về mặt cấu
 > trúc không dành cho bạn.
 >
-> Tôi làm một trang tra cứu. **110 công ty** thật sự tuyển được người ở VN, mỗi kết luận kèm
+> Tôi làm một trang tra cứu. **103 công ty** thật sự tuyển được người ở VN, mỗi kết luận kèm
 > trích dẫn nguyên văn từ tin gốc. Miễn phí, không tài khoản, không quảng cáo.
 >
 > [LINK]
@@ -33,13 +33,13 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 
 ## B. LinkedIn · ~120 từ
 
-> 34.313 tin remote. 3.666 công ty. Ba nền tảng tuyển dụng công khai.
+> 34.546 tin remote. 3.630 công ty. Ba nền tảng tuyển dụng công khai.
 >
-> **86,3% khoá theo địa lý.** 1,2% không vướng gì. Và 0/150 tin chấm tay ghi rõ tuyển được
+> **86,8% khoá theo địa lý.** 1,1% không vướng gì. Và 0/150 tin chấm tay ghi rõ tuyển được
 > người ở Việt Nam.
 >
-> Rào cản không mơ hồ, nó viết sẵn trong tin: 19.023 tin khoá theo nước/vùng/bang · 5.466 tin
-> gắn nhãn remote nhưng bên trong yêu cầu lên văn phòng · 793 tin đòi hình thức lao động chỉ
+> Rào cản không mơ hồ, nó viết sẵn trong tin: 19.363 tin khoá theo nước/vùng/bang · 5.579 tin
+> gắn nhãn remote nhưng bên trong yêu cầu lên văn phòng · 796 tin đòi hình thức lao động chỉ
 > tồn tại ở một nước.
 >
 > Tôi mở dữ liệu này thành trang tra cứu công khai: công ty nào tuyển được người ở VN, và câu
@@ -68,7 +68,7 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > Vietnam.
 >
 > The barriers are concrete, not vibes: 19,023 locked to a country/region/state, 5,466 labeled
-> remote but requiring office presence, 793 requiring an employment form that only exists in
+> remote but requiring office presence, 796 requiring an employment form that only exists in
 > one country (US W-2, UK PAYE).
 >
 > The interesting part is the paradox. Vietnam has ~530k developers and ranks top-6 globally

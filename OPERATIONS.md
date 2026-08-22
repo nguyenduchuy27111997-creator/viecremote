@@ -58,6 +58,7 @@ Khoảng **1.300/5.700 slug** mỗi ngày. Tin của slug quá **30 ngày** khô
 | Xem **nút báo sai** người dùng gửi | 30 phút | Chỉ số sống còn của sứ mệnh |
 | Chấm tay **5 tin ngẫu nhiên** từ nhóm "mở" | 45 phút | Phát hiện trôi nhãn trước khi nó thành hệ thống |
 | Ghi số liệu tuần vào `STATUS.md` | 30 phút | Không đo thì không biết đang thắng hay thua |
+| `python3 tools/post_numbers.py --check` trước mọi lần đăng bài | 2 phút | Kho đổi mỗi ngày. Chỉ sau MỘT chu kỳ, số công ty mở đã 110 → 103 |
 
 ---
 
