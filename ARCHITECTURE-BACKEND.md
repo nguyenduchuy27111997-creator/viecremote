@@ -125,7 +125,7 @@ Còn **68 phút** cho toàn kho, **16 phút** khi chỉ kéo slug đến hạn.
 | # | Lỗ hổng | Trạng thái |
 |---|---|---|
 | 1 | Không phải git repo | ✅ **xong** — `git init`, 299 tệp, repo 3,4 MB |
-| 2 | Cron chạy trên laptop | ✅ **xong** — `.github/workflows/refresh.yml`, cron 22:17 UTC |
+| 2 | Cron chạy trên laptop | ✅ **xong** — GitHub Actions 22:17 UTC · và launchd trên máy 05:17 giờ VN. **Dự án phải nằm NGOÀI ~/Desktop** — TCC chặn launchd thực thi ở đó. Xem [OPERATIONS.md](OPERATIONS.md) Mục 8 |
 | 3 | Không có cảnh báo | ✅ **xong** — Actions gửi email khi job đỏ |
 | 4 | Không có CI | ✅ **xong** — `.github/workflows/ci.yml` |
 | 5 | Không có staging | ✅ **xong** — `.github/workflows/preview.yml` |

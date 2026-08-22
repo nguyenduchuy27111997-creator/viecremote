@@ -25,12 +25,18 @@ Cron 05:17 mỗi ngày. Bốn bước, mỗi bước là một cổng:
 
 | # | Bước | Thời gian | Hỏng thì sao |
 |---|---|---|---|
-| 1 | Kéo + chấm nhãn slug **đến hạn** | ~16 phút | Khôi phục `jobs.json`, thoát |
+| 1a | Kéo slug **đến hạn** (~2.450/5.686) | ~16 phút | Khôi phục `jobs.json`, thoát |
+| 1b | Đọc `applicantLocationRequirements` 2.500 tin | **~42 phút** | như trên |
 | 2 | Xuất SQLite + seed **kèm cổng C1–C5** | ~40 giây | Khôi phục, thoát — **dữ liệu sai không bao giờ tới DB** |
 | 3 | Dựng bản tĩnh (đường lui) | ~4 giây | Khôi phục, thoát |
 | 4 | Nạp D1 từ xa + deploy Worker | ~6 phút | Khôi phục, thoát |
 
-**Vì sao chỉ 16 phút chứ không 110:** phân bậc poll trong `tools/tiering.py` chỉ kéo slug đến hạn.
+**Tổng ~60 phút/ngày**, không phải 16 — bước đọc schema (1b) chiếm phần lớn. Đo thật ngày
+22/08. Con số này quan trọng cho GitHub Actions: 60 phút × 30 ngày = **1.800 phút/tháng**, sát
+trần 2.000 phút của repo private. Vượt thì chuyển repo sang public (dự án vốn không có gì bí mật)
+hoặc hạ `--schema-limit`.
+
+**Vì sao chỉ 16 phút cho bước kéo chứ không 110:** phân bậc poll trong `tools/tiering.py` chỉ kéo slug đến hạn.
 
 | Bậc | Nhịp | Điều kiện |
 |---|---|---|
@@ -118,3 +124,48 @@ tiếp đều ≥95%.
 
 Không có chi phí LLM: toàn bộ chấm nhãn là quy tắc, không gọi mô hình. Đây là lý do dự án
 sống được ở 0 doanh thu vô thời hạn — **thời gian là ràng buộc, không phải tiền**.
+
+---
+
+## 8. Lịch chạy hằng ngày trên máy — launchd, không phải cron
+
+Đã cài: `~/Library/LaunchAgents/com.viecremote.refresh.plist` · **05:17 mỗi ngày**
+
+```bash
+launchctl print gui/$(id -u)/com.viecremote.refresh   # xem trạng thái
+launchctl kickstart gui/$(id -u)/com.viecremote.refresh  # chạy ngay, không chờ
+tail -f ~/Library/Logs/viecremote/refresh.log         # xem log
+launchctl bootout gui/$(id -u)/com.viecremote.refresh # gỡ
+```
+
+### Vì sao launchd chứ không phải cron
+
+**Máy ngủ đúng giờ hẹn thì launchd chạy bù khi thức. cron bỏ luôn lần đó.**
+Laptop ngủ là chuyện thường, nên với cron sẽ có những ngày kho đơn giản không cập nhật
+mà không có dấu hiệu gì.
+
+Vẫn còn giới hạn: **máy tắt hẳn thì không có gì chạy.** Muốn độc lập khỏi máy thì dùng
+GitHub Actions (`.github/workflows/refresh.yml`, đã viết sẵn).
+
+### Hai cái bẫy macOS đã sập, ghi lại để khỏi mất thời gian
+
+**1. Dự án KHÔNG được nằm trong `~/Desktop`, `~/Documents`, `~/Downloads`.**
+
+TCC chặn launchd *thực thi* tệp trong các thư mục đó:
+
+```
+bash: ./refresh.sh: Operation not permitted
+```
+
+Đã kiểm bằng cách chạy cùng một job launchd với script ở hai nơi — `~/tcc-probe` chạy
+được, `~/Desktop/...` bị chặn. Cách khắc phục duy nhất ngoài việc di chuyển là cấp
+**Full Disk Access cho `/bin/bash`** — quyền quá rộng, cho MỌI script bash đọc toàn bộ
+đĩa. Không đáng.
+
+**Dự án đã chuyển sang `~/viecremote` vì lý do này.**
+
+**2. Log cũng không được để trong thư mục bị TCC.**
+
+`launchd` **tự mở** `StandardOutPath`/`StandardErrorPath`, và bản thân nó không có quyền
+TCC. Job chết ngay với `EX_CONFIG (78)` **trước khi chạy được dòng nào**, và log rỗng nên
+không có manh mối gì. Log để ở `~/Library/Logs/viecremote/`.
