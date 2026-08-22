@@ -1,7 +1,9 @@
 import Link from "next/link"
-import { cacheLife } from "next/cache"
 import { all, meta } from "@/lib/db"
 import { Eyebrow, Lead, Note } from "@/components/Page"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 export const metadata = {
   title: "Vậy tôi nên làm gì",
@@ -19,8 +21,6 @@ export const metadata = {
  * không có số.
  */
 export default async function WhatToDo() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
   const mech = await all<{ mechanism: string; n: number }>(
     "SELECT mechanism, count(*) n FROM company WHERE verdict='ok' GROUP BY mechanism",

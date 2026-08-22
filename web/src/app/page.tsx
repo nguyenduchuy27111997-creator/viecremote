@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { Suspense } from "react"
-import { cacheLife } from "next/cache"
 import { all, meta, parseLocked, type Company } from "@/lib/db"
 import { MECH } from "@/lib/labels"
 import { cname } from "@/lib/countries"
@@ -10,6 +9,9 @@ import { DensityBar, StatRow } from "@/components/Stat"
 import { SearchBox } from "@/components/SearchBox"
 import { BlockSkeleton, Loading, RowSkeleton } from "@/components/Skeleton"
 import { EmptyState } from "@/components/EmptyState"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 const PAGE = 60
 
@@ -57,8 +59,6 @@ export default async function Home({
 }
 
 async function Header() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
   const items = [
     { tone: "open" as const, n: +m.n_comp_ok, label: "tuyển được người ở Việt Nam", href: "/?v=ok" },

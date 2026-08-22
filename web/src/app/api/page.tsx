@@ -1,7 +1,9 @@
 import Link from "next/link"
-import { cacheLife } from "next/cache"
 import { meta } from "@/lib/db"
 import { Eyebrow, Lead, Note } from "@/components/Page"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 export const metadata = {
   title: "API — dữ liệu địa lý tuyển dụng",
@@ -17,8 +19,6 @@ export const metadata = {
  * là 123 triệu là cách nhanh nhất để mất khách ngay buổi thứ hai.
  */
 export default async function ApiDocs() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
 
   return (

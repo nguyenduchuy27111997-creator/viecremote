@@ -1,16 +1,16 @@
 import Link from "next/link"
-import { cacheLife } from "next/cache"
 import { all, meta } from "@/lib/db"
 import { REASON } from "@/lib/labels"
 import { cname } from "@/lib/countries"
 import { BarRow, Eyebrow, Lead, Note, Section } from "@/components/Page"
 
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
+
 export const metadata = { title: "Vì sao tin bị loại" }
 
 /** Lõi sản phẩm: 86% kho là câu "không", và mỗi câu "không" đều trích dẫn được. */
 export default async function Why() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
 
   const reasons = await all<{ reason: string; n: number }>(

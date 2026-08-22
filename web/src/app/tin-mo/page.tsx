@@ -1,11 +1,13 @@
 import Link from "next/link"
-import { cacheLife } from "next/cache"
 import { all, meta, type Job } from "@/lib/db"
 import { SCOPE_LABEL, SCOPE_TONE } from "@/lib/labels"
 import { Badge } from "@/components/Badge"
 import { DensityBar, StatRow } from "@/components/Stat"
 import { Eyebrow, Lead, Note } from "@/components/Page"
 import { evidenceText } from "@/lib/evidence"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 export const metadata = { title: "Tin đang mở cho người ở Việt Nam" }
 
@@ -16,8 +18,6 @@ const SHORT: Record<string, string> = {
 
 /** Trục phụ. Trục chính là công ty — xem business-model.md Mục 1. */
 export default async function OpenJobs() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
   const jobs = await all<Job & { company_name: string }>(
     `SELECT j.*, c.name AS company_name FROM job j

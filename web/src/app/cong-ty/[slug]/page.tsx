@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Suspense } from "react"
 import { notFound } from "next/navigation"
-import { cacheLife } from "next/cache"
 import type { Metadata } from "next"
 import { all, one, parseDeclared, parseLocked, parseReasons, type Company, type Job } from "@/lib/db"
 import { MECH, REASON, SCOPE_LABEL, SCOPE_TONE } from "@/lib/labels"
@@ -11,6 +10,9 @@ import { BarRow, Chip, Crumb, KV, KVTable, Section, ToneChip } from "@/component
 import { Loading, RowSkeleton } from "@/components/Skeleton"
 import { ReportButton } from "@/components/ReportButton"
 import { evidenceText } from "@/lib/evidence"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 const SHORT: Record<string, string> = {
   "Mở toàn cầu": "Toàn cầu",
@@ -32,8 +34,6 @@ export async function generateStaticParams() {
 }
 
 async function load(slug: string) {
-  "use cache"
-  cacheLife("days")
   const c = await one<Company>("SELECT * FROM company WHERE slug = ?", slug)
   if (!c) return null
   const jobs = await all<Job>(

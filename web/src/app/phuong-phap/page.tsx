@@ -1,6 +1,8 @@
-import { cacheLife } from "next/cache"
 import { meta } from "@/lib/db"
 import { Eyebrow, KV, KVTable, Lead } from "@/components/Page"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 export const metadata = { title: "Phương pháp" }
 
@@ -27,8 +29,6 @@ const FIXES = [
 ]
 
 export default async function Method() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
   const tot = +m.n_jobs
   const pct = (n: number) => `${((100 * n) / tot).toFixed(1)}%`

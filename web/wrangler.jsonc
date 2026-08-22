@@ -6,6 +6,6 @@
   "compatibility_flags": ["nodejs_compat"],
   "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
   "d1_databases": [
-    { "binding": "DB", "database_name": "viec-remote", "database_id": "PLACEHOLDER" }
+    { "binding": "DB", "database_name": "viec-remote", "database_id": "8406614a-8834-4cb4-942e-57c5cbb707f0" }
   ]
 }

@@ -1,8 +1,10 @@
 import Link from "next/link"
-import { cacheLife } from "next/cache"
 import { all, meta } from "@/lib/db"
 import { cname } from "@/lib/countries"
 import { BarRow, Eyebrow, Lead, Note } from "@/components/Page"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 export const metadata = {
   title: "Công ty khoá tuyển vào nước nào",
@@ -16,8 +18,6 @@ export const metadata = {
  * câu người ta thật sự hỏi: "công ty này khoá vào đâu?"
  */
 export default async function LockedIndex() {
-  "use cache"
-  cacheLife("days")
   const m = await meta()
   const rows = await all<{ code: string; n_comp: number; n_jobs: number }>(
     `SELECT code, count(*) n_comp, sum(n_jobs) n_jobs

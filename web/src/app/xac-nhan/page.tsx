@@ -3,7 +3,6 @@ import { getCloudflareContext } from "@opennextjs/cloudflare"
 import { Eyebrow, Lead, Note } from "@/components/Page"
 
 export const metadata = { title: "Xác nhận đăng ký", robots: { index: false } }
-export const instant = false
 
 /** Bước thứ hai của double opt-in. Chỉ sau bước này mới tính là đã đăng ký. */
 export default async function Confirm({

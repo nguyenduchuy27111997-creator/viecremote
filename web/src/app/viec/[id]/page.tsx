@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { Suspense } from "react"
 import { notFound } from "next/navigation"
-import { cacheLife } from "next/cache"
 import type { Metadata } from "next"
 import { all, one, type Job } from "@/lib/db"
 import { MECH, SCOPE_LABEL, SCOPE_TONE } from "@/lib/labels"
@@ -9,6 +8,9 @@ import { Badge } from "@/components/Badge"
 import { evidenceText } from "@/lib/evidence"
 import { Loading } from "@/components/Skeleton"
 import { ReportButton } from "@/components/ReportButton"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 /** Chỉ tin MỞ mới có trang riêng: tin bị loại đã có kết luận ngay trên trang công ty,
  *  dựng thêm 19.000 trang chỉ để nói "không" là lãng phí và làm loãng chỉ mục. */
@@ -20,8 +22,6 @@ export async function generateStaticParams() {
 }
 
 async function load(id: string) {
-  "use cache"
-  cacheLife("days")
   const j = await one<Job & { company_name: string }>(
     `SELECT j.*, c.name AS company_name FROM job j
      JOIN company c ON c.slug = j.company_slug

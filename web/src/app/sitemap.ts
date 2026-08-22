@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next"
-import { cacheLife } from "next/cache"
 import { all } from "@/lib/db"
 import { SITE_URL } from "@/lib/site"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 /**
  * Sứ mệnh là để người ta TÌM THẤY sự thật. Không có sitemap thì 3.666 trang
@@ -12,9 +14,6 @@ import { SITE_URL } from "@/lib/site"
  * lên 10.000 công ty vẫn còn dư. Vượt ngưỡng thì phải chuyển sang generateSitemaps.
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // `revalidate` không dùng chung với cacheComponents — dùng "use cache".
-  "use cache"
-  cacheLife("days")
   const now = new Date()
 
   const fixed: MetadataRoute.Sitemap = [

@@ -1,11 +1,13 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { cacheLife } from "next/cache"
 import type { Metadata } from "next"
 import { all, one, type Company } from "@/lib/db"
 import { cname, CNAME } from "@/lib/countries"
 import { Badge } from "@/components/Badge"
 import { Crumb, Eyebrow, Lead, Note, ToneChip } from "@/components/Page"
+
+// Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
+export const revalidate = 86400
 
 const SHORT: Record<string, string> = {
   "Tuyển toàn cầu": "Toàn cầu",
@@ -30,7 +32,6 @@ const SHORT: Record<string, string> = {
  * (`dynamicParams` không dùng chung với cacheComponents được — cùng họ với
  * `revalidate`. `instant = false` là lối thoát mà chính thông báo lỗi chỉ ra.)
  */
-export const instant = false
 
 export async function generateStaticParams() {
   const rows = await all<{ code: string }>("SELECT DISTINCT code FROM locked")
@@ -38,8 +39,6 @@ export async function generateStaticParams() {
 }
 
 async function load(code: string) {
-  "use cache"
-  cacheLife("days")
   const up = code.toUpperCase()
   if (!CNAME[up] && up.length > 6) return null
   const rows = await all<Company & { locked_jobs: number }>(

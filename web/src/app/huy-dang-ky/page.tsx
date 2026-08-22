@@ -3,7 +3,6 @@ import { getCloudflareContext } from "@opennextjs/cloudflare"
 import { Eyebrow, Lead } from "@/components/Page"
 
 export const metadata = { title: "Huỷ đăng ký", robots: { index: false } }
-export const instant = false
 
 /**
  * Huỷ đăng ký = XOÁ HẲN bản ghi, không phải đánh dấu.
