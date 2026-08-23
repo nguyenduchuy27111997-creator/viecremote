@@ -6,6 +6,11 @@ import { useEffect, useRef, useState } from "react"
 /**
  * Phía CẦU — sản phẩm Đ3 (legal-options.md Mục 3).
  *
+ * KHÔNG phải cổng đổi email lấy báo cáo (sửa 24/08). Toàn bộ báo cáo nằm công
+ * khai trên trang, không cần đăng ký gì — bắt đổi email mới được đọc là tự tạo
+ * ra một việc phải làm tay cho người vận hành, đúng thứ mô hình này tránh.
+ * Form giờ chỉ để báo khi kho ĐỔI, tức là thứ không đọc sẵn trên trang được.
+ *
  * Đây là con đường duy nhất có doanh thu mà không cần giấy phép nào, và lý do
  * là NHỮNG GÌ NÓ KHÔNG LÀM: không thu dữ liệu kỹ sư, không giới thiệu ai, không
  * tư vấn cho người lao động. Bán nghiên cứu về chính sách tuyển dụng của công
@@ -53,8 +58,8 @@ export function Inquiry() {
   if (state === "done")
     return (
       <p role="status" className="rounded-md border border-open/35 bg-open-bg px-4 py-3 text-[13px] text-open">
-        Received. You will get the current brief by email, plus the country breakdown for the
-        markets you named. No newsletter, no follow-up sequence.
+        Noted. You will hear from us when a company opens or closes to Vietnam — not on a
+        schedule, only when the corpus actually changes. Nothing else.
       </p>
     )
 
@@ -103,11 +108,11 @@ export function Inquiry() {
         disabled={state === "sending"}
         className="mt-4 rounded-sm border border-line bg-raised px-4 py-[11px] text-[13px] leading-5 transition-colors hover:border-field disabled:opacity-50"
       >
-        {state === "sending" ? "Sending…" : "Request the brief"}
+        {state === "sending" ? "Sending…" : "Notify me on changes"}
       </button>
 
       <p className="mt-3 max-w-[54ch] text-[12px] leading-relaxed text-text-3">
-        We store your company name and work email to send the brief and nothing else — no
+        We store your company name and work email to send those alerts and nothing else — no
         newsletter, no resale, no tracking pixel. Ask and it is deleted.{" "}
         <Link className="underline underline-offset-2 hover:text-text-2" href="/rieng-tu">
           How data is handled
