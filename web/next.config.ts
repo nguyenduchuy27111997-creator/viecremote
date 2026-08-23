@@ -15,6 +15,16 @@ import type { NextConfig } from "next"
  * stream vỏ tĩnh trước, nhưng kho vốn dựng lại mỗi ngày nên gần như không mất gì.
  */
 const nextConfig: NextConfig = {
+  // Pivot 24/08: trục sản phẩm phía cầu đổi từ Việt Nam sang Đông Nam Á.
+  // URL cũ đã nằm trong sitemap đã nộp và có thể đã được chia sẻ — chuyển
+  // hướng vĩnh viễn thay vì để 404 và mất hết giá trị đã tích.
+  async redirects() {
+    return [
+      { source: "/hiring-in-vietnam", destination: "/hiring-in-sea/vietnam", permanent: true },
+      { source: "/hiring-in-vietnam/:slug", destination: "/company/:slug", permanent: true },
+    ]
+  },
+
   // Bật Cache Components: PPR thành mặc định, và caching chuyển sang opt-in
   // qua directive "use cache" thay vì ngầm định.
   // D1 cục bộ (miniflare) là một tiến trình duy nhất; 11 worker build đập cùng

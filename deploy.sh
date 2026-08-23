@@ -140,7 +140,7 @@ else
     }
 
     FAIL=0
-    for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /hiring-in-vietnam /hiring-in-vietnam/snowflake /sitemap.xml /robots.txt; do
+    for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /hiring-in-sea /hiring-in-sea/vietnam /hiring-in-sea/philippines /company/snowflake /sitemap.xml /robots.txt; do
         if probe "$URL$p" 200; then printf '  %-32s 200\n' "$p"
         else printf '  %-32s %s  ← hỏng\n' "$p" "$CODE"; FAIL=1; fi
     done
@@ -182,7 +182,7 @@ cat <<EOF
        Chưa có thì honeypot + kiểm thời gian vẫn chạy.
      - L2 (mạng lưới): điều kiện đã rõ (Giấy phép + ký quỹ 300 triệu + đồng ý theo
        từng lần chuyển giao), nhưng hai câu pháp lý còn chặn. Xem prd.md Mục 2.
-       Đường có doanh thu ít rủi ro nhất: /hiring-in-vietnam (legal-options.md Đ3 — đọc
+       Đường có doanh thu ít rủi ro nhất: /hiring-in-sea (legal-options.md Đ3 — đọc
        khối sửa lỗi 23/08 trước khi thu tiền).
 
 EOF

@@ -81,7 +81,7 @@ export const CNAME: Record<string, string> = {
 export const cname = (c: string) => CNAME[c] ?? c
 
 /**
- * Tên nước bằng tiếng Anh — cho trang phía cầu (/hiring-in-vietnam), nơi người
+ * Tên nước bằng tiếng Anh — cho trang phía cầu (/hiring-in-sea), nơi người
  * đọc là công ty nước ngoài.
  *
  * Dùng Intl thay vì bảng ánh xạ thứ hai: runtime đã có sẵn toàn bộ ISO 3166,

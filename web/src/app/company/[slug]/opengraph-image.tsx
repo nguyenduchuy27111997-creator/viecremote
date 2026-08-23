@@ -6,7 +6,9 @@ export const alt = "Where this company's remote postings allow hiring"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
-const SEA = new Set(["PH", "ID", "TH", "MY"])
+import { NEIGHBOURS } from "@/lib/sea"
+
+const SEA = new Set(NEIGHBOURS)
 
 const TONE = {
   ok: { fg: "#6fd5ab", bg: "#002b1c", label: "Can hire in Vietnam" },

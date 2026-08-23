@@ -2,6 +2,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { all, one, parseLocked, type Company } from "@/lib/db"
 import { ename } from "@/lib/countries"
+import { NEIGHBOURS } from "@/lib/sea"
 import { Eyebrow, Lead, Note, Section } from "@/components/Page"
 
 export const revalidate = 86400
@@ -10,7 +11,7 @@ export const revalidate = 86400
 export const dynamicParams = true
 
 /** PH/ID/TH/MY — tín hiệu mạnh nhất trong kho. Xem tools/prospects.py. */
-const SEA = new Set(["PH", "ID", "TH", "MY"])
+const NEAR = new Set(NEIGHBOURS)
 
 export async function generateStaticParams() {
   // Chỉ dựng sẵn nhóm đáng dựng: đã tuyển ở ĐNA. Đây là nhóm mà trang này có
@@ -49,7 +50,7 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
   if (!c) notFound()
 
   const locked = parseLocked(c.locked)
-  const sea = locked.filter(([code]) => SEA.has(code))
+  const sea = locked.filter(([code]) => NEAR.has(code))
   const totals = await one<{ total: number; open: number }>(
     "SELECT count(*) total, sum(verdict='ok') open FROM company",
   )
@@ -74,8 +75,8 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
   return (
     <div lang="en">
       <p className="font-mono text-[11.5px] text-text-3">
-        <Link className="hover:underline" href="/hiring-in-vietnam">
-          ← Market brief
+        <Link className="hover:underline" href="/hiring-in-sea">
+          ← Southeast Asia
         </Link>
       </p>
 
@@ -149,11 +150,11 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
                 {locked.map(([code, n]) => (
                   <tr
                     key={code}
-                    className={`border-b border-line last:border-0 ${SEA.has(code) ? "text-open" : ""}`}
+                    className={`border-b border-line last:border-0 ${NEAR.has(code) ? "text-open" : ""}`}
                   >
                     <td className="px-4 py-3">
                       {ename(code)}
-                      {SEA.has(code) && <span className="ml-2 font-mono text-[11px]">SEA</span>}
+                      {NEAR.has(code) && <span className="ml-2 font-mono text-[11px]">SEA</span>}
                     </td>
                     <td className="px-4 py-3 text-right font-mono tabular-nums">{num(n)}</td>
                   </tr>
@@ -182,7 +183,7 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
         <Note>
           Want the full picture — every company, the mechanisms they use, and what published terms
           imply about rates?{" "}
-          <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/hiring-in-vietnam">
+          <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/hiring-in-sea">
             Request the market brief
           </Link>
           .

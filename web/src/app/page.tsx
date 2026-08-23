@@ -140,7 +140,7 @@ async function ForCompanies() {
         an EOR, adding it is a policy edit, not a project.
       </p>
       <Link
-        href="/hiring-in-vietnam"
+        href="/hiring-in-sea"
         className="mt-4 inline-block rounded-sm border border-line bg-raised px-4 py-[11px] text-[13px] leading-5 transition-colors hover:border-field"
       >
         Read the market brief →

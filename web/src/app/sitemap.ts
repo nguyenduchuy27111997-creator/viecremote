@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next"
 import { all } from "@/lib/db"
 import { SITE_URL } from "@/lib/site"
+import { SEA } from "@/lib/sea"
 
 // Kho dựng lại mỗi ngày; ISR thường thay cho "use cache".
 export const revalidate = 86400
@@ -22,7 +23,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/vi-sao-bi-loai`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${SITE_URL}/khoa`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/lam-gi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/hiring-in-vietnam`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/hiring-in-sea`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    ...SEA.map((c) => ({
+      url: `${SITE_URL}/hiring-in-sea/${c.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: c.scored ? 0.9 : 0.7,
+    })),
     { url: `${SITE_URL}/api`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/rieng-tu`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
     { url: `${SITE_URL}/phuong-phap`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -36,7 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   )
   const codes = await all<{ code: string }>("SELECT DISTINCT code FROM locked")
 
-  // Trang gương soi tiếng Anh — chỉ những công ty CÓ mệnh đề địa lý. Công ty
+  // Trang gương soi tiếng Anh (/company/[slug]) — chỉ công ty CÓ mệnh đề địa lý. Công ty
   // không có mệnh đề nào thì trang chỉ toàn số 0; đưa vào sitemap là tự nộp
   // hàng nghìn trang mỏng cho Google, hại nhiều hơn lợi.
   // Đã tuyển ở ĐNA lên ưu tiên cao nhất: đó là nhóm trang có điều đáng nói.
@@ -58,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: c.verdict === "ok" ? 0.8 : 0.4,
     })),
     ...mirrors.map((m) => ({
-      url: `${SITE_URL}/hiring-in-vietnam/${m.slug}`,
+      url: `${SITE_URL}/company/${m.slug}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: m.sea ? 0.9 : 0.5,

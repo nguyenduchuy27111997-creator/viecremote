@@ -46,7 +46,7 @@ const NAV = [
   { href: "/phuong-phap", label: "Phương pháp" },
   // Trang duy nhất cho phía CẦU, và duy nhất bằng tiếng Anh — nhãn giữ tiếng Anh
   // để không ai bấm nhầm rồi gặp một trang mình không đọc được.
-  { href: "/hiring-in-vietnam", label: "For companies" },
+  { href: "/hiring-in-sea", label: "For companies" },
 ]
 
 /**

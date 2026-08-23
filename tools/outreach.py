@@ -34,7 +34,7 @@ DB = Path(__file__).resolve().parent.parent / "data" / "app.db"
 CODE = {v: k.title() for k, v in ISO.items()}
 CODE.update({"US": "the US", "GB": "the UK", "AE": "the UAE", "PH": "the Philippines",
              "NL": "the Netherlands", "CZ": "Czechia"})
-SITE = "https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam"
+SITE = "https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea"
 
 
 def name_of(code):

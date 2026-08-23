@@ -37,7 +37,7 @@ export async function Lookup({ q }: { q?: string }) {
 
   return (
     <div lang="en">
-      <form action="/hiring-in-vietnam" method="get" className="max-w-[52ch]">
+      <form action="/hiring-in-sea" method="get" className="max-w-[52ch]">
         <label htmlFor="lk" className="font-mono text-[11px] uppercase tracking-wider text-text-3">
           Look up your own company
         </label>
@@ -78,7 +78,7 @@ export async function Lookup({ q }: { q?: string }) {
                 return (
                   <li key={h.slug}>
                     <Link
-                      href={`/hiring-in-vietnam/${h.slug}`}
+                      href={`/company/${h.slug}`}
                       className="flex flex-wrap items-baseline gap-x-3 gap-y-1 px-4 py-3 text-[13.5px] transition-colors hover:bg-raised"
                     >
                       <span className="font-medium">{h.name}</span>
