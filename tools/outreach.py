@@ -119,12 +119,30 @@ def stats(db):
     }
 
 
+# Loại khỏi DANH SÁCH GỬI THƯ, KHÔNG loại khỏi kho.
+#
+# Phân biệt này quan trọng: cả ba vẫn thật sự mở cho Việt Nam, nên con số
+# "9/200 công ty có cơ chế mở cho VN" giữ nguyên — đó là dữ kiện đo được.
+# Chỉ là gửi thư chào hàng cho họ thì vô nghĩa.
+SKIP = {
+    "remotecom": "bán EOR — đối thủ/nhà cung cấp, không phải khách",
+    "remotereferralboardinternaluseonly": "bảng nội bộ của chính Remote.com — trùng",
+    "enveritas": "phi lợi nhuận, 4 tin — không tuyển ở quy mô cần mua nghiên cứu",
+}
+
+
 def pick(db, proof, n):
     v = "verdict='ok'" if proof else "verdict='no'"
-    return db.execute(
+    rows = db.execute(
         f"""SELECT name, mechanism, n_jobs, locked FROM company
             WHERE mechanism <> 'unknown' AND {v}
-            ORDER BY n_jobs DESC LIMIT ?""", (n,)).fetchall()
+            ORDER BY n_jobs DESC""").fetchall()
+    keep, dropped = [], []
+    for r in rows:
+        (dropped if r[0].lower() in SKIP else keep).append(r)
+        if len(keep) == n:
+            break
+    return keep, dropped
 
 
 def target_mail(name, mech, n_jobs, where, s):
@@ -210,13 +228,18 @@ def main():
 
     db = sqlite3.connect(f"file:{a.db}?mode=ro", uri=True)
     s = stats(db)
-    rows = pick(db, a.proof, a.n)
+    rows, dropped = pick(db, a.proof, a.n)
     write = proof_mail if a.proof else target_mail
 
     print(f"\n{'='*78}\n{len(rows)} thư — ĐỌC LẠI TRƯỚC KHI GỬI. Kho không có địa chỉ, tự tìm.\n{'='*78}")
 
     # Tên suy từ slug có thể sai. Nêu ngay đầu ra thay vì để lẫn trong thư —
     # sai tên ở dòng đầu thư lạnh là mất luôn người đọc.
+    if dropped:
+        print(f"\n   Bỏ qua {len(dropped)} công ty (vẫn nằm trong kho, chỉ không gửi thư):")
+        for slug, *_ in dropped:
+            print(f"     {slug:<40} {SKIP[slug.lower()]}")
+
     unsure = [(slug, display(slug)[0]) for slug, *_ in rows if not display(slug)[1]]
     if unsure:
         print(f"\n⚠  {len(unsure)}/{len(rows)} tên suy từ slug, CHƯA kiểm chứng — sửa trước khi gửi:")
