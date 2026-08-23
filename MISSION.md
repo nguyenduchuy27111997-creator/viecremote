@@ -14,7 +14,7 @@ Lý do đổi và cái giá: [PIVOT.md](PIVOT.md)
 > liệu cá nhân"* không ([legal-research.md](legal-research.md) Mục 7).
 >
 > Bỏ 300 triệu ký quỹ trước khi trả lời được hai câu đó là đặt cược sai thứ tự. Nên **Đ3 —
-> bán nghiên cứu cho phía cầu — đi trước**: có doanh thu, không cần giấy phép nào, và trả lời
+> bán nghiên cứu cho phía cầu — đi trước**: rủi ro pháp lý thấp hơn L2 nhiều, và trả lời
 > câu quan trọng hơn mọi câu pháp lý — *có ai trả tiền không*.
 > Bốn cấu trúc hợp pháp và cửa nào đã đóng: [legal-options.md](legal-options.md).
 

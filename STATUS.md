@@ -9,7 +9,7 @@
 | | Là gì | Trạng thái | Cần giấy phép? |
 |---|---|---|---|
 | **L1** | Tra cứu minh bạch — công ty nào tuyển được ở VN | ✅ **Chạy**, precision 97,5% | Không |
-| **Đ3** | Bán nghiên cứu cho công ty nước ngoài | ✅ **Chạy** — `/hiring-in-vietnam`, báo cáo, 13 thư chào hàng soạn sẵn | **Không** |
+| **Đ3** | Bán nghiên cứu cho công ty nước ngoài | ✅ **Chạy** — `/hiring-in-vietnam`, báo cáo, 13 thư chào hàng soạn sẵn | Miễn phí: không · **Thu tiền: vùng xám** — [legal-options.md](legal-options.md) Đ3 |
 | **L2** | Mạng lưới — hồ sơ kỹ sư, giới thiệu có thu phí | 🔒 Đã đặc tả, **hai câu pháp lý còn chặn** | Có — [prd.md](prd.md) Mục 2 |
 
 **Vì sao Đ3 trước:** L2 cần Giấy phép + ký quỹ 300 triệu, mà hai câu pháp lý chưa có lời giải.

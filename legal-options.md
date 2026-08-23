@@ -120,7 +120,31 @@ Phổ biến trong HR-tech, hợp pháp, không phải vỏ bọc — miễn là
 **Cảnh báo:** nếu hợp đồng ghi đối tác giới thiệu nhưng thực tế nền tảng quyết định ghép ai với
 ai và thu tiền, đây là cột phải của Mục 0. Phân vai phải khớp việc làm thật.
 
-### Đ3 — Chỉ phục vụ phía cầu. Ngoài cả hai chế độ.
+### Đ3 — Chỉ phục vụ phía cầu. An toàn hơn nhiều, nhưng KHÔNG ngoài vòng.
+
+> **Sửa lỗi 23/08 — bản trước nói quá chắc.** Tôi đã viết Đ3 "ngoài cả hai chế độ" và "không
+> cần giấy phép nào". Đọc kỹ **Điều 20 khoản 1 Luật Việc làm** thì không đứng vững:
+>
+> > **1.** Thông tin thị trường lao động bao gồm:
+> > **a)** Thông tin về cung lao động, **cầu lao động, kết nối cung - cầu lao động**;
+> > […] **c)** Thông tin về xu hướng tìm kiếm việc làm và **nhu cầu sử dụng lao động**;
+> > **d)** Thông tin về **tiền lương và thu nhập** của người lao động.
+>
+> Báo cáo Đ3 bán đúng (a), (c) và (d). Và Điều 27.1(c) xếp *"thu thập, phân tích, lưu trữ,
+> cung cấp thông tin về thị trường lao động"* vào **dịch vụ việc làm** — mà Điều 27.4 buộc
+> hoạt động **kinh doanh** dịch vụ việc làm bằng thương mại điện tử phải có Giấy phép.
+>
+> **Lập luận ngược, thật chứ không phải bào chữa:** Điều 19–21 nằm trong chương về *hệ thống
+> thông tin thị trường lao động của Nhà nước* — "quản lý tập trung, thống nhất trên phạm vi cả
+> nước", kết nối cơ sở dữ liệu quốc gia, và Điều 20.2 buộc các Bộ nộp dữ liệu về Bộ Nội vụ.
+> Chương đó điều chỉnh **hệ thống nhà nước**, không phải nghiên cứu tư nhân. Thêm nữa Đ3 bán
+> **chính sách tuyển dụng của công ty nước ngoài, cho công ty nước ngoài** — không phải dữ liệu
+> lao động Việt Nam bán cho thị trường Việt Nam.
+>
+> **Xếp lại thật:** Đ3 **miễn phí** thì gần như chắc chắn ngoài vòng (thiếu yếu tố *kinh doanh*).
+> Đ3 **có thu tiền** thì nằm ở vùng xám, và là câu hỏi luật sư **thứ ba**. Rủi ro thấp hơn L2
+> nhiều — chế tài vi phạm điều kiện kinh doanh khác hẳn 10× doanh thu của mua bán dữ liệu — nhưng
+> không bằng không.
 
 **Không chạm dữ liệu kỹ sư. Không giới thiệu ai.** Bán cho công ty nước ngoài đúng thứ L1 đã
 biết: nước nào tuyển được, rào cản gì, mặt bằng lương, so sánh EOR, cách vào thị trường Việt Nam.
