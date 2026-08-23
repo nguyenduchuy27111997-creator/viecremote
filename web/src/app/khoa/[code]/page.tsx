@@ -24,13 +24,15 @@ const SHORT: Record<string, string> = {
  * status 200 TRƯỚC khi biết param có hợp lệ không — nên `notFound()` stream sau
  * không đổi được status. `/khoa/zzz` trả 200, và Google sẽ lập chỉ mục rác.
  *
- * Ở đây tập param là ĐÓNG và nhỏ (104) nên dựng hết, và dùng `instant = false`
- * để route CHẶN cho tới khi biết param — đổi lại điều hướng không còn tức thì,
- * nhưng status code đúng. Với 104 trang dựng sẵn thì gần như không ai chạm vào
- * đường chặn đó. Trang công ty KHÔNG làm vậy được: 3.666 slug và còn tăng.
+ * Ở đây tập param là ĐÓNG và nhỏ (104) nên dựng hết bằng generateStaticParams,
+ * và chỉ khai `revalidate`. Param ngoài danh sách ra 404 đúng vì notFound().
  *
- * (`dynamicParams` không dùng chung với cacheComponents được — cùng họ với
- * `revalidate`. `instant = false` là lối thoát mà chính thông báo lỗi chỉ ra.)
+ * LỊCH SỬ, đừng thử lại (24/08):
+ *   - `instant = false` từng là lối thoát khi cacheComponents còn bật. Nay
+ *     cacheComponents ĐÃ TẮT (xem next.config.ts — nó treo Worker), nên khai
+ *     `instant` làm HỎNG BUILD. Comment cũ ở đây mô tả nó như đang dùng và đã
+ *     làm mất một lần build.
+ *   - `dynamicParams = false` build được nhưng Worker trả 404 cho mọi trang.
  */
 
 export async function generateStaticParams() {

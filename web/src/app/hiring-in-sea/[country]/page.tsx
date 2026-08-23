@@ -5,8 +5,13 @@ import { SEA, SEA_CODES, NEIGHBOURS, bySlug } from "@/lib/sea"
 import { Eyebrow, Lead, Note, Section } from "@/components/Page"
 import { Inquiry } from "@/components/Inquiry"
 
+// Chỉ `revalidate` — đúng mẫu của mọi route động khác trong dự án.
+//
+// ĐÃ THỬ VÀ HỎNG, ghi lại để không ai thử lại:
+//   dynamicParams = false  -> build sinh đủ 6 trang nhưng Worker trả 404 hết
+//   instant = false        -> build lỗi, nó đòi cacheComponents mà dự án đã tắt
+// Param ngoài danh sách vẫn ra 404 đúng, vì bySlug() trả undefined -> notFound().
 export const revalidate = 86400
-export const dynamicParams = false
 
 export async function generateStaticParams() {
   return SEA.map((c) => ({ country: c.slug }))
