@@ -128,7 +128,7 @@ if [ -z "$URL" ]; then
     echo "  ! không tự tìm được URL — kiểm tay trên dashboard"
 else
     FAIL=0
-    for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /hiring-in-vietnam /sitemap.xml /robots.txt; do
+    for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /hiring-in-vietnam /hiring-in-vietnam/snowflake /sitemap.xml /robots.txt; do
         CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "$URL$p")
         printf '  %-16s %s\n' "$p" "$CODE"
         [ "$CODE" = "200" ] || FAIL=1

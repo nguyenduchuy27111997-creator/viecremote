@@ -2,6 +2,7 @@ import { all, one } from "@/lib/db"
 import { ename } from "@/lib/countries"
 import { BarRow, Eyebrow, Lead, Note, Section } from "@/components/Page"
 import { Inquiry } from "@/components/Inquiry"
+import { Lookup } from "@/components/Lookup"
 
 export const revalidate = 86400
 
@@ -25,7 +26,12 @@ export const metadata = {
  * hứa giới thiệu, không thu hồ sơ. Mục "What this is not" ở cuối không phải
  * khiêm tốn — nó là ranh giới pháp lý viết ra thành chữ.
  */
-export default async function HiringInVietnam() {
+export default async function HiringInVietnam({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string }>
+}) {
+  const { q } = await searchParams
   const c = await one<{ total: number; open: number; closed: number; unk: number }>(
     `SELECT count(*) total,
             sum(verdict='ok')  open,
@@ -72,6 +78,15 @@ export default async function HiringInVietnam() {
           any individual.
         </Lead>
       </div>
+
+      <Section
+        title="Start with your own postings"
+        hint="The fastest way to see what this corpus holds is to look yourself up."
+      >
+        <div className="mt-5">
+          <Lookup q={q} />
+        </div>
+      </Section>
 
       <Section
         title="Remote is not global"
