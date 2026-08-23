@@ -65,6 +65,30 @@ jobs:
           print("6/6 ca đối kháng bị chặn")
           PY
 
+      - name: Cổng L2 C6..C9 — chạy cả khi L2 đang tắt
+        # Thứ nó canh là LƯỢC ĐỒ và MÃ NGUỒN, không phải dữ liệu. Lúc tắt thì
+        # dữ liệu rỗng, nhưng ràng buộc đã phải đúng từ trước — không ai sửa
+        # khoá ngoại vào đúng hôm bật.
+        run: python3 tools/gates_l2.py
+
+      - name: Cổng L2 chặn được vi phạm thật
+        run: |
+          set -e
+          probe=web/src/lib/__ci_probe.ts
+          trap 'rm -f "$probe"' EXIT
+
+          echo 'export const sql = "UPDATE company SET verdict = 1"' > "$probe"
+          if python3 tools/gates_l2.py >/dev/null 2>&1; then
+            echo "CỔNG KHÔNG CHẶN: C9 sửa nhãn tay"; exit 1
+          fi
+          echo "  ✓ chặn C9 sửa nhãn tay"
+
+          echo 'export const p = { price_id: "x", engineer: true }' > "$probe"
+          if python3 tools/gates_l2.py >/dev/null 2>&1; then
+            echo "CỔNG KHÔNG CHẶN: C7 thu tiền kỹ sư"; exit 1
+          fi
+          echo "  ✓ chặn C7 thu tiền kỹ sư"
+
   web:
     name: Kiểm kiểu và build web
     runs-on: ubuntu-latest

@@ -145,6 +145,91 @@ CREATE TABLE IF NOT EXISTS inquiry (
   handled    INTEGER NOT NULL DEFAULT 0
 );
 CREATE INDEX IF NOT EXISTS inquiry_open ON inquiry(handled, created_at DESC);
+
+-- ------------------------------------------------------------------ L2, TẮT
+-- Bảng dựng sẵn, KHÔNG có dòng nào cho tới khi L2_ENABLED được bật (web/src/lib/l2.ts).
+--
+-- Ràng buộc C6 ("không hồ sơ nào rời hệ thống mà thiếu đồng ý cho ĐÚNG công ty
+-- đó") được ép bằng KHOÁ NGOẠI GHÉP, không phải bằng kiểm tra ở tầng ứng dụng:
+-- transfer trỏ tới (consent_id, company_slug) và (agreement_id, company_slug),
+-- nên không thể ghi một lần chuyển giao mà đồng ý lại thuộc công ty khác.
+-- D1 CÓ bật khoá ngoại, khác SQLite mặc định — nên đây là ràng buộc thật.
+
+CREATE TABLE IF NOT EXISTS engineer (
+  id          TEXT PRIMARY KEY,
+  email       TEXT NOT NULL UNIQUE,
+  created_at  TEXT NOT NULL,
+  -- Điều 25.1.c Luật 91/2025: không tuyển thì phải xoá. Cột này là hạn chót,
+  -- không phải gợi ý — tools/gates_l2.py chặn build nếu quá hạn mà còn dữ liệu.
+  purge_after TEXT NOT NULL
+);
+
+-- Đồng ý THEO TỪNG LẦN CHUYỂN GIAO, đúng NĐ 356 Điều 7.3.a. Một dòng cho một
+-- (kỹ sư, công ty, mục đích). KHÔNG có dạng "đồng ý cho mọi đối tác" — muốn có
+-- cũng không biểu diễn được trong lược đồ này, và đó là chủ ý.
+CREATE TABLE IF NOT EXISTS consent (
+  id            TEXT PRIMARY KEY,
+  engineer_id   TEXT NOT NULL REFERENCES engineer(id) ON DELETE CASCADE,
+  company_slug  TEXT NOT NULL,
+  purpose       TEXT NOT NULL,
+  -- Nguyên văn màn hình kỹ sư đã đọc lúc bấm đồng ý. Điều 7.3.a buộc họ "được
+  -- biết chính xác mục đích chuyển giao, tổ chức tiếp nhận" — lưu lại thì mới
+  -- chứng minh được là đã cho biết.
+  shown_text    TEXT NOT NULL,
+  granted_at    TEXT NOT NULL,
+  revoked_at    TEXT,
+  UNIQUE (id, company_slug)
+);
+CREATE INDEX IF NOT EXISTS consent_eng ON consent(engineer_id, granted_at DESC);
+
+-- Thoả thuận với bên nhận ở nước ngoài. Bảy cột nội dung = bảy mục a..g của
+-- NĐ 356 Điều 7.1, NOT NULL từng cái: thiếu một mục thì không ghi được dòng nào.
+CREATE TABLE IF NOT EXISTS company_agreement (
+  id             TEXT PRIMARY KEY,
+  company_slug   TEXT NOT NULL,
+  purpose        TEXT NOT NULL,   -- a) mục đích chuyển giao
+  subjects_types TEXT NOT NULL,   -- b) đối tượng chủ thể và loại dữ liệu
+  retention      TEXT NOT NULL,   -- c) thời hạn xử lý, yêu cầu xoá sau khi xong
+  legal_basis    TEXT NOT NULL,   -- d) cơ sở pháp lý
+  protection     TEXT NOT NULL,   -- đ) trách nhiệm bảo vệ dữ liệu
+  subject_rights TEXT NOT NULL,   -- e) trách nhiệm thực hiện quyền của chủ thể
+  breach_duty    TEXT NOT NULL,   -- g) trách nhiệm phối hợp khi có vi phạm
+  signed_at      TEXT NOT NULL,
+  UNIQUE (id, company_slug)
+);
+
+-- Lần chuyển giao thật. Khoá ngoại ghép ép cả hai điều kiện cùng lúc:
+-- đồng ý phải thuộc đúng công ty đó, VÀ thoả thuận phải thuộc đúng công ty đó.
+--
+-- ON DELETE CASCADE là quyết định có cân nhắc, không phải cho tiện: quyền được
+-- xoá (Điều 25.1.c) THẮNG nhu cầu lưu vết. Lý do lưu vết vẫn đủ mà không cần
+-- giữ dòng này: Điều 20.3 nói hồ sơ đánh giá tác động làm 01 LẦN cho suốt thời
+-- gian hoạt động, không phải mỗi lần chuyển một hồ sơ. Vết cần cho thanh tra
+-- nằm ở transfer_audit dưới đây — nơi không có dữ liệu cá nhân nào để mà xoá.
+CREATE TABLE IF NOT EXISTS transfer (
+  id            TEXT PRIMARY KEY,
+  company_slug  TEXT NOT NULL,
+  consent_id    TEXT NOT NULL,
+  agreement_id  TEXT NOT NULL,
+  transferred_at TEXT NOT NULL,
+  FOREIGN KEY (consent_id,   company_slug) REFERENCES consent(id, company_slug)
+    ON DELETE CASCADE,
+  FOREIGN KEY (agreement_id, company_slug) REFERENCES company_agreement(id, company_slug)
+);
+CREATE INDEX IF NOT EXISTS transfer_when ON transfer(transferred_at DESC);
+
+-- Vết chỉ-thêm, KHÔNG có dữ liệu cá nhân: công ty nào, theo thoả thuận nào,
+-- lúc nào. Không tham chiếu tới kỹ sư, nên không nằm trong phạm vi quyền xoá
+-- và cũng không cần cascade. Đây là thứ trả lời được câu thanh tra hỏi —
+-- "đã chuyển ra nước ngoài bao nhiêu lần, theo cơ sở nào" — sau khi mọi hồ sơ
+-- cá nhân đã bị xoá đúng luật.
+CREATE TABLE IF NOT EXISTS transfer_audit (
+  id             TEXT PRIMARY KEY,
+  company_slug   TEXT NOT NULL,
+  agreement_id   TEXT NOT NULL,
+  transferred_at TEXT NOT NULL
+);
+CREATE INDEX IF NOT EXISTS transfer_audit_when ON transfer_audit(transferred_at DESC);
 """
 
 SCHEMA = TABLES.replace("{S}", "") + INDEXES + USER_TABLES

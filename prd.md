@@ -149,16 +149,28 @@ Nằm ở `tools/gates.py`, **cả hai luồng xuất bản cùng gọi**. Vi ph
 
 Đã kiểm đối kháng sáu ca; CI chạy lại mỗi lần push.
 
-### 5.2 L2 — bốn ràng buộc mới, chưa có cổng
+### 5.2 L2 — bốn cổng, ĐÃ CÓ, chạy cả khi L2 tắt
 
-Đây là món nợ: **chưa có cơ chế nào ép chúng.** Phải build cùng lúc với L2, không phải sau.
+Nằm ở `tools/gates_l2.py`, CI gọi mỗi lần push. Món nợ "chưa có cơ chế nào ép chúng" **đã trả**
+(23/08) — dựng cùng lúc với lược đồ L2, đúng như ghi chú cũ yêu cầu.
+
+Cổng canh **lược đồ và mã nguồn**, không canh dữ liệu — nên chạy được lúc L2 còn tắt và kho L2
+còn rỗng. Không ai sửa khoá ngoại vào đúng hôm bật.
 
 | # | Ràng buộc | Kiểm thế nào |
 |---|---|---|
-| **C6** | Không hồ sơ nào rời hệ thống mà thiếu bản ghi đồng ý cho **đúng công ty đó** | Chặn ở tầng dữ liệu, không phải tầng giao diện |
-| **C7** | Kỹ sư không bao giờ bị thu tiền | Không có luồng thanh toán nào hướng vào kỹ sư |
-| **C8** | Rút lui = xoá hẳn trong 24h | Kiểm tự động |
-| **C9** | Tầng minh bạch không đổi vì công ty trả tiền | Nhãn công ty do pipeline sinh, **không có đường sửa tay** |
+| **C6** | Không hồ sơ nào rời hệ thống mà thiếu đồng ý cho **đúng công ty đó** | **Khoá ngoại ghép** `transfer(consent_id, company_slug)` → `consent(id, company_slug)` và tương tự với `company_agreement`. Cổng THỬ VI PHẠM trên bản sao trong bộ nhớ — đọc DDL là chưa đủ |
+| **C7** | Kỹ sư không bao giờ bị thu tiền | Quét mã web: tệp nào có cả từ khoá thanh toán lẫn khái niệm kỹ sư/ứng viên ⇒ đỏ |
+| **C8** | Rút lui = xoá hẳn trong 24h | Truy vấn: không lần chuyển giao nào sau `revoked_at`; không hồ sơ nào quá `purge_after` |
+| **C9** | Tầng minh bạch không đổi vì công ty trả tiền | Quét mã web tìm mọi `INSERT/UPDATE/DELETE` vào `company`/`job` — đúng ra phải là **không có câu nào** |
+
+Cả bốn đã kiểm đối kháng: bỏ khoá ngoại, thêm luồng thu tiền, thêm đường sửa nhãn, đặt cứng
+công tắc — mỗi ca đều làm cổng đỏ.
+
+**Quyền xoá thắng nhu cầu lưu vết.** `transfer` có `ON DELETE CASCADE`; vết cho thanh tra nằm ở
+`transfer_audit` — chỉ công ty, thoả thuận, thời điểm, **không tham chiếu tới người nào**, nên
+không thuộc phạm vi quyền xoá. Căn cứ: Điều 20.3 Luật 91/2025 — hồ sơ đánh giá tác động làm
+**01 lần** cho suốt thời gian hoạt động, không phải mỗi lần chuyển một hồ sơ.
 
 **C9 là ràng buộc khó nhất** vì nó chống lại chính động cơ kinh tế. Cách ép duy nhất đáng tin:
 giữ nhãn công ty hoàn toàn do `tools/score_rules.py` sinh, và **không xây giao diện sửa nhãn nào cả**.
