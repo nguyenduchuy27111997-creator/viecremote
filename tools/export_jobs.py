@@ -50,6 +50,15 @@ def score(job):
     if cl:
         found.append(("DQ-02", cl[1][:220], "description"))
 
+    # Mệnh đề "chỉ nhận ứng viên <nơi chốn>". Chạy RIÊNG trên tiêu đề rồi tới
+    # thân tin, không chạy trên blob: cần biết bằng chứng nằm ở đâu để C1 và
+    # trang công ty dẫn đúng nguồn.
+    for src, txt in (("title", title), ("description", desc)):
+        ao = S.applicants_only(txt)
+        if ao:
+            found.append(("DQ-02", ao[1][:220], src))
+            break
+
     for cid, rx in S.DQ:
         m = rx.search(blob)
         if not m:

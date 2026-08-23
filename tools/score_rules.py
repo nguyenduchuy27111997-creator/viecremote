@@ -339,6 +339,32 @@ def closed_country_list(txt):
     return ("no", re.sub(r"\s+", " ", txt[m.start():m.end() + 300]).strip())
 
 
+# "International (UK, AUS, NZ) Applicants Only" — mệnh đề giới hạn dạng DANH TỪ.
+# CLOSED_LIST ở trên chỉ bắt dạng ĐỘNG TỪ ("open to candidates in select
+# countries"), nên hình thái này lọt qua và tin bị chấm mở toàn cầu khi trường
+# location ghi "Anywhere". Trường có cấu trúc thắng văn xuôi ở mọi chỗ khác;
+# đây là chỗ nó THUA, vì tiêu đề nói rõ hơn trường.
+ONLY_FROM = R(r"(?:applicants?|candidates?|residents?|nationals?|citizens?)\s+only\b"
+              r"|only\s+(?:applicants?|candidates?|residents?)\s+(?:from|in|based in)\b")
+
+
+def applicants_only(txt):
+    """-> ('no', trích dẫn) nếu tin giới hạn ứng viên vào nơi chốn không có VN.
+
+    Cửa sổ trước chỗ khớp bị cắt tại RANH GIỚI CÂU. Không cắt thì "Văn phòng ở
+    Berlin. Chỉ nhận ứng viên nội bộ" sẽ đọc ra Berlin và kết luận sai — mệnh đề
+    giới hạn phải nằm cùng câu với tên nơi chốn thì mới lý giải được nhãn."""
+    for m in ONLY_FROM.finditer(txt):
+        sent = re.split(r"(?<=[.!?])\s+", txt[max(0, m.start() - 120):m.start()])[-1]
+        win = sent + txt[m.start():m.end() + 120]
+        if re.search(r"\bvi[eệ]t ?nam\b", win, re.I) or VN_REGION.search(win):
+            continue                    # có VN, hoặc vùng có thể chứa VN -> không kết luận
+        if not loc_names_place(sent):
+            continue                    # "internal applicants only" -> không phải nơi chốn
+        return ("no", quote_around(txt, m, 200))
+    return None
+
+
 def quote_around(txt, m, cap=180):
     """Trích một cửa sổ quanh chỗ khớp, BẢO ĐẢM chứa trọn đoạn đã khớp.
 
