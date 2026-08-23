@@ -146,6 +146,23 @@ CREATE TABLE IF NOT EXISTS inquiry (
 );
 CREATE INDEX IF NOT EXISTS inquiry_open ON inquiry(handled, created_at DESC);
 
+-- Lịch sử ĐỔI NHÃN công ty. Chỉ ghi khi có thay đổi, không chụp ảnh mỗi ngày.
+--
+-- Kho dựng lại mỗi ngày và GHI ĐÈ, nên nếu không ghi ở đây thì mỗi ngày trôi
+-- qua là một ngày lịch sử mất vĩnh viễn. Không ai khác đang thu dữ liệu này:
+-- "công ty nào vừa mở, vừa đóng cho Việt Nam" là thứ chỉ có được bằng cách
+-- quan sát liên tục, không mua lại được sau.
+--
+-- Ba tháng nữa nó trả lời được câu mà hôm nay không ai trả lời được.
+CREATE TABLE IF NOT EXISTS verdict_change (
+  slug       TEXT NOT NULL,
+  from_v     TEXT NOT NULL,
+  to_v       TEXT NOT NULL,
+  changed_at TEXT NOT NULL,
+  PRIMARY KEY (slug, changed_at)
+);
+CREATE INDEX IF NOT EXISTS verdict_change_when ON verdict_change(changed_at DESC);
+
 -- ------------------------------------------------------------------ L2, TẮT
 -- Bảng dựng sẵn, KHÔNG có dòng nào cho tới khi L2_ENABLED được bật (web/src/lib/l2.ts).
 --
@@ -359,9 +376,25 @@ def write_seed(db, outdir, per_file=4000, per_stmt=40):
     # Drop `company` khi `job` còn tham chiếu -> SQLITE_CONSTRAINT_FOREIGNKEY.
     # Bảng mới không có FK nên đây là vấn đề một lần, nhưng thứ tự phải đúng
     # ở mọi lần chạy vì có thể nạp lên một CSDL còn schema cũ.
+    # Ghi lịch sử TRƯỚC khi hoán đổi: sau DROP thì không còn nhãn cũ để so.
+    # Chỉ ghi công ty ĐÃ TỒN TẠI và có nhãn khác — công ty mới xuất hiện không
+    # phải "đổi nhãn", và ghi cả 3.630 dòng ở lần chạy đầu là rác.
+    history = [
+        # Kho trống (lần nạp đầu, hoặc CSDL mới) thì `company` chưa tồn tại và
+        # câu INSERT dưới sẽ làm HỎNG CẢ TỆP khi chạy qua wrangler d1 execute —
+        # sqlite3 CLI chỉ cảnh báo rồi đi tiếp nên lỗi này không lộ ở local.
+        # Bảng cọc hai cột là đủ cho câu SELECT, và bị DROP ngay sau đó.
+        "CREATE TABLE IF NOT EXISTS company (slug TEXT PRIMARY KEY, verdict TEXT);",
+        "INSERT OR IGNORE INTO verdict_change (slug, from_v, to_v, changed_at) "
+        "SELECT o.slug, o.verdict, n.verdict, datetime('now') "
+        "FROM company o JOIN company_new n ON n.slug = o.slug "
+        "WHERE o.verdict <> n.verdict;"
+    ]
     emit("swap",
-         [f"DROP TABLE IF EXISTS {t}; ALTER TABLE {t}_new RENAME TO {t};"
-          for t in ("job", "locked", "company", "meta")]
+         stmts(USER_TABLES)          # bảng lịch sử phải tồn tại trước khi ghi
+         + history
+         + [f"DROP TABLE IF EXISTS {t}; ALTER TABLE {t}_new RENAME TO {t};"
+            for t in ("job", "locked", "company", "meta")]
          + stmts(INDEXES))
 
     tot = sum(os.path.getsize(f) for f in files)

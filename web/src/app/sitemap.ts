@@ -35,6 +35,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
      ORDER BY CASE verdict WHEN 'ok' THEN 0 WHEN 'unk' THEN 1 ELSE 2 END, n_global DESC`,
   )
   const codes = await all<{ code: string }>("SELECT DISTINCT code FROM locked")
+
+  // Trang gương soi tiếng Anh — chỉ những công ty CÓ mệnh đề địa lý. Công ty
+  // không có mệnh đề nào thì trang chỉ toàn số 0; đưa vào sitemap là tự nộp
+  // hàng nghìn trang mỏng cho Google, hại nhiều hơn lợi.
+  // Đã tuyển ở ĐNA lên ưu tiên cao nhất: đó là nhóm trang có điều đáng nói.
+  const mirrors = await all<{ slug: string; sea: number }>(
+    `SELECT DISTINCT l.slug,
+            MAX(CASE WHEN l.code IN ('PH','ID','TH','MY') THEN 1 ELSE 0 END) sea
+     FROM locked l GROUP BY l.slug`,
+  )
   const jobs = await all<{ id: string }>(
     "SELECT id FROM job WHERE scope IN ('worldwide','vn') ORDER BY id",
   )
@@ -46,6 +56,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: now,
       changeFrequency: "weekly" as const,
       priority: c.verdict === "ok" ? 0.8 : 0.4,
+    })),
+    ...mirrors.map((m) => ({
+      url: `${SITE_URL}/hiring-in-vietnam/${m.slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: m.sea ? 0.9 : 0.5,
     })),
     ...codes.map((c) => ({
       url: `${SITE_URL}/khoa/${c.code.toLowerCase()}`,
