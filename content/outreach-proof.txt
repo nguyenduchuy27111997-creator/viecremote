@@ -38,35 +38,6 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Zipline  ·  eor  ·  313 tin
-------------------------------------------------------------------------------
-Subject: Zipline is one of 9 companies hiring in Vietnam via an EOR
-
-Hi,
-
-I maintain a study of where remote companies are actually allowed to hire —
-34,546 live postings across 3,630 companies, each geographic clause quoted
-verbatim.
-
-Zipline came up because you are unusual. Of the 200 companies that declare EOR
-or contractor hiring, only 9 extend it to Vietnam. You are one of them.
-
-That means you are competing for those engineers against a field of 91
-companies, not 3,630 — and most of your peers have not noticed the opening
-yet. The brief lays out who the other 90 are, which mechanisms they use, and
-what their published terms imply about rates, so you can see where your offer
-sits.
-
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
-
-What this is not: I do not place candidates, make introductions, or hold any
-candidate data. It is research into published company policy.
-
-— Huy
-   Reply "no thanks" and I won't write again.
-
-
-------------------------------------------------------------------------------
 ### Meridial  ·  contractor  ·  199 tin
 ------------------------------------------------------------------------------
 Subject: Meridial is one of 9 companies hiring in Vietnam via contractor arrangements
@@ -137,6 +108,35 @@ verbatim.
 
 LumiMeds came up because you are unusual. Of the 200 companies that declare
 EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
+
+That means you are competing for those engineers against a field of 91
+companies, not 3,630 — and most of your peers have not noticed the opening
+yet. The brief lays out who the other 90 are, which mechanisms they use, and
+what their published terms imply about rates, so you can see where your offer
+sits.
+
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+
+What this is not: I do not place candidates, make introductions, or hold any
+candidate data. It is research into published company policy.
+
+— Huy
+   Reply "no thanks" and I won't write again.
+
+
+------------------------------------------------------------------------------
+### Zipline  ·  eor  ·  313 tin
+------------------------------------------------------------------------------
+Subject: Zipline is one of 9 companies hiring in Vietnam via an EOR
+
+Hi,
+
+I maintain a study of where remote companies are actually allowed to hire —
+34,546 live postings across 3,630 companies, each geographic clause quoted
+verbatim.
+
+Zipline came up because you are unusual. Of the 200 companies that declare EOR
+or contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91
 companies, not 3,630 — and most of your peers have not noticed the opening

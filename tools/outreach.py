@@ -32,7 +32,8 @@ from country import ISO  # noqa: E402
 
 DB = Path(__file__).resolve().parent.parent / "data" / "app.db"
 CODE = {v: k.title() for k, v in ISO.items()}
-CODE.update({"US": "the US", "GB": "the UK", "AE": "the UAE"})
+CODE.update({"US": "the US", "GB": "the UK", "AE": "the UAE", "PH": "the Philippines",
+             "NL": "the Netherlands", "CZ": "Czechia"})
 SITE = "https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam"
 
 
@@ -135,12 +136,19 @@ SKIP = {
 }
 
 
+# Tín hiệu mạnh nhất trong kho — xem tools/prospects.py để biết cách đo.
+SEA = {"PH", "ID", "TH", "MY"}
+
+
 def pick(db, proof, n):
     v = "verdict='ok'" if proof else "verdict='no'"
     rows = db.execute(
         f"""SELECT name, mechanism, n_jobs, locked FROM company
-            WHERE mechanism <> 'unknown' AND {v}
-            ORDER BY n_jobs DESC""").fetchall()
+            WHERE mechanism <> 'unknown' AND {v}""").fetchall()
+    # Đã tuyển ở ĐNA lên trước: "bạn đã giải bài này ở Philippines rồi" là câu
+    # mở đầu mạnh hơn hẳn một danh sách nước chung chung.
+    rows.sort(key=lambda r: (not ({c for c, _ in json.loads(r[3] or "[]")} & SEA),
+                             -r[2]))
     keep, dropped = [], []
     for r in rows:
         (dropped if r[0].lower() in SKIP else keep).append(r)
@@ -154,14 +162,25 @@ def target_mail(name, mech, n_jobs, where, s):
     name, _sure = display(name)
     mech_word = "employer-of-record" if mech == "eor" else "contractor"
     mech_label = "an EOR" if mech == "eor" else "contractor"
-    if where:
+    sea = sorted(set(where) & SEA)
+    if sea:
+        # Câu mở mạnh nhất có được: cùng múi giờ, cùng bậc chi phí, cùng kiểu
+        # hợp đồng. Không phải "bạn thiếu một nước" mà "bạn đã làm đúng việc này rồi".
+        line = (f"You already hire in {' and '.join(name_of(c) for c in sea)} through "
+                f"{mech_word} arrangements. Vietnam sits in the same timezone band, the same "
+                "cost tier, and takes the same contracting paperwork you have already done — "
+                "but it is not in your scope.")
+    elif where:
         shown = ", ".join(name_of(c) for c in where[:5])
         line = (f"Your postings show you already hire through {mech_word} arrangements "
                 f"in {len(where)} places — {shown}. Vietnam is not among them.")
     else:
         line = (f"Your postings show you already hire through {mech_word} arrangements. "
                 "None of them extend to Vietnam.")
-    return wrap(f"""Subject: {name} hires via {mech_label} in {len(where) or 'several'} countries — not Vietnam
+    subject = (f"{name} hires in {' and '.join(name_of(c) for c in sea)} — why not Vietnam?"
+               if sea else
+               f"{name} hires via {mech_label} in {len(where) or 'several'} countries — not Vietnam")
+    return wrap(f"""Subject: {subject}
 
 Hi,
 

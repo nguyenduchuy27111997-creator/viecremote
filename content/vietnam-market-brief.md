@@ -59,7 +59,22 @@ These companies have solved payroll, compliance and contracting across borders. 
 
 For a company that already runs an EOR, adding Vietnam is a policy edit, not a project. That is the arbitrage.
 
-## 4. Who is already hiring here
+## 4. The strongest predictor we found
+
+Across every slice of this corpus, one signal dominates: **whether a company already hires somewhere else in Southeast Asia.**
+
+| Company already hires in | Companies | Open to Vietnam | Rate | vs baseline |
+|---|---:|---:|---:|---:|
+| Anywhere (baseline) | 3,630 | 91 | 2.5% | 1.0× |
+| **Southeast Asia** (PH/ID/TH/MY) | 87 | 16 | **18.4%** | **7.3×** |
+
+For comparison, hiring in India lifts the rate 2.4×, Latin America 2.6×, Eastern Europe 4.1× — all far below Southeast Asia.
+
+The lift is not a size artefact. Split the corpus into four bands by posting count and the effect holds in **every** band, between 3.3× and 7.0×. A control group — companies that publish any geographic clause at all — sits at the baseline rate, so this is not simply *"firms that bother to write clauses"*.
+
+The reading is straightforward. A company hiring in Manila has already solved the timezone band, the contractor paperwork and the cost-tier conversation. Vietnam is the same problem, already solved, just not switched on.
+
+## 5. Who is already hiring here
 
 The 91 companies open to Vietnam, largest first:
 
