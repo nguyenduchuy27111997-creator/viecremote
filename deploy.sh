@@ -127,16 +127,26 @@ say "5/6  Kiểm khói trên bản vừa deploy"
 if [ -z "$URL" ]; then
     echo "  ! không tự tìm được URL — kiểm tay trên dashboard"
 else
+    # Bản vừa deploy cần vài giây để lan ra biên. Không chờ thì kiểm khói báo
+    # 404 cho trang HOÀN TOÀN đúng — đã dính hai lần. Thử lại vài nhịp trước
+    # khi kết luận hỏng; cổng chỉ có giá trị khi nó không kêu oan.
+    probe() {
+        for _ in 1 2 3 4 5 6; do
+            CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "$1")
+            [ "$CODE" = "$2" ] && return 0
+            sleep 4
+        done
+        return 1
+    }
+
     FAIL=0
     for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /hiring-in-vietnam /hiring-in-vietnam/snowflake /sitemap.xml /robots.txt; do
-        CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "$URL$p")
-        printf '  %-16s %s\n' "$p" "$CODE"
-        [ "$CODE" = "200" ] || FAIL=1
+        if probe "$URL$p" 200; then printf '  %-32s 200\n' "$p"
+        else printf '  %-32s %s  ← hỏng\n' "$p" "$CODE"; FAIL=1; fi
     done
     # Trang không tồn tại PHẢI trả 404. Trả 200 thì Google lập chỉ mục rác.
-    CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "$URL/khong-co-trang-nay")
-    printf '  %-16s %s (mong đợi 404)\n' "/404" "$CODE"
-    [ "$CODE" = "404" ] || FAIL=1
+    if probe "$URL/khong-co-trang-nay" 404; then printf '  %-32s 404 (mong đợi 404)\n' "/404"
+    else printf '  %-32s %s  ← phải là 404\n' "/404" "$CODE"; FAIL=1; fi
     [ "$FAIL" = "0" ] || die "kiểm khói thất bại — xem log Worker trên dashboard"
     echo "  ✓ tất cả xanh"
 fi
