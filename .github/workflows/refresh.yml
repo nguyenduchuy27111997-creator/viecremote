@@ -119,6 +119,26 @@ jobs:
             npx wrangler d1 execute viec-remote --remote --file="$f" -y
           done
 
+      # Xoá dữ liệu L2 quá hạn. Đây là NGHĨA VỤ theo Điều 25.1.c Luật 91/2025,
+      # không phải dọn dẹp cho gọn — nên nó chạy hằng ngày kể cả khi L2 đang
+      # tắt (bảng rỗng ⇒ không-thao-tác), và báo số dòng trước/sau để một lần
+      # xoá bất thường không trôi qua im lặng.
+      - name: Xoá dữ liệu L2 quá hạn (C8)
+        if: inputs.deploy != false
+        working-directory: web
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          count() {
+            npx wrangler d1 execute viec-remote --remote --json \
+              --command "SELECT (SELECT count(*) FROM engineer) e, (SELECT count(*) FROM consent) c" \
+              2>/dev/null | tr -d ' \n'
+          }
+          echo "trước: $(count)"
+          npx wrangler d1 execute viec-remote --remote --file=../tools/purge_l2.sql -y
+          echo "sau:   $(count)"
+
       - name: Deploy Worker
         if: inputs.deploy != false
         working-directory: web
