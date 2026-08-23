@@ -40,11 +40,58 @@ def name_of(code):
     return CODE.get(code, code)
 
 
+# Tên trong kho là SLUG ATS, không phải tên công ty. Gửi thư mở đầu bằng
+# "Flyzipline" là hỏng ngay dòng đầu.
+#
+# Bản đồ này chỉ chứa tên CÓ CĂN CỨ: hoặc suy từ tên miền riêng trong chính
+# URL tin tuyển dụng (đánh dấu # url), hoặc là tên thương hiệu phổ biến mà
+# cách viết hoa là công khai. Không đoán bừa — slug nào không có ở đây thì
+# dọn máy móc rồi ĐÁNH DẤU để người gửi tự kiểm.
+NAMES = {
+    "flyzipline": "Zipline",            # url: www.zipline.com
+    "housecall": "Housecall Pro",       # url: www.housecallpro.com
+    "gostudent": "GoStudent",           # url: www.gostudent.org
+    "asana": "Asana",                   # url: www.asana.com
+    "upstart": "Upstart",               # url: careers.upstart.com
+    "lokalise": "Lokalise",             # url: lokalise.com
+    "sisense": "Sisense",               # url: www.sisense.com
+    "aligned": "Aligned",               # url: alignedup.com
+    "twilio": "Twilio",
+    "reddit": "Reddit",
+    "snowflake": "Snowflake",
+    "chainguard": "Chainguard",
+    "betterhelp": "BetterHelp",
+    "planetlabs": "Planet Labs",
+    "chaosindustries": "Chaos Industries",
+    "cloverhealth": "Clover Health",
+    "pingidentity": "Ping Identity",
+    "scaleai": "Scale AI",
+    "openloophealth": "OpenLoop Health",
+    "nice": "NICE",
+    "lilt-production": "Lilt",
+    "remotecom": "Remote",
+    "ashby": "Ashby",
+    "watershed": "Watershed",
+    "rula": "Rula",
+}
+
+# Đuôi do ATS gắn thêm, không thuộc tên công ty. Bóc được mà không phải đoán.
+SLUG_TAIL = re.compile(
+    r"(?:[-_]?(?:production|staging|careers?|jobs?|talent ?pool|internal ?use ?only|"
+    r"corporate ?careers?|referral ?board|hq|inc|llc)\b|\d+)+$", re.I)
+
+
 def display(slug_name):
-    """Tên trong kho là slug ATS ("chaosindustries"). Làm cho đọc được, nhưng
-    KHÔNG đoán chỗ tách từ — "Chaosindustries" sai ít hơn "Chaos Industries"
-    đoán bừa. Người gửi phải sửa lại cho đúng trước khi bấm gửi."""
-    return re.sub(r"[-_]+", " ", slug_name).strip().title()
+    """-> (tên hiển thị, có chắc không).
+
+    Chắc = có trong NAMES. Không chắc = tự dọn từ slug, người gửi phải kiểm.
+    KHÔNG đoán chỗ tách từ: "Bjakcareer" -> "Bjak" chứ không thành "BJAK",
+    vì viết hoa sai tên thương hiệu đọc còn tệ hơn viết thường."""
+    key = (slug_name or "").strip().lower()
+    if key in NAMES:
+        return NAMES[key], True
+    cleaned = SLUG_TAIL.sub("", key)
+    return re.sub(r"[-_]+", " ", cleaned or key).strip().title(), False
 
 
 def wrap(t):
@@ -82,7 +129,7 @@ def pick(db, proof, n):
 
 def target_mail(name, mech, n_jobs, where, s):
     """Thư cho công ty CÓ bộ máy mà loại Việt Nam."""
-    name = display(name)
+    name, _sure = display(name)
     mech_word = "employer-of-record" if mech == "eor" else "contractor"
     mech_label = "an EOR" if mech == "eor" else "contractor"
     if where:
@@ -126,7 +173,7 @@ not place candidates, make introductions, or hold any candidate data.
 
 def proof_mail(name, mech, n_jobs, where, s):
     """Thư cho công ty ĐÃ mở — luận điểm là so sánh đối thủ, không phải cơ hội bỏ lỡ."""
-    name = display(name)
+    name, _sure = display(name)
     mech_label = "an EOR" if mech == "eor" else "contractor arrangements"
     return wrap(f"""Subject: {name} is one of {s['mech_ok']} companies hiring in Vietnam via {mech_label}
 
@@ -167,9 +214,19 @@ def main():
     write = proof_mail if a.proof else target_mail
 
     print(f"\n{'='*78}\n{len(rows)} thư — ĐỌC LẠI TRƯỚC KHI GỬI. Kho không có địa chỉ, tự tìm.\n{'='*78}")
+
+    # Tên suy từ slug có thể sai. Nêu ngay đầu ra thay vì để lẫn trong thư —
+    # sai tên ở dòng đầu thư lạnh là mất luôn người đọc.
+    unsure = [(slug, display(slug)[0]) for slug, *_ in rows if not display(slug)[1]]
+    if unsure:
+        print(f"\n⚠  {len(unsure)}/{len(rows)} tên suy từ slug, CHƯA kiểm chứng — sửa trước khi gửi:")
+        for slug, guess in unsure:
+            print(f"     {slug:<40} -> {guess}")
+        print("   (thêm tên đúng vào NAMES trong tools/outreach.py để lần sau khỏi sửa)")
+
     for name, mech, n_jobs, locked in rows:
         where = [c for c, _ in json.loads(locked or "[]")]
-        print(f"\n{'-'*78}\n### {display(name)}  ·  {mech}  ·  {n_jobs} tin\n{'-'*78}")
+        print(f"\n{'-'*78}\n### {display(name)[0]}  ·  {mech}  ·  {n_jobs} tin\n{'-'*78}")
         print(write(name, mech, n_jobs, where, s))
     db.close()
 

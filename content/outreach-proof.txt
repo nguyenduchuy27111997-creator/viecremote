@@ -3,10 +3,19 @@
 9 thư — ĐỌC LẠI TRƯỚC KHI GỬI. Kho không có địa chỉ, tự tìm.
 ==============================================================================
 
+⚠  6/9 tên suy từ slug, CHƯA kiểm chứng — sửa trước khi gửi:
+     agency                                   -> Agency
+     bjakcareer                               -> Bjak
+     remotereferralboardinternaluseonly       -> Remotereferralboard
+     lumimeds                                 -> Lumimeds
+     learnlux                                 -> Learnlux
+     enveritas                                -> Enveritas
+   (thêm tên đúng vào NAMES trong tools/outreach.py để lần sau khỏi sửa)
+
 ------------------------------------------------------------------------------
-### Lilt Production  ·  contractor  ·  383 tin
+### Lilt  ·  contractor  ·  383 tin
 ------------------------------------------------------------------------------
-Subject: Lilt Production is one of 9 companies hiring in Vietnam via contractor arrangements
+Subject: Lilt is one of 9 companies hiring in Vietnam via contractor arrangements
 
 Hi,
 
@@ -14,9 +23,8 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Lilt Production came up because you are unusual. Of the 200 companies that
-declare EOR or contractor hiring, only 9 extend it to Vietnam. You are one of
-them.
+Lilt came up because you are unusual. Of the 200 companies that declare EOR or
+contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91
 companies, not 3,630 — and most of your peers have not noticed the opening
@@ -34,9 +42,9 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Flyzipline  ·  eor  ·  313 tin
+### Zipline  ·  eor  ·  313 tin
 ------------------------------------------------------------------------------
-Subject: Flyzipline is one of 9 companies hiring in Vietnam via an EOR
+Subject: Zipline is one of 9 companies hiring in Vietnam via an EOR
 
 Hi,
 
@@ -44,8 +52,8 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Flyzipline came up because you are unusual. Of the 200 companies that declare
-EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
+Zipline came up because you are unusual. Of the 200 companies that declare EOR
+or contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91
 companies, not 3,630 — and most of your peers have not noticed the opening
@@ -92,9 +100,9 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Bjakcareer  ·  eor  ·  117 tin
+### Bjak  ·  eor  ·  117 tin
 ------------------------------------------------------------------------------
-Subject: Bjakcareer is one of 9 companies hiring in Vietnam via an EOR
+Subject: Bjak is one of 9 companies hiring in Vietnam via an EOR
 
 Hi,
 
@@ -102,8 +110,8 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Bjakcareer came up because you are unusual. Of the 200 companies that declare
-EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
+Bjak came up because you are unusual. Of the 200 companies that declare EOR or
+contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91
 companies, not 3,630 — and most of your peers have not noticed the opening
@@ -121,9 +129,9 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Remotecom  ·  eor  ·  77 tin
+### Remote  ·  eor  ·  77 tin
 ------------------------------------------------------------------------------
-Subject: Remotecom is one of 9 companies hiring in Vietnam via an EOR
+Subject: Remote is one of 9 companies hiring in Vietnam via an EOR
 
 Hi,
 
@@ -131,8 +139,8 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Remotecom came up because you are unusual. Of the 200 companies that declare
-EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
+Remote came up because you are unusual. Of the 200 companies that declare EOR
+or contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91
 companies, not 3,630 — and most of your peers have not noticed the opening
@@ -150,9 +158,9 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Remotereferralboardinternaluseonly  ·  eor  ·  69 tin
+### Remotereferralboard  ·  eor  ·  69 tin
 ------------------------------------------------------------------------------
-Subject: Remotereferralboardinternaluseonly is one of 9 companies hiring in Vietnam via an EOR
+Subject: Remotereferralboard is one of 9 companies hiring in Vietnam via an EOR
 
 Hi,
 
@@ -160,9 +168,9 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Remotereferralboardinternaluseonly came up because you are unusual. Of the 200
-companies that declare EOR or contractor hiring, only 9 extend it to Vietnam.
-You are one of them.
+Remotereferralboard came up because you are unusual. Of the 200 companies that
+declare EOR or contractor hiring, only 9 extend it to Vietnam. You are one of
+them.
 
 That means you are competing for those engineers against a field of 91
 companies, not 3,630 — and most of your peers have not noticed the opening
