@@ -128,7 +128,7 @@ if [ -z "$URL" ]; then
     echo "  ! không tự tìm được URL — kiểm tay trên dashboard"
 else
     FAIL=0
-    for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /sitemap.xml /robots.txt; do
+    for p in / /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api /hiring-in-vietnam /sitemap.xml /robots.txt; do
         CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 25 "$URL$p")
         printf '  %-16s %s\n' "$p" "$CODE"
         [ "$CODE" = "200" ] || FAIL=1
@@ -170,6 +170,8 @@ cat <<EOF
        Chưa có thì form vẫn lưu email nhưng KHÔNG gửi xác nhận được.
      - Turnstile chống spam: cd web && npx wrangler secret put TURNSTILE_SECRET
        Chưa có thì honeypot + kiểm thời gian vẫn chạy.
-     - L2 (mạng lưới): KHOÁ, chờ luật sư. Xem prd.md Mục 2.
+     - L2 (mạng lưới): điều kiện đã rõ (Giấy phép + ký quỹ 300 triệu + đồng ý theo
+       từng lần chuyển giao), nhưng hai câu pháp lý còn chặn. Xem prd.md Mục 2.
+       Đường có doanh thu mà KHÔNG cần giấy phép: /hiring-in-vietnam (legal-options.md Mục 3).
 
 EOF
