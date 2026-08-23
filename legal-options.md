@@ -149,13 +149,15 @@ ai và thu tiền, đây là cột phải của Mục 0. Phân vai phải khớp
 **Không chạm dữ liệu kỹ sư. Không giới thiệu ai.** Bán cho công ty nước ngoài đúng thứ L1 đã
 biết: nước nào tuyển được, rào cản gì, mặt bằng lương, so sánh EOR, cách vào thị trường Việt Nam.
 
-- Không có dữ liệu cá nhân ⇒ **Luật 91/2025 không áp dụng**
+- Không có dữ liệu cá nhân ⇒ **Luật 91/2025 không áp dụng**. Đây là phần chắc chắn, và là phần
+  đắt nhất — toàn bộ chế tài 10× doanh thu nằm ở luật đó
 - Không tư vấn/giới thiệu cho **người lao động**, không cung ứng lao động ⇒ ngoài Điều 27.1
-  nhóm 1 và 2
-- Không phải thông tin thị trường lao động **Việt Nam bán cho người Việt** ⇒ tránh nhóm 3
+  **nhóm 1 và 2**
+- **Nhóm 3 thì không tránh được bằng câu chữ** — xem khối sửa lỗi ở trên. Miễn phí thì ngoài
+  vòng, thu tiền thì vùng xám
 
-Sản phẩm nghiên cứu, khách hàng doanh nghiệp nước ngoài, thanh toán quốc tế. **Không cần giấy
-phép nào.** Và nó kiểm chứng đúng giả thuyết cốt lõi — công ty nước ngoài **có** trả tiền để vào
+Sản phẩm nghiên cứu, khách hàng doanh nghiệp nước ngoài, thanh toán quốc tế. **Rủi ro thấp hơn
+L2 một bậc lớn**, nhưng không bằng không. Và nó kiểm chứng đúng giả thuyết cốt lõi — công ty nước ngoài **có** trả tiền để vào
 được nguồn kỹ sư Việt hay không — trước khi bỏ một đồng vào tuân thủ.
 
 ### Đ4 — Kỹ sư tự gửi. Có tác dụng, nhưng chỉ một nửa.

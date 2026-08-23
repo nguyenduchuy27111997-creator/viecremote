@@ -172,6 +172,7 @@ cat <<EOF
        Chưa có thì honeypot + kiểm thời gian vẫn chạy.
      - L2 (mạng lưới): điều kiện đã rõ (Giấy phép + ký quỹ 300 triệu + đồng ý theo
        từng lần chuyển giao), nhưng hai câu pháp lý còn chặn. Xem prd.md Mục 2.
-       Đường có doanh thu mà KHÔNG cần giấy phép: /hiring-in-vietnam (legal-options.md Mục 3).
+       Đường có doanh thu ít rủi ro nhất: /hiring-in-vietnam (legal-options.md Đ3 — đọc
+       khối sửa lỗi 23/08 trước khi thu tiền).
 
 EOF
