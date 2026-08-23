@@ -77,6 +77,13 @@ def score(job):
         cid, q, src = found[0]
         return "excluded", cid, q, src
 
+    # Hộp thư nhận hồ sơ chung KHÔNG chứng minh công ty tuyển được ở Việt Nam —
+    # chỉ chứng minh họ nhận hồ sơ. Hạ xuống 'unknown', KHÔNG phải 'excluded':
+    # không nêu vai trò thì cũng không nêu loại trừ. Đặt sau vòng DQ để tin hộp
+    # thư có kèm mệnh đề loại trừ vẫn giữ được nhãn excluded có cứ liệu.
+    if S.placeholder_posting(title, desc):
+        return "unknown", None, "", ""
+
     if lv == "ok":          # địa điểm CÓ Việt Nam (hoặc vùng chứa VN)
         return "worldwide", None, lw, "location"
     if lv == "global":

@@ -36,9 +36,9 @@ Most-restricted-to locations, by number of companies:
 
 | | Count | Share |
 |---|---:|---:|
-| Companies that can hire in Vietnam | **103** | 2.8% |
+| Companies that can hire in Vietnam | **91** | 2.5% |
 | Companies that explicitly cannot | 2,493 | 68.7% |
-| Companies with no clause either way | 1,034 | 28.5% |
+| Companies with no clause either way | 1,046 | 28.8% |
 | Postings naming Vietnam at all | 60 | 0.2% |
 
 Vietnam has roughly 530,000 software developers and ranks in the global top ten for IT outsourcing. Yet **60 of 34,546 postings** mention the country by name. The demand exists; it does not travel through public job postings. It travels through agencies, EOR providers and referral.
@@ -49,11 +49,11 @@ This is the finding that should change a hiring plan.
 
 | Mechanism declared | Open to Vietnam | Unclear | Closed |
 |---|---:|---:|---:|
-| CONTRACTOR | 5 | 31 | 78 |
+| CONTRACTOR | 4 | 32 | 78 |
 | EOR | 5 | 28 | 53 |
-| **Total** | **10** | | |
+| **Total** | **9** | | |
 
-**200 companies already state they hire through an employer-of-record or contractor arrangement — the exact machinery needed to hire anywhere. Only 10 of them include Vietnam.**
+**200 companies already state they hire through an employer-of-record or contractor arrangement — the exact machinery needed to hire anywhere. Only 9 of them include Vietnam.**
 
 These companies have solved payroll, compliance and contracting across borders. They have the capability and still exclude Vietnam. The constraint is not legal or operational — it is the default scope someone typed into a job template and nobody revisited.
 
@@ -61,7 +61,7 @@ For a company that already runs an EOR, adding Vietnam is a policy edit, not a p
 
 ## 4. Who is already hiring here
 
-The 103 companies open to Vietnam, largest first:
+The 91 companies open to Vietnam, largest first:
 
 | Company | Postings | Open to VN | Mechanism |
 |---|---:|---:|---|
@@ -75,7 +75,7 @@ The 103 companies open to Vietnam, largest first:
 | bjakcareer | 117 | 3 | eor |
 | remotecom | 77 | 1 | eor |
 | remotereferralboardinternaluseonly | 69 | 5 | eor |
-| worldquant | 67 | 11 | — |
+| worldquant | 67 | 10 | — |
 | keepersecurity | 65 | 1 | — |
 | alpaca | 61 | 4 | — |
 | supabase | 56 | 2 | — |

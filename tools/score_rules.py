@@ -365,6 +365,53 @@ def applicants_only(txt):
     return None
 
 
+# Tin "hộp thư" — General Application, Talent Pool, Talent Community. Chúng
+# thường ghi địa điểm "Anywhere"/"Global" nên được chấm mở toàn cầu, nhưng
+# chúng KHÔNG chứng minh công ty tuyển được ở Việt Nam: chúng chỉ chứng minh
+# công ty nhận hồ sơ. Rổ worldwide là sản phẩm bán, nên một khẳng định yếu
+# đứng chung hạng với các khẳng định có cứ liệu là làm hỏng cả rổ.
+#
+# Ranh giới: hộp thư là tin KHÔNG NÊU VAI TRÒ NÀO. "Future Opportunities:
+# Content Specialist" có nêu vai trò và có mô tả thật -> giữ nguyên.
+PH_ASK = R(r"\b(?:do|does|did)n.?t (?:see|find)\b|\bnot see (?:a |the )?(?:job|role|position)")
+PH_TAIL = R(r"\btalent (?:pool|community|network|bank|pipeline)\W*$")
+PH_WORD = R(r"^(?:general|open|spontaneous|speculative|unsolicited|join|our|the|a|an|to|"
+            r"application|applications|interest|expression|of|for|talent|pool|community|"
+            r"network|bank|pipeline|future|opportunity|opportunities|consideration|"
+            r"role|roles|opening|openings|position|positions|candidate|candidates|"
+            r"other|submit|send|apply|resume|cv|profile|here|us|we|re|hiring)$")
+
+
+# Tiêu đề KHÔNG đủ. "Software Engineer - Future Openings" nêu vai trò thật
+# nhưng thân tin ghi thẳng "This posting is NOT for an active role". Chỉ nhận
+# những mệnh đề dứt khoát — "có thể được xét cho vai trò tương lai" là câu
+# lịch sự cuối tin tuyển dụng THẬT, không phải dấu hiệu hộp thư.
+PH_BODY = R(r"not (?:tied to|for) an active (?:role|position)|"
+            r"is not an active (?:role|position|opening)|"
+            r"(?:no|not a) (?:current|active|specific|live) (?:opening|vacanc\w*|role|position)|"
+            r"(?:join|to join) (?:our|the) talent (?:pool|community|network)")
+
+
+def placeholder_posting(title, desc=""):
+    """Tin có phải hộp thư nhận hồ sơ chung (không gắn vai trò đang mở) không?
+
+    Hai tầng, vì không tầng nào đủ một mình:
+      - tiêu đề: "General Application", "Talent Pool" — không nêu vai trò nào
+      - thân tin: nêu vai trò nhưng tự khai không phải vị trí đang mở"""
+    t = (title or "").strip()
+    if not t:
+        return False
+    if PH_ASK.search(t):                      # "Don't see a role that fits?"
+        return True
+    if PH_TAIL.search(t):                     # "<tên công ty> Talent Network"
+        return True
+    if PH_BODY.search(desc or ""):
+        return True
+    # Bóc hết từ vô nghĩa; còn lại chữ nào là còn nêu vai trò.
+    rest = [w for w in re.split(r"[^A-Za-z]+", t.lower()) if w and not PH_WORD.match(w)]
+    return not rest
+
+
 def quote_around(txt, m, cap=180):
     """Trích một cửa sổ quanh chỗ khớp, BẢO ĐẢM chứa trọn đoạn đã khớp.
 
