@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/vi-sao-bi-loai`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     { url: `${SITE_URL}/khoa`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/lam-gi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${SITE_URL}/hiring-in-vietnam`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/api`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/rieng-tu`, lastModified: now, changeFrequency: "monthly", priority: 0.3 },
     { url: `${SITE_URL}/phuong-phap`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },

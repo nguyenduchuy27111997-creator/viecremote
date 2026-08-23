@@ -79,3 +79,21 @@ export const CNAME: Record<string, string> = {
 }
 
 export const cname = (c: string) => CNAME[c] ?? c
+
+/**
+ * Tên nước bằng tiếng Anh — cho trang phía cầu (/hiring-in-vietnam), nơi người
+ * đọc là công ty nước ngoài.
+ *
+ * Dùng Intl thay vì bảng ánh xạ thứ hai: runtime đã có sẵn toàn bộ ISO 3166,
+ * và một bảng chép tay sẽ lệch khỏi CNAME ngay lần sửa đầu tiên. Mã vùng
+ * ("EMEA", "AMER") không phải ISO nên Intl ném lỗi — trả lại chính mã đó.
+ */
+const EN = new Intl.DisplayNames(["en"], { type: "region", fallback: "code" })
+
+export const ename = (c: string) => {
+  try {
+    return EN.of(c) ?? c
+  } catch {
+    return c
+  }
+}

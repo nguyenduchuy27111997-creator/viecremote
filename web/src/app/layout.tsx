@@ -44,6 +44,9 @@ const NAV = [
   { href: "/lam-gi", label: "Làm gì" },
   { href: "/vi-sao-bi-loai", label: "Vì sao bị loại" },
   { href: "/phuong-phap", label: "Phương pháp" },
+  // Trang duy nhất cho phía CẦU, và duy nhất bằng tiếng Anh — nhãn giữ tiếng Anh
+  // để không ai bấm nhầm rồi gặp một trang mình không đọc được.
+  { href: "/hiring-in-vietnam", label: "For companies" },
 ]
 
 /**

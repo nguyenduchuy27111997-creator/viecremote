@@ -115,14 +115,36 @@ CREATE TABLE IF NOT EXISTS subscriber (
 );
 CREATE INDEX IF NOT EXISTS subscriber_token ON subscriber(token);
 
--- Khoá API cho khách trả tiền (giai đoạn 2). Lưu SHA-256 của khoá, không lưu
--- khoá thô: rò cơ sở dữ liệu thì kẻ lấy được cũng không gọi API được.
+-- Khoá API. Lưu SHA-256 của khoá, không lưu khoá thô: rò cơ sở dữ liệu thì
+-- kẻ lấy được cũng không gọi API được.
+--
+-- CẢNH BÁO PHÁP LÝ trước khi bán API: Điều 27.1 Luật Việc làm 74/2025 xếp
+-- "thu thập, phân tích, lưu trữ, cung cấp thông tin về thị trường lao động"
+-- vào dịch vụ việc làm — cần giấy phép. API miễn phí thì ngoài phạm vi;
+-- API TRẢ PHÍ kích hoạt nhóm này. Xem legal-options.md Mục 2.
 CREATE TABLE IF NOT EXISTS api_key (
   hash       TEXT PRIMARY KEY,
   label      TEXT NOT NULL,
   created_at TEXT NOT NULL,
   revoked    INTEGER NOT NULL DEFAULT 0
 );
+
+-- Yêu cầu báo cáo thị trường từ công ty nước ngoài — sản phẩm Đ3.
+--
+-- Chỉ dữ liệu TỔ CHỨC và một email liên hệ công việc. KHÔNG có trường nào cho
+-- dữ liệu kỹ sư, và không được thêm: Đ3 hợp pháp không cần giấy phép CHÍNH VÌ
+-- nó không chạm dữ liệu người lao động và không giới thiệu ai (legal-options.md
+-- Mục 3). Thêm một cột "ứng viên" vào đây là đổi hẳn chế độ pháp lý áp dụng.
+CREATE TABLE IF NOT EXISTS inquiry (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  company    TEXT NOT NULL,
+  email      TEXT NOT NULL,
+  role       TEXT,
+  note       TEXT,
+  created_at TEXT NOT NULL,
+  handled    INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX IF NOT EXISTS inquiry_open ON inquiry(handled, created_at DESC);
 """
 
 SCHEMA = TABLES.replace("{S}", "") + INDEXES + USER_TABLES

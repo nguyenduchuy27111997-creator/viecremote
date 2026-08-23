@@ -6,6 +6,9 @@
 > Cả ba có lời giải; toàn văn làm lộ **hai câu mới** chặn L2. Không câu nào chặn launch L1.
 
 **Đang làm:** **L1 — tầng minh bạch** (tra cứu địa lý tuyển dụng công ty), sẵn sàng launch.
+**Đ3 — báo cáo thị trường bán cho công ty nước ngoài** đã build: `/hiring-in-vietnam` +
+`tools/market_report.py`. Đây là đường có doanh thu **không cần giấy phép nào** —
+[legal-options.md](legal-options.md) Mục 3.
 **L2 — mạng lưới** đã đặc tả. Điều kiện đã rõ (Giấy phép + ký quỹ 300 triệu · hồ sơ xuyên biên
 giới · đồng ý theo từng lần chuyển giao), nhưng **hai câu mới còn chặn** — xem [prd.md](prd.md) Mục 2.
 Trục chuyển từ *tin* sang *công ty* (21/08). Giao diện chuyển sang **Next.js 16 + Cloudflare D1**

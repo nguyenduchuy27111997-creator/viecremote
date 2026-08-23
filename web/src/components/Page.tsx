@@ -96,11 +96,13 @@ export function KVTable({ children }: { children: React.ReactNode }) {
 
 /** Hàng có thanh tỉ lệ. Thanh và số ở HAI ô riêng — gộp một ô thì thanh 100%
  *  đẩy con số lớn nhất, tức quan trọng nhất, ra ngoài khung. */
-export function BarRow({ label, n, pct, tone = "closed" }: {
+export function BarRow({ label, n, pct, tone = "closed", locale = "vi-VN" }: {
   label: React.ReactNode
   n: number
   pct: number
   tone?: "open" | "closed" | "unk"
+  /** Trang phía cầu viết tiếng Anh: "1.793" kiểu Việt đọc thành một phẩy bảy chín ba. */
+  locale?: "vi-VN" | "en-US"
 }) {
   const bar = { open: "bg-open", closed: "bg-closed", unk: "bg-unk" }[tone]
   return (
@@ -115,7 +117,7 @@ export function BarRow({ label, n, pct, tone = "closed" }: {
         </span>
       </td>
       <td className="w-[1%] whitespace-nowrap py-3 pl-3 pr-4 text-right font-mono text-[12.5px] tabular-nums text-text-2">
-        {n.toLocaleString("vi-VN")}
+        {n.toLocaleString(locale)}
       </td>
     </tr>
   )
