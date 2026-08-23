@@ -8,13 +8,6 @@
      remotereferralboardinternaluseonly       bảng nội bộ của chính Remote.com — trùng
      enveritas                                phi lợi nhuận, 4 tin — không tuyển ở quy mô cần mua nghiên cứu
 
-⚠  4/6 tên suy từ slug, CHƯA kiểm chứng — sửa trước khi gửi:
-     agency                                   -> Agency
-     bjakcareer                               -> Bjak
-     lumimeds                                 -> Lumimeds
-     learnlux                                 -> Learnlux
-   (thêm tên đúng vào NAMES trong tools/outreach.py để lần sau khỏi sửa)
-
 ------------------------------------------------------------------------------
 ### Lilt  ·  contractor  ·  383 tin
 ------------------------------------------------------------------------------
@@ -74,9 +67,9 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Agency  ·  contractor  ·  199 tin
+### Meridial  ·  contractor  ·  199 tin
 ------------------------------------------------------------------------------
-Subject: Agency is one of 9 companies hiring in Vietnam via contractor arrangements
+Subject: Meridial is one of 9 companies hiring in Vietnam via contractor arrangements
 
 Hi,
 
@@ -84,65 +77,7 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Agency came up because you are unusual. Of the 200 companies that declare EOR
-or contractor hiring, only 9 extend it to Vietnam. You are one of them.
-
-That means you are competing for those engineers against a field of 91
-companies, not 3,630 — and most of your peers have not noticed the opening
-yet. The brief lays out who the other 90 are, which mechanisms they use, and
-what their published terms imply about rates, so you can see where your offer
-sits.
-
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
-
-What this is not: I do not place candidates, make introductions, or hold any
-candidate data. It is research into published company policy.
-
-— Huy
-   Reply "no thanks" and I won't write again.
-
-
-------------------------------------------------------------------------------
-### Bjak  ·  eor  ·  117 tin
-------------------------------------------------------------------------------
-Subject: Bjak is one of 9 companies hiring in Vietnam via an EOR
-
-Hi,
-
-I maintain a study of where remote companies are actually allowed to hire —
-34,546 live postings across 3,630 companies, each geographic clause quoted
-verbatim.
-
-Bjak came up because you are unusual. Of the 200 companies that declare EOR or
-contractor hiring, only 9 extend it to Vietnam. You are one of them.
-
-That means you are competing for those engineers against a field of 91
-companies, not 3,630 — and most of your peers have not noticed the opening
-yet. The brief lays out who the other 90 are, which mechanisms they use, and
-what their published terms imply about rates, so you can see where your offer
-sits.
-
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
-
-What this is not: I do not place candidates, make introductions, or hold any
-candidate data. It is research into published company policy.
-
-— Huy
-   Reply "no thanks" and I won't write again.
-
-
-------------------------------------------------------------------------------
-### Lumimeds  ·  contractor  ·  39 tin
-------------------------------------------------------------------------------
-Subject: Lumimeds is one of 9 companies hiring in Vietnam via contractor arrangements
-
-Hi,
-
-I maintain a study of where remote companies are actually allowed to hire —
-34,546 live postings across 3,630 companies, each geographic clause quoted
-verbatim.
-
-Lumimeds came up because you are unusual. Of the 200 companies that declare
+Meridial came up because you are unusual. Of the 200 companies that declare
 EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91
@@ -161,9 +96,9 @@ candidate data. It is research into published company policy.
 
 
 ------------------------------------------------------------------------------
-### Learnlux  ·  contractor  ·  11 tin
+### BJAK  ·  eor  ·  117 tin
 ------------------------------------------------------------------------------
-Subject: Learnlux is one of 9 companies hiring in Vietnam via contractor arrangements
+Subject: BJAK is one of 9 companies hiring in Vietnam via an EOR
 
 Hi,
 
@@ -171,7 +106,65 @@ I maintain a study of where remote companies are actually allowed to hire —
 34,546 live postings across 3,630 companies, each geographic clause quoted
 verbatim.
 
-Learnlux came up because you are unusual. Of the 200 companies that declare
+BJAK came up because you are unusual. Of the 200 companies that declare EOR or
+contractor hiring, only 9 extend it to Vietnam. You are one of them.
+
+That means you are competing for those engineers against a field of 91
+companies, not 3,630 — and most of your peers have not noticed the opening
+yet. The brief lays out who the other 90 are, which mechanisms they use, and
+what their published terms imply about rates, so you can see where your offer
+sits.
+
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+
+What this is not: I do not place candidates, make introductions, or hold any
+candidate data. It is research into published company policy.
+
+— Huy
+   Reply "no thanks" and I won't write again.
+
+
+------------------------------------------------------------------------------
+### LumiMeds  ·  contractor  ·  39 tin
+------------------------------------------------------------------------------
+Subject: LumiMeds is one of 9 companies hiring in Vietnam via contractor arrangements
+
+Hi,
+
+I maintain a study of where remote companies are actually allowed to hire —
+34,546 live postings across 3,630 companies, each geographic clause quoted
+verbatim.
+
+LumiMeds came up because you are unusual. Of the 200 companies that declare
+EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
+
+That means you are competing for those engineers against a field of 91
+companies, not 3,630 — and most of your peers have not noticed the opening
+yet. The brief lays out who the other 90 are, which mechanisms they use, and
+what their published terms imply about rates, so you can see where your offer
+sits.
+
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+
+What this is not: I do not place candidates, make introductions, or hold any
+candidate data. It is research into published company policy.
+
+— Huy
+   Reply "no thanks" and I won't write again.
+
+
+------------------------------------------------------------------------------
+### LearnLux  ·  contractor  ·  11 tin
+------------------------------------------------------------------------------
+Subject: LearnLux is one of 9 companies hiring in Vietnam via contractor arrangements
+
+Hi,
+
+I maintain a study of where remote companies are actually allowed to hire —
+34,546 live postings across 3,630 companies, each geographic clause quoted
+verbatim.
+
+LearnLux came up because you are unusual. Of the 200 companies that declare
 EOR or contractor hiring, only 9 extend it to Vietnam. You are one of them.
 
 That means you are competing for those engineers against a field of 91

@@ -69,6 +69,10 @@ NAMES = {
     "openloophealth": "OpenLoop Health",
     "nice": "NICE",
     "lilt-production": "Lilt",
+    "agency": "Meridial",               # board: <title>Jobs at Meridial</title>, alt="Meridial Logo"
+    "bjakcareer": "BJAK",               # bjak.com og:site_name="BJAK"; thân tin viết "ABOUT BJAK"
+    "learnlux": "LearnLux",             # board: <title>Jobs at LearnLux</title>
+    "lumimeds": "LumiMeds",             # lumimeds.com <title>… | LumiMeds</title>
     "remotecom": "Remote",
     "ashby": "Ashby",
     "watershed": "Watershed",
