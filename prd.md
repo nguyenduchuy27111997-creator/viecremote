@@ -48,6 +48,16 @@ mới** chưa có lời giải.
 **Chế tài** (Điều 8): mua bán dữ liệu **10× khoản thu**, sàn 3 tỷ · vi phạm chuyển xuyên biên
 giới **5% doanh thu năm trước** · vi phạm khác tối đa **3 tỷ**. Có thể truy cứu hình sự.
 
+### Ràng buộc mới cho L1 — đọc trước khi bán API
+
+**Điều 27.1 Luật Việc làm 74/2025** xếp *"thu thập, phân tích, lưu trữ, cung cấp thông tin về thị
+trường lao động"* vào **dịch vụ việc làm**. L1 miễn phí hiện nằm ngoài (Điều 27.4 và Điều 28 gắn
+với *kinh doanh* và *định giá dịch vụ*). **Bán API hoặc bán báo cáo thị trường lao động sẽ kích
+hoạt nhóm này.** Kiếm tiền từ tài trợ/quảng cáo thì không. Phân tích: [legal-options.md](legal-options.md) Mục 2.
+
+Các cấu trúc hợp pháp thay thế (kể cả phương án **không cần giấy phép nào**):
+[legal-options.md](legal-options.md).
+
 ### Hệ quả kiến trúc phải chốt trước khi code
 
 Điều 20.6.c Luật và NĐ 356 Điều 7.6 đều miễn trừ khi **chủ thể tự chuyển dữ liệu của mình**.

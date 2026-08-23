@@ -171,6 +171,7 @@ A3 (phía cầu) chặn toàn bộ đường doanh thu có trần cao và **chư
 | [MISSION.md](MISSION.md) | Sứ mệnh + 5 hệ quả |
 | [rubric-spec.md](rubric-spec.md) | Quy tắc chấm nhãn, v0.4 |
 | [legal-research.md](legal-research.md) | **Pháp lý L2 — đối chiếu toàn văn Công báo** |
+| [legal-options.md](legal-options.md) | **Cấu trúc hợp pháp — cửa nào đóng, cửa nào mở** |
 | [legal-brief.md](legal-brief.md) | 15 câu cho luật sư/kế toán (nền) |
 | `scoring-sheet.csv` · `a9-targets.csv` | Dữ liệu |
 | `tools/` | Pipeline |
