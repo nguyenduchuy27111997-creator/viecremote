@@ -2,12 +2,12 @@
 
 > **ĐỔI HƯỚNG 22/08.** Từ *web tra cứu đọc-only* sang **mạng lưới nối công ty nước ngoài với
 > kỹ sư Việt**. Lý do, cái giá, và cái gì còn dùng được: [PIVOT.md](PIVOT.md).
-> Ba câu pháp lý từng chặn tất cả **đã nghiên cứu xong** — [legal-research.md](legal-research.md).
-> Mô hình hợp pháp được, có điều kiện. Không còn gì chặn launch L1.
+> Ba câu pháp lý từng chặn tất cả **đã đối chiếu toàn văn Công báo** — [legal-research.md](legal-research.md).
+> Cả ba có lời giải; toàn văn làm lộ **hai câu mới** chặn L2. Không câu nào chặn launch L1.
 
 **Đang làm:** **L1 — tầng minh bạch** (tra cứu địa lý tuyển dụng công ty), sẵn sàng launch.
-**L2 — mạng lưới** đã đặc tả, **mở khoá có điều kiện** (ký quỹ 300 triệu · Mẫu 09 · đồng ý theo
-công ty) — xem [prd.md](prd.md) Mục 2.
+**L2 — mạng lưới** đã đặc tả. Điều kiện đã rõ (Giấy phép + ký quỹ 300 triệu · hồ sơ xuyên biên
+giới · đồng ý theo từng lần chuyển giao), nhưng **hai câu mới còn chặn** — xem [prd.md](prd.md) Mục 2.
 Trục chuyển từ *tin* sang *công ty* (21/08). Giao diện chuyển sang **Next.js 16 + Cloudflare D1**
 (21/08) — xem [ARCHITECTURE-WEB.md](ARCHITECTURE-WEB.md), triển khai [DEPLOY-WEB.md](DEPLOY-WEB.md). Spec: [prd.md](prd.md). Launch mục tiêu ~2–3 tuần.
 
@@ -170,7 +170,7 @@ A3 (phía cầu) chặn toàn bộ đường doanh thu có trần cao và **chư
 | [prd.md](prd.md) | **Spec build** — đọc cái này để code |
 | [MISSION.md](MISSION.md) | Sứ mệnh + 5 hệ quả |
 | [rubric-spec.md](rubric-spec.md) | Quy tắc chấm nhãn, v0.4 |
-| [legal-research.md](legal-research.md) | **Ba câu chặn L2 — đã tra, có nguồn** |
+| [legal-research.md](legal-research.md) | **Pháp lý L2 — đối chiếu toàn văn Công báo** |
 | [legal-brief.md](legal-brief.md) | 15 câu cho luật sư/kế toán (nền) |
 | `scoring-sheet.csv` · `a9-targets.csv` | Dữ liệu |
 | `tools/` | Pipeline |

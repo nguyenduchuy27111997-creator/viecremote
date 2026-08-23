@@ -26,29 +26,33 @@ L2 là chỗ có doanh thu, và cũng là chỗ có mọi rủi ro pháp lý.
 
 ## 2. Điều kiện để build L2 — đọc trước khi viết code
 
-Ba câu từng chặn L2 **đã nghiên cứu xong** — [legal-research.md](legal-research.md).
-Kết luận: **mô hình hợp pháp được, có điều kiện.** Điều kiện đã biết rõ, không còn là ẩn số.
+Ba câu từng chặn L2 **đã đối chiếu toàn văn** từ Công báo Chính phủ —
+[legal-research.md](legal-research.md). Cả ba đã có lời giải. Nhưng toàn văn làm lộ **hai câu
+mới** chưa có lời giải.
 
-| Câu | Kết quả nghiên cứu | Ràng buộc để lại cho L2 |
+### Ba câu cũ — xong
+
+| Câu | Kết quả | Ràng buộc để lại |
 |---|---|---|
-| **B-Q5** — "kết nối có đồng ý, thu phí từ công ty" có phải mua bán dữ liệu? | **Không**, nếu đúng cấu trúc. Điều 7 Luật 91/2025 cấm mua bán *"trừ trường hợp luật có quy định khác"* — Luật Việc làm 2025 quy định rõ *"tư vấn, giới thiệu việc làm"*. Điều 25 cho phép dùng dữ liệu ngoài tuyển dụng **nếu ứng viên đồng ý** | Đồng ý **theo từng công ty**, rút lại được, có nhật ký. Thu phí cho **dịch vụ**, không theo số lượng hồ sơ. Không tuyển thì **xoá** |
-| **Điều 18 NĐ 356** — gửi hồ sơ ra nước ngoài, miễn hay phải khai? | **Phải khai.** Cả hai miễn trừ đều trượt: "quản lý nhân sự xuyên biên giới" chỉ áp cho nhân viên của chính mình; miễn trừ doanh nghiệp siêu nhỏ loại trừ khi *hoạt động chính là xử lý dữ liệu* — đúng trường hợp này | **Mẫu 09** + báo Bộ Công an trong 60 ngày + **thoả thuận ràng buộc với từng công ty nhận hồ sơ** |
-| **NĐ 352/2025** — nền tảng online có phải đủ điều kiện dịch vụ việc làm? | **Có.** Luật ghi rõ dịch vụ việc làm được làm bằng phương thức điện tử. Thủ tục cấp phép đã bãi bỏ 01/07/2026, nhưng **điều kiện vẫn còn**, chuyển sang hậu kiểm | Pháp nhân · **ký quỹ 300 triệu** · trụ sở thuê ≥24 tháng, duy trì suốt quá trình |
+| **B-Q5** — thu phí có phải mua bán dữ liệu? | **Không.** Điều 17 khoản 2 Luật 91/2025: chuyển giao khi có đồng ý, *"có thu phí hoặc không thu phí thì không được xác định là mua, bán dữ liệu cá nhân"* | NĐ 356 Điều 7.3: đồng ý **theo từng lần chuyển giao**, hiện rõ tên công ty nhận · **không được hình thành kho dữ liệu** · thỏa thuận ký **trước khi** chuyển · mã ngành phải khớp |
+| **Xuyên biên giới** | **Phải lập hồ sơ.** Điều 20.2: gửi trong **60 ngày** kể từ lần chuyển đầu. Danh sách miễn trừ (NĐ 356 Điều 17.3) đóng, không mục nào áp dụng | Hồ sơ làm **01 lần** cho suốt thời gian hoạt động, cập nhật 06 tháng khi có thay đổi |
+| **Dịch vụ việc làm** | **Vẫn cần Giấy phép** (NĐ 352 Điều 13–20), UBND cấp tỉnh cấp, hạn tối đa 60 tháng | Ký quỹ **300 triệu** · trụ sở thuê **≥24 tháng** · người đại diện có đại học **hoặc** ≥24 tháng kinh nghiệm dịch vụ việc làm |
 
-**Bộ luật Lao động 2019:** người lao động không phải trả chi phí tuyển dụng. Ràng buộc *"kỹ sư
-không bao giờ trả tiền"* trong [MISSION.md](MISSION.md) là **luật**, không phải lựa chọn.
+### Hai câu mới — CHẶN, phải hỏi trước khi ký quỹ
 
-### Cái nghiên cứu KHÔNG giải quyết được
+| Câu | Vì sao chặn |
+|---|---|
+| **Remote cho công ty nước ngoài có bị coi là "việc làm ở nước ngoài"?** NĐ 352 Điều 12.2.b | Nếu **có**: phải giới thiệu **thông qua doanh nghiệp được cấp phép đưa lao động đi nước ngoài** — phá mô hình. Lập luận ngược: luật dùng cụm *"đi làm việc ở nước ngoài theo hợp đồng"*, kỹ sư remote không đi đâu cả |
+| **Nền tảng có phải "dịch vụ xử lý dữ liệu cá nhân"?** NĐ 356 Điều 21.3 — *"dịch vụ thu thập, xử lý dữ liệu cá nhân trực tuyến từ trang web, ứng dụng"* | Nếu **có**: thêm một Giấy chứng nhận (Điều 24–27) + **tối thiểu 03 nhân sự** đủ chuẩn Điều 13.2 (cao đẳng+, ≥2 năm kinh nghiệm, đã đào tạo) |
 
-Rà soát chuyên môn vẫn cần, nhưng **muộn hơn và rẻ hơn** — câu hỏi đã đổi từ *"mô hình này có
-hợp pháp không"* thành *"câu chữ đã đúng chưa"*:
+**Chế tài** (Điều 8): mua bán dữ liệu **10× khoản thu**, sàn 3 tỷ · vi phạm chuyển xuyên biên
+giới **5% doanh thu năm trước** · vi phạm khác tối đa **3 tỷ**. Có thể truy cứu hình sự.
 
-- Câu chữ đồng ý cụ thể · mẫu thoả thuận với công ty nhận hồ sơ · nội dung Mẫu 09
-- Ngưỡng DPO/DPIA — hoạt động chính là xử lý dữ liệu, nhiều khả năng **mất miễn trừ ngay từ đầu**
-- Cách thực thi thực tế: luật hiệu lực 01/01/2026, chưa có án lệ
+### Hệ quả kiến trúc phải chốt trước khi code
 
-**Thời điểm:** trước **ca nối đầu tiên**, không phải bây giờ. Chế tài cao nhất là **10× doanh
-thu** — không tự tin vào tài liệu nghiên cứu khi đến bước đó.
+Điều 20.6.c Luật và NĐ 356 Điều 7.6 đều miễn trừ khi **chủ thể tự chuyển dữ liệu của mình**.
+Nền tảng gửi hộ, hay kỹ sư tự gửi — hai kiến trúc khác nhau, gánh nặng pháp lý khác hẳn.
+**Quyết định này đi trước dòng code đầu tiên của L2.**
 
 ---
 
