@@ -50,6 +50,22 @@ Về dịch vụ việc làm thì còn tệ hơn: doanh nghiệp nước ngoài 
 Nhà lập pháp đã nghĩ tới nền tảng online và viết riêng một khoản cho nó. "Chúng tôi chỉ là phần
 mềm" không phải lập luận mới — nó là trường hợp được nêu đích danh.
 
+**Bằng chứng thực nghiệm, không phải suy luận (23/08).** Đọc danh sách doanh nghiệp có Giấy
+phép do Sở TPHCM công bố (`content/licensed-partners-hcm.csv`, 141 doanh nghiệp): **mọi sàn
+tuyển dụng lớn của Việt Nam đều nằm trong đó.**
+
+| Sàn | Pháp nhân trong danh sách có giấy phép |
+|---|---|
+| VietnamWorks | Công ty Cổ phần **Navigos Group** Việt Nam |
+| ITviec | Công ty Cổ phần **IT Việc** |
+| Vieclam24h | Công ty Cổ phần **Việc Làm 24H** |
+| CareerLink | Công ty TNHH **CareerLink** |
+
+Đây là ngành đã chạy nhiều năm, có tiền, có luật sư. Nếu tồn tại cách cấu trúc để trang đăng tin
+việc làm **không** cần giấy phép, họ đã tìm ra và dùng từ lâu — chứ không cùng nhau đi ký quỹ.
+
+**Kết luận: "chỉ là trang đăng tin" không phải kẽ hở. Nó là mô tả của một ngành có giấy phép.**
+
 ### 1.3 "Miễn phí nên không phải kinh doanh" — MỎNG, không dựa vào được
 
 Có cơ sở: Điều 27.4 nói *"hoạt động **kinh doanh** dịch vụ việc làm"*, và Điều 28.4 giả định
