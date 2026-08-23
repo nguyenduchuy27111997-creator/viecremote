@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Suspense } from "react"
-import { all, meta, parseLocked, type Company } from "@/lib/db"
+import { all, meta, one, parseLocked, type Company } from "@/lib/db"
 import { MECH } from "@/lib/labels"
 import { cname } from "@/lib/countries"
 import { Badge } from "@/components/Badge"
@@ -99,7 +99,53 @@ async function Header() {
         </Link>
         .
       </p>
+
+      <ForCompanies />
     </div>
+  )
+}
+
+/**
+ * Khối duy nhất trên trang này nói với PHÍA CẦU.
+ *
+ * Đ3 (legal-options.md Mục 3) là đường có doanh thu mà không cần Giấy phép
+ * dịch vụ việc làm — nhưng nó đang nằm sau mục nav thứ 7 và không ai tìm ra.
+ * Đặt ở đây vì người đọc trang này gồm cả người ở công ty nước ngoài đi tra
+ * đối thủ, không chỉ kỹ sư Việt.
+ *
+ * Tiếng Anh có chủ ý: người trả tiền không đọc tiếng Việt. Khối tiếng Anh
+ * giữa trang tiếng Việt là cố ý gây chú ý, không phải sót bản dịch — nên có
+ * lang="en" để trình đọc màn hình đổi giọng đúng.
+ */
+async function ForCompanies() {
+  // Số phải sống như mọi số khác trên site. Cứng ở đây thì tới ngày kho đổi,
+  // khối bán hàng thành khối nói dối — và nó là khối duy nhất người trả tiền đọc.
+  const m = await one<{ mech: number; mech_ok: number }>(
+    `SELECT count(*) mech, sum(verdict='ok') mech_ok
+     FROM company WHERE mechanism <> 'unknown'`,
+  )
+  return (
+    <aside
+      className="rise mt-9 rounded-lg border border-line bg-card p-5 sm:p-6"
+      style={{ animationDelay: "300ms" }}
+      lang="en"
+    >
+      <p className="font-mono text-[11px] uppercase tracking-wider text-text-3">
+        For companies hiring remotely
+      </p>
+      <p className="mt-3 max-w-[62ch] text-[14px] leading-relaxed text-text-2">
+        {m?.mech ?? 0} companies in this corpus already hire through an employer-of-record or
+        contractor arrangement — the machinery needed to hire anywhere.{" "}
+        <b className="text-text">{m?.mech_ok ?? 0}</b> of them include Vietnam. If you already run
+        an EOR, adding it is a policy edit, not a project.
+      </p>
+      <Link
+        href="/hiring-in-vietnam"
+        className="mt-4 inline-block rounded-sm border border-line bg-raised px-4 py-[11px] text-[13px] leading-5 transition-colors hover:border-field"
+      >
+        Read the market brief →
+      </Link>
+    </aside>
   )
 }
 

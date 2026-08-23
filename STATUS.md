@@ -1,16 +1,23 @@
-# Trạng thái — 22/08/2026
+# Trạng thái — 23/08/2026
 
-> **ĐỔI HƯỚNG 22/08.** Từ *web tra cứu đọc-only* sang **mạng lưới nối công ty nước ngoài với
-> kỹ sư Việt**. Lý do, cái giá, và cái gì còn dùng được: [PIVOT.md](PIVOT.md).
-> Ba câu pháp lý từng chặn tất cả **đã đối chiếu toàn văn Công báo** — [legal-research.md](legal-research.md).
-> Cả ba có lời giải; toàn văn làm lộ **hai câu mới** chặn L2. Không câu nào chặn launch L1.
+> **ĐỔI HƯỚNG 22/08** sang **mạng lưới nối công ty nước ngoài với kỹ sư Việt** ([PIVOT.md](PIVOT.md)).
+> **SỬA THỨ TỰ 23/08** sau khi đối chiếu toàn văn Công báo: **Đ3 trước, L2 sau**
+> ([legal-research.md](legal-research.md) · [legal-options.md](legal-options.md)).
 
-**Đang làm:** **L1 — tầng minh bạch** (tra cứu địa lý tuyển dụng công ty), sẵn sàng launch.
-**Đ3 — báo cáo thị trường bán cho công ty nước ngoài** đã build: `/hiring-in-vietnam` +
-`tools/market_report.py`. Đây là đường có doanh thu **không cần giấy phép nào** —
-[legal-options.md](legal-options.md) Mục 3.
-**L2 — mạng lưới** đã đặc tả. Điều kiện đã rõ (Giấy phép + ký quỹ 300 triệu · hồ sơ xuyên biên
-giới · đồng ý theo từng lần chuyển giao), nhưng **hai câu mới còn chặn** — xem [prd.md](prd.md) Mục 2.
+## Ba tầng, theo đúng thứ tự làm
+
+| | Là gì | Trạng thái | Cần giấy phép? |
+|---|---|---|---|
+| **L1** | Tra cứu minh bạch — công ty nào tuyển được ở VN | ✅ **Chạy**, precision 97,5% | Không |
+| **Đ3** | Bán nghiên cứu cho công ty nước ngoài | ✅ **Chạy** — `/hiring-in-vietnam`, báo cáo, 13 thư chào hàng soạn sẵn | **Không** |
+| **L2** | Mạng lưới — hồ sơ kỹ sư, giới thiệu có thu phí | 🔒 Đã đặc tả, **hai câu pháp lý còn chặn** | Có — [prd.md](prd.md) Mục 2 |
+
+**Vì sao Đ3 trước:** L2 cần Giấy phép + ký quỹ 300 triệu, mà hai câu pháp lý chưa có lời giải.
+Bỏ 300 triệu trước khi trả lời được là đặt cược sai thứ tự. Đ3 có doanh thu, không cần giấy
+phép nào, và trả lời câu quan trọng hơn — *có ai trả tiền không*.
+
+**Việc kế tiếp là của bạn, không tự động được:** tìm địa chỉ liên hệ cho 13 thư trong
+`content/outreach-*.txt` rồi gửi. Đó là bài kiểm tra thật của Đ3.
 Trục chuyển từ *tin* sang *công ty* (21/08). Giao diện chuyển sang **Next.js 16 + Cloudflare D1**
 (21/08) — xem [ARCHITECTURE-WEB.md](ARCHITECTURE-WEB.md), triển khai [DEPLOY-WEB.md](DEPLOY-WEB.md). Spec: [prd.md](prd.md). Launch mục tiêu ~2–3 tuần.
 

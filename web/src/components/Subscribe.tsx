@@ -4,11 +4,14 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 /**
- * Kênh sở hữu duy nhất, và là HẠT GIỐNG của mạng lưới (BUSINESS-PLAN GĐ 1).
+ * Kênh sở hữu duy nhất. Chỉ thu email, KHÔNG hồ sơ, KHÔNG CV.
  *
- * Chỉ thu email. KHÔNG hồ sơ, KHÔNG CV, KHÔNG kỹ năng — mọi thứ đó thuộc L2 và
- * L2 đang khoá chờ luật sư (prd.md Mục 2). Ghi danh quan tâm không phải là
- * "giới thiệu việc làm", nên nó nằm ngoài phạm vi dịch vụ việc làm có điều kiện.
+ * ĐÃ RÚT lời hứa "mạng lưới sắp mở" (23/08). Lý do: L2 cần Giấy phép dịch vụ
+ * việc làm, ký quỹ 300 triệu, và hai câu pháp lý còn chưa có lời giải
+ * (legal-research.md Mục 7). Không có ngày tháng nào đứng sau lời hứa đó, nên
+ * hứa ở đây là thu email bằng một thứ có thể không bao giờ giao được.
+ *
+ * Giờ chỉ hứa đúng thứ giao được ngay: thư khi kho đổi đáng kể.
  *
  * Copy phải nói THẲNG sẽ dùng làm gì ngay tại chỗ nhập — email là dữ liệu cá
  * nhân, và hứa mơ hồ ở đây là vừa dở vừa rủi ro.
@@ -55,7 +58,7 @@ export function Subscribe() {
   return (
     <form onSubmit={submit} className="max-w-[52ch]">
       <label htmlFor="sub" className="font-mono text-[11px] uppercase tracking-wider text-text-3">
-        Ghi danh mạng lưới kỹ sư Việt
+        Nhận thư khi kho thay đổi
       </label>
       <div className="mt-2 flex flex-wrap gap-2">
         <input
@@ -77,9 +80,9 @@ export function Subscribe() {
         </button>
       </div>
       <p className="mt-2.5 max-w-[52ch] text-[12px] leading-relaxed text-text-3">
-        Tôi đang xây một mạng lưới nối kỹ sư Việt với công ty nước ngoài{" "}
-        <b className="text-text-2">thật sự tuyển được</b> — ghi danh để biết khi nó mở. Trong lúc
-        chờ, bạn nhận thư khi kho có thay đổi đáng kể.
+        Kho dựng lại mỗi ngày. Thư gửi khi có thay đổi{" "}
+        <b className="text-text-2">đáng để bạn biết</b> — công ty mới mở cho Việt Nam, công ty
+        đang mở thì đóng lại, hoặc phương pháp chấm đổi. Không phải bản tin định kỳ.
       </p>
       <p className="mt-1.5 max-w-[52ch] text-[12px] leading-relaxed text-text-3">
         Chỉ thu email, <b className="text-text-2">không hồ sơ, không CV</b>. Cần xác nhận qua thư.

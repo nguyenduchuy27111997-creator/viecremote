@@ -1,8 +1,22 @@
 # Sứ mệnh & Tầm nhìn
 
 **Chốt lại:** 22/08/2026 — đổi hướng sang **mạng lưới**
+**Sửa thứ tự:** 23/08/2026 — **Đ3 trước, L2 sau**
 **Thay thế** bản 17/08 (*"Sứ mệnh A — minh bạch thị trường"*, đọc-only, không tài khoản)
 Lý do đổi và cái giá: [PIVOT.md](PIVOT.md)
+
+> **Sứ mệnh không đổi. Thứ tự đổi.**
+>
+> Đối chiếu toàn văn Công báo (23/08) cho thấy mạng lưới **hợp pháp được, có điều kiện**:
+> Giấy phép dịch vụ việc làm, ký quỹ 300 triệu, đồng ý theo từng lần chuyển giao, hồ sơ chuyển
+> dữ liệu xuyên biên giới. Nhưng **hai câu vẫn chưa có lời giải** — remote cho công ty nước
+> ngoài có bị coi là *"việc làm ở nước ngoài"* không, và nền tảng có phải *"dịch vụ xử lý dữ
+> liệu cá nhân"* không ([legal-research.md](legal-research.md) Mục 7).
+>
+> Bỏ 300 triệu ký quỹ trước khi trả lời được hai câu đó là đặt cược sai thứ tự. Nên **Đ3 —
+> bán nghiên cứu cho phía cầu — đi trước**: có doanh thu, không cần giấy phép nào, và trả lời
+> câu quan trọng hơn mọi câu pháp lý — *có ai trả tiền không*.
+> Bốn cấu trúc hợp pháp và cửa nào đã đóng: [legal-options.md](legal-options.md).
 
 ---
 
