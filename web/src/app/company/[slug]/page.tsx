@@ -31,6 +31,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description:
       `What ${c.name}'s own job postings say about the countries it can hire in, `
       + "quoted clause by clause. Company policy research — no candidate data.",
+    alternates: {
+      canonical: `/company/${slug}`,
+      languages: { en: `/company/${slug}`, vi: `/cong-ty/${slug}` },
+    },
   }
 }
 

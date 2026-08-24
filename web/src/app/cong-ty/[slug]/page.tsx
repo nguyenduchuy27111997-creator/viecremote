@@ -48,11 +48,16 @@ async function load(slug: string) {
 export async function generateMetadata({
   params,
 }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const d = await load((await params).slug)
+  const slug = (await params).slug
+  const d = await load(slug)
   if (!d) return {}
   return {
     title: `${d.c.name} — địa lý tuyển dụng`,
     description: `${d.c.name}: ${d.c.verdict_label.toLowerCase()}. ${d.c.n_jobs} tin remote, kèm trích dẫn.`,
+    alternates: {
+      canonical: `/cong-ty/${slug}`,
+      languages: { vi: `/cong-ty/${slug}`, en: `/company/${slug}` },
+    },
   }
 }
 

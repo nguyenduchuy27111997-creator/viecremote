@@ -8,6 +8,10 @@ export const revalidate = 86400
 
 export const metadata = {
   title: "Tôi chấm 34 nghìn tin remote. 0/150 tin chấm tay ghi rõ tuyển được ở Việt Nam",
+  alternates: {
+    canonical: "/cong-bo",
+    languages: { vi: "/cong-bo", en: "/research" },
+  },
   description:
     "Bài công bố: cách kho được dựng, ba con số chính, rào cản là gì, và vì sao "
     + "kênh tin đăng công khai về mặt cấu trúc không dành cho kỹ sư Việt.",
@@ -54,8 +58,19 @@ export default async function CongBo() {
   const pct = (n: number) => `${((100 * n) / jobs).toFixed(1).replace(".", ",")}%`
   const openJobs = of("worldwide")
 
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `Tôi chấm ${num(jobs)} tin remote. 0/150 tin chấm tay ghi rõ tuyển được ở Việt Nam`,
+    inLanguage: "vi",
+    about: "Công ty remote nào thật sự tuyển được người ở Việt Nam, đo từ tin công khai",
+    isAccessibleForFree: true,
+    dateModified: new Date().toISOString().slice(0, 10),
+  }
+
   return (
     <article>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <p className="font-mono text-[11.5px] text-text-3">
         <Link className="underline underline-offset-2 hover:text-text-2" href="/research" lang="en">
           English version →

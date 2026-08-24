@@ -11,6 +11,12 @@ export const metadata = {
   description:
     "The study behind this site: how the corpus is built, what blocks a candidate in Vietnam, "
     + "and why the public-postings channel is structurally closed. Numbers update daily.",
+  // Cặp song ngữ với /cong-bo. Không khai thì Google thấy hai trang rời và có
+  // thể trả bản tiếng Việt cho người tìm tiếng Anh.
+  alternates: {
+    canonical: "/research",
+    languages: { en: "/research", vi: "/cong-bo" },
+  },
 }
 
 /** Nhãn rào cản tiếng Anh — bản Việt nằm ở lib/labels.ts cho trang /vi-sao-bi-loai. */
@@ -62,8 +68,21 @@ export default async function Research({
   const num = (n: number) => n.toLocaleString("en-US")
   const pct = (n: number) => `${((100 * n) / jobs).toFixed(1)}%`
 
+  // JSON-LD Article — KHÔNG phải JobPosting (C2 cấm phát sinh JobPosting schema;
+  // đây là bài nghiên cứu VỀ các tin, không phải tin). Số sống như chính trang.
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `I scored ${num(jobs)} remote job posts. 0 of 150 hand-scored said they hire in Vietnam`,
+    inLanguage: "en",
+    about: "Where remote companies can actually hire, measured from public job postings",
+    isAccessibleForFree: true,
+    dateModified: new Date().toISOString().slice(0, 10),
+  }
+
   return (
     <article lang="en">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       <div className="glow rise">
         <Eyebrow>The study · numbers update daily</Eyebrow>
         <h1 className="mt-4 max-w-[24ch] text-[clamp(28px,4.8vw,44px)]">
