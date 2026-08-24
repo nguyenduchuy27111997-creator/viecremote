@@ -85,7 +85,7 @@ Ba biến thể. Thay `https://viec-remote.nguyenduchuy27111997.workers.dev` tr�
 > Every label carries a verbatim quote from the source posting. No accounts, no ads, no data
 > selling. Static-ish site on Cloudflare, costs about $12/year to run.
 >
-> https://viec-remote.nguyenduchuy27111997.workers.dev
+> https://viec-remote.nguyenduchuy27111997.workers.dev/research
 
 ---
 

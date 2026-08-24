@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/khoa`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/lam-gi`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/cong-bo`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/research`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/hiring-in-sea`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/hiring-in-sea/changes`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
     ...SEA.map((c) => ({

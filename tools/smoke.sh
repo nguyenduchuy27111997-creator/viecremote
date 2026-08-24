@@ -22,7 +22,7 @@ URL="${URL%/}"
 # API, và hai tệp cho máy đọc.
 PAGES=(/ /tin-mo /thay-doi /khoa /lam-gi /cong-bo /phuong-phap /rieng-tu /api
        /hiring-in-sea /hiring-in-sea/changes /hiring-in-sea/vietnam /hiring-in-sea/philippines
-       /company/snowflake /sitemap.xml /robots.txt)
+       /company/snowflake /research /sitemap.xml /robots.txt)
 
 probe() { # url mã-mong-đợi
     local code=""

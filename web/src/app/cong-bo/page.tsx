@@ -56,7 +56,13 @@ export default async function CongBo() {
 
   return (
     <article>
-      <div className="glow rise">
+      <p className="font-mono text-[11.5px] text-text-3">
+        <Link className="underline underline-offset-2 hover:text-text-2" href="/research" lang="en">
+          English version →
+        </Link>
+      </p>
+
+      <div className="glow rise mt-4">
         <Eyebrow>Bài công bố · số liệu cập nhật mỗi ngày</Eyebrow>
         <h1 className="mt-4 max-w-[22ch] text-[clamp(28px,4.8vw,44px)]">
           Tôi chấm {num(jobs)} tin remote. Có <span className="grad">0 tin</span> ghi rõ tuyển
