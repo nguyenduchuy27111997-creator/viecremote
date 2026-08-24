@@ -106,7 +106,12 @@ jobs:
           exit 1
 
       - name: Dựng bản tĩnh (đường lui)
-        run: python3 build.py
+        # Font tải một lần rồi nằm ngoài git (site/ bị ignore) — máy dev có sẵn
+        # từ lần fetch cũ, runner tươi thì KHÔNG, và build.py kiểm link nội bộ
+        # nên thiếu fonts.css là 4.219 link gãy, đỏ cả run (đã chết thật 24/08).
+        run: |
+          [ -f site/assets/fonts.css ] || python3 tools/fetch_fonts.py
+          python3 build.py
 
       - name: Lưu kho
         uses: actions/cache/save@v4
