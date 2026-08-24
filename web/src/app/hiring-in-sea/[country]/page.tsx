@@ -47,10 +47,16 @@ export default async function Market({ params }: { params: Promise<{ country: st
   const foot = await one<{ n: number; jobs: number }>(
     "SELECT count(DISTINCT slug) n, sum(n_jobs) jobs FROM locked WHERE code = ?", c.code,
   )
-  const alone = await one<{ n: number }>(
-    `SELECT count(*) n FROM (
+  // Công ty mà DẤU CHÂN ĐNA chỉ có đúng nước này — danh sách, không chỉ con số.
+  // Đây là nội dung bán được của trang: từng cái tên là một công ty đã trả
+  // tiền cho bộ máy khu vực mà mới dùng ở một chỗ.
+  const alone = await all<{ slug: string; name: string; here: number; mechanism: string }>(
+    `SELECT c.slug, c.name, l.n_jobs here, c.mechanism
+     FROM locked l JOIN company c ON c.slug = l.slug
+     WHERE l.code = ? AND l.slug IN (
        SELECT slug FROM locked WHERE code IN (${codes})
-       GROUP BY slug HAVING count(DISTINCT code) = 1 AND max(code) = ?)`, c.code,
+       GROUP BY slug HAVING count(DISTINCT code) = 1)
+     ORDER BY l.n_jobs DESC`, c.code,
   )
   const top = await all<{ slug: string; name: string; n: number; mechanism: string }>(
     `SELECT c.slug, c.name, l.n_jobs n, c.mechanism
@@ -232,15 +238,39 @@ export default async function Market({ params }: { params: Promise<{ country: st
         </Section>
       )}
 
-      <Section
-        title={`Companies that stop at ${c.name}`}
-        hint={`${num(alone?.n ?? 0)} companies name ${c.name} and no other Southeast Asian market.`}
-      >
-        <Note>
-          They already carry the cost of hiring in the region and draw from one talent pool with
-          it. That is the gap this brief measures — not a missing country, an unused capability.
-        </Note>
-      </Section>
+      {alone.length > 0 && (
+        <Section
+          title={`Companies that stop at ${c.name}`}
+          hint={`${num(alone.length)} companies name ${c.name} and no other Southeast Asian market.
+                 They already carry the cost of hiring in the region — the gap this brief measures
+                 is not a missing country, it is an unused capability.`}
+        >
+          <div className="scroll-x mt-5 max-h-[30rem] overflow-y-auto rounded-lg border border-line bg-card">
+            <table className="w-full border-collapse text-[13.5px]">
+              <thead className="sticky top-0 bg-card">
+                <tr className="border-b border-line text-left font-mono text-[11px] uppercase tracking-wider text-text-3">
+                  <th className="px-4 py-3 font-normal">Company</th>
+                  <th className="px-4 py-3 text-right font-normal">Postings here</th>
+                  <th className="px-4 py-3 font-normal">Mechanism</th>
+                </tr>
+              </thead>
+              <tbody>
+                {alone.map((a) => (
+                  <tr key={a.slug} className="border-b border-line last:border-0">
+                    <td className="px-4 py-2.5">
+                      <Link className="hover:underline" href={`/company/${a.slug}`}>{a.name}</Link>
+                    </td>
+                    <td className="px-4 py-2.5 text-right font-mono tabular-nums">{num(a.here)}</td>
+                    <td className="px-4 py-2.5 text-text-3">
+                      {a.mechanism === "unknown" ? "—" : a.mechanism}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Section>
+      )}
 
       <Section
         title={`Largest hirers naming ${c.name}`}
