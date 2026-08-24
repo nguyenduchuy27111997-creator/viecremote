@@ -7,7 +7,7 @@ import { Eyebrow, Lead, Note, Section } from "@/components/Page"
 export const revalidate = 86400
 
 export const metadata = {
-  title: "Tôi chấm 34 nghìn tin remote. 0 tin ghi rõ tuyển được ở Việt Nam",
+  title: "Tôi chấm 34 nghìn tin remote. 0/150 tin chấm tay ghi rõ tuyển được ở Việt Nam",
   description:
     "Bài công bố: cách kho được dựng, ba con số chính, rào cản là gì, và vì sao "
     + "kênh tin đăng công khai về mặt cấu trúc không dành cho kỹ sư Việt.",
@@ -65,8 +65,8 @@ export default async function CongBo() {
       <div className="glow rise mt-4">
         <Eyebrow>Bài công bố · số liệu cập nhật mỗi ngày</Eyebrow>
         <h1 className="mt-4 max-w-[22ch] text-[clamp(28px,4.8vw,44px)]">
-          Tôi chấm {num(jobs)} tin remote. Có <span className="grad">0 tin</span> ghi rõ tuyển
-          được người ở Việt Nam
+          Tôi chấm {num(jobs)} tin remote. <span className="grad">0/150 tin chấm tay</span> ghi
+          rõ tuyển được người ở Việt Nam
         </h1>
         <Lead>
           Tôi hay thấy câu này trong các nhóm dev: <i>&ldquo;remote thì làm ở đâu chẳng

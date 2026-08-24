@@ -7,7 +7,7 @@ import { Lookup } from "@/components/Lookup"
 export const revalidate = 86400
 
 export const metadata = {
-  title: "I scored 34k remote job posts. Zero said they hire in Vietnam",
+  title: "I scored 34k remote job posts. 0 of 150 hand-scored said they hire in Vietnam",
   description:
     "The study behind this site: how the corpus is built, what blocks a candidate in Vietnam, "
     + "and why the public-postings channel is structurally closed. Numbers update daily.",
@@ -67,8 +67,8 @@ export default async function Research({
       <div className="glow rise">
         <Eyebrow>The study · numbers update daily</Eyebrow>
         <h1 className="mt-4 max-w-[24ch] text-[clamp(28px,4.8vw,44px)]">
-          I scored {num(jobs)} remote job posts. <span className="grad">Zero</span> said they
-          hire in Vietnam
+          I scored {num(jobs)} remote job posts. <span className="grad">Zero of 150
+          hand-scored</span> said they hire in Vietnam
         </h1>
         <Lead>
           I kept seeing &ldquo;remote means you can work anywhere&rdquo; and wanted to know how
