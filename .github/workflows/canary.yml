@@ -1,0 +1,47 @@
+name: Chim hoàng yến
+
+# Kiểm KẾT QUẢ, không kiểm pipeline.
+#
+# Bài học 24/08: refresh bị HUỶ (không phải fail) ba đêm liên tiếp vì timeout,
+# và GitHub không gửi thư cho run bị huỷ — kho đóng băng, mọi cổng đều im.
+# Cổng nằm trong pipeline chỉ kêu khi pipeline chạy tới nó. Workflow này đứng
+# NGOÀI: mỗi sáng hỏi production đúng một câu — "dữ liệu hôm nay có phải của
+# hôm nay không" — nên bất kể refresh chết kiểu gì (huỷ, treo, quên bật, secret
+# hết hạn), nó vẫn đỏ và GitHub vẫn gửi thư.
+#
+# 03:00 UTC = 10:00 sáng VN, sau cửa sổ refresh (22:17 UTC + ~2,5h) đủ xa.
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Dữ liệu production có tươi không
+        run: |
+          URL="${{ vars.SITE_URL || 'https://viec-remote.nguyenduchuy27111997.workers.dev' }}"
+          body=$(curl -sf --max-time 25 "$URL/api/health") \
+            || { echo "::error::/api/health không trả lời — site sập hoặc route mất"; exit 1; }
+          echo "health: $body"
+
+          built=$(echo "$body" | python3 -c "import sys,json; print(json.load(sys.stdin)['built_at'] or '')")
+          jobs=$(echo "$body"  | python3 -c "import sys,json; print(json.load(sys.stdin)['n_jobs'])")
+
+          [ -n "$built" ] || { echo "::error::meta không có built_at"; exit 1; }
+          # Kho rỗng mà vẫn 200 là kiểu chết tinh vi hơn sập hẳn.
+          [ "$jobs" -gt 10000 ] || { echo "::error::n_jobs=$jobs — kho teo bất thường"; exit 1; }
+
+          # Ngưỡng 2 ngày, không phải 1: built_at chỉ có ngày (không giờ), và
+          # canary 03:00 UTC chạy SAU refresh 22:17 UTC cùng đêm — refresh thành
+          # công đêm qua cho built_at = hôm qua theo UTC. Ngưỡng 1 ngày sẽ kêu
+          # oan đúng vào sáng mà mọi thứ đều ổn.
+          age=$(( ( $(date -u +%s) - $(date -u -d "$built" +%s) ) / 86400 ))
+          echo "built_at=$built · $age ngày trước"
+          if [ "$age" -gt 2 ]; then
+            echo "::error::kho đóng băng — bản dựng cuối $built ($age ngày trước). Xem run refresh.yml gần nhất: kể cả trạng thái CANCELLED, vì cancelled không gửi thư."
+            exit 1
+          fi
+          echo "✓ tươi"
