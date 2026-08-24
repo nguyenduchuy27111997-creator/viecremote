@@ -2,7 +2,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { all, one, parseLocked, type Company } from "@/lib/db"
 import { ename } from "@/lib/countries"
-import { NEIGHBOURS, SEA } from "@/lib/sea"
+import { NEIGHBOURS, SEA, byCode } from "@/lib/sea"
 import { Eyebrow, Lead, Note, Section } from "@/components/Page"
 
 export const revalidate = 86400
@@ -128,7 +128,7 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
         <Section title="You already hire next door">
           <p className="mt-4 max-w-[64ch] text-[14px] leading-relaxed text-text-2">
             Your postings restrict to{" "}
-            <b className="text-text">{sea.map(([code]) => ename(code)).join(", ")}</b>. That is the
+            <b className="text-text">{sea.map(([code]) => byCode(code)?.name ?? ename(code)).join(", ")}</b>. That is the
             single strongest predictor in this corpus: companies hiring somewhere in Southeast
             Asia are open to Vietnam at <b className="text-text">18.4%</b> against a{" "}
             {base.toFixed(1)}% baseline — a <b className="text-text">7.3×</b> difference that holds
