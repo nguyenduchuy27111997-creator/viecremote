@@ -208,7 +208,19 @@ A03 = R(r"\bAPAC\b|Asia[- ]Pacific|Southeast Asia|South[- ]East Asia")
 VN  = R(r"\bVi[eệ]t ?[Nn]am\b|\bVietnamese\b")
 # LỖI 3: mệnh đề giới hạn ngay sau cụm toàn cầu
 LIMIT = R(r"^\W{0,4}(?:within|in|across|throughout)\s+(?:the\s+)?[A-Z][\w .'-]{1,28}")
-B01 = R(r"contractor(?:s)? (?:welcome|role|basis)|hire (?:you )?(?:globally )?as (?:a )?contractor|\bB2B contract\b|independent contractor|invoice (?:us|monthly)")
+# Mở rộng 24/08 sau khi chấm tay 40 tin unknown với mô tả ĐẦY ĐỦ (máy bắt 3,0%
+# vs tay 7,2% — sót già nửa). Hai kiểu sót tìm thấy:
+#   "Employment type: Contract"  — dòng có cấu trúc của ATS, không phải văn xuôi
+#   "As a contractor you'll supply…" / "Freelance | 8–20 hrs/week"
+# Các ca ĐÚNG-KHI-KHÔNG-BẮT phải giữ nguyên: "contractor for the U.S.
+# government", "contract research/negotiations/lifecycle", "coordinate
+# contractors" (xây dựng) — nên "contract"/"freelance" trần không được vào.
+B01 = R(r"contractor(?:s)? (?:welcome|role|basis)|hire (?:you )?(?:globally )?as (?:a )?contractor|"
+        r"\bas an? (?:independent )?contractor,? you|"
+        r"employment type:?\s*(?:contract|freelance)\b|"
+        r"\bcontract (?:position|role|basis|engagement)\b|"
+        r"\bfreelance\b(?=[^.]{0,60}(?:\||hrs\b|hours|project\b|professionals|role\b|position|basis))|"
+        r"\bB2B contract\b|independent contractor|invoice (?:us|monthly)")
 B03 = R(r"async[- ]first|asynchronous(?:ly)?|no core hours|fully distributed|work(?:ing)? asynchronously")
 B04 = R(r"\bDeel\b|Oyster HR|employer of record|\bEOR\b|Velocity Global|Remofirst")
 TZP = R(r"(CET|CEST|EET|GMT\+[12]\b|UTC\+[12]\b|European time ?zones?)")
