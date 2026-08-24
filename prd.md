@@ -161,7 +161,7 @@ còn rỗng. Không ai sửa khoá ngoại vào đúng hôm bật.
 |---|---|---|
 | **C6** | Không hồ sơ nào rời hệ thống mà thiếu đồng ý cho **đúng công ty đó** | **Khoá ngoại ghép** `transfer(consent_id, company_slug)` → `consent(id, company_slug)` và tương tự với `company_agreement`. Cổng THỬ VI PHẠM trên bản sao trong bộ nhớ — đọc DDL là chưa đủ |
 | **C7** | Kỹ sư không bao giờ bị thu tiền | Quét mã web: tệp nào có cả từ khoá thanh toán lẫn khái niệm kỹ sư/ứng viên ⇒ đỏ |
-| **C8** | Rút lui = xoá hẳn trong 24h | Cổng: không lần chuyển giao nào sau `revoked_at`, không hồ sơ nào quá `purge_after`. Thi hành: `tools/purge_l2.sql` chạy hằng ngày trong `refresh.yml` — cổng phát hiện, tệp này khắc phục |
+| **C8** | Rút lui = xoá hẳn trong 24h | Cổng: không lần chuyển giao nào sau `revoked_at`, không hồ sơ nào quá `purge_after`. Thi hành: `tools/purge.sql` chạy hằng ngày trong `refresh.yml` — cổng phát hiện, tệp này khắc phục |
 | **C9** | Tầng minh bạch không đổi vì công ty trả tiền | Quét mã web tìm mọi `INSERT/UPDATE/DELETE` vào `company`/`job` — đúng ra phải là **không có câu nào** |
 
 Cả bốn đã kiểm đối kháng: bỏ khoá ngoại, thêm luồng thu tiền, thêm đường sửa nhãn, đặt cứng

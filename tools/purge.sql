@@ -1,4 +1,5 @@
--- Xoá dữ liệu L2 quá hạn. Chạy hằng ngày, an toàn khi bảng rỗng (L2 đang tắt).
+-- Vệ sinh dữ liệu NGƯỜI DÙNG hằng ngày — mọi lời hứa xoá trên site thi hành ở đây.
+-- An toàn khi bảng rỗng.
 --
 -- Không phải dọn dẹp cho gọn. Đây là NGHĨA VỤ:
 --
@@ -31,3 +32,11 @@ WHERE purge_after < datetime('now');
 DELETE FROM engineer
 WHERE created_at < datetime('now', '-24 hours')
   AND id NOT IN (SELECT engineer_id FROM consent WHERE revoked_at IS NULL);
+
+-- 4. Email ghi danh CHƯA XÁC NHẬN quá 7 ngày. Thư xác nhận hứa nguyên văn:
+--    "địa chỉ của bạn sẽ bị xoá sau 7 ngày" — không có câu lệnh này thì đó là
+--    lời hứa suông, và một địa chỉ email chưa xác nhận là dữ liệu cá nhân đang
+--    được giữ không có cơ sở (chủ nhân có thể chưa từng đăng ký — ai đó gõ hộ).
+DELETE FROM subscriber
+WHERE confirmed = 0
+  AND created_at < datetime('now', '-7 days');

@@ -150,8 +150,15 @@ jobs:
               2>/dev/null | tr -d ' \n'
           }
           echo "trước: $(count)"
-          npx wrangler d1 execute viec-remote --remote --file=../tools/purge_l2.sql -y
+          npx wrangler d1 execute viec-remote --remote --file=../tools/purge.sql -y
           echo "sau:   $(count)"
+          # Khẳng định lời hứa đã được giữ — cổng ở CI không thấy production,
+          # nên chỗ DUY NHẤT kiểm được là ngay sau khi xoá, bằng chính secrets này.
+          overdue=$(npx wrangler d1 execute viec-remote --remote --json --command \
+            "SELECT (SELECT count(*) FROM subscriber WHERE confirmed=0 AND created_at < datetime('now','-8 days'))
+              + (SELECT count(*) FROM engineer WHERE purge_after < datetime('now','-1 day')) n" \
+            | python3 -c "import sys,json; print(json.load(sys.stdin)[0]['results'][0]['n'])")
+          [ "$overdue" = "0" ] || { echo "::error::$overdue bản ghi quá hạn xoá vẫn còn sau khi purge chạy"; exit 1; }
 
       - name: Deploy Worker
         if: github.event_name == 'schedule' || inputs.deploy == true
