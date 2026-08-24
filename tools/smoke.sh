@@ -20,7 +20,7 @@ URL="${URL%/}"
 # Mỗi đường một trang đại diện: tiếng Việt tĩnh, tiếng Việt động (D1),
 # tiếng Anh khu vực, tiếng Anh thị trường chấm được + chưa chấm, gương soi,
 # API, và hai tệp cho máy đọc.
-PAGES=(/ /tin-mo /thay-doi /khoa /lam-gi /phuong-phap /rieng-tu /api
+PAGES=(/ /tin-mo /thay-doi /khoa /lam-gi /cong-bo /phuong-phap /rieng-tu /api
        /hiring-in-sea /hiring-in-sea/changes /hiring-in-sea/vietnam /hiring-in-sea/philippines
        /company/snowflake /sitemap.xml /robots.txt)
 

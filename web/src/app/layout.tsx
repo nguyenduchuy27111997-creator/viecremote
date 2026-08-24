@@ -117,6 +117,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <p className="mt-8 text-[12.5px] leading-relaxed text-text-3">
             Không nhận hồ sơ. Mọi thông tin lấy từ tin gốc do công ty tự công bố.
             Nhãn có thể sai — xem{" "}
+            <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/cong-bo">
+              bài công bố
+            </Link>
+            {" · "}
             <Link className="text-text-2 underline underline-offset-2 hover:text-text" href="/phuong-phap">
               phương pháp và giới hạn
             </Link>
