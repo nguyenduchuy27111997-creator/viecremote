@@ -98,6 +98,15 @@ async function Profile({ params }: { params: Promise<{ slug: string }> }) {
         {c.n_global > 0 && <ToneChip tone="open">{c.n_global} vị trí toàn cầu</ToneChip>}
         {c.n_vn > 0 && <ToneChip tone="open">{c.n_vn} vị trí mở cho VN</ToneChip>}
       </div>
+
+      {/* Cùng công ty này có bản tiếng Anh cho phía cầu. Kỹ sư là người mang
+          link đi: gửi bản tiếng Việt cho hiring manager nước ngoài là vô ích,
+          nên đường sang bản tiếng Anh phải nằm ngay đây, không phải trong nav. */}
+      <p className="mt-3 font-mono text-[11.5px] text-text-3">
+        <Link className="underline underline-offset-2 hover:text-text-2" href={`/company/${c.slug}`} lang="en">
+          English version for employers →
+        </Link>
+      </p>
       </div>
 
       <KVTable>

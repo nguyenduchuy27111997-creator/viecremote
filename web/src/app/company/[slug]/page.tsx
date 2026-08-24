@@ -78,9 +78,12 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
 
   return (
     <div lang="en">
-      <p className="font-mono text-[11.5px] text-text-3">
+      <p className="flex flex-wrap gap-x-5 font-mono text-[11.5px] text-text-3">
         <Link className="hover:underline" href="/hiring-in-sea">
           ← Southeast Asia
+        </Link>
+        <Link className="hover:underline" href={`/cong-ty/${slug}`} lang="vi">
+          Bản tiếng Việt cho kỹ sư →
         </Link>
       </p>
 
