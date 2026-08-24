@@ -86,13 +86,11 @@ if a.check:
         if not os.path.exists(f):
             continue
         txt = open(f, encoding="utf-8").read()
-        for k in ("tin", "cong_ty", "cong_ty_mo", "bi_loai", "dia_ly", "hybrid"):
-            cur = fmt(V[k])
-            # tìm số cùng bậc độ lớn nhưng khác giá trị
-            for m in re.finditer(r"\b\d{1,3}(?:\.\d{3})+\b|\b\d{2,4}\b", txt):
-                pass
-        # kiểm đơn giản: số hiện tại có xuất hiện trong bài không
-        missing = [k for k in ("tin", "cong_ty", "cong_ty_mo") if fmt(V[k]) not in txt]
+        # So khớp CÓ BIÊN SỐ, không phải substring: "91" nằm lọt trong "391"
+        # từng làm cổng xanh trong khi bài ghi 103 — cổng thủng đúng lúc cần.
+        # Biên là "không dính chữ số hay dấu chấm" vì fmt kiểu Việt (34.546).
+        has = lambda k: re.search(rf"(?<![\d.]){re.escape(fmt(V[k]))}(?![\d.])", txt)
+        missing = [k for k in ("tin", "cong_ty", "cong_ty_mo", "tin_mo") if not has(k)]
         if missing:
             stale.append((f, missing))
     print()

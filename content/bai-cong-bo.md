@@ -1,13 +1,14 @@
 # Bài công bố — bản chính
 
 **Dùng cho:** blog, LinkedIn, nhóm Facebook dev Việt, Spiderum
-**Độ dài:** ~1.100 từ · **Ngày dữ liệu:** 21/08/2026
+**Độ dài:** ~1.100 từ · **Ngày dữ liệu:** 24/08/2026
 **Trước khi đăng — hai việc:**
 
-1. Thay `[LINK]` bằng URL thật.
-2. **Chạy `python3 tools/post_numbers.py --check`.** Kho đổi mỗi ngày; chỉ sau MỘT chu kỳ
-   cập nhật, số công ty tuyển được đã đi từ 110 xuống 103. Đăng số cũ thì người đọc mở trang
-   ra thấy số khác — mất đúng thứ duy nhất bài này bán.
+1. Thay `https://viec-remote.nguyenduchuy27111997.workers.dev` bằng URL thật.
+2. **Chạy `python3 tools/post_numbers.py --check`.** Kho đổi mỗi ngày; số công ty tuyển được
+   đã đi 110 → 103 → 91 chỉ trong vài ngày (lần cuối vì loại tin hộp thư *"General
+   Application"* khỏi rổ mở — khẳng định yếu không được đứng chung hạng). Đăng số cũ thì người
+   đọc mở trang ra thấy số khác — mất đúng thứ duy nhất bài này bán.
 
 Và đọc lại Mục "Giới hạn" — đó là phần giữ uy tín cho toàn bài.
 
@@ -31,14 +32,14 @@ Kết quả không dễ chịu.
 
 | | Số tin | |
 |---|---|---|
-| Bị giới hạn địa lý | **30.000** | **86,8%** |
-| Chưa đủ căn cứ kết luận | 4.297 | 12,5% |
-| Không vướng giới hạn nào | **391** | **1,1%** |
+| Bị giới hạn địa lý | **30.001** | **86,8%** |
+| Chưa đủ căn cứ kết luận | 4.176 | 12,1% |
+| Không vướng giới hạn nào | **369** | **1,1%** |
 
-Trong 391 tin đó: 290 tin mở toàn cầu, 101 tin mở cho một vùng hoặc nước có Việt Nam
+Trong 369 tin đó: 269 tin mở toàn cầu, 100 tin mở cho một vùng hoặc nước có Việt Nam
 (APAC, Hà Nội, TP.HCM…).
 
-Tính theo **công ty** thì rõ hơn: trong 3.630 công ty, **103 công ty** tuyển được người ở Việt
+Tính theo **công ty** thì rõ hơn: trong 3.630 công ty, **91 công ty** tuyển được người ở Việt
 Nam. **2.493 công ty khoá hoàn toàn** — không một vị trí nào.
 
 Và con số làm tôi dừng lại lâu nhất: tôi chấm tay 150 tin ngẫu nhiên, đọc từ đầu đến cuối.
@@ -52,7 +53,7 @@ Không phải "công ty không thích người Việt". Là những mệnh đề
 
 | Số tin | Rào cản |
 |---|---|
-| 19.363 | Khoá theo nước, vùng, hoặc bang — *"Remote (US only)"*, *"EMEA"* |
+| 19.364 | Khoá theo nước, vùng, hoặc bang — *"Remote (US only)"*, *"EMEA"* |
 | 5.579 | Phải có mặt tại văn phòng — tin gắn nhãn remote nhưng bên trong là hybrid |
 | 1.640 | Cần giấy phép lao động tại một nước cụ thể |
 | 1.257 | Yêu cầu quốc tịch hoặc security clearance |
@@ -92,7 +93,7 @@ nào.** Mà đó chính là câu hỏi quyết định bạn có làm được h
 
 ### Nên tôi làm một trang tra cứu
 
-**[LINK]**
+**https://viec-remote.nguyenduchuy27111997.workers.dev**
 
 Không phải job board. Không nhận hồ sơ. Không đăng tin.
 
@@ -101,9 +102,11 @@ trong tin chứng minh điều đó.**
 
 Ba thứ có thể dùng ngay:
 
-- **103 công ty tuyển được người ở Việt Nam** — kèm số vị trí đang mở
+- **91 công ty tuyển được người ở Việt Nam** — kèm số vị trí đang mở
 - **Hồ sơ từng công ty** — họ khoá tuyển vào những nước nào, đếm theo số tin
-- **30.000 tin bị loại, kèm lý do trích dẫn được** — để bạn biết *đừng* mất thời gian vào đâu
+- **30.001 tin bị loại, kèm lý do trích dẫn được** — để bạn biết *đừng* mất thời gian vào đâu
+- **Nhật ký đổi nhãn** — công ty vừa mở hay vừa đóng với Việt Nam, ghi đúng ngày kho bắt được.
+  Kho dựng lại mỗi ngày và ghi đè chính nó; trang này là thứ duy nhất nhớ hôm qua
 
 Mỗi kết luận đều kèm **trích dẫn nguyên văn** từ tin gốc. Không có "theo thuật toán của chúng
 tôi". Bạn đọc được đúng câu mà máy đã đọc.
@@ -140,4 +143,4 @@ Miễn phí, không cần tài khoản, không quảng cáo, không bán dữ li
 
 ---
 
-*Dữ liệu tính đến 21/08/2026. Cập nhật hằng ngày.*
+*Dữ liệu tính đến 24/08/2026. Cập nhật hằng ngày.*

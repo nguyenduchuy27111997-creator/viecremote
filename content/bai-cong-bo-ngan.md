@@ -1,6 +1,6 @@
 # Bản ngắn — mạng xã hội
 
-Ba biến thể. Thay `[LINK]` trước khi đăng.
+Ba biến thể. Thay `https://viec-remote.nguyenduchuy27111997.workers.dev` trước khi đăng.
 
 ---
 
@@ -9,7 +9,7 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > Tôi chấm 34.546 tin tuyển dụng remote từ Greenhouse, Lever, Ashby. Tìm một thứ duy nhất:
 > có câu nào chặn người đang sống ở Việt Nam không.
 >
-> **86,8% bị giới hạn địa lý.** Chỉ **391 tin** (1,1%) không vướng gì.
+> **86,8% bị giới hạn địa lý.** Chỉ **369 tin** (1,1%) không vướng gì.
 >
 > Tôi cũng chấm tay 150 tin ngẫu nhiên, đọc từ đầu đến cuối. **Không một tin nào ghi rõ tuyển
 > được người ở Việt Nam.** Không phải "ít" — là 0.
@@ -21,10 +21,10 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > Nếu bạn đang rải đơn vào các tin remote trên LinkedIn: không phải bạn kém. Kênh đó về mặt cấu
 > trúc không dành cho bạn.
 >
-> Tôi làm một trang tra cứu. **103 công ty** thật sự tuyển được người ở VN, mỗi kết luận kèm
+> Tôi làm một trang tra cứu. **91 công ty** thật sự tuyển được người ở VN, mỗi kết luận kèm
 > trích dẫn nguyên văn từ tin gốc. Miễn phí, không tài khoản, không quảng cáo.
 >
-> [LINK]
+> https://viec-remote.nguyenduchuy27111997.workers.dev
 >
 > Độ chính xác 97,5% — cách đo và giới hạn ghi công khai ở trang Phương pháp. Thấy sai thì
 > báo tôi.
@@ -38,21 +38,21 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > **86,8% khoá theo địa lý.** 1,1% không vướng gì. Và 0/150 tin chấm tay ghi rõ tuyển được
 > người ở Việt Nam.
 >
-> Rào cản không mơ hồ, nó viết sẵn trong tin: 19.363 tin khoá theo nước/vùng/bang · 5.579 tin
+> Rào cản không mơ hồ, nó viết sẵn trong tin: 19.364 tin khoá theo nước/vùng/bang · 5.579 tin
 > gắn nhãn remote nhưng bên trong yêu cầu lên văn phòng · 796 tin đòi hình thức lao động chỉ
 > tồn tại ở một nước.
 >
 > Tôi mở dữ liệu này thành trang tra cứu công khai: công ty nào tuyển được người ở VN, và câu
 > nào trong tin chứng minh.
 >
-> [LINK]
+> https://viec-remote.nguyenduchuy27111997.workers.dev
 
 ---
 
 ## C. Hacker News · tiếng Anh
 
 **Tiêu đề:**
-`Show HN: I scored 34,313 remote job posts – 0 of 150 sampled said they hire in Vietnam`
+`Show HN: I scored 34,546 remote job posts – 0 of 150 sampled said they hire in Vietnam`
 
 **Bình luận đầu (đăng ngay sau khi post):**
 
@@ -63,11 +63,11 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > Ashby) and checked each one for a single thing: does any clause block someone living in
 > Vietnam?
 >
-> 34,313 postings, 3,666 companies. **86.3% are geo-restricted.** 1.2% have no blocking clause.
+> 34,546 postings, 3,630 companies. **86.8% are geo-restricted.** 1.1% have no blocking clause.
 > I also hand-scored 150 random postings end to end — **zero** explicitly said they hire in
 > Vietnam.
 >
-> The barriers are concrete, not vibes: 19,023 locked to a country/region/state, 5,466 labeled
+> The barriers are concrete, not vibes: 19,364 locked to a country/region/state, 5,579 labeled
 > remote but requiring office presence, 796 requiring an employment form that only exists in
 > one country (US W-2, UK PAYE).
 >
@@ -85,7 +85,7 @@ Ba biến thể. Thay `[LINK]` trước khi đăng.
 > Every label carries a verbatim quote from the source posting. No accounts, no ads, no data
 > selling. Static-ish site on Cloudflare, costs about $12/year to run.
 >
-> [LINK]
+> https://viec-remote.nguyenduchuy27111997.workers.dev
 
 ---
 
