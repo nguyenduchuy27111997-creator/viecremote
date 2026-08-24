@@ -180,6 +180,7 @@ A3 (phía cầu) chặn toàn bộ đường doanh thu có trần cao và **chư
 | [prd.md](prd.md) | **Spec build** — đọc cái này để code |
 | [MISSION.md](MISSION.md) | Sứ mệnh + 5 hệ quả |
 | [rubric-spec.md](rubric-spec.md) | Quy tắc chấm nhãn, v0.4 |
+| `tools/inbox.py` | **Hộp thư vận hành** — yêu cầu Đ3, báo sai, ghi danh trên production. Chạy mỗi sáng |
 | [legal-research.md](legal-research.md) | **Pháp lý L2 — đối chiếu toàn văn Công báo** |
 | [legal-options.md](legal-options.md) | **Cấu trúc hợp pháp — cửa nào đóng, cửa nào mở** |
 | [legal-brief.md](legal-brief.md) | 15 câu cho luật sư/kế toán (nền) |
