@@ -31,7 +31,10 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    # Bước kéo toàn kho cần ~2h; mốc 90 phút đã huỷ ba đêm liên tiếp mà không
+    # ai hay — và vì bậc poll chỉ được ghi khi chạy trọn, mỗi đêm lại kéo đúng
+    # chỗ cũ rồi chết đúng chỗ cũ. Repo public nên phút Actions miễn phí.
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v5
 
@@ -39,7 +42,7 @@ jobs:
       # kéo tin chiếm phần lớn). Sai quyền mà đợi 25 phút mới biết là vòng lặp
       # sửa lỗi tệ. Kiểm ngay đầu, hỏng thì dừng sau ~40 giây.
       - name: Kiểm thông tin xác thực Cloudflare
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
         working-directory: web
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -80,6 +83,17 @@ jobs:
       - name: Cổng C1..C5 + xuất SQLite/seed
         run: python3 -u tools/export_db.py
 
+      # Bậc poll là trạng thái DUY NHẤT không dựng lại được và không nằm trong
+      # jobs.json. Ghi NGAY sau khi dữ liệu qua cổng — để trước bước deploy thì
+      # deploy hỏng không kéo mất tiến độ kéo tin (đã mất ba đêm vì để cuối).
+      - name: Ghi lại bậc poll
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/slug_state.json
+          git diff --quiet --cached || git commit -m "chore: cập nhật bậc poll [skip ci]"
+          git push
+
       - name: Dựng bản tĩnh (đường lui)
         run: python3 build.py
 
@@ -92,13 +106,13 @@ jobs:
 
       - run: npm ci
         working-directory: web
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
 
       # BẮT BUỘC trước khi build: `next build` chạy generateStaticParams, và
       # hàm đó TRUY VẤN D1. Trên runner mới, D1 local rỗng ⇒ build chết với
       # "no such table: company". Seed local trước, seed remote sau.
       - name: Seed D1 cục bộ (cho bước build)
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
         working-directory: web
         run: |
           for f in ../data/seed-*.sql; do
@@ -108,7 +122,7 @@ jobs:
       # Tệp cuối (seed-NN-swap.sql) là bước hoán đổi. Đứt trước nó thì
       # production vẫn chạy dữ liệu hôm qua — xem tools/export_db.py.
       - name: Nạp D1
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
         working-directory: web
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -124,7 +138,7 @@ jobs:
       # tắt (bảng rỗng ⇒ không-thao-tác), và báo số dòng trước/sau để một lần
       # xoá bất thường không trôi qua im lặng.
       - name: Xoá dữ liệu L2 quá hạn (C8)
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
         working-directory: web
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -140,7 +154,7 @@ jobs:
           echo "sau:   $(count)"
 
       - name: Deploy Worker
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
         working-directory: web
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -156,18 +170,8 @@ jobs:
       # refresh hỏng là site chết tới sáng — bước này làm workflow ĐỎ và
       # GitHub gửi thư báo. Cùng tools/smoke.sh với deploy.sh, không chép tay.
       - name: Kiểm khói trên bản vừa deploy
-        if: inputs.deploy != false
+        if: github.event_name == 'schedule' || inputs.deploy == true
         run: tools/smoke.sh "${{ vars.SITE_URL || 'https://viec-remote.nguyenduchuy27111997.workers.dev' }}"
-
-      # Bậc poll là trạng thái DUY NHẤT không dựng lại được và không nằm trong
-      # jobs.json. Mất nó thì lần sau phải kéo cả 5.700 slug.
-      - name: Ghi lại bậc poll
-        run: |
-          git config user.name  "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add tools/slug_state.json
-          git diff --quiet --cached || git commit -m "chore: cập nhật bậc poll [skip ci]"
-          git push
 
       - name: Tóm tắt
         if: always()
