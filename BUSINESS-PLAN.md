@@ -1,7 +1,21 @@
 # Kế hoạch kinh doanh — mạng lưới kỹ sư Việt
 
-**Ngày:** 22/08/2026 · **Sứ mệnh:** [MISSION.md](MISSION.md) · **Lý do đổi hướng:** [PIVOT.md](PIVOT.md)
-**Trạng thái:** chưa launch · doanh thu **0** · chưa có pháp nhân · A3 **chưa bao giờ chạy**
+**Ngày:** 22/08/2026 · **Cập nhật:** 24/08/2026 · **Sứ mệnh:** [MISSION.md](MISSION.md) · **Lý do đổi hướng:** [PIVOT.md](PIVOT.md)
+**Trạng thái:** L1 + Đ3 **đã live** · doanh thu 0 · chưa có pháp nhân · A3 chưa bao giờ chạy
+
+> **CẬP NHẬT 24/08 — hai điều đổi so với thân bài:**
+> 1. Ba câu pháp lý ở Mục 2 **đã có lời giải** bằng đối chiếu toàn văn Công báo —
+>    [legal-research.md](legal-research.md). Không còn "chưa rõ": kết nối có đồng ý, thu phí
+>    **không phải** mua bán dữ liệu (Điều 17.2 Luật 91/2025); **Giấy phép dịch vụ việc làm
+>    VẪN CÒN** (NĐ 352 Điều 13–20 — dòng "đã bãi bỏ" trong bảng dưới là SAI, giữ để đối chiếu);
+>    xuyên biên giới phải lập hồ sơ, không miễn trừ nào áp dụng. Hai câu MỚI thay chỗ —
+>    [prd.md](prd.md) Mục 2. Buổi luật sư đổi từ "chặn tất cả" thành **rà soát trước ca nối
+>    đầu tiên**.
+> 2. Thứ tự làm đổi: **Đ3 đi trước** — bán nghiên cứu phía cầu, trục Đông Nam Á, đã live tại
+>    `/hiring-in-sea` — vì nó có doanh thu với rủi ro thấp nhất và trả lời câu quan trọng hơn
+>    mọi câu pháp lý: *có ai trả tiền không*. Bốn cấu trúc và cửa nào đã đóng:
+>    [legal-options.md](legal-options.md). Đường chạy ngay không cần ký quỹ: **Đ2 — hợp tác
+>    doanh nghiệp có giấy phép** (danh sách 141 doanh nghiệp: `content/licensed-partners-hcm.csv`).
 
 ---
 
@@ -45,9 +59,8 @@ không phải lựa chọn.
 | **Cấm mua bán dữ liệu cá nhân**, phạt tới **10× doanh thu** | Luật 91/2025 | Ranh giới "kết nối có đồng ý" vs "bán dữ liệu" **chưa rõ** |
 | Mất miễn trừ DPO/DPIA khi vượt 100.000 chủ thể hoặc xử lý dữ liệu nhạy cảm | NĐ 356/2025 | Phải có DPO khi lớn |
 
-**Ba câu chưa có lời giải** — B-Q5, Điều 18, điều kiện NĐ 352 — cần **một buổi luật sư**. Đây
-là chi tiêu đầu tiên nên làm, và nó rẻ hơn nhiều so với build sáu tháng rồi phát hiện không
-được phép.
+**Ba câu này đã có lời giải — xem biển cập nhật đầu tài liệu.** Buổi luật sư giờ là **rà
+soát câu chữ trước ca nối đầu tiên**, không phải câu hỏi sống còn chặn tất cả.
 
 ---
 
@@ -199,7 +212,7 @@ Build thêm: hồ sơ kỹ sư, luồng đồng ý theo từng công ty, nhật 
 | # | Rủi ro | Vì sao nguy hiểm | Giảm thế nào |
 |---|---|---|---|
 | 1 | **Cold start hai phía** | Kỹ sư không vào nếu chưa có công ty; công ty không trả nếu chưa có kỹ sư | Dùng dữ liệu 110 công ty đi trước — bắt đầu từ phía cầu, không phải phía cung |
-| 2 | **B-Q5 trả lời là "bán dữ liệu"** | Cả mô hình doanh thu sụp, phạt 10× doanh thu | **Hỏi luật sư TRƯỚC**, không build trước |
+| 2 | ~~B-Q5 trả lời là "bán dữ liệu"~~ **ĐÃ GỠ 24/08**: Điều 17.2 Luật 91/2025 nói thẳng chuyển giao có đồng ý, thu phí **không phải** mua bán | Rủi ro còn lại là câu chữ đồng ý sai chuẩn NĐ 356 Điều 7.3 | Rà soát pháp lý trước ca nối đầu tiên |
 | 3 | Đối thủ đã có sẵn quan hệ | Công ty gia công VN đã làm việc này nhiều năm | Lợi thế duy nhất: biết công ty nào tuyển được, có bằng chứng |
 | 4 | Không mở rộng được | Doanh thu tăng theo giờ làm, không theo người dùng | Chấp nhận. Đây là doanh nghiệp dịch vụ |
 | 5 | Uốn dữ liệu cho khách lớn | Mất tài sản duy nhất | [MISSION.md](MISSION.md) ràng buộc 1 — không ngoại lệ |
@@ -212,13 +225,13 @@ Build thêm: hồ sơ kỹ sư, luồng đồng ý theo từng công ty, nhật 
 
 | # | Việc | Ai | Chặn cái gì |
 |---|---|---|---|
-| 1 | **Buổi luật sư — 3 câu ở Mục 2** | **Bạn** | **Toàn bộ mô hình** |
-| 2 | Deploy + tên miền + cron | **Bạn** | Mọi thứ khác |
-| 3 | Đăng bài công bố | **Bạn** | Phân phối |
-| 4 | A8 — 10 kỹ sư Việt | **Bạn** | Biết có đúng vấn đề không |
-| 5 | **A3 — 10 công ty trong danh sách 110** | **Bạn** | Quyết định có dựng pháp nhân |
+| 1 | Đăng bài công bố (HN sáng thứ Ba giờ Mỹ, rồi nhóm Việt) | **Bạn** | Phân phối — mọi thứ phía sau |
+| 2 | A8 — 10 kỹ sư Việt (nghe từ bình luận bài công bố) | **Bạn** | Biết có đúng vấn đề không |
+| 3 | A3 — chào Đ3 tới các mục tiêu trong `content/outreach-targets.txt` | **Bạn** | Biết có ai trả tiền không |
+| 4 | Tên miền (mở khoá gửi thư xác nhận) | **Bạn** | Kênh sở hữu |
+| 5 | Rà soát pháp lý — trước **ca nối đầu tiên**, không phải bây giờ | **Bạn** | L2 |
 
-Việc số 1 đổi chỗ lên đầu so với bản trước. Lý do: bản trước chọn **tránh hẳn** mô hình giới
-thiệu nên buổi luật sư không chặn gì. Bây giờ mô hình đó **là** business, nên nó chặn tất cả.
+*(Bản 22/08 đặt "buổi luật sư" ở #1 chặn tất cả — đã gỡ sau đối chiếu toàn văn 23–24/08.
+Deploy + cron đã xong, không còn trong danh sách.)*
 
-Bốn việc còn lại đều là việc của bạn, không phải của máy.
+Cả năm đều là việc của bạn, không phải của máy.

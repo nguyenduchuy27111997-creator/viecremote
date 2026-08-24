@@ -38,7 +38,9 @@ nào nên R2 chỉ là lý thuyết. Bây giờ hồ sơ kỹ sư **chính là**
 giới giữa *dịch vụ kết nối có đồng ý* và *bán dữ liệu* nằm ngay giữa mô hình doanh thu.
 
 > **Câu hỏi B-Q5 vẫn chưa có lời giải, và giờ nó không tránh được nữa.**
-> Xem [BUSINESS-PLAN.md](BUSINESS-PLAN.md) Mục 2 — cần một buổi luật sư trước khi build.
+> **Cập nhật 24/08:** ba câu pháp lý đã có lời giải ([legal-research.md](legal-research.md));
+> buổi luật sư đổi thành rà soát trước ca nối đầu tiên. Dòng doanh thu chạy TRƯỚC là **Đ3 —
+> nghiên cứu bán phía cầu** ([legal-options.md](legal-options.md)), đã live tại `/hiring-in-sea`.
 
 ---
 
@@ -156,7 +158,7 @@ thẳng. **Ngày đầu tiên mất một khách vì điều đó là ngày bi�
 
 | # | Việc | Chặn cái gì |
 |---|---|---|
-| 1 | **Buổi luật sư — B-Q5, Điều 18 NĐ 356, điều kiện NĐ 352** | Toàn bộ mô hình |
+| 1 | ~~Buổi luật sư~~ **ĐÃ GỠ 24/08** — ba câu có lời giải, còn rà soát trước ca nối đầu | L2, không chặn Đ3 |
 | 2 | Launch trang tra cứu, đo khán giả | Phễu kỹ sư |
 | 3 | **A3 — 10 công ty trong danh sách 110** | Quyết định có dựng pháp nhân |
 | 4 | Làm thủ công **một ca** trước khi ký quỹ | Biết quy trình vỡ ở đâu |
