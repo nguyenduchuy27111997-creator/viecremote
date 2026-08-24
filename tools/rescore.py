@@ -57,7 +57,7 @@ for j in hit:
         blob = f"{r['title']}. {r['location']}. {r['desc']}"
         j.update(eligibility=el, exclusion_reason=reason, evidence=ev,
                  evidence_source=evsrc, timezone_overlap_gmt7=tz_overlap(blob),
-                 contract_mechanism=mechanism(r["desc"]))
+                 contract_mechanism=mechanism(r["desc"], r["title"]))
 
 for k, v in ch.most_common():
     print(f"  {k:<28}{v:>6}")

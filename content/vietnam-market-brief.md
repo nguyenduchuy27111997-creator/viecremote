@@ -1,6 +1,6 @@
 # Where Remote Companies Can Actually Hire
 
-**Vietnam market brief — 23 August 2026**
+**Vietnam market brief — 24 August 2026**
 
 Built from **34,546 live postings** across **3,630 companies** that publish remote roles on Greenhouse, Ashby and Lever. Every claim below traces to a quotable clause in a live posting. Nothing is modelled or estimated.
 
@@ -49,11 +49,11 @@ This is the finding that should change a hiring plan.
 
 | Mechanism declared | Open to Vietnam | Unclear | Closed |
 |---|---:|---:|---:|
-| CONTRACTOR | 4 | 32 | 78 |
-| EOR | 5 | 28 | 53 |
-| **Total** | **9** | | |
+| CONTRACTOR | 5 | 71 | 153 |
+| EOR | 5 | 26 | 52 |
+| **Total** | **10** | | |
 
-**200 companies already state they hire through an employer-of-record or contractor arrangement — the exact machinery needed to hire anywhere. Only 9 of them include Vietnam.**
+**312 companies already state they hire through an employer-of-record or contractor arrangement — the exact machinery needed to hire anywhere. Only 10 of them include Vietnam.**
 
 These companies have solved payroll, compliance and contracting across borders. They have the capability and still exclude Vietnam. The constraint is not legal or operational — it is the default scope someone typed into a job template and nobody revisited.
 

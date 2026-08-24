@@ -102,11 +102,24 @@ def score(job):
     return "unknown", None, "", ""
 
 
-def mechanism(desc):
+def mechanism(desc, title=""):
+    # Tiêu đề khoá hình thức thuê ở 549 tin mà thân tin không nói — "(Contract)",
+    # ", Contract" đuôi, "Freelance …". Mẫu CHẶT vì tiêu đề đầy bẫy chủ-đề:
+    #   - "Contract Manufacturing/Negotiation/Manager" = việc VỀ hợp đồng
+    #   - "Smart Contract Engineer" = crypto
+    #   - "(Fixed Term Contract)" = NHÂN VIÊN có thời hạn, không phải contractor
+    # nên chỉ nhận: trong ngoặc, ở đuôi sau dấu phẩy/gạch, 1099, hoặc freelance.
+    if TITLE_CONTRACT.search(title):
+        return "contractor"
     for name, rx in (("eor", S.B04), ("contractor", S.B01)):
         if rx.search(desc):
             return name
     return "unknown"
+
+
+TITLE_CONTRACT = re.compile(
+    r"\(contract(?:or)?(?:\s+role)?\)|\(freelance(?:r)?\)|\b1099 contractor\b|"
+    r"[-–—,]\s*contract(?:or)?\s*$|^freelance\b|\bfreelance\s*[-–—|]", re.I)
 
 
 TZ = {"CET": 3, "CEST": 3, "EET": 4, "CEST/CET": 3, "GMT+1": 3, "GMT+2": 4,
@@ -300,7 +313,7 @@ def main():
             "eligibility": el, "exclusion_reason": reason,
             "evidence": ev, "evidence_source": evsrc,
             "timezone_overlap_gmt7": tz_overlap(blob),
-            "contract_mechanism": mechanism(r["desc"]),
+            "contract_mechanism": mechanism(r["desc"], r["title"]),
             "pay_disclosed": bool(r["pay"]) or bool(re.search(r"\$\s?\d{2,3}[,.]?\d{3}", r["desc"])),
             "alr_countries": [],
             "excerpt": r["desc"][:EXCERPT],

@@ -4,12 +4,12 @@
 ==============================================================================
 
 ⚠  6/7 tên suy từ slug, CHƯA kiểm chứng — sửa trước khi gửi:
+     geotab                                   -> Geotab
      studycontractors                         -> Studycontractors
      cas                                      -> Cas
+     vaynermedia                              -> Vaynermedia
      annaautismcare                           -> Annaautismcare
      panoptyc                                 -> Panoptyc
-     mobbin.com                               -> Mobbin.Com
-     skilledwoundcare                         -> Skilledwoundcare
    (thêm tên đúng vào NAMES trong tools/outreach.py để lần sau khỏi sửa)
 
 ------------------------------------------------------------------------------
@@ -27,16 +27,53 @@ You already hire in Malaysia through contractor arrangements. Vietnam sits in
 the same timezone band, the same cost tier, and takes the same contracting
 paperwork you have already done — but it is not in your scope.
 
-That gap is the finding worth your time: 200 companies in the corpus already
+That gap is the finding worth your time: 312 companies in the corpus already
 declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
+— and only 10 of them include Vietnam. The constraint is almost never legal or
 operational. It is the default scope typed into a job template years ago.
 
 Vietnam has ~530,000 developers and sits in the global top ten for IT
 outsourcing, yet fewer than 0.2% of postings name it. If you already run
 contractor arrangements, adding it is a policy edit, not a project.
 
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
+
+I also produce a fuller brief — country-by-country breakdown, the 91 companies
+already hiring there, the mechanisms they use, and what their published terms
+imply about rates. Happy to send it over if useful.
+
+To be clear about what this is: research into published company policy. I do
+not place candidates, make introductions, or hold any candidate data.
+
+— Huy
+   Reply "no thanks" and I won't write again.
+
+
+------------------------------------------------------------------------------
+### Geotab  ·  contractor  ·  15 tin
+------------------------------------------------------------------------------
+Subject: Geotab hires in Indonesia — why not Vietnam?
+
+Hi,
+
+I maintain a study of where remote companies are actually allowed to hire. It
+reads 34,546 live postings across 3,630 companies and records the geographic
+clause each one states, quoted verbatim.
+
+You already hire in Indonesia through contractor arrangements. Vietnam sits in
+the same timezone band, the same cost tier, and takes the same contracting
+paperwork you have already done — but it is not in your scope.
+
+That gap is the finding worth your time: 312 companies in the corpus already
+declare EOR or contractor hiring — the exact machinery needed to hire anywhere
+— and only 10 of them include Vietnam. The constraint is almost never legal or
+operational. It is the default scope typed into a job template years ago.
+
+Vietnam has ~530,000 developers and sits in the global top ten for IT
+outsourcing, yet fewer than 0.2% of postings name it. If you already run
+contractor arrangements, adding it is a policy edit, not a project.
+
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
 
 I also produce a fuller brief — country-by-country breakdown, the 91 companies
 already hiring there, the mechanisms they use, and what their published terms
@@ -64,16 +101,16 @@ You already hire in the Philippines through contractor arrangements. Vietnam
 sits in the same timezone band, the same cost tier, and takes the same
 contracting paperwork you have already done — but it is not in your scope.
 
-That gap is the finding worth your time: 200 companies in the corpus already
+That gap is the finding worth your time: 312 companies in the corpus already
 declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
+— and only 10 of them include Vietnam. The constraint is almost never legal or
 operational. It is the default scope typed into a job template years ago.
 
 Vietnam has ~530,000 developers and sits in the global top ten for IT
 outsourcing, yet fewer than 0.2% of postings name it. If you already run
 contractor arrangements, adding it is a policy edit, not a project.
 
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
 
 I also produce a fuller brief — country-by-country breakdown, the 91 companies
 already hiring there, the mechanisms they use, and what their published terms
@@ -101,16 +138,53 @@ You already hire in the Philippines through contractor arrangements. Vietnam
 sits in the same timezone band, the same cost tier, and takes the same
 contracting paperwork you have already done — but it is not in your scope.
 
-That gap is the finding worth your time: 200 companies in the corpus already
+That gap is the finding worth your time: 312 companies in the corpus already
 declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
+— and only 10 of them include Vietnam. The constraint is almost never legal or
 operational. It is the default scope typed into a job template years ago.
 
 Vietnam has ~530,000 developers and sits in the global top ten for IT
 outsourcing, yet fewer than 0.2% of postings name it. If you already run
 contractor arrangements, adding it is a policy edit, not a project.
 
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
+
+I also produce a fuller brief — country-by-country breakdown, the 91 companies
+already hiring there, the mechanisms they use, and what their published terms
+imply about rates. Happy to send it over if useful.
+
+To be clear about what this is: research into published company policy. I do
+not place candidates, make introductions, or hold any candidate data.
+
+— Huy
+   Reply "no thanks" and I won't write again.
+
+
+------------------------------------------------------------------------------
+### Vaynermedia  ·  contractor  ·  8 tin
+------------------------------------------------------------------------------
+Subject: Vaynermedia hires in the Philippines — why not Vietnam?
+
+Hi,
+
+I maintain a study of where remote companies are actually allowed to hire. It
+reads 34,546 live postings across 3,630 companies and records the geographic
+clause each one states, quoted verbatim.
+
+You already hire in the Philippines through contractor arrangements. Vietnam
+sits in the same timezone band, the same cost tier, and takes the same
+contracting paperwork you have already done — but it is not in your scope.
+
+That gap is the finding worth your time: 312 companies in the corpus already
+declare EOR or contractor hiring — the exact machinery needed to hire anywhere
+— and only 10 of them include Vietnam. The constraint is almost never legal or
+operational. It is the default scope typed into a job template years ago.
+
+Vietnam has ~530,000 developers and sits in the global top ten for IT
+outsourcing, yet fewer than 0.2% of postings name it. If you already run
+contractor arrangements, adding it is a policy edit, not a project.
+
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
 
 I also produce a fuller brief — country-by-country breakdown, the 91 companies
 already hiring there, the mechanisms they use, and what their published terms
@@ -138,16 +212,16 @@ You already hire in the Philippines through contractor arrangements. Vietnam
 sits in the same timezone band, the same cost tier, and takes the same
 contracting paperwork you have already done — but it is not in your scope.
 
-That gap is the finding worth your time: 200 companies in the corpus already
+That gap is the finding worth your time: 312 companies in the corpus already
 declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
+— and only 10 of them include Vietnam. The constraint is almost never legal or
 operational. It is the default scope typed into a job template years ago.
 
 Vietnam has ~530,000 developers and sits in the global top ten for IT
 outsourcing, yet fewer than 0.2% of postings name it. If you already run
 contractor arrangements, adding it is a policy edit, not a project.
 
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
 
 I also produce a fuller brief — country-by-country breakdown, the 91 companies
 already hiring there, the mechanisms they use, and what their published terms
@@ -175,90 +249,16 @@ You already hire in the Philippines through contractor arrangements. Vietnam
 sits in the same timezone band, the same cost tier, and takes the same
 contracting paperwork you have already done — but it is not in your scope.
 
-That gap is the finding worth your time: 200 companies in the corpus already
+That gap is the finding worth your time: 312 companies in the corpus already
 declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
+— and only 10 of them include Vietnam. The constraint is almost never legal or
 operational. It is the default scope typed into a job template years ago.
 
 Vietnam has ~530,000 developers and sits in the global top ten for IT
 outsourcing, yet fewer than 0.2% of postings name it. If you already run
 contractor arrangements, adding it is a policy edit, not a project.
 
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
-
-I also produce a fuller brief — country-by-country breakdown, the 91 companies
-already hiring there, the mechanisms they use, and what their published terms
-imply about rates. Happy to send it over if useful.
-
-To be clear about what this is: research into published company policy. I do
-not place candidates, make introductions, or hold any candidate data.
-
-— Huy
-   Reply "no thanks" and I won't write again.
-
-
-------------------------------------------------------------------------------
-### Mobbin.Com  ·  contractor  ·  3 tin
-------------------------------------------------------------------------------
-Subject: Mobbin.Com hires in Indonesia — why not Vietnam?
-
-Hi,
-
-I maintain a study of where remote companies are actually allowed to hire. It
-reads 34,546 live postings across 3,630 companies and records the geographic
-clause each one states, quoted verbatim.
-
-You already hire in Indonesia through contractor arrangements. Vietnam sits in
-the same timezone band, the same cost tier, and takes the same contracting
-paperwork you have already done — but it is not in your scope.
-
-That gap is the finding worth your time: 200 companies in the corpus already
-declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
-operational. It is the default scope typed into a job template years ago.
-
-Vietnam has ~530,000 developers and sits in the global top ten for IT
-outsourcing, yet fewer than 0.2% of postings name it. If you already run
-contractor arrangements, adding it is a policy edit, not a project.
-
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
-
-I also produce a fuller brief — country-by-country breakdown, the 91 companies
-already hiring there, the mechanisms they use, and what their published terms
-imply about rates. Happy to send it over if useful.
-
-To be clear about what this is: research into published company policy. I do
-not place candidates, make introductions, or hold any candidate data.
-
-— Huy
-   Reply "no thanks" and I won't write again.
-
-
-------------------------------------------------------------------------------
-### Skilledwoundcare  ·  contractor  ·  2 tin
-------------------------------------------------------------------------------
-Subject: Skilledwoundcare hires in the Philippines — why not Vietnam?
-
-Hi,
-
-I maintain a study of where remote companies are actually allowed to hire. It
-reads 34,546 live postings across 3,630 companies and records the geographic
-clause each one states, quoted verbatim.
-
-You already hire in the Philippines through contractor arrangements. Vietnam
-sits in the same timezone band, the same cost tier, and takes the same
-contracting paperwork you have already done — but it is not in your scope.
-
-That gap is the finding worth your time: 200 companies in the corpus already
-declare EOR or contractor hiring — the exact machinery needed to hire anywhere
-— and only 9 of them include Vietnam. The constraint is almost never legal or
-operational. It is the default scope typed into a job template years ago.
-
-Vietnam has ~530,000 developers and sits in the global top ten for IT
-outsourcing, yet fewer than 0.2% of postings name it. If you already run
-contractor arrangements, adding it is a policy edit, not a project.
-
-The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-vietnam
+The summary is public: https://viec-remote.nguyenduchuy27111997.workers.dev/hiring-in-sea
 
 I also produce a fuller brief — country-by-country breakdown, the 91 companies
 already hiring there, the mechanisms they use, and what their published terms

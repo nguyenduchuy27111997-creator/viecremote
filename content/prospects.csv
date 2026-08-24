@@ -1,41 +1,41 @@
 company,mechanism,postings,evidence,sea,hires_in,n_countries
 snowflake,contractor,63,clause excludes VN,MY,"US, DE, GB, MX, PL, IL, MY, CO",9
+geotab,contractor,15,clause excludes VN,ID,"CA, GB, ID, AU, AR, CL, CO, MX",9
 studycontractors,contractor,12,clause excludes VN,PH,"PH, IN, US, CA",4
 cas,contractor,9,clause excludes VN,PH,PH,1
+vaynermedia,contractor,8,clause excludes VN,PH,PH,1
 annaautismcare,contractor,7,clause excludes VN,PH,"CA, PH, US",3
 panoptyc,contractor,3,clause excludes VN,PH,PH,1
 mobbin.com,contractor,3,clause excludes VN,ID,ID,1
 skilledwoundcare,contractor,2,clause excludes VN,PH,"PH, US",2
 rundoo,contractor,1,clause excludes VN,PH,PH,1
-gitlab,eor,169,no clause found,PH,"US, CA, GB, DE, IN, IE, PL, FR",25
+gitlab,contractor,169,no clause found,PH,"US, CA, GB, DE, IN, IE, PL, FR",25
+mongodb,contractor,102,no clause found,MY,"US, IE, IN, CA, GB, DE, NL, MY",13
 hirehangar,contractor,84,no clause found,PH,"ZA, MX, AR, PE, US, PA, NI, BO",16
 restaurantsupply,contractor,5,no clause found,PH,PH,1
 twilio,eor,122,clause excludes VN,,"US, IN, CO, CA, GB, IE, EE, SG",12
 chaosindustries,contractor,119,clause excludes VN,,"US, GB",2
+10xteam,contractor,106,clause excludes VN,,"GB, DE, FR, PL, ES, NL, IE, BE",13
 reddit,contractor,93,clause excludes VN,,"US, CA, GB, NL",4
+radiant-industries,contractor,92,clause excludes VN,,US,1
 asana,eor,89,clause excludes VN,,—,0
 upstart,contractor,85,clause excludes VN,,—,0
+inversionspace,contractor,76,clause excludes VN,,—,0
 planetlabs,eor,74,clause excludes VN,,"DE, KR, US, LATAM, AE",5
 nice,eor,73,clause excludes VN,,"US, GB, CA, ES, ZA, NL, DE, IT",8
 chainguard,eor,70,clause excludes VN,,"US, GB, DE, SG, NL, FR, EU, DK",11
+datadog,contractor,64,clause excludes VN,,"US, FR, GB, DE, NL, ES, IT, SE",17
 engine,contractor,60,clause excludes VN,,—,0
+stackadapt,contractor,57,clause excludes VN,,"US, CA, GB, DE, ES",5
 betterhelp,contractor,47,clause excludes VN,,"US, NL, GE",3
 openloophealth,eor,47,clause excludes VN,,"US, CA",2
 ashby,eor,46,clause excludes VN,,"US, EU, CA",3
 rula,contractor,45,clause excludes VN,,US,1
+fieldguide,contractor,43,clause excludes VN,,"US, KR, CA, AU, GB",5
 speak,contractor,39,clause excludes VN,,"US, KR, JP, CN",4
 pingidentity,eor,37,clause excludes VN,,"US, GB, FR, BE, NL, NO",6
-harborglobal,eor,36,clause excludes VN,,"US, GB, CA",3
+harborglobal,contractor,36,clause excludes VN,,"US, GB, CA",3
 cloverhealth,contractor,34,clause excludes VN,,"US, GE, CA",3
 scaleai,contractor,34,clause excludes VN,,"US, GB, MX",3
+sentinellabs,contractor,34,clause excludes VN,,US,1
 pebl,eor,34,clause excludes VN,,"US, PT, IN, CO, FR, EU, CA, TW",10
-watershed,eor,32,clause excludes VN,,—,0
-onhires,contractor,32,clause excludes VN,,"EU, UA, US, BG, BR, TR, SA, ES",8
-interviewengineering,contractor,26,clause excludes VN,,"CA, AL, BR, BG, CL, CR, DK, EG",25
-apolloio,contractor,24,clause excludes VN,,"US, CA, PL",3
-medsien,contractor,22,clause excludes VN,,"US, TR",2
-drata,eor,21,clause excludes VN,,"US, MX, EMEA",3
-globalizationpartners,eor,21,clause excludes VN,,"US, IN, SG, NL, TW, CA, MX, IE",8
-midihealth,contractor,21,clause excludes VN,,—,0
-coderoad,contractor,20,clause excludes VN,,US,1
-allarahealth,contractor,19,clause excludes VN,,"US, GE",2
