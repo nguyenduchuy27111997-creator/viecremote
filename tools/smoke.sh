@@ -21,7 +21,7 @@ URL="${URL%/}"
 # tiếng Anh khu vực, tiếng Anh thị trường chấm được + chưa chấm, gương soi,
 # API, và hai tệp cho máy đọc.
 PAGES=(/ /tin-mo /khoa /lam-gi /phuong-phap /rieng-tu /api
-       /hiring-in-sea /hiring-in-sea/vietnam /hiring-in-sea/philippines
+       /hiring-in-sea /hiring-in-sea/changes /hiring-in-sea/vietnam /hiring-in-sea/philippines
        /company/snowflake /sitemap.xml /robots.txt)
 
 probe() { # url mã-mong-đợi

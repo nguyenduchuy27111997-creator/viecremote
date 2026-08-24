@@ -140,6 +140,19 @@ export default async function HiringInSEA({
         </ul>
       </Section>
 
+      <Section
+        title="What changed"
+        hint="The corpus rebuilds daily and overwrites itself. One page remembers yesterday."
+      >
+        <p className="mt-4 max-w-[64ch] text-[14px] leading-relaxed text-text-2">
+          Every day a company opens or closes to Vietnam, it is recorded — the only dataset
+          tracking these flips at all.{" "}
+          <Link className="underline underline-offset-2 hover:text-text" href="/hiring-in-sea/changes">
+            See the change log →
+          </Link>
+        </p>
+      </Section>
+
       <Section title="What this is, and what it is not">
         <ul className="mt-4 max-w-[64ch] space-y-2.5 text-[13.5px] leading-relaxed text-text-2">
           <li>
