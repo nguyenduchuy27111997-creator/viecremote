@@ -152,6 +152,13 @@ jobs:
           NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL }}
         run: npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy
 
+      # Cron deploy lúc 22:17 UTC không có ai nhìn. Không kiểm thì một lần
+      # refresh hỏng là site chết tới sáng — bước này làm workflow ĐỎ và
+      # GitHub gửi thư báo. Cùng tools/smoke.sh với deploy.sh, không chép tay.
+      - name: Kiểm khói trên bản vừa deploy
+        if: inputs.deploy != false
+        run: tools/smoke.sh "${{ vars.SITE_URL || 'https://viec-remote.nguyenduchuy27111997.workers.dev' }}"
+
       # Bậc poll là trạng thái DUY NHẤT không dựng lại được và không nằm trong
       # jobs.json. Mất nó thì lần sau phải kéo cả 5.700 slug.
       - name: Ghi lại bậc poll
