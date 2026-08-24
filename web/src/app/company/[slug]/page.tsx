@@ -2,7 +2,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { all, one, parseLocked, type Company } from "@/lib/db"
 import { ename } from "@/lib/countries"
-import { NEIGHBOURS } from "@/lib/sea"
+import { NEIGHBOURS, SEA } from "@/lib/sea"
 import { Eyebrow, Lead, Note, Section } from "@/components/Page"
 
 export const revalidate = 86400
@@ -50,6 +50,10 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
   if (!c) notFound()
 
   const locked = parseLocked(c.locked)
+  const present = new Set(locked.map(([code]) => code))
+  // Thị trường ĐNA công ty KHÔNG nhắc tới. Đây là câu chuyện sau pivot: không
+  // phải "bạn thiếu Việt Nam" mà "bạn đã vào khu vực rồi và dừng ở một nước".
+  const absent = SEA.filter((m) => !present.has(m.code))
   const sea = locked.filter(([code]) => NEAR.has(code))
   const totals = await one<{ total: number; open: number }>(
     "SELECT count(*) total, sum(verdict='ok') open FROM company",
@@ -134,6 +138,38 @@ export default async function CompanyMirror({ params }: { params: Promise<{ slug
             The reading is not that you missed a country. It is that the timezone band, the
             contracting paperwork and the cost tier are problems you have already solved. Vietnam
             reuses all three.
+          </Note>
+        </Section>
+      )}
+
+      {present.size > 0 && absent.length > 0 && (
+        <Section
+          title={`Where you are not`}
+          hint={`Your postings name ${SEA.length - absent.length} of ${SEA.length} Southeast Asian
+                 markets. These are the rest — same timezone band, same contracting pattern.`}
+        >
+          <div className="scroll-x mt-5 rounded-lg border border-line bg-card">
+            <table className="w-full border-collapse text-[13.5px]">
+              <tbody>
+                {absent.map((m) => (
+                  <tr key={m.code} className="border-b border-line last:border-0">
+                    <td className="px-4 py-3">
+                      <Link className="hover:underline" href={`/hiring-in-sea/${m.slug}`}>
+                        {m.name}
+                      </Link>
+                    </td>
+                    <td className="px-4 py-3 text-right font-mono text-[11.5px] text-text-3">
+                      no posting names it
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <Note>
+            Absence here is not proof you cannot hire there — it means nothing was published either
+            way. But an unstated market is one nobody on the hiring side has considered, and that
+            is exactly how a template default survives for years.
           </Note>
         </Section>
       )}
