@@ -40,6 +40,7 @@ export const metadata: Metadata = {
 const NAV = [
   { href: "/", label: "Công ty" },
   { href: "/tin-mo", label: "Tin mở" },
+  { href: "/thay-doi", label: "Thay đổi" },
   { href: "/khoa", label: "Khoá tuyển" },
   { href: "/lam-gi", label: "Làm gì" },
   { href: "/vi-sao-bi-loai", label: "Vì sao bị loại" },
