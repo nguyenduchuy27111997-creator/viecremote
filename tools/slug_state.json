@@ -24,10 +24,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|cloudflare": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 61,
-"last_ok": "2026-10-29",
+"jobs": 63,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|instacart": {
@@ -161,11 +161,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|supabase": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 64,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 65,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|resend": {
 "last_polled": "2026-10-28",
@@ -510,11 +510,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|aptura": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 21,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|coreflow": {
 "last_polled": "2026-09-04",
@@ -539,11 +539,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|colonist": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|cradlebio": {
 "last_polled": "2026-10-28",
@@ -651,11 +651,11 @@
 "jobs": 0
 },
 "lever|distru": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "lever|eleostech": {
 "last_polled": "2026-10-28",
@@ -746,10 +746,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|eightsleep": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 7,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-05"
 },
 "ashby|forus": {
@@ -758,10 +758,10 @@
 "jobs": 0
 },
 "ashby|livekit": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 20,
-"last_ok": "2026-10-29",
+"jobs": 21,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|felix": {
@@ -841,11 +841,11 @@
 "last_ok": "2026-10-28"
 },
 "lever|metabase": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 19,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|cantina": {
 "last_polled": "2026-10-28",
@@ -944,10 +944,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|ether.fi": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|extend": {
@@ -1252,10 +1252,10 @@
 "jobs": 0
 },
 "ashby|luxor": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-27"
 },
 "lever|meili": {
@@ -1326,11 +1326,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|canonical": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 253,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|coreweave": {
 "last_polled": "2026-10-28",
@@ -1381,11 +1381,11 @@
 "jobs": 0
 },
 "greenhouse|alpaca": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 65,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 67,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|cloverhealth": {
 "last_polled": "2026-10-28",
@@ -1449,11 +1449,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|customerio": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 23,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|blacksky": {
 "last_polled": "2026-10-28",
@@ -1503,10 +1503,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|brave": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-14"
 },
 "greenhouse|canopyworks": {
@@ -1602,10 +1602,10 @@
 "jobs": 0
 },
 "greenhouse|aurosglobal": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|blueroseresearch": {
@@ -1632,11 +1632,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|enveritas": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|fay": {
 "last_polled": "2026-10-28",
@@ -1741,11 +1741,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|okx": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 34,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 32,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|verkada": {
 "last_polled": "2026-10-28",
@@ -1754,11 +1754,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|xai": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 32,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 30,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "lever|zoox": {
 "last_polled": "2026-10-28",
@@ -1785,10 +1785,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|sezzle": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 75,
-"last_ok": "2026-10-29",
+"jobs": 73,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-14"
 },
 "greenhouse|thenewyorktimes": {
@@ -1950,11 +1950,11 @@
 "jobs": 0
 },
 "greenhouse|humansignal": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 12,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 6,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|launchdarkly": {
 "last_polled": "2026-10-28",
@@ -1975,10 +1975,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|permitflow": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 8,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|prompt": {
@@ -1994,10 +1994,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|runway-ml": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 44,
-"last_ok": "2026-10-29",
+"jobs": 45,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-15"
 },
 "greenhouse|gofundme": {
@@ -2058,10 +2058,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|obsidiansecurity": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 6,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-02"
 },
 "ashby|weave": {
@@ -2187,11 +2187,11 @@
 "jobs": 0
 },
 "ashby|revenuecat": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 19,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|virtahealth": {
 "last_polled": "2026-10-28",
@@ -2335,11 +2335,11 @@
 "jobs": 0
 },
 "ashby|tempo-xyz": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|perpay": {
 "last_polled": "2026-09-04",
@@ -2387,10 +2387,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|planetscale": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 8,
-"last_ok": "2026-10-29",
+"jobs": 9,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|range": {
@@ -2491,11 +2491,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|railway": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|vitalize": {
 "last_polled": "2026-10-28",
@@ -2610,10 +2610,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|lithic": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 6,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|ngrokinc": {
@@ -2697,10 +2697,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|p2p.org": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|pod-network": {
@@ -2998,11 +2998,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|oyster": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 22,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 21,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|primer.io": {
 "last_polled": "2026-10-28",
@@ -3053,11 +3053,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|sourcegraph91": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 7,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|vercel": {
 "last_polled": "2026-10-28",
@@ -3084,10 +3084,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|0g": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|10alabs": {
@@ -3336,10 +3336,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|abacusinsights": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|abbyy": {
@@ -3711,10 +3711,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|admios": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|adonis": {
@@ -3775,10 +3775,10 @@
 "last_ok": "2026-09-10"
 },
 "greenhouse|aestudio": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 6,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|aevexaerospace": {
@@ -3817,10 +3817,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|ag1": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 8,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-20"
 },
 "ashby|agavegames": {
@@ -3841,11 +3841,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|agency": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 210,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 209,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|agencywithin": {
 "last_polled": "2026-10-28",
@@ -3899,10 +3899,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|agoda": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 13,
-"last_ok": "2026-10-29",
+"jobs": 16,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-08"
 },
 "ashby|agreena": {
@@ -3935,10 +3935,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|aift": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-05"
 },
 "greenhouse|air": {
@@ -4090,10 +4090,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|alan": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 47,
-"last_ok": "2026-10-29",
+"jobs": 49,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|alarmcom": {
@@ -4259,11 +4259,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|almedia": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 35,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 34,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|aloyoga": {
 "last_polled": "2026-10-29",
@@ -4571,11 +4571,11 @@
 "jobs": 0
 },
 "ashby|anagram": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 5,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|analyst1": {
 "last_polled": "2026-10-29",
@@ -4623,11 +4623,11 @@
 "last_ok": "2026-10-29"
 },
 "ashby|andromeda": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 20,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|anglehealth": {
 "last_polled": "2026-09-04",
@@ -4730,11 +4730,11 @@
 "jobs": 0
 },
 "ashby|anyone-ai": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 220,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|anyscale": {
 "last_polled": "2026-10-29",
@@ -5735,10 +5735,10 @@
 "jobs": 0
 },
 "greenhouse|automatticcareers": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 12,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-01"
 },
 "greenhouse|automox": {
@@ -5769,11 +5769,11 @@
 "last_ok": "2026-10-26"
 },
 "ashby|ava-labs": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|avalynpharma": {
 "last_polled": "2026-10-29",
@@ -5804,10 +5804,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|avepoint": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 11,
-"last_ok": "2026-10-29",
+"jobs": 9,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-17"
 },
 "greenhouse|avetta": {
@@ -5925,10 +5925,10 @@
 "jobs": 0
 },
 "greenhouse|axon": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 92,
-"last_ok": "2026-10-29",
+"jobs": 84,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-08"
 },
 "greenhouse|axonag": {
@@ -5996,11 +5996,11 @@
 "jobs": 0
 },
 "greenhouse|b12": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|b2spin": {
 "last_polled": "2026-09-04",
@@ -6163,11 +6163,11 @@
 "jobs": 0
 },
 "greenhouse|baublebar": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 7,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|bauerhockeycascademaveriklacrosse": {
 "last_polled": "2026-08-31",
@@ -6598,11 +6598,11 @@
 "jobs": 0
 },
 "ashby|bjakcareer": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 200,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 199,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|blab": {
 "last_polled": "2026-09-26",
@@ -6912,10 +6912,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|bobtail": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-09"
 },
 "ashby|bobyard": {
@@ -7686,10 +7686,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|camunda": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 45,
-"last_ok": "2026-10-29",
+"jobs": 47,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|canals": {
@@ -7970,10 +7970,10 @@
 "jobs": 0
 },
 "greenhouse|carvana": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 7,
-"last_ok": "2026-10-29",
+"jobs": 8,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|carwow": {
@@ -8232,11 +8232,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|centreforeffectivealtruism": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 8,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|centriaautism": {
 "last_polled": "2026-10-28",
@@ -8733,10 +8733,10 @@
 "jobs": 0
 },
 "greenhouse|cloudbeds": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 22,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|cloudbedsthirdpartyboard": {
@@ -8752,10 +8752,10 @@
 "last_ok": "2026-08-19"
 },
 "greenhouse|cloudsek": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|cloudzero": {
@@ -8882,10 +8882,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|code3": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 11,
-"last_ok": "2026-10-29",
+"jobs": 12,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|codepath": {
@@ -8924,10 +8924,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|coefficientgiving": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-05"
 },
 "greenhouse|cofraholding": {
@@ -9708,10 +9708,10 @@
 "jobs": 0
 },
 "greenhouse|crisprecruit": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|critical-energy": {
@@ -10485,10 +10485,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|diligentrobotics": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|directive": {
@@ -10646,11 +10646,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|doitintl": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 24,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 19,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|doji": {
 "last_polled": "2026-09-04",
@@ -10754,11 +10754,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|dourolabs.xyz": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|downtownmusic": {
 "last_polled": "2026-09-04",
@@ -10772,18 +10772,18 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|dragos": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 45,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|drata": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 11,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 10,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|drdansanimalhospital": {
 "last_polled": "2026-09-04",
@@ -10983,11 +10983,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|echodynecorp": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 6,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|eclinicalsolutions": {
 "last_polled": "2026-10-28",
@@ -11014,10 +11014,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|edelmanfinancialenginesllc": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 16,
-"last_ok": "2026-10-29",
+"jobs": 15,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|edgewoodpartnersinsurancecenter": {
@@ -11189,10 +11189,10 @@
 "jobs": 0
 },
 "greenhouse|eleventhhourgames": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|elicit": {
@@ -11235,11 +11235,11 @@
 "jobs": 0
 },
 "ashby|ellipsislabs": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|elliptic": {
 "last_polled": "2026-10-28",
@@ -11505,10 +11505,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|ensco": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|ent-security": {
@@ -11679,10 +11679,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|eqvilentjobs": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 23,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|erasca": {
@@ -11837,11 +11837,11 @@
 "last_ok": "2026-09-07"
 },
 "ashby|everai": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 39,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 50,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|everfield": {
 "last_polled": "2026-10-28",
@@ -11948,11 +11948,11 @@
 "worldwide_last": "2026-08-22"
 },
 "greenhouse|exoduspoint": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|expa": {
 "last_polled": "2026-10-28",
@@ -12058,11 +12058,11 @@
 "jobs": 0
 },
 "ashby|factory": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|faculty": {
 "last_polled": "2026-10-28",
@@ -12100,11 +12100,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|fal-ai": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|falconer": {
 "last_polled": "2026-09-04",
@@ -12385,10 +12385,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|financialtimes33": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 30,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-13"
 },
 "ashby|finary": {
@@ -12503,11 +12503,11 @@
 "jobs": 0
 },
 "greenhouse|firstprinciples": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 6,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|firststepsforkids": {
 "last_polled": "2026-09-04",
@@ -12532,10 +12532,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|fivetran": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 23,
-"last_ok": "2026-10-29",
+"jobs": 22,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|fixify": {
@@ -12653,10 +12653,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|flipper": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-10"
 },
 "ashby|flipturn": {
@@ -12728,10 +12728,10 @@
 "jobs": 0
 },
 "ashby|flutterflow": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "greenhouse|fluxon": {
@@ -12752,11 +12752,11 @@
 "jobs": 0
 },
 "greenhouse|flyzipline": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 338,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 356,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|fnatic": {
 "last_polled": "2026-09-04",
@@ -14068,11 +14068,11 @@
 "last_ok": "2026-10-19"
 },
 "ashby|gradient": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 5,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|gradientrobotics": {
 "last_polled": "2026-09-04",
@@ -14173,10 +14173,10 @@
 "jobs": 0
 },
 "ashby|gratia": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-19"
 },
 "ashby|gravie": {
@@ -14350,18 +14350,18 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|growe": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|growetalents": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 14,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|growthprotocol": {
 "last_polled": "2026-10-28",
@@ -14523,11 +14523,11 @@
 "last_ok": "2026-08-31"
 },
 "greenhouse|hackerrank": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|hadrian-automation": {
 "last_polled": "2026-10-10",
@@ -14724,11 +14724,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|hawkeyeinnovations": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|haystacknews": {
 "last_polled": "2026-10-28",
@@ -15301,10 +15301,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|horizenlabstalentpool": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|horizon3ai": {
@@ -15645,11 +15645,11 @@
 "jobs": 0
 },
 "greenhouse|iftother": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|ignite-reading": {
 "last_polled": "2026-09-04",
@@ -15740,11 +15740,11 @@
 "last_ok": "2026-10-29"
 },
 "ashby|improbable": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|impulse": {
 "last_polled": "2026-10-04",
@@ -15909,11 +15909,11 @@
 "last_ok": "2026-09-02"
 },
 "greenhouse|infuse": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 27,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|ingenious": {
 "last_polled": "2026-10-29",
@@ -15986,11 +15986,11 @@
 "last_ok": "2026-10-29"
 },
 "ashby|inspectiv": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|inspiraeducation": {
 "last_polled": "2026-10-29",
@@ -16333,11 +16333,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|its": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 10,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|itslogisticsllc": {
 "last_polled": "2026-09-04",
@@ -16625,10 +16625,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|jumio": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 10,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-07"
 },
 "ashby|jump": {
@@ -16831,10 +16831,10 @@
 "last_ok": "2026-10-25"
 },
 "greenhouse|kayzen": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-28"
 },
 "greenhouse|keeleyconstruction": {
@@ -16849,10 +16849,10 @@
 "jobs": 0
 },
 "greenhouse|keepersecurity": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 85,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-08"
 },
 "greenhouse|kellerpostman": {
@@ -17081,11 +17081,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|knightdivisiontactical": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|knit": {
 "last_polled": "2026-10-29",
@@ -17582,10 +17582,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|learnlux": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 5,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-09"
 },
 "greenhouse|learnupon": {
@@ -17691,11 +17691,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|leolabsinc": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|leona": {
 "last_polled": "2026-09-04",
@@ -17891,11 +17891,11 @@
 "last_ok": "2026-10-29"
 },
 "ashby|lilt-production": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 442,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 443,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|limbic": {
 "last_polled": "2026-10-29",
@@ -18119,11 +18119,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|logos": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|logos-space": {
 "last_polled": "2026-10-29",
@@ -18300,10 +18300,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|lumimeds": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 24,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-14"
 },
 "ashby|luminai": {
@@ -18313,11 +18313,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|luminishealth": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|luminovo": {
 "last_polled": "2026-10-29",
@@ -18639,10 +18639,10 @@
 "last_ok": "2026-09-11"
 },
 "greenhouse|mariadbplc": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 16,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-24"
 },
 "ashby|marianaminerals": {
@@ -18783,11 +18783,11 @@
 "jobs": 0
 },
 "ashby|matter-labs": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|maven-agi": {
 "last_polled": "2026-10-29",
@@ -19094,11 +19094,11 @@
 "jobs": 0
 },
 "greenhouse|mercyforanimals": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|mergemoney": {
 "last_polled": "2026-09-04",
@@ -19266,11 +19266,11 @@
 "last_ok": "2026-10-29"
 },
 "ashby|mimica": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 14,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 15,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|mindgrub": {
 "last_polled": "2026-10-20",
@@ -19312,10 +19312,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|minio": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 25,
-"last_ok": "2026-10-29",
+"jobs": 28,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-29"
 },
 "greenhouse|minitab": {
@@ -19568,11 +19568,11 @@
 "jobs": 0
 },
 "ashby|molecule": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|molg": {
 "last_polled": "2026-09-04",
@@ -19940,10 +19940,10 @@
 "last_ok": "2026-10-29"
 },
 "ashby|nirvana": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-21"
 },
 "greenhouse|nisc": {
@@ -20335,10 +20335,10 @@
 "last_ok": "2026-10-29"
 },
 "ashby|observable-space": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 24,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-24"
 },
 "greenhouse|observeai": {
@@ -20374,10 +20374,10 @@
 "jobs": 0
 },
 "greenhouse|oceanx": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-21"
 },
 "greenhouse|ocrolusinc": {
@@ -20595,10 +20595,10 @@
 "jobs": 0
 },
 "ashby|omniscient": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 14,
-"last_ok": "2026-10-29",
+"jobs": 11,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-29"
 },
 "greenhouse|onapsis": {
@@ -20808,11 +20808,11 @@
 "last_ok": "2026-10-29"
 },
 "ashby|openrouter": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 24,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 25,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|opensea": {
 "last_polled": "2026-10-23",
@@ -20875,10 +20875,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|opswat": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 19,
-"last_ok": "2026-10-29",
+"jobs": 20,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-20"
 },
 "greenhouse|optimadermatologycareers": {
@@ -20960,10 +20960,10 @@
 "jobs": 0
 },
 "ashby|orca": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-23"
 },
 "greenhouse|orcasecurity": {
@@ -20985,11 +20985,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|orderly": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|orennia": {
 "last_polled": "2026-10-29",
@@ -21050,10 +21050,10 @@
 "jobs": 0
 },
 "greenhouse|osmosis": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 7,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "greenhouse|ossiumhealth": {
@@ -21799,11 +21799,11 @@
 "last_ok": "2026-09-29"
 },
 "ashby|percona": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 12,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|perfectserve": {
 "last_polled": "2026-10-29",
@@ -21972,10 +21972,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|pingidentity": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 50,
-"last_ok": "2026-10-29",
+"jobs": 52,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-19"
 },
 "ashby|pingo": {
@@ -22085,11 +22085,11 @@
 "last_ok": "2026-08-24"
 },
 "greenhouse|platacard": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|platformed": {
 "last_polled": "2026-09-04",
@@ -22103,11 +22103,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|platformsh": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 7,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|platinumdermphysicians": {
 "last_polled": "2026-09-04",
@@ -22143,10 +22143,10 @@
 "last_ok": "2026-10-29"
 },
 "ashby|playson": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-16"
 },
 "greenhouse|playworks96": {
@@ -22478,17 +22478,17 @@
 "last_ok": "2026-09-23"
 },
 "ashby|pragmatike": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 50,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-24"
 },
 "greenhouse|prathaminternational": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|pravah": {
@@ -22498,11 +22498,11 @@
 "last_ok": "2026-08-27"
 },
 "greenhouse|praxent": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 13,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|praxis": {
 "last_polled": "2026-09-04",
@@ -23057,11 +23057,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|quanata": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 10,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|quansight": {
 "last_polled": "2026-09-08",
@@ -23104,11 +23104,11 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|quberesearchandtechnologies": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 15,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 14,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|queracomputinginc": {
 "last_polled": "2026-10-28",
@@ -23135,10 +23135,10 @@
 "last_ok": "2026-10-29"
 },
 "greenhouse|quince": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 15,
-"last_ok": "2026-10-29",
+"jobs": 17,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-29"
 },
 "greenhouse|quintoandar": {
@@ -24477,11 +24477,11 @@
 "jobs": 0
 },
 "ashby|rwazi": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 25,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|rxsense": {
 "last_polled": "2026-10-28",
@@ -24553,10 +24553,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|sailorhealth": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 135,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-25"
 },
 "ashby|sailpeak": {
@@ -24721,10 +24721,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|sayari": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 11,
-"last_ok": "2026-10-29",
+"jobs": 10,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|sazabi": {
@@ -24751,11 +24751,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|scalemath": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|scan-com": {
 "last_polled": "2026-10-28",
@@ -25048,18 +25048,18 @@
 "jobs": 0
 },
 "greenhouse|semafor": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 6,
-"last_ok": "2026-10-29",
+"jobs": 5,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|semgrep": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|semperis": {
 "last_polled": "2026-09-10",
@@ -25517,17 +25517,17 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|signifyd95": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|sigp": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "greenhouse|silananotechnologies": {
@@ -25719,11 +25719,11 @@
 "last_ok": "2026-09-16"
 },
 "ashby|skelar": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 34,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|skildai-careers": {
 "last_polled": "2026-10-28",
@@ -26191,11 +26191,11 @@
 "jobs": 0
 },
 "greenhouse|soraunion": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|sorcero": {
 "last_polled": "2026-09-13",
@@ -26340,10 +26340,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|spauldingridge": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 3,
-"last_ok": "2026-10-29",
+"jobs": 2,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|spcareers": {
@@ -26375,10 +26375,10 @@
 "jobs": 0
 },
 "ashby|specright": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|specter": {
@@ -26399,10 +26399,10 @@
 "jobs": 0
 },
 "greenhouse|speechify": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 735,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-02"
 },
 "ashby|spekit": {
@@ -26485,10 +26485,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|spotme": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 10,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|spoton": {
@@ -26583,11 +26583,11 @@
 "last_ok": "2026-08-19"
 },
 "ashby|squads": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 5,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|squarespace": {
 "last_polled": "2026-10-28",
@@ -26814,11 +26814,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|stellar": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|stellar-health": {
 "last_polled": "2026-10-28",
@@ -27347,11 +27347,11 @@
 "last_ok": "2026-10-28"
 },
 "ashby|sweedpos.com": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 8,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 9,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|sweep": {
 "last_polled": "2026-09-04",
@@ -27397,11 +27397,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|synacksrt": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|synaptrixlabs": {
 "last_polled": "2026-09-16",
@@ -27514,10 +27514,10 @@
 "last_ok": "2026-08-25"
 },
 "ashby|talentsafari": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 2,
-"last_ok": "2026-10-29",
+"jobs": 3,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "greenhouse|talkdesk2": {
@@ -27847,10 +27847,10 @@
 "jobs": 0
 },
 "greenhouse|telnyx54": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 26,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-05"
 },
 "ashby|telus-digital": {
@@ -27936,11 +27936,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|tenstorrent": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 36,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 35,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|tenstorrentuniversity": {
 "last_polled": "2026-09-13",
@@ -28017,10 +28017,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|testlio": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 12,
-"last_ok": "2026-10-29",
+"jobs": 14,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-09"
 },
 "greenhouse|testnisc": {
@@ -28174,10 +28174,10 @@
 "jobs": 0
 },
 "greenhouse|thefarmersdog": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 1,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|thefloridapanthers": {
@@ -28326,10 +28326,10 @@
 "jobs": 0
 },
 "greenhouse|thinkacademymy": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|thinkacademyus": {
@@ -28483,10 +28483,10 @@
 "jobs": 0
 },
 "ashby|tilthq": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 16,
-"last_ok": "2026-10-29",
+"jobs": 17,
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-08"
 },
 "ashby|timely": {
@@ -28608,11 +28608,11 @@
 "last_ok": "2026-09-16"
 },
 "ashby|toogeza": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 19,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|toogoodtogo": {
 "last_polled": "2026-09-22",
@@ -28654,10 +28654,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|torq": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 15,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-09-04"
 },
 "ashby|tortus": {
@@ -28718,11 +28718,11 @@
 "jobs": 0
 },
 "ashby|tradeify": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 7,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 8,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|traderepublicbank": {
 "last_polled": "2026-09-16",
@@ -28849,10 +28849,10 @@
 "jobs": 0
 },
 "greenhouse|trinityparktalent": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|tripactions": {
@@ -29023,11 +29023,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|tubescience52": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 11,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 9,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|tubitv": {
 "last_polled": "2026-10-28",
@@ -29063,11 +29063,11 @@
 "jobs": 0
 },
 "greenhouse|turing": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 9,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-20"
+"jobs": 10,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|turion-space": {
 "last_polled": "2026-09-22",
@@ -29122,11 +29122,11 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|twistbioscience": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 13,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 12,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|twitch": {
 "last_polled": "2026-09-25",
@@ -29269,10 +29269,10 @@
 "jobs": 0
 },
 "greenhouse|unanet": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 6,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "greenhouse|unconventionalinc": {
@@ -29741,10 +29741,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|vaynermedia": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 10,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-29"
 },
 "ashby|vclusterlabs": {
@@ -29837,11 +29837,11 @@
 "last_ok": "2026-10-25"
 },
 "greenhouse|veocorporatecareers": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|veracode": {
 "last_polled": "2026-10-28",
@@ -30532,10 +30532,10 @@
 "last_ok": "2026-10-28"
 },
 "ashby|weaviate": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|webai": {
@@ -30675,18 +30675,18 @@
 "last_ok": "2026-10-28"
 },
 "ashby|whetstoneresearch": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 2,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|whippy": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 9,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|whisperaero": {
 "last_polled": "2026-10-28",
@@ -30785,11 +30785,11 @@
 "jobs": 0
 },
 "ashby|windranger": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "greenhouse|wingspan": {
 "last_polled": "2026-10-28",
@@ -30856,10 +30856,10 @@
 "last_ok": "2026-10-28"
 },
 "greenhouse|withmeinc": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|withpace": {
@@ -31010,18 +31010,18 @@
 "jobs": 0
 },
 "ashby|worldly": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 3,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-10-22"
 },
 "greenhouse|worldquant": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
-"jobs": 61,
-"last_ok": "2026-10-29",
-"worldwide_last": "2026-10-29"
+"jobs": 60,
+"last_ok": "2026-10-30",
+"worldwide_last": "2026-10-30"
 },
 "ashby|wormholelabs": {
 "last_polled": "2026-10-28",
@@ -31104,10 +31104,10 @@
 "jobs": 0
 },
 "greenhouse|xapo61": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 4,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-22"
 },
 "ashby|xbowcareers": {
@@ -31362,10 +31362,10 @@
 "last_ok": "2026-09-07"
 },
 "ashby|zeely": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 18,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|zefir": {
@@ -31524,10 +31524,10 @@
 "last_ok": "2026-09-03"
 },
 "greenhouse|zoominfo": {
-"last_polled": "2026-10-29",
+"last_polled": "2026-10-30",
 "fails": 0,
 "jobs": 24,
-"last_ok": "2026-10-29",
+"last_ok": "2026-10-30",
 "worldwide_last": "2026-08-19"
 },
 "ashby|zoomlogi": {
@@ -31968,9 +31968,9 @@
 "ashby|moxfive": {
 "fails": 0,
 "jobs": 11,
-"worldwide_last": "2026-10-29",
-"last_polled": "2026-10-29",
-"last_ok": "2026-10-29"
+"worldwide_last": "2026-10-30",
+"last_polled": "2026-10-30",
+"last_ok": "2026-10-30"
 },
 "ashby|moxie": {
 "fails": 0,
